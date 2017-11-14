@@ -155,6 +155,11 @@ protected slots:
 protected:
     void tagHistory(quint64 tagId);
 
+private slots:
+    void on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;

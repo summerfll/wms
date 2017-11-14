@@ -11,7 +11,7 @@
 // -------------------------------------------------------------------------------------------------------------------
 
 #include "GraphicsWidget.h"
-#include "ui_graphicswidget.h"
+#include "ui_GraphicsWidget.h"
 
 #include "RTLSDisplayApplication.h"
 #include "ViewSettings.h"
@@ -1693,3 +1693,5 @@ void GraphicsWidget::anchTableEditing(bool enable)
     }
 
 }
+
+
