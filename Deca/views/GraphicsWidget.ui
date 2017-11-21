@@ -29,20 +29,29 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>85</width>
-        <height>239</height>
+        <width>93</width>
+        <height>222</height>
        </rect>
       </property>
       <attribute name="label">
        <string>地     图</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>设 置</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="page_2">
       <property name="geometry">
@@ -58,11 +67,27 @@
       </attribute>
      </widget>
      <widget class="QWidget" name="page_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
       <attribute name="label">
        <string>页</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="page_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
       <attribute name="label">
        <string>页</string>
       </attribute>
@@ -226,6 +251,17 @@
          </item>
         </layout>
        </item>
+       <item row="1" column="1">
+        <widget class="QDockWidget" name="dockWidget">
+         <property name="maximumSize">
+          <size>
+           <width>350</width>
+           <height>800</height>
+          </size>
+         </property>
+         <widget class="ViewSettingsWidget" name="dockWidgetContents"/>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
@@ -253,6 +289,12 @@
    <extends>QGraphicsView</extends>
    <header>GraphicsView.h</header>
   </customwidget>
+  <customwidget>
+   <class>ViewSettingsWidget</class>
+   <extends>QWidget</extends>
+   <header>ViewSettingsWidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
@@ -269,6 +311,22 @@
     <hint type="destinationlabel">
      <x>104</x>
      <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>dockWidget</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1081</x>
+     <y>248</y>
     </hint>
    </hints>
   </connection>

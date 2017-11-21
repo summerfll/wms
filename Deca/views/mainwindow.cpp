@@ -85,8 +85,9 @@ void MainWindow::onReady()
     {
         ui->mainToolBar->hide();
     }
-
-    ui->viewSettings_dw->show();
+//stt
+ //   ui->viewSettings_dw->show();
+    ui->viewSettings_dw->hide();
 
 #ifdef QT_DEBUG
     ui->mainToolBar->show();

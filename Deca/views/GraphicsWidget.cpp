@@ -119,6 +119,10 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     _line02 = NULL;
     _line12 = NULL;
     RTLSDisplayApplication::connectReady(this, "onReady()");
+    //stt
+    ui->tagTable->hide();
+    ui->anchorTable->hide();
+    ui->dockWidget->hide();
 }
 
 void GraphicsWidget::onReady()
