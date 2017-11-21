@@ -6,155 +6,243 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1074</width>
-    <height>300</height>
+    <width>1144</width>
+    <height>361</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <widget class="QTableWidget" name="anchorTable">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
+    <widget class="QToolBox" name="toolBox">
      <property name="minimumSize">
       <size>
-       <width>0</width>
-       <height>112</height>
+       <width>85</width>
+       <height>343</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>350</width>
-       <height>16777215</height>
+       <width>69</width>
+       <height>343</height>
       </size>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
+     <property name="currentIndex">
+      <number>1</number>
      </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="rowCount">
-      <number>4</number>
-     </property>
-     <property name="columnCount">
-      <number>12</number>
-     </property>
-     <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>70</number>
-     </attribute>
-     <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>70</number>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="verticalHeaderVisible">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="verticalHeaderDefaultSectionSize">
-      <number>18</number>
-     </attribute>
-     <attribute name="verticalHeaderHighlightSections">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="verticalHeaderMinimumSectionSize">
-      <number>18</number>
-     </attribute>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
+     <widget class="QWidget" name="page">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>地     图</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string> 出入库管理</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <attribute name="label">
+       <string>页</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <attribute name="label">
+       <string>页</string>
+      </attribute>
+     </widget>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="GraphicsView" name="graphicsView"/>
-   </item>
    <item row="0" column="1">
-    <widget class="QTableWidget" name="tagTable">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>71</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>700</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="rowCount">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
       <number>0</number>
      </property>
-     <property name="columnCount">
-      <number>10</number>
-     </property>
-     <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>70</number>
-     </attribute>
-     <attribute name="horizontalHeaderMinimumSectionSize">
-      <number>70</number>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="verticalHeaderDefaultSectionSize">
-      <number>18</number>
-     </attribute>
-     <attribute name="verticalHeaderMinimumSectionSize">
-      <number>18</number>
-     </attribute>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
-     <column/>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>tab1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="GraphicsView" name="graphicsView"/>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QTableWidget" name="anchorTable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>350</width>
+             <height>112</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>350</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>4</number>
+           </property>
+           <property name="columnCount">
+            <number>12</number>
+           </property>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>70</number>
+           </attribute>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>70</number>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>18</number>
+           </attribute>
+           <attribute name="verticalHeaderHighlightSections">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>18</number>
+           </attribute>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tagTable">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>653</width>
+             <height>112</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>700</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>0</number>
+           </property>
+           <property name="columnCount">
+            <number>10</number>
+           </property>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>70</number>
+           </attribute>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>70</number>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>18</number>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>18</number>
+           </attribute>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+           <column/>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>tab2</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>tab3</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>tab4</string>
+      </attribute>
+     </widget>
     </widget>
    </item>
   </layout>
@@ -167,5 +255,22 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>toolBox</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>tabWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>104</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
