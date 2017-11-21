@@ -14,139 +14,27 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <widget class="QToolBox" name="toolBox">
-     <property name="minimumSize">
-      <size>
-       <width>85</width>
-       <height>343</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>69</width>
-       <height>343</height>
-      </size>
-     </property>
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="page">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>239</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  地     图</string>
-      </attribute>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>9</x>
-         <y>99</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>设 置</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>239</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string> 出入库管理</string>
-      </attribute>
-      <widget class="QToolBox" name="toolBox_2">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>69</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="currentIndex">
-        <number>1</number>
-       </property>
-       <widget class="QWidget" name="page_5">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>69</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Page 1</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="page_6">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>69</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>Page 2</string>
-        </attribute>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>239</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>页</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="page_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>239</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>页</string>
-      </attribute>
-     </widget>
-    </widget>
-   </item>
    <item row="0" column="1">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
        <string>tab1</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="1">
+        <widget class="QDockWidget" name="dockWidget">
+         <property name="maximumSize">
+          <size>
+           <width>350</width>
+           <height>800</height>
+          </size>
+         </property>
+         <widget class="ViewSettingsWidget" name="dockWidgetContents"/>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="GraphicsView" name="graphicsView"/>
        </item>
@@ -294,17 +182,6 @@
          </item>
         </layout>
        </item>
-       <item row="1" column="1">
-        <widget class="QDockWidget" name="dockWidget">
-         <property name="maximumSize">
-          <size>
-           <width>350</width>
-           <height>800</height>
-          </size>
-         </property>
-         <widget class="ViewSettingsWidget" name="dockWidgetContents"/>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
@@ -321,6 +198,149 @@
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>tab4</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QToolBox" name="toolBox">
+     <property name="minimumSize">
+      <size>
+       <width>85</width>
+       <height>343</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>69</width>
+       <height>343</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  地     图</string>
+      </attribute>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>77</width>
+         <height>83</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Setting</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>AnchorTable</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>TagTable</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string> 出入库管理</string>
+      </attribute>
+      <widget class="QToolBox" name="toolBox_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>69</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="page_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>69</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>Page 1</string>
+        </attribute>
+       </widget>
+       <widget class="QWidget" name="page_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>69</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <attribute name="label">
+         <string>Page 2</string>
+        </attribute>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>页</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>239</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>页</string>
       </attribute>
      </widget>
     </widget>
@@ -355,22 +375,6 @@
     <hint type="destinationlabel">
      <x>104</x>
      <y>185</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>dockWidget</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>55</x>
-     <y>145</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1214</x>
-     <y>248</y>
     </hint>
    </hints>
   </connection>

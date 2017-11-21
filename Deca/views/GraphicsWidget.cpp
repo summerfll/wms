@@ -123,6 +123,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui->tagTable->hide();
     ui->anchorTable->hide();
     ui->dockWidget->hide();
+
 }
 
 void GraphicsWidget::onReady()
@@ -1698,4 +1699,42 @@ void GraphicsWidget::anchTableEditing(bool enable)
 
 }
 
+void GraphicsWidget::on_pushButton_clicked()
+{
 
+    bool flag=ui->dockWidget->isHidden();
+    if(flag)
+    {
+        ui->dockWidget->show();
+    }
+    if(!flag)
+    {
+        ui->dockWidget->hide();
+    }
+}
+
+void GraphicsWidget::on_pushButton_2_clicked()
+{
+    bool flag=ui->anchorTable->isHidden();
+    if(flag)
+    {
+        ui->anchorTable->show();
+    }
+    if(!flag)
+    {
+        ui->anchorTable->hide();
+    }
+}
+
+void GraphicsWidget::on_pushButton_3_clicked()
+{
+    bool flag=ui->tagTable->isHidden();
+    if(flag)
+    {
+        ui->tagTable->show();
+    }
+    if(!flag)
+    {
+        ui->tagTable->hide();
+    }
+}
