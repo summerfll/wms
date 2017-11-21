@@ -18,6 +18,7 @@
 #include <QAbstractItemView>
 #include <QGraphicsView>
 #include "RTLSClient.h"
+#include <QSqlTableModel>
 
 namespace Ui {
 class GraphicsWidget;
@@ -79,6 +80,8 @@ class GraphicsWidget : public QWidget
     Q_OBJECT
 
 public:
+
+    QSqlTableModel *model;
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -163,6 +166,8 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::GraphicsWidget *ui;

@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     tools/ScaleTool.cpp \
     util/QPropertyModel.cpp \
     network/SerialConnection.cpp \
-    tools/trilateration.cpp
+    tools/trilateration.cpp \
+    wms/connect_database.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -55,7 +56,8 @@ HEADERS  += \
     tools/ScaleTool.h \
     util/QPropertyModel.h \
     network/SerialConnection.h \
-    tools/trilateration.h
+    tools/trilateration.h \
+    wms/connect_database.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
@@ -65,3 +67,4 @@ FORMS    += \
 
 RESOURCES += \
     res/resources.qrc
+QT   +=sql

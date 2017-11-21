@@ -26,6 +26,8 @@
 #include <QFile>
 #include <QPen>
 
+#include <QSqlTableModel>
+
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -35,6 +37,14 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui(new Ui::GraphicsWidget)
 {
     ui->setupUi(this);
+
+    model=new QSqlTableModel(this);
+    model->setTable("book");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select(); //选取整个表的所有行
+    ui->tableView->setModel(model);
+
+
 
     this->_scene = new QGraphicsScene(this);
 
@@ -1737,4 +1747,10 @@ void GraphicsWidget::on_pushButton_3_clicked()
     {
         ui->tagTable->hide();
     }
+}
+
+void GraphicsWidget::on_pushButton_4_clicked()
+{
+    model->setTable("book");
+    model->select();
 }

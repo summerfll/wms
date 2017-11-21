@@ -25,12 +25,16 @@
 #include <QDomDocument>
 #include <QFile>
 
+#include "wms/connect_database.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
 
+    ConnectDatabase::openDatabase();
     _showMainToolBar = false;
     _notConnected = true;
 
