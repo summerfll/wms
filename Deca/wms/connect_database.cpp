@@ -1,6 +1,6 @@
 #include "connect_database.h"
 #include <QSqlQuery>
-
+#include <QMessageBox>
 QSqlDatabase ConnectDatabase::db = QSqlDatabase::addDatabase("QMYSQL");
 
 
@@ -27,6 +27,7 @@ bool ConnectDatabase::openDatabase()
 
     if (!db.open())
     {
+       QMessageBox::information(NULL, QString("数据库错误提示"), QString("数据库连接失败"));
       //  printf("----------------------------------------database false-------------------------------\n");
         return false;
     }
