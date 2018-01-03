@@ -68,7 +68,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="lineEdit_1">
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
@@ -184,7 +184,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_7"/>
+        <widget class="QLineEdit" name="lineEdit_5"/>
        </item>
        <item>
         <spacer name="horizontalSpacer_6">
@@ -207,7 +207,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_8"/>
+        <widget class="QLineEdit" name="lineEdit_6"/>
        </item>
       </layout>
      </item>
@@ -234,7 +234,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_5"/>
+        <widget class="QLineEdit" name="lineEdit_7"/>
        </item>
        <item>
         <spacer name="horizontalSpacer_5">
@@ -257,7 +257,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_6"/>
+        <widget class="QLineEdit" name="lineEdit_8"/>
        </item>
       </layout>
      </item>
@@ -361,7 +361,7 @@
   <zorder>horizontalSpacer</zorder>
   <zorder>horizontalSpacer_2</zorder>
   <zorder>pushButton_2</zorder>
-  <zorder>lineEdit</zorder>
+  <zorder>lineEdit_1</zorder>
   <zorder>lineEdit_2</zorder>
   <zorder>horizontalSpacer_3</zorder>
   <zorder>layoutWidget</zorder>
