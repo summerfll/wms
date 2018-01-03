@@ -389,3 +389,4 @@ void ViewSettingsWidget::scaleClicked()
     RTLSDisplayApplication::graphicsView()->setTool(tool);
 }
 
+

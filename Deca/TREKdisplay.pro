@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     util/QPropertyModel.cpp \
     network/SerialConnection.cpp \
     tools/trilateration.cpp \
-    wms/connect_database.cpp
+    wms/connect_database.cpp \
+    views/storage.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -57,12 +58,14 @@ HEADERS  += \
     util/QPropertyModel.h \
     network/SerialConnection.h \
     tools/trilateration.h \
-    wms/connect_database.h
+    wms/connect_database.h \
+    views/storage.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
     views/ViewSettingsWidget.ui \
-    views/connectionwidget.ui
+    views/connectionwidget.ui \
+    views/storage.ui
 
 
 RESOURCES += \

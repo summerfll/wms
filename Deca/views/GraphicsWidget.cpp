@@ -28,6 +28,10 @@
 
 #include <QSqlTableModel>
 
+#include "storage.h"
+
+#include<QDesktopWidget>
+
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -39,12 +43,16 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui->setupUi(this);
 
     model=new QSqlTableModel(this);
-    model->setTable("book");
+    model->setTable("input");
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model->select(); //选取整个表的所有行
     ui->tableView->setModel(model);
 
-
+    model1=new QSqlTableModel(this);
+    model1->setTable("reader");
+    model1->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model1->select(); //选取整个表的所有行
+    ui->tableView_2->setModel(model1);
 
     this->_scene = new QGraphicsScene(this);
 
@@ -1753,4 +1761,34 @@ void GraphicsWidget::on_pushButton_4_clicked()
 {
     model->setTable("book");
     model->select();
+}
+
+void GraphicsWidget::on_pushButton_5_clicked()
+{
+    ui->tagTable->hide();
+    ui->anchorTable->hide();
+    ui->dockWidget->hide();
+}
+
+
+
+void GraphicsWidget::on_pushButton_6_clicked()
+{
+    model->setTable("storage_copy");
+    model->select();
+}
+
+void GraphicsWidget::on_pushButton_13_clicked()
+{
+    model1->setTable("storage_copy");
+    model1->select();
+}
+
+void GraphicsWidget::on_pushButton_8_clicked()
+{
+    storage *add_storage=new storage();
+    add_storage->show();
+    add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
+                      (QApplication::desktop()->height() - add_storage->height()) / 2);
+
 }

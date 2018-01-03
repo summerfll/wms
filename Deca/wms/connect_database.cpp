@@ -20,7 +20,7 @@ bool ConnectDatabase::openDatabase()
 {
 
     db.setHostName("localhost");
-    db.setDatabaseName("library");
+    db.setDatabaseName("wms");
     db.setUserName("root");
     db.setPassword("666666");
     db.setPort(3306);
