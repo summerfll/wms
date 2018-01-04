@@ -28,6 +28,12 @@
 
 #include <QSqlTableModel>
 
+#include "storage.h"
+
+#include<QDesktopWidget>
+#include "storage_modify.h"
+#include "storage_delete.h"
+
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -39,12 +45,16 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui->setupUi(this);
 
     model=new QSqlTableModel(this);
-    model->setTable("book");
+    model->setTable("input");
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model->select(); //选取整个表的所有行
     ui->tableView->setModel(model);
 
-
+    model1=new QSqlTableModel(this);
+    model1->setTable("reader");
+    model1->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model1->select(); //选取整个表的所有行
+    ui->tableView_2->setModel(model1);
 
     this->_scene = new QGraphicsScene(this);
 
@@ -1753,4 +1763,69 @@ void GraphicsWidget::on_pushButton_4_clicked()
 {
     model->setTable("book");
     model->select();
+}
+
+void GraphicsWidget::on_pushButton_5_clicked()
+{
+    ui->tagTable->hide();
+    ui->anchorTable->hide();
+    ui->dockWidget->hide();
+}
+
+
+
+void GraphicsWidget::on_pushButton_6_clicked()
+{
+    model->setTable("storage_copy");
+    model->select();
+}
+
+void GraphicsWidget::on_pushButton_13_clicked()
+{
+    model1->setTable("storage_copy");
+    model1->select();
+}
+
+void GraphicsWidget::on_pushButton_8_clicked()
+{
+    storage *add_storage=new storage();
+    add_storage->show();
+    add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
+                      (QApplication::desktop()->height() - add_storage->height()) / 2);
+
+}
+
+void GraphicsWidget::on_pushButton_7_clicked()
+{
+    QString query_text;
+    QString slect_text;
+    query_text=ui->lineEdit->text();
+    slect_text="订单号 like'"+query_text+"%'";
+    model1->setFilter(slect_text);
+    model1->select();
+    ui->lineEdit->clear();
+
+
+}
+
+void GraphicsWidget::on_pushButton_11_clicked()
+{
+    storage_modify *modify = new storage_modify();
+    modify->show();
+    modify->move((QApplication::desktop()->width() - modify->width()) / 2,
+                  (QApplication::desktop()->height() - modify->height()) / 2);
+}
+
+void GraphicsWidget::on_pushButton_9_clicked()
+{
+    model1->setTable("storage_copy");
+    model1->select();
+}
+
+void GraphicsWidget::on_pushButton_10_clicked()
+{
+    storage_delete *deletes = new storage_delete();
+    deletes->show();
+    deletes->move((QApplication::desktop()->width() - deletes->width()) / 2,
+                  (QApplication::desktop()->height() - deletes->height()) / 2);
 }

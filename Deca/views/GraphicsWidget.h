@@ -82,6 +82,7 @@ class GraphicsWidget : public QWidget
 public:
 
     QSqlTableModel *model;
+    QSqlTableModel *model1;
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -168,6 +169,24 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_toolBox_2_destroyed();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_13_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
 
 private:
     Ui::GraphicsWidget *ui;
