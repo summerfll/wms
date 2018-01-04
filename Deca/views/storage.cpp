@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QString>
 #include <QSqlQuery>
+#include <QDateTime>
 storage::storage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::storage)
@@ -43,7 +44,9 @@ void storage::on_pushButton_clicked()
     str5=ui->lineEdit_5->text().trimmed();
     str6=ui->lineEdit_6->text().trimmed();
     str7=ui->lineEdit_7->text().trimmed();
-    str8=ui->lineEdit_8->text().trimmed();
+    QDateTime current_data=QDateTime::currentDateTime();
+    QString current=current_data.toString("yyyy-MM-dd hh:mm:ss");
+    str8=current;
 
     query.exec("select 订单号 from storage_copy where 订单号='"+str1+"'");
     if(!query.next())
