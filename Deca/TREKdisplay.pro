@@ -80,3 +80,7 @@ FORMS    += \
 RESOURCES += \
     res/resources.qrc
 QT   +=sql
+
+
+
+CONFIG += qaxcontainer #导出excel
