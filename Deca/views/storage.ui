@@ -370,7 +370,7 @@
           <bool>true</bool>
          </property>
          <property name="placeholderText">
-          <string>NOW DATA</string>
+          <string>NOW DATE</string>
          </property>
         </widget>
        </item>

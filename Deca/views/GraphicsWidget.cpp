@@ -39,7 +39,7 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QAxObject>
-
+#include <QSqlQuery>
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -61,6 +61,12 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model1->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model1->select(); //选取整个表的所有行
     ui->tableView_2->setModel(model1);
+
+    model2=new QSqlTableModel(this);
+    model2->setTable("reader");
+    model2->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model2->select(); //选取整个表的所有行
+    ui->tableView_3->setModel(model2);
 
     this->_scene = new QGraphicsScene(this);
 
@@ -1842,7 +1848,7 @@ void GraphicsWidget::on_pushButton_12_clicked()
      //void FaJianDialog::Table2ExcelByHtml(QTableWidget *table,QString title)
     QTableView *table;
     table=ui->tableView_2;
-    QString title="入库报表";
+    QString title=" 入库报表";
      {
          QString fileName = QFileDialog::getSaveFileName(table, "保存",QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),"Excel 文件(*.xls *.xlsx)");
          if (fileName!="")
@@ -1962,4 +1968,10 @@ void GraphicsWidget::on_pushButton_12_clicked()
          }
      }
 
+}
+
+void GraphicsWidget::on_pushButton_22_clicked()
+{
+    model2->setTable("storage_copy");
+    model2->select();
 }

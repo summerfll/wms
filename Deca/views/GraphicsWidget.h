@@ -83,6 +83,7 @@ public:
 
     QSqlTableModel *model;
     QSqlTableModel *model1;
+    QSqlTableModel *model2;
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -190,6 +191,8 @@ private slots:
 
     void on_pushButton_12_clicked();
 
+    void on_pushButton_22_clicked();
+
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;
@@ -222,6 +225,8 @@ private:
     QGraphicsLineItem * _line01;
     QGraphicsLineItem * _line02;
     QGraphicsLineItem * _line12;
+
+
 
 };
 
