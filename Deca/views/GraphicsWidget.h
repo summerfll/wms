@@ -19,6 +19,8 @@
 #include <QGraphicsView>
 #include "RTLSClient.h"
 #include <QSqlTableModel>
+#include <QTableView>
+#include <QTableWidget>
 
 namespace Ui {
 class GraphicsWidget;
@@ -84,6 +86,8 @@ public:
     QSqlTableModel *model;
     QSqlTableModel *model1;
     QSqlTableModel *model2;
+   // QSqlTableModel *model3;
+
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -116,6 +120,12 @@ public:
     void saveConfigFile(QString filename);
 
     void hideTACorrectionTable(bool hidden);
+
+
+    void outputQtableviewtoexcel(QTableView *table,QString title);//导出excel表格
+    void outputQtablewidgettoexcel(QTableWidget *table,QString title);
+
+
 
 signals:
     void updateAnchorXYZ(int id, int x, double value);
@@ -193,6 +203,20 @@ private slots:
 
     void on_pushButton_22_clicked();
 
+    void on_pushButton_15_clicked();
+
+    void on_pushButton_15_clicked(bool checked);
+
+    void on_pushButton_23_clicked();
+
+    void on_pushButton_20_clicked();
+
+    void on_pushButton_21_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_16_clicked();
+
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;
@@ -225,6 +249,13 @@ private:
     QGraphicsLineItem * _line01;
     QGraphicsLineItem * _line02;
     QGraphicsLineItem * _line12;
+
+    QMap<QString, int>::iterator order_itera;
+    QMap<QString, int> order_num_map;
+    QVector<QString>   order_id;
+    void empytOrdermap();
+
+
 
 
 

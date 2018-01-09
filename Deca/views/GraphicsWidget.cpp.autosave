@@ -2248,6 +2248,13 @@ void GraphicsWidget::on_pushButton_17_clicked()
 
 void GraphicsWidget::on_pushButton_16_clicked()
 {
+    QString order_id;
+    QModelIndex index;
+    
     int current_row=ui->tableWidget_4->currentIndex().row();
     ui->tableWidget_4->removeRow(current_row);
+    
+    index=ui->tableWidget_4->currentIndex();
+    order_id = book_borrow_model->record(index.row()).value("订单号").toString();
+    
 }

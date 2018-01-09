@@ -2,6 +2,7 @@
 #include "ui_storage_delete.h"
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QDebug>
 storage_delete::storage_delete(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::storage_delete)
