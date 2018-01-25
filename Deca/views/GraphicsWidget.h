@@ -86,7 +86,7 @@ public:
     QSqlTableModel *model;
     QSqlTableModel *model1;
     QSqlTableModel *model2;
-   // QSqlTableModel *model3;
+    QSqlTableModel *model3;
 
 
     enum Column {
@@ -216,6 +216,14 @@ private slots:
     void on_pushButton_17_clicked();
 
     void on_pushButton_16_clicked();
+
+    void on_pushButton_18_clicked();
+
+    void on_pushButton_19_clicked();
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_25_clicked();
 
 private:
     Ui::GraphicsWidget *ui;

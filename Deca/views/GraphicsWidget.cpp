@@ -43,7 +43,7 @@
 #include <QSqlRecord>
 #include "wms/connect_database.h"
 #include <QDateTime>
-
+#include <QTableWidgetItem>
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -72,7 +72,11 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model2->select(); //选取整个表的所有行
     ui->tableView_3->setModel(model2);
 
-
+    model3=new QSqlTableModel(this);
+    model3->setTable("outstorage");
+    model3->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model3->select(); //选取整个表的所有行
+    ui->tableView_5->setModel(model3);
 
     this->_scene = new QGraphicsScene(this);
 
@@ -2118,7 +2122,7 @@ void GraphicsWidget::empytOrdermap()
     QSqlQuery query;
     QSqlRecord record;
     QString order_id;
-    bool a = query.exec("select * from storage_copy");
+    query.exec("select * from storage_copy");
     while(query.next())
     {
         record = query.record();
@@ -2127,7 +2131,7 @@ void GraphicsWidget::empytOrdermap()
     }
 }
 
-void GraphicsWidget::on_pushButton_15_clicked()
+void GraphicsWidget::on_pushButton_15_clicked()               //从库存添加到当前出库
 {
     QDateTime current_data=QDateTime::currentDateTime();
     QString current_time=current_data.toString("yyyy-MM-dd hh:mm:ss");
@@ -2214,13 +2218,18 @@ void GraphicsWidget::on_pushButton_15_clicked()
 
 }
 
-void GraphicsWidget::on_pushButton_15_clicked(bool checked)
-{
-
-}
 
 void GraphicsWidget::on_pushButton_23_clicked()
 {
+   QString order_id;
+   int row=ui->tableWidget_4->rowCount();
+   for(int i=0;i<row;i++)              //清零待出库订单数量
+   {
+      order_id=ui->tableWidget_4->item(i,0)->text();
+      order_num_map[order_id] = 0;
+   }
+   ui->tableWidget_4->clearContents(); //只清除表中数据，不清除表头数据
+   ui->tableWidget_4->setRowCount(0);  //清除行
 }
 
 void GraphicsWidget::on_pushButton_20_clicked()
@@ -2248,6 +2257,198 @@ void GraphicsWidget::on_pushButton_17_clicked()
 
 void GraphicsWidget::on_pushButton_16_clicked()
 {
-    int current_row=ui->tableWidget_4->currentIndex().row();
-    ui->tableWidget_4->removeRow(current_row);
+    QString order_id;
+
+    bool focus=ui->tableWidget_4->isItemSelected(ui->tableWidget_4->currentItem());
+    if(focus)  //判断是否选中任意一行，否则无法获取行
+    {
+    int allrow=ui->tableWidget_4->rowCount();
+
+    if(allrow>0) //表中必须有数据，否则无法移出，发生异常
+    {
+        int row=ui->tableWidget_4->currentItem()->row();
+        order_id=ui->tableWidget_4->item(row,0)->text();
+        ui->tableWidget_4->removeRow(row);
+        order_num_map[order_id] = 0;
+    }
+    else
+    {
+        QMessageBox::warning(this, tr("警告"), tr("当前出库为空，无法移除"));
+
+    }
+    }
+}
+
+
+void GraphicsWidget::on_pushButton_18_clicked()
+{
+    ConnectDatabase::openDatabase();
+    QDateTime current_data=QDateTime::currentDateTime();
+    QString current_time=current_data.toString("yyyy-MM-dd hh:mm:ss");
+    QSqlQuery query;
+    QString str1;QString str2;QString str3;QString str4;QString str5; QString str6;QString str7;QString str8;
+    int order_num_all;
+    QString out_order_id;
+    int repeat_flag = 0;
+
+    QString order_id=ui->lineEdit_3->text().trimmed();       //读取输入
+    int order_num=ui->lineEdit_4->text().trimmed().toInt();
+
+
+    if(order_id!=""&&order_num!=0)
+    {
+        query.exec("select * from storage_copy where 订单号 = '"+order_id+"'");
+        if(query.next())
+        {
+            QSqlRecord record=query.record();
+            order_itera=order_num_map.find(order_id);
+            order_num_all=order_num+order_itera.value();  //现要出库适量+以在map中数量=总出库数量
+            if(order_num_all<=query.value(record.indexOf("数量")).toInt())
+            {
+                //str1  order_id
+                //获取表中数据
+                str2=query.value(record.indexOf("产品名称")).toString();  //产品名称
+                str3=query.value(record.indexOf("产品编号")).toString(); //产品编号
+                str4=query.value(record.indexOf("标签编号")).toString();//标签编号
+                //str5 order_num
+                //str6 入库时间  current_time
+                str7=query.value(record.indexOf("仓库")).toString();//仓库
+                str8=query.value(record.indexOf("管理员")).toString();//管理员
+
+                for(int i=0;i<ui->tableWidget_4->rowCount();i++)
+                {
+                    out_order_id=ui->tableWidget_4->item(i,0)->text();
+                    if(out_order_id==order_id)   //如果存在，则出库数量加当前数量
+                    {
+                        QTableWidgetItem *item= new QTableWidgetItem(QString::number(order_num_all));
+                        ui->tableWidget_4->setItem(i,4,item);
+                        repeat_flag=1;
+                        break;
+                    }
+                }
+                if(repeat_flag==0)         //如果不存在，则重新创建新行
+                {
+                    QTableWidgetItem *item1= new QTableWidgetItem(order_id);
+                    QTableWidgetItem *item2= new QTableWidgetItem(str2);
+                    QTableWidgetItem *item3= new QTableWidgetItem(str3);
+                    QTableWidgetItem *item4= new QTableWidgetItem(str4);
+                    QTableWidgetItem *item5= new QTableWidgetItem(QString::number(order_num_all));
+                    QTableWidgetItem *item6= new QTableWidgetItem(current_time);
+                    QTableWidgetItem *item7= new QTableWidgetItem(str7);
+                    QTableWidgetItem *item8= new QTableWidgetItem(str8);
+                    int row=ui->tableWidget_4->rowCount();
+                    ui->tableWidget_4->setRowCount(row+1);
+                    ui->tableWidget_4->setItem(row,0,item1);
+                    ui->tableWidget_4->setItem(row,1,item2);
+                    ui->tableWidget_4->setItem(row,2,item3);
+                    ui->tableWidget_4->setItem(row,3,item4);
+                    ui->tableWidget_4->setItem(row,4,item5);
+                    ui->tableWidget_4->setItem(row,5,item6);
+                    ui->tableWidget_4->setItem(row,6,item7);
+                    ui->tableWidget_4->setItem(row,7,item8);
+                }
+                order_num_map[order_id]=order_num_all;
+            }
+            else{
+                QMessageBox::warning(this, tr("警告"), tr("货物数量超过库存！"));
+                order_num_all-=order_num;
+            }
+
+
+        }
+        else
+              QMessageBox::warning(this, tr("警告"), tr("不存在该订单！请先入库！"));
+    }
+    else
+        QMessageBox::warning(this, tr("警告"), tr("输入不正确"));
+    ui->lineEdit_4->setText("");
+
+}
+
+void GraphicsWidget::on_pushButton_19_clicked()
+{
+    ConnectDatabase::openDatabase();
+    QString order_id;
+    QSqlQuery query;
+    QSqlQuery query_insert;
+
+
+    int order_num;
+
+    //订单号、产品名称、产品编号、标签编号、出库数量、出库时间、仓库、管理员
+    QString str1;QString str2;QString str3;QString str4;QString str5; QString str6;QString str7;QString str8;
+    int row=ui->tableWidget_4->rowCount();
+    if(row==0)
+        QMessageBox::warning(this,tr("警告"),tr("请选择当前出库订单！"));
+    //将当前出库表中数据插入outstorage,并且减少storage_copy中相应订单货物的数量
+    for(int i=0;i<row;i++)
+    {
+        order_id=ui->tableWidget_4->item(i,0)->text();
+        str2=ui->tableWidget_4->item(i,1)->text();
+        str3=ui->tableWidget_4->item(i,2)->text();
+        str4=ui->tableWidget_4->item(i,3)->text();
+        str5=ui->tableWidget_4->item(i,4)->text();
+        str6=ui->tableWidget_4->item(i,5)->text();
+        str7=ui->tableWidget_4->item(i,6)->text();
+        str8=ui->tableWidget_4->item(i,7)->text();
+
+//       bool aa=query.exec("select 出库数量 from outstorage where 订单号 ='"+order_id+"'");
+//        if(query.next())
+//        {
+//            QSqlRecord record=query.record();
+//            order_num=query.value(record.indexOf("数量")).toInt();  //获取当前库存订单数量
+//        }
+//        else
+//            continue;
+        QString properties="订单号,产品名称,产品编号,标签编号,出库数量,出库时间,仓库,管理员";
+        QString values=":no1, :no2, :no3, :no4, :no5, :no6, :no7, :no8";
+
+        query_insert.prepare("insert into outstorage ("+ properties + ") values ("+ values + ")");
+        query_insert.bindValue(":no1",order_id);
+        query_insert.bindValue(":no2",str2);
+        query_insert.bindValue(":no3",str3);
+        query_insert.bindValue(":no4",str4);
+        query_insert.bindValue(":no5",str5);
+        query_insert.bindValue(":no6",str6);
+        query_insert.bindValue(":no7",str7);
+        query_insert.bindValue(":no8",str8);
+        query_insert.exec();
+    }
+    //将当前库存中已出库减去已出库货物数量
+
+
+
+
+
+
+
+    //完成出库后清空当前出库订单
+    for(int i=0;i<row;i++)              //清零待出库订单数量
+    {
+       order_id=ui->tableWidget_4->item(i,0)->text();
+       order_num_map[order_id] = 0;
+    }
+    ui->tableWidget_4->clearContents(); //只清除表中数据，不清除表头数据
+    ui->tableWidget_4->setRowCount(0);  //清除行
+    //更新已出库订单
+    model3->setTable("outstorage");
+    model3->select();
+
+
+
+
+}
+
+void GraphicsWidget::on_pushButton_24_clicked()
+{
+    model3->setTable("outstorage");
+    model3->select();
+}
+
+void GraphicsWidget::on_pushButton_25_clicked()
+{
+    QString title="         出库报表";
+    QTableView *table;
+    table=ui->tableView_5;
+    GraphicsWidget::outputQtableviewtoexcel(table, title);
 }
