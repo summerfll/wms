@@ -2371,9 +2371,7 @@ void GraphicsWidget::on_pushButton_19_clicked()
     QString order_id;
     QSqlQuery query;
     QSqlQuery query_insert;
-
-
-    int order_num;
+    QSqlQuery query_updata;
 
     //订单号、产品名称、产品编号、标签编号、出库数量、出库时间、仓库、管理员
     QString str1;QString str2;QString str3;QString str4;QString str5; QString str6;QString str7;QString str8;
@@ -2392,14 +2390,7 @@ void GraphicsWidget::on_pushButton_19_clicked()
         str7=ui->tableWidget_4->item(i,6)->text();
         str8=ui->tableWidget_4->item(i,7)->text();
 
-//       bool aa=query.exec("select 出库数量 from outstorage where 订单号 ='"+order_id+"'");
-//        if(query.next())
-//        {
-//            QSqlRecord record=query.record();
-//            order_num=query.value(record.indexOf("数量")).toInt();  //获取当前库存订单数量
-//        }
-//        else
-//            continue;
+
         QString properties="订单号,产品名称,产品编号,标签编号,出库数量,出库时间,仓库,管理员";
         QString values=":no1, :no2, :no3, :no4, :no5, :no6, :no7, :no8";
 
@@ -2413,11 +2404,25 @@ void GraphicsWidget::on_pushButton_19_clicked()
         query_insert.bindValue(":no7",str7);
         query_insert.bindValue(":no8",str8);
         query_insert.exec();
+
+
+
+        //将当前库存中已出库减去已出库货物数量
+        int order_num;  //定义当前出库货物数量
+        query.exec("select 数量 from storage_copy where 订单号 ='"+order_id+"'");
+        if(query.next())
+        {
+            QSqlRecord record=query.record();
+            order_num=query.value(record.indexOf("数量")).toInt();  //获取当前库存订单数量
+        }
+        int order_num_out=str5.toInt();
+        int order_num_new=order_num-order_num_out;
+        query.prepare("update storage_copy set 数量 = :one where 订单号 ='"+order_id+"'");
+        query.bindValue(":one",order_num_new);
+        query.exec();
+        model2->setTable("storage_copy");  //刷新当前库存
+        model2->select();
     }
-    //将当前库存中已出库减去已出库货物数量
-
-
-
 
 
 
@@ -2451,4 +2456,49 @@ void GraphicsWidget::on_pushButton_25_clicked()
     QTableView *table;
     table=ui->tableView_5;
     GraphicsWidget::outputQtableviewtoexcel(table, title);
+}
+
+void GraphicsWidget::on_pushButton_27_clicked()
+{
+    if(ui->groupBox_3->isHidden())
+    {
+        ui->groupBox_3->show();
+    }
+    else
+   {
+       ui->groupBox_3->hide();
+   }
+}
+
+void GraphicsWidget::on_pushButton_28_clicked()
+{
+    if(ui->groupBox_2->isHidden())
+    {
+        ui->groupBox_2->show();
+        ui->groupBox->show();
+        ui->pushButton_15->show();
+        ui->pushButton_16->show();
+        ui->pushButton_19->show();
+        ui->label_3->show();
+        ui->label_4->show();
+        ui->lineEdit_3->show();
+        ui->lineEdit_4->show();
+        ui->pushButton_17->show();
+        ui->pushButton_18->show();
+
+    }
+    else
+   {
+       ui->groupBox_2->hide();
+       ui->groupBox->hide();
+       ui->pushButton_15->hide();
+       ui->pushButton_16->hide();
+       ui->pushButton_19->hide();
+       ui->label_3->hide();
+       ui->label_4->hide();
+       ui->lineEdit_3->hide();
+       ui->lineEdit_4->hide();
+       ui->pushButton_17->hide();
+       ui->pushButton_18->hide();
+   }
 }

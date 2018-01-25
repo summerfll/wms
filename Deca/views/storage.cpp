@@ -66,10 +66,10 @@ void storage::on_pushButton_clicked()
             if(query.isActive())
             {
                 query.numRowsAffected();
-                QMessageBox::information(this, tr("信息"), tr("数据插入成功！"));
+                QMessageBox::information(this, tr("信息"), tr("订单入库成功！"));
             }
             else
-                QMessageBox::warning(this, tr("警告"), tr("数据插入失败！"));
+                QMessageBox::warning(this, tr("警告"), tr("入库失败！"));
 
         }
         else
@@ -81,6 +81,14 @@ void storage::on_pushButton_clicked()
         QMessageBox::warning(this, tr("警告"), tr("订单号是唯一的，不能重复！"));
         return ;
     }
+    ui->lineEdit_1->clear();
+    ui->lineEdit_2->clear();
+    ui->lineEdit_3->clear();
+    ui->lineEdit_4->clear();
+    ui->lineEdit_5->clear();
+    ui->lineEdit_6->clear();
+    ui->lineEdit_7->clear();
+
 
 
 }
