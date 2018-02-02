@@ -2502,3 +2502,51 @@ void GraphicsWidget::on_pushButton_28_clicked()
        ui->pushButton_18->hide();
    }
 }
+
+void GraphicsWidget::on_pushButton_31_clicked()
+{
+    //获取选中的行
+       int curRow = ui->tableView_5->currentIndex().row();
+
+       if(curRow==-1)
+       {
+           QMessageBox::warning(this,tr("提示"),tr("没有选中行") );
+       }
+       else
+       {
+        //删除该行
+         model3->removeRow(curRow);
+
+         int ok = QMessageBox::warning(this,tr("删除当前行!"),
+                                     tr("你确定删除当前行吗？"),
+                                     QMessageBox::Yes,QMessageBox::No);
+         if(ok == QMessageBox::No)
+          {
+            model3->revertAll(); //如果不删除，则撤销
+           }
+          else model3->submitAll(); //否则提交，在数据库中删除该行
+       }
+}
+
+void GraphicsWidget::on_pushButton_26_clicked()
+{
+    if(ui->groupBox_4->isHidden())
+    {
+        ui->groupBox_4->show();
+        ui->groupBox_5->hide();
+    }
+    else
+    ui->groupBox_5->hide();
+
+}
+
+void GraphicsWidget::on_pushButton_29_clicked()
+{
+    if(ui->groupBox_5->isHidden())
+    {
+        ui->groupBox_5->show();
+        ui->groupBox_4->hide();
+    }
+    else
+        ui->groupBox_4->hide();
+}
