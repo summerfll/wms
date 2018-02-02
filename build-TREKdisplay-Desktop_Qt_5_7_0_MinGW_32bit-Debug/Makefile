@@ -203,6 +203,7 @@ Makefile: F:/git/uwb_qt/Deca/TREKdisplay.pro .qmake.cache D:/setup/qt5.7.0/5.7/m
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/moc.prf \
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/win32/opengl.prf \
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/uic.prf \
+		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/win32/dumpcpp.prf \
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/file_copies.prf \
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/win32/windows.prf \
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/testcase_targets.prf \
@@ -211,6 +212,8 @@ Makefile: F:/git/uwb_qt/Deca/TREKdisplay.pro .qmake.cache D:/setup/qt5.7.0/5.7/m
 		D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/lex.prf \
 		F:/git/uwb_qt/Deca/TREKdisplay.pro \
 		D:/setup/qt5.7.0/5.7/mingw53_32/lib/qtmaind.prl \
+		D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5AxContainer.prl \
+		D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5AxBase.prl \
 		D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5Widgets.prl \
 		D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5Gui.prl \
 		D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5Network.prl \
@@ -363,6 +366,7 @@ D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/resources.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/moc.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/win32/opengl.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/uic.prf:
+D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/win32/dumpcpp.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/file_copies.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/win32/windows.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/testcase_targets.prf:
@@ -371,6 +375,8 @@ D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/yacc.prf:
 D:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/features/lex.prf:
 F:/git/uwb_qt/Deca/TREKdisplay.pro:
 D:/setup/qt5.7.0/5.7/mingw53_32/lib/qtmaind.prl:
+D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5AxContainer.prl:
+D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5AxBase.prl:
 D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5Widgets.prl:
 D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5Gui.prl:
 D:/setup/qt5.7.0/5.7/mingw53_32/lib/Qt5Network.prl:

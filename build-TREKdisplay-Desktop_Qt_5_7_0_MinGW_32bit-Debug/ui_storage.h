@@ -299,7 +299,7 @@ public:
         label_8->setText(QApplication::translate("storage", "\347\256\241 \347\220\206 \345\221\230", 0));
         label_9->setText(QApplication::translate("storage", "\345\205\245\345\272\223\346\227\266\351\227\264", 0));
         lineEdit_8->setText(QString());
-        lineEdit_8->setPlaceholderText(QApplication::translate("storage", "NOW DATA", 0));
+        lineEdit_8->setPlaceholderText(QApplication::translate("storage", "NOW DATE", 0));
     } // retranslateUi
 
 };
