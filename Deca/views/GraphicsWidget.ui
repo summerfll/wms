@@ -799,7 +799,7 @@
             <item>
              <widget class="QPushButton" name="pushButton_36">
               <property name="text">
-               <string>高级查询</string>
+               <string>全部</string>
               </property>
              </widget>
             </item>
@@ -819,7 +819,7 @@
            </spacer>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="QColumnView" name="columnView"/>
+           <widget class="QTableView" name="tableView_6"/>
           </item>
          </layout>
         </widget>
@@ -863,17 +863,17 @@
               </item>
               <item>
                <property name="text">
+                <string>出库时间</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>仓库</string>
                </property>
               </item>
               <item>
                <property name="text">
                 <string>管理员</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>入库时间</string>
                </property>
               </item>
              </widget>
@@ -891,7 +891,7 @@
             <item>
              <widget class="QPushButton" name="pushButton_38">
               <property name="text">
-               <string>高级查询</string>
+               <string>全部</string>
               </property>
              </widget>
             </item>
@@ -964,7 +964,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
@@ -1089,7 +1089,7 @@
          <x>0</x>
          <y>10</y>
          <width>81</width>
-         <height>83</height>
+         <height>112</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -1111,6 +1111,13 @@
          <widget class="QPushButton" name="pushButton_32">
           <property name="text">
            <string>移库管理</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_39">
+          <property name="text">
+           <string>全部显示</string>
           </property>
          </widget>
         </item>

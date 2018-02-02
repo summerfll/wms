@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QColumnView>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDockWidget>
 #include <QtWidgets/QGridLayout>
@@ -121,7 +120,7 @@ public:
     QPushButton *pushButton_30;
     QPushButton *pushButton_36;
     QSpacerItem *horizontalSpacer_5;
-    QColumnView *columnView;
+    QTableView *tableView_6;
     QGroupBox *groupBox_5;
     QGridLayout *gridLayout_9;
     QHBoxLayout *horizontalLayout_9;
@@ -158,6 +157,7 @@ public:
     QPushButton *pushButton_26;
     QPushButton *pushButton_29;
     QPushButton *pushButton_32;
+    QPushButton *pushButton_39;
     QWidget *page_5;
     QPushButton *pushButton_33;
     QWidget *page_7;
@@ -617,10 +617,10 @@ public:
 
         gridLayout_10->addItem(horizontalSpacer_5, 0, 1, 1, 1);
 
-        columnView = new QColumnView(groupBox_4);
-        columnView->setObjectName(QStringLiteral("columnView"));
+        tableView_6 = new QTableView(groupBox_4);
+        tableView_6->setObjectName(QStringLiteral("tableView_6"));
 
-        gridLayout_10->addWidget(columnView, 1, 0, 1, 2);
+        gridLayout_10->addWidget(tableView_6, 1, 0, 1, 2);
 
 
         gridLayout_8->addWidget(groupBox_4, 0, 0, 1, 1);
@@ -761,7 +761,7 @@ public:
         page_4->setGeometry(QRect(0, 0, 85, 187));
         layoutWidget2 = new QWidget(page_4);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(0, 10, 81, 83));
+        layoutWidget2->setGeometry(QRect(0, 10, 81, 112));
         verticalLayout_7 = new QVBoxLayout(layoutWidget2);
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
         verticalLayout_7->setContentsMargins(0, 0, 0, 0);
@@ -779,6 +779,11 @@ public:
         pushButton_32->setObjectName(QStringLiteral("pushButton_32"));
 
         verticalLayout_7->addWidget(pushButton_32);
+
+        pushButton_39 = new QPushButton(layoutWidget2);
+        pushButton_39->setObjectName(QStringLiteral("pushButton_39"));
+
+        verticalLayout_7->addWidget(pushButton_39);
 
         toolBox->addItem(page_4, QString::fromUtf8("  \345\212\250\346\200\201\347\233\230\347\202\271"));
         page_5 = new QWidget();
@@ -816,7 +821,7 @@ public:
         QObject::connect(toolBox, SIGNAL(currentChanged(int)), tabWidget, SLOT(setCurrentIndex(int)));
 
         tabWidget->setCurrentIndex(3);
-        toolBox->setCurrentIndex(3);
+        toolBox->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(GraphicsWidget);
@@ -887,7 +892,7 @@ public:
          << QApplication::translate("GraphicsWidget", "\345\205\245\345\272\223\346\227\266\351\227\264", 0)
         );
         pushButton_30->setText(QApplication::translate("GraphicsWidget", "\346\237\245\350\257\242", 0));
-        pushButton_36->setText(QApplication::translate("GraphicsWidget", "\351\253\230\347\272\247\346\237\245\350\257\242", 0));
+        pushButton_36->setText(QApplication::translate("GraphicsWidget", "\345\205\250\351\203\250", 0));
         groupBox_5->setTitle(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\347\233\230\347\202\271", 0));
         label_6->setText(QApplication::translate("GraphicsWidget", "\346\237\245\350\257\242\346\226\271\345\274\217\357\274\232", 0));
         comboBox_2->clear();
@@ -896,12 +901,12 @@ public:
          << QApplication::translate("GraphicsWidget", "\344\272\247\345\223\201\345\220\215\347\247\260", 0)
          << QApplication::translate("GraphicsWidget", "\344\272\247\345\223\201\347\274\226\345\217\267", 0)
          << QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\347\274\226\345\217\267", 0)
+         << QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\346\227\266\351\227\264", 0)
          << QApplication::translate("GraphicsWidget", "\344\273\223\345\272\223", 0)
          << QApplication::translate("GraphicsWidget", "\347\256\241\347\220\206\345\221\230", 0)
-         << QApplication::translate("GraphicsWidget", "\345\205\245\345\272\223\346\227\266\351\227\264", 0)
         );
         pushButton_37->setText(QApplication::translate("GraphicsWidget", "\346\237\245\350\257\242", 0));
-        pushButton_38->setText(QApplication::translate("GraphicsWidget", "\351\253\230\347\272\247\346\237\245\350\257\242", 0));
+        pushButton_38->setText(QApplication::translate("GraphicsWidget", "\345\205\250\351\203\250", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("GraphicsWidget", "tab4", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("GraphicsWidget", "tab5", 0));
         pushButton_6->setText(QApplication::translate("GraphicsWidget", "slect 2", 0));
@@ -919,6 +924,7 @@ public:
         pushButton_26->setText(QApplication::translate("GraphicsWidget", "\345\272\223\345\255\230\347\233\230\347\202\271", 0));
         pushButton_29->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\347\233\230\347\202\271", 0));
         pushButton_32->setText(QApplication::translate("GraphicsWidget", "\347\247\273\345\272\223\347\256\241\347\220\206", 0));
+        pushButton_39->setText(QApplication::translate("GraphicsWidget", "\345\205\250\351\203\250\346\230\276\347\244\272", 0));
         toolBox->setItemText(toolBox->indexOf(page_4), QApplication::translate("GraphicsWidget", "  \345\212\250\346\200\201\347\233\230\347\202\271", 0));
         pushButton_33->setText(QApplication::translate("GraphicsWidget", "\345\256\232\344\275\215\346\240\207\347\255\276", 0));
         toolBox->setItemText(toolBox->indexOf(page_5), QApplication::translate("GraphicsWidget", "  \346\240\207\350\257\206\347\256\241\347\220\206", 0));

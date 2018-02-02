@@ -44,6 +44,7 @@
 #include "wms/connect_database.h"
 #include <QDateTime>
 #include <QTableWidgetItem>
+
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -2549,4 +2550,79 @@ void GraphicsWidget::on_pushButton_29_clicked()
     }
     else
         ui->groupBox_4->hide();
+}
+
+void GraphicsWidget::on_pushButton_39_clicked()
+{
+    ui->groupBox_4->show();
+    ui->groupBox_5->show();
+}
+
+void GraphicsWidget::on_pushButton_36_clicked()
+{
+    QSqlTableModel *model;
+    model=new QSqlTableModel(this);
+    model->setTable("storage_copy");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select(); //选取整个表的所有行
+    ui->tableView_6->setModel(model);
+
+
+}
+
+void GraphicsWidget::on_pushButton_38_clicked()
+{
+    QSqlTableModel *model;
+    model=new QSqlTableModel(this);
+    model->setTable("outstorage");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select(); //选取整个表的所有行
+    ui->tableView_4->setModel(model);
+}
+
+
+
+void GraphicsWidget::on_pushButton_30_clicked()
+{
+    QString query_text;
+    QString select_text;
+    QString method;
+    method=ui->comboBox->currentText().trimmed();
+    query_text=ui->lineEdit_5->text();
+
+    select_text=""+method+" like '"+query_text+"%'";
+
+    QSqlTableModel *model;
+    model=new QSqlTableModel(this);
+    model->setTable("storage_copy");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+    model->setFilter(select_text);
+
+    model->select(); //选取整个表的所有行
+    ui->tableView_6->setModel(model);
+    ui->lineEdit_5->clear();
+
+}
+
+void GraphicsWidget::on_pushButton_37_clicked()
+{
+    QString query_text;
+    QString select_text;
+    QString method;
+    method=ui->comboBox_2->currentText().trimmed();
+    query_text=ui->lineEdit_6->text();
+
+    select_text=""+method+" like '"+query_text+"%'";
+
+    QSqlTableModel *model;
+    model=new QSqlTableModel(this);
+    model->setTable("outstorage");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+    model->setFilter(select_text);
+
+    model->select(); //选取整个表的所有行
+    ui->tableView_4->setModel(model);
+    ui->lineEdit_6->clear();
 }
