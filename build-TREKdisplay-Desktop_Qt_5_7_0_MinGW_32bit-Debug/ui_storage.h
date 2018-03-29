@@ -77,6 +77,9 @@ public:
         storage->setWindowModality(Qt::NonModal);
         storage->resize(600, 400);
         storage->setMaximumSize(QSize(600, 400));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Normal, QIcon::On);
+        storage->setWindowIcon(icon);
         storage->setAutoFillBackground(false);
         storage->setInputMethodHints(Qt::ImhNone);
         gridLayout = new QGridLayout(storage);

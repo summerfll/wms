@@ -22,6 +22,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/icons/CQUPT.ico</normalon>
+   </iconset>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>

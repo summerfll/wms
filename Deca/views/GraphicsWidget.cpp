@@ -84,7 +84,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model5->setTable("biaoshi");
     model5->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model5->select(); //选取整个表的所有行
-    ui->tableView_7->setModel(model3);
+    ui->tableView_7->setModel(model5);
 
 
     this->_scene = new QGraphicsScene(this);

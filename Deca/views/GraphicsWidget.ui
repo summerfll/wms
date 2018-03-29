@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <widget class="QToolBox" name="toolBox">
@@ -28,8 +31,11 @@
        <height>343</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
@@ -264,11 +270,29 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
      <property name="mouseTracking">
       <bool>false</bool>
      </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhNone</set>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <property name="iconSize">
       <size>
@@ -294,9 +318,14 @@
      <property name="tabBarAutoHide">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="tab1">
+     <widget class="QWidget" name="">
+      <attribute name="icon">
+       <iconset resource="../res/resources.qrc">
+        <normaloff>:/icons/(5@79@2K3OH)}[LRI2I]4UJ.png</normaloff>
+        <selectedoff>:/icons/CQUPT.ico</selectedoff>:/icons/(5@79@2K3OH)}[LRI2I]4UJ.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>tab1</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
        <item row="1" column="1">
@@ -460,8 +489,12 @@
       </layout>
      </widget>
      <widget class="QWidget" name="tab_3">
+      <attribute name="icon">
+       <iconset resource="../res/resources.qrc">
+        <normaloff>:/icons/1@45`1YI[Q~8JT8{]6ARJ0X.png</normaloff>:/icons/1@45`1YI[Q~8JT8{]6ARJ0X.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>tab2</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0" rowspan="3">
@@ -501,6 +534,9 @@
                <width>75</width>
                <height>16777215</height>
               </size>
+             </property>
+             <property name="cursor">
+              <cursorShape>OpenHandCursor</cursorShape>
              </property>
              <property name="text">
               <string>查询</string>
@@ -600,6 +636,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QPushButton" name="pushButton_8">
+           <property name="styleSheet">
+            <string notr="true">alternate-background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(255, 255, 255, 255), stop:0.373979 rgba(255, 255, 255, 255), stop:0.373991 rgba(33, 30, 255, 255), stop:0.624018 rgba(33, 30, 255, 255), stop:0.624043 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));</string>
+           </property>
            <property name="text">
             <string>新增</string>
            </property>
@@ -649,13 +688,52 @@
         </spacer>
        </item>
        <item row="3" column="0" colspan="4">
-        <widget class="QTableView" name="tableView_2"/>
+        <widget class="QTableView" name="tableView_2">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>12</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::WheelFocus</enum>
+         </property>
+         <property name="accessibleDescription">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;fgs gfg&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">selection-background-color: rgb(170, 0, 127);
+border-image: url(:/icons/图片1.jpg);
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(0, 170, 0);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_4">
+      <attribute name="icon">
+       <iconset>
+        <normalon>:/icons/7O$7Q345[(P`U`5(YE[U5B0.png</normalon>
+       </iconset>
+      </attribute>
       <attribute name="title">
-       <string>tab3</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="1" column="0">
@@ -664,21 +742,64 @@
           <layout class="QHBoxLayout" name="horizontalLayout_11">
            <item>
             <widget class="QGroupBox" name="groupBox">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;导出EXCEL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="title">
               <string>当前库存</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
               <item row="0" column="1">
                <widget class="QPushButton" name="pushButton_22">
+                <property name="minimumSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="whatsThis">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/timg (3).jpg);</string>
+                </property>
                 <property name="text">
-                 <string>刷新</string>
+                 <string/>
                 </property>
                </widget>
               </item>
               <item row="0" column="2">
                <widget class="QPushButton" name="pushButton_20">
+                <property name="minimumSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="whatsThis">
+                 <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/timg (2).jpg);</string>
+                </property>
                 <property name="text">
-                 <string>导出</string>
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="3">
+               <widget class="QTableView" name="tableView_3">
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/图片4.jpg);
+selection-background-color: rgb(170, 0, 127);
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(0, 170, 0);</string>
                 </property>
                </widget>
               </item>
@@ -694,9 +815,6 @@
                  </size>
                 </property>
                </spacer>
-              </item>
-              <item row="1" column="0" colspan="3">
-               <widget class="QTableView" name="tableView_3"/>
               </item>
              </layout>
             </widget>
@@ -734,15 +852,36 @@
              <layout class="QGridLayout" name="gridLayout_5">
               <item row="0" column="2">
                <widget class="QPushButton" name="pushButton_21">
+                <property name="minimumSize">
+                 <size>
+                  <width>25</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/timg (2).jpg);</string>
+                </property>
                 <property name="text">
-                 <string>导出</string>
+                 <string/>
                 </property>
                </widget>
               </item>
               <item row="0" column="1">
                <widget class="QPushButton" name="pushButton_23">
+                <property name="minimumSize">
+                 <size>
+                  <width>45</width>
+                  <height>23</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;重置&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/reset.jpg);</string>
+                </property>
                 <property name="text">
-                 <string>重置</string>
+                 <string/>
                 </property>
                </widget>
               </item>
@@ -763,6 +902,12 @@
                <widget class="QTableWidget" name="tableWidget_4">
                 <property name="whatsThis">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;v规划局规划局&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/图片4.jpg);
+selection-background-color: rgb(170, 0, 127);
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(0, 170, 0);</string>
                 </property>
                 <column>
                  <property name="text">
@@ -839,25 +984,66 @@
             </item>
             <item row="1" column="1">
              <widget class="QPushButton" name="pushButton_24">
+              <property name="minimumSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">image: url(:/icons/timg (3).jpg);
+border-image: url(:/icons/timg (3).jpg);</string>
+              </property>
               <property name="text">
-               <string>刷新</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item row="1" column="3">
              <widget class="QPushButton" name="pushButton_25">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>25</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: url(:/icons/timg (2).jpg);</string>
+              </property>
               <property name="text">
-               <string>导出</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item row="2" column="0" colspan="4">
-             <widget class="QTableView" name="tableView_5"/>
+             <widget class="QTableView" name="tableView_5">
+              <property name="styleSheet">
+               <string notr="true">border-image: url(:/icons/图片3.jpg);
+selection-background-color: rgb(170, 0, 127);
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(0, 170, 0);</string>
+              </property>
+             </widget>
             </item>
             <item row="1" column="2">
              <widget class="QPushButton" name="pushButton_31">
+              <property name="minimumSize">
+               <size>
+                <width>26</width>
+                <height>26</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border-image: url(:/icons/delet.png);</string>
+              </property>
               <property name="text">
-               <string>删除选中</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -970,8 +1156,13 @@
       </layout>
      </widget>
      <widget class="QWidget" name="tab_5">
+      <attribute name="icon">
+       <iconset>
+        <normalon>:/icons/PD9%ATGCO4EZ$NIRF534~$M.png</normalon>
+       </iconset>
+      </attribute>
       <attribute name="title">
-       <string>tab4</string>
+       <string/>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
@@ -991,6 +1182,9 @@
             </item>
             <item>
              <widget class="QComboBox" name="comboBox">
+              <property name="styleSheet">
+               <string notr="true">color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0, 0, 255), stop:0.339795 rgba(255, 0, 0, 255), stop:0.339799 rgba(255, 255, 255, 255), stop:0.662444 rgba(255, 255, 255, 255), stop:0.662469 rgba(0, 0, 255, 255), stop:1 rgba(0, 0, 255, 255));</string>
+              </property>
               <item>
                <property name="text">
                 <string>订单号</string>
@@ -1061,7 +1255,15 @@
            </spacer>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="QTableView" name="tableView_6"/>
+           <widget class="QTableView" name="tableView_6">
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/icons/图片5.jpg);
+selection-background-color: rgb(170, 0, 127);
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(0, 170, 0);
+border-image: url(:/icons/图片5.jpg);</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -1073,7 +1275,14 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
           <item row="2" column="0" colspan="2">
-           <widget class="QTableView" name="tableView_4"/>
+           <widget class="QTableView" name="tableView_4">
+            <property name="styleSheet">
+             <string notr="true">selection-background-color: rgb(170, 0, 127);
+border-image: url(:/icons/图片5.jpg);
+font: 75 12pt &quot;微软雅黑&quot;;
+color: rgb(0, 170, 0);</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -1161,8 +1370,13 @@
       </layout>
      </widget>
      <widget class="QWidget" name="tab">
+      <attribute name="icon">
+       <iconset>
+        <normalon>:/icons/`_11_%}7%H@(8JKDNL%)YMO.png</normalon>
+       </iconset>
+      </attribute>
       <attribute name="title">
-       <string>tab5</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="2">
@@ -1181,71 +1395,6 @@
        </item>
        <item row="1" column="1" rowspan="3" colspan="2">
         <widget class="QTableView" name="tableView_7"/>
-       </item>
-       <item row="0" column="0" rowspan="2">
-        <widget class="QGroupBox" name="groupBox_7">
-         <property name="title">
-          <string>标签查询</string>
-         </property>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>80</y>
-            <width>282</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_15">
-           <item>
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>标签标识：</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_10"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_43">
-             <property name="text">
-              <string>查询</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>40</y>
-            <width>282</width>
-            <height>25</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_14">
-           <item>
-            <widget class="QLabel" name="label_9">
-             <property name="text">
-              <string>标签编号：</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_9"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_42">
-             <property name="text">
-              <string>查询</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QGroupBox" name="groupBox_8">
@@ -1377,6 +1526,89 @@
          </widget>
         </widget>
        </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="title">
+          <string>标签查询</string>
+         </property>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>50</y>
+            <width>251</width>
+            <height>27</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;标签编号：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_9"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_49">
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-image: url(:/icons/timg (1).jpg);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>90</y>
+            <width>231</width>
+            <height>27</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>标签标识：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_10"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_43">
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border-image: url(:/icons/timg (1).jpg);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
       </layout>
       <zorder>tableView_7</zorder>
       <zorder>toolBox</zorder>
@@ -1387,8 +1619,13 @@
       <zorder>pushButton_48</zorder>
      </widget>
      <widget class="QWidget" name="tab_2">
+      <attribute name="icon">
+       <iconset>
+        <activeon>:/icons/1S7FKIM1V{FGRY%)$[[$L5M.png</activeon>
+       </iconset>
+      </attribute>
       <attribute name="title">
-       <string>tab6</string>
+       <string/>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
@@ -1427,7 +1664,9 @@
    <header>GraphicsView.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>toolBox</sender>

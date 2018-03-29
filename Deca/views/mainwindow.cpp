@@ -27,6 +27,7 @@
 
 #include "wms/connect_database.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -35,6 +36,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ConnectDatabase::openDatabase();
+
+
+
+
     _showMainToolBar = false;
     _notConnected = true;
 

@@ -5,5 +5,22 @@
     </qresource>
     <qresource prefix="/icons">
         <file>DWctrler.ico</file>
+        <file>CQUPT.ico</file>
+        <file>图片1.jpg</file>
+        <file>图片3.jpg</file>
+        <file>图片4.jpg</file>
+        <file>图片5.jpg</file>
+        <file>(5@79@2K3OH)}[LRI2I]4UJ.png</file>
+        <file>`_11_%}7%H@(8JKDNL%)YMO.png</file>
+        <file>1@45`1YI[Q~8JT8{]6ARJ0X.png</file>
+        <file>7O$7Q345[(P`U`5(YE[U5B0.png</file>
+        <file>PD9%ATGCO4EZ$NIRF534~$M.png</file>
+        <file>1S7FKIM1V{FGRY%)$[[$L5M.png</file>
+        <file>timg.jpg</file>
+        <file>timg (1).jpg</file>
+        <file>timg (2).jpg</file>
+        <file>timg (3).jpg</file>
+        <file>reset.jpg</file>
+        <file>delet.png</file>
     </qresource>
 </RCC>

@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>DecaRangeRTLS</string>
+   <string>CQUPT WMS</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../res/resources.qrc">
-    <normaloff>:/icons/DWctrler.ico</normaloff>:/icons/DWctrler.ico</iconset>
+    <normaloff>:/icons/CQUPT.ico</normaloff>:/icons/CQUPT.ico</iconset>
   </property>
   <widget class="GraphicsWidget" name="graphicsWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -24,7 +24,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="viewMenu">

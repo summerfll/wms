@@ -48,7 +48,7 @@ public:
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(400, 300);
         QIcon icon;
-        icon.addFile(QStringLiteral(":/icons/DWctrler.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QStringLiteral("actionAbout"));
@@ -59,7 +59,7 @@ public:
         MainWindow->setCentralWidget(graphicsWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 21));
+        menuBar->setGeometry(QRect(0, 0, 400, 23));
         viewMenu = new QMenu(menuBar);
         viewMenu->setObjectName(QStringLiteral("viewMenu"));
         helpMenu = new QMenu(menuBar);
@@ -97,7 +97,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "DecaRangeRTLS", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "CQUPT WMS", 0));
         actionAbout->setText(QApplication::translate("MainWindow", "About", 0));
         actionConfig->setText(QApplication::translate("MainWindow", "Channel Config", 0));
         viewMenu->setTitle(QApplication::translate("MainWindow", "&View", 0));
