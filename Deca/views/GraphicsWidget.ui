@@ -7,13 +7,255 @@
     <x>0</x>
     <y>0</y>
     <width>1277</width>
-    <height>454</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QToolBox" name="toolBox">
+     <property name="minimumSize">
+      <size>
+       <width>85</width>
+       <height>343</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>69</width>
+       <height>343</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>4</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>187</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  全局地图</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>77</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Setting</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="text">
+           <string>AnchorTable</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="text">
+           <string>TagTable</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="text">
+           <string>CloseAll</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>187</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  入库管理</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>187</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  出库管理</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>77</width>
+         <height>54</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QPushButton" name="pushButton_28">
+          <property name="text">
+           <string>出库操作</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_27">
+          <property name="text">
+           <string>出库报表</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>187</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  动态盘点</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>81</width>
+         <height>112</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QPushButton" name="pushButton_26">
+          <property name="text">
+           <string>库存盘点</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_29">
+          <property name="text">
+           <string>出库盘点</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_32">
+          <property name="text">
+           <string>移库管理</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_39">
+          <property name="text">
+           <string>全部显示</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>187</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  标识管理</string>
+      </attribute>
+      <widget class="QPushButton" name="pushButton_33">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>定位标签</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>85</width>
+        <height>187</height>
+       </rect>
+      </property>
+      <attribute name="label">
+       <string>  定位管理</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>77</width>
+         <height>54</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QPushButton" name="pushButton_34">
+          <property name="text">
+           <string>货物定位</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_35">
+          <property name="text">
+           <string>人员定位</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
    <item row="0" column="1">
     <widget class="QTabWidget" name="tabWidget">
      <property name="maximumSize">
@@ -26,7 +268,7 @@
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>4</number>
      </property>
      <property name="iconSize">
       <size>
@@ -731,8 +973,8 @@
       <attribute name="title">
        <string>tab4</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
           <string>库存盘点</string>
@@ -824,13 +1066,16 @@
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item>
         <widget class="QGroupBox" name="groupBox_5">
          <property name="title">
           <string>出库盘点</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
-          <item row="0" column="0">
+          <item row="2" column="0" colspan="2">
+           <widget class="QTableView" name="tableView_4"/>
+          </item>
+          <item row="1" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
              <widget class="QLabel" name="label_6">
@@ -897,7 +1142,7 @@
             </item>
            </layout>
           </item>
-          <item row="0" column="1">
+          <item row="1" column="1">
            <spacer name="horizontalSpacer_4">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -910,9 +1155,6 @@
             </property>
            </spacer>
           </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QTableView" name="tableView_4"/>
-          </item>
          </layout>
         </widget>
        </item>
@@ -922,6 +1164,227 @@
       <attribute name="title">
        <string>tab5</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="0" column="2">
+        <widget class="QPushButton" name="pushButton_47">
+         <property name="text">
+          <string>导出数据</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushButton_48">
+         <property name="text">
+          <string>显示所有</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" rowspan="3" colspan="2">
+        <widget class="QTableView" name="tableView_7"/>
+       </item>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="title">
+          <string>标签查询</string>
+         </property>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>282</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>标签标识：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_10"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_43">
+             <property name="text">
+              <string>查询</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>40</y>
+            <width>282</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>标签编号：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_9"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_42">
+             <property name="text">
+              <string>查询</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>删除标签</string>
+         </property>
+         <widget class="QWidget" name="layoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>282</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>标签标识：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_11"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_44">
+             <property name="text">
+              <string>确认</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>11</x>
+            <y>40</y>
+            <width>282</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>标签编号：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_12"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_45">
+             <property name="text">
+              <string>确认</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string>新增标签</string>
+         </property>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>11</x>
+            <y>40</y>
+            <width>282</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_17">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>标签编号：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_7"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_46">
+             <property name="text">
+              <string>取消</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>282</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>标签标识：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_8"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_41">
+             <property name="text">
+              <string>确认</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+      <zorder>tableView_7</zorder>
+      <zorder>toolBox</zorder>
+      <zorder>groupBox_6</zorder>
+      <zorder>groupBox_7</zorder>
+      <zorder>groupBox_8</zorder>
+      <zorder>pushButton_47</zorder>
+      <zorder>pushButton_48</zorder>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
@@ -946,248 +1409,6 @@
         </widget>
        </item>
       </layout>
-     </widget>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QToolBox" name="toolBox">
-     <property name="minimumSize">
-      <size>
-       <width>85</width>
-       <height>343</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>69</width>
-       <height>343</height>
-      </size>
-     </property>
-     <property name="currentIndex">
-      <number>1</number>
-     </property>
-     <widget class="QWidget" name="page">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>187</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  全局地图</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>77</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Setting</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>AnchorTable</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="text">
-           <string>TagTable</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>CloseAll</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>187</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  入库管理</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="page_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>187</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  出库管理</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>77</width>
-         <height>54</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <item>
-         <widget class="QPushButton" name="pushButton_28">
-          <property name="text">
-           <string>出库操作</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_27">
-          <property name="text">
-           <string>出库报表</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>187</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  动态盘点</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>81</width>
-         <height>112</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_7">
-        <item>
-         <widget class="QPushButton" name="pushButton_26">
-          <property name="text">
-           <string>库存盘点</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_29">
-          <property name="text">
-           <string>出库盘点</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_32">
-          <property name="text">
-           <string>移库管理</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_39">
-          <property name="text">
-           <string>全部显示</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>187</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  标识管理</string>
-      </attribute>
-      <widget class="QPushButton" name="pushButton_33">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>定位标签</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_7">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>187</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  定位管理</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>77</width>
-         <height>54</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <widget class="QPushButton" name="pushButton_34">
-          <property name="text">
-           <string>货物定位</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_35">
-          <property name="text">
-           <string>人员定位</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
      </widget>
     </widget>
    </item>

@@ -79,6 +79,14 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model3->select(); //选取整个表的所有行
     ui->tableView_5->setModel(model3);
 
+
+    model5=new QSqlTableModel(this);
+    model5->setTable("biaoshi");
+    model5->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model5->select(); //选取整个表的所有行
+    ui->tableView_7->setModel(model3);
+
+
     this->_scene = new QGraphicsScene(this);
 
     ui->graphicsView->setScene(this->_scene);
@@ -2625,4 +2633,14 @@ void GraphicsWidget::on_pushButton_37_clicked()
     model->select(); //选取整个表的所有行
     ui->tableView_4->setModel(model);
     ui->lineEdit_6->clear();
+}
+
+void GraphicsWidget::on_pushButton_48_clicked()
+{
+    QSqlTableModel *model;
+    model=new QSqlTableModel(this);
+    model->setTable("biaoshi");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select(); //选取整个表的所有行
+    ui->tableView_7->setModel(model);
 }

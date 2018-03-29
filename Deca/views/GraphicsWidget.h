@@ -88,6 +88,8 @@ public:
     QSqlTableModel *model2;
     QSqlTableModel *model3;
 
+    QSqlTableModel *model5;
+
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -244,6 +246,8 @@ private slots:
     void on_pushButton_30_clicked();
 
     void on_pushButton_37_clicked();
+
+    void on_pushButton_48_clicked();
 
 private:
     Ui::GraphicsWidget *ui;
