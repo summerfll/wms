@@ -292,7 +292,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>1</number>
      </property>
      <property name="iconSize">
       <size>
@@ -318,7 +318,7 @@
      <property name="tabBarAutoHide">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="widget">
       <attribute name="icon">
        <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/(5@79@2K3OH)}[LRI2I]4UJ.png</normaloff>
@@ -709,9 +709,10 @@
          </property>
          <property name="styleSheet">
           <string notr="true">selection-background-color: rgb(170, 0, 127);
-border-image: url(:/icons/图片1.jpg);
 font: 75 12pt &quot;微软雅黑&quot;;
-color: rgb(0, 170, 0);</string>
+border-image: url(:/icons/cy.jpg);
+color: rgb(255, 0, 0);
+</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Box</enum>
@@ -1430,7 +1431,7 @@ color: rgb(0, 170, 0);</string>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
@@ -1466,7 +1467,7 @@ color: rgb(0, 170, 0);</string>
          <property name="title">
           <string>新增标签</string>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>11</x>
@@ -1495,7 +1496,7 @@ color: rgb(0, 170, 0);</string>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -1528,82 +1529,81 @@ color: rgb(0, 170, 0);</string>
        </item>
        <item row="0" column="0" rowspan="2">
         <widget class="QGroupBox" name="groupBox_7">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="title">
           <string>标签查询</string>
          </property>
-         <widget class="QWidget" name="">
+         <widget class="QWidget" name="layoutWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
             <y>50</y>
-            <width>251</width>
-            <height>27</height>
+            <width>254</width>
+            <height>62</height>
            </rect>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <layout class="QVBoxLayout" name="verticalLayout_10">
            <item>
-            <widget class="QLabel" name="label_9">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;标签编号：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;标签编号：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_9"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_49">
+               <property name="minimumSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-image: url(:/icons/timg (1).jpg);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_9"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_49">
-             <property name="minimumSize">
-              <size>
-               <width>25</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">border-image: url(:/icons/timg (1).jpg);</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>90</y>
-            <width>231</width>
-            <height>27</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_15">
-           <item>
-            <widget class="QLabel" name="label_10">
-             <property name="text">
-              <string>标签标识：</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_10"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_43">
-             <property name="minimumSize">
-              <size>
-               <width>25</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">border-image: url(:/icons/timg (1).jpg);</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_15">
+             <item>
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;标签标识：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_10"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_43">
+               <property name="minimumSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-image: url(:/icons/timg (1).jpg);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
@@ -1611,7 +1611,6 @@ color: rgb(0, 170, 0);</string>
        </item>
       </layout>
       <zorder>tableView_7</zorder>
-      <zorder>toolBox</zorder>
       <zorder>groupBox_6</zorder>
       <zorder>groupBox_7</zorder>
       <zorder>groupBox_8</zorder>

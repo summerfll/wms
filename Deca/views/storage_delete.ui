@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/icons/图片5.jpg);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>

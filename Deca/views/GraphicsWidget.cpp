@@ -1751,7 +1751,7 @@ void GraphicsWidget::anchTableEditing(bool enable)
     }
 
 }
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void GraphicsWidget::on_pushButton_clicked()
 {
 
@@ -1843,10 +1843,11 @@ void GraphicsWidget::on_pushButton_7_clicked()
 
 void GraphicsWidget::on_pushButton_11_clicked()
 {
+
     storage_modify *modify = new storage_modify();
     modify->show();
     modify->move((QApplication::desktop()->width() - modify->width()) / 2,
-                  (QApplication::desktop()->height() - modify->height()) / 2);
+                 (QApplication::desktop()->height() - modify->height()) / 2);
 }
 
 void GraphicsWidget::on_pushButton_9_clicked()
