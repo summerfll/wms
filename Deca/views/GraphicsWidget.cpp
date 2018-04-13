@@ -1809,8 +1809,11 @@ void GraphicsWidget::on_pushButton_5_clicked()
 
 void GraphicsWidget::on_pushButton_6_clicked()
 {
-    model->setTable("storage_copy");
-    model->select();
+     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView);
+     model->setQuery("select 订单号,产品编号 from storage_copy");
+
+     ui->tableView->setModel(model);
+
 }
 
 void GraphicsWidget::on_pushButton_13_clicked()
@@ -2569,11 +2572,8 @@ void GraphicsWidget::on_pushButton_39_clicked()
 
 void GraphicsWidget::on_pushButton_36_clicked()
 {
-    QSqlTableModel *model;
-    model=new QSqlTableModel(this);
-    model->setTable("storage_copy");
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    model->select(); //选取整个表的所有行
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_6);
+    model->setQuery("select * from storage_copy");
     ui->tableView_6->setModel(model);
 
 
@@ -2581,11 +2581,8 @@ void GraphicsWidget::on_pushButton_36_clicked()
 
 void GraphicsWidget::on_pushButton_38_clicked()
 {
-    QSqlTableModel *model;
-    model=new QSqlTableModel(this);
-    model->setTable("outstorage");
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    model->select(); //选取整个表的所有行
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_4);
+    model->setQuery("select * from outstorage");
     ui->tableView_4->setModel(model);
 }
 
@@ -2638,10 +2635,7 @@ void GraphicsWidget::on_pushButton_37_clicked()
 
 void GraphicsWidget::on_pushButton_48_clicked()
 {
-    QSqlTableModel *model;
-    model=new QSqlTableModel(this);
-    model->setTable("biaoshi");
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    model->select(); //选取整个表的所有行
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_7);
+    model->setQuery("select * from biaoshi");
     ui->tableView_7->setModel(model);
 }
