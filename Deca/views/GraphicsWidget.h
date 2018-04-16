@@ -249,6 +249,10 @@ private slots:
 
     void on_pushButton_48_clicked();
 
+    void on_pushButton_49_clicked();
+
+    void on_pushButton_43_clicked();
+
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;

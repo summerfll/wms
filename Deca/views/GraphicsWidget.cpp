@@ -2639,3 +2639,26 @@ void GraphicsWidget::on_pushButton_48_clicked()
     model->setQuery("select * from biaoshi");
     ui->tableView_7->setModel(model);
 }
+
+void GraphicsWidget::on_pushButton_49_clicked()
+{
+    QString qurey_text;
+    qurey_text=ui->lineEdit_9->text();
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_7);
+    model->setQuery("select * from biaoshi where 标签编号='"+qurey_text+"'");
+    ui->tableView_7->setModel(model);
+    ui->lineEdit_9->clear();
+
+
+}
+
+void GraphicsWidget::on_pushButton_43_clicked()
+{
+    QString qurey_text;
+    qurey_text=ui->lineEdit_10->text();
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_7);
+    model->setQuery("select * from biaoshi where 标签标识='"+qurey_text+"'");
+    ui->tableView_7->setModel(model);
+    ui->lineEdit_10->clear();
+
+}

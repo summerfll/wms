@@ -292,7 +292,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>4</number>
      </property>
      <property name="iconSize">
       <size>
@@ -1632,14 +1632,6 @@ color: rgb(0, 170, 0);</string>
         </layout>
        </item>
       </layout>
-      <zorder>tableView_7</zorder>
-      <zorder>groupBox_6</zorder>
-      <zorder>groupBox_7</zorder>
-      <zorder>groupBox_8</zorder>
-      <zorder>pushButton_47</zorder>
-      <zorder>pushButton_48</zorder>
-      <zorder>horizontalSpacer_8</zorder>
-      <zorder>tableView_7</zorder>
       <zorder></zorder>
      </widget>
      <widget class="QWidget" name="tab_2">

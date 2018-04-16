@@ -17,6 +17,9 @@
    <iconset resource="../res/resources.qrc">
     <normaloff>:/icons/CQUPT.ico</normaloff>:/icons/CQUPT.ico</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="GraphicsWidget" name="graphicsWidget"/>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
