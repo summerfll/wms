@@ -20,6 +20,7 @@ INPUT(
 ./release\storage_modify.o
 ./release\storage_modify2.o
 ./release\storage_delete.o
+./release\tag_add.o
 ./release\qrc_resources.o
 ./release\moc_RTLSDisplayApplication.o
 ./release\moc_mainwindow.o
@@ -40,4 +41,5 @@ INPUT(
 ./release\moc_storage_modify.o
 ./release\moc_storage_modify2.o
 ./release\moc_storage_delete.o
+./release\moc_tag_add.o
 );

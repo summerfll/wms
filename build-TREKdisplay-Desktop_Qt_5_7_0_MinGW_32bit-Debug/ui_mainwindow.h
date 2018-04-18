@@ -50,6 +50,7 @@ public:
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
+        MainWindow->setStyleSheet(QStringLiteral(""));
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QStringLiteral("actionAbout"));
         actionConfig = new QAction(MainWindow);

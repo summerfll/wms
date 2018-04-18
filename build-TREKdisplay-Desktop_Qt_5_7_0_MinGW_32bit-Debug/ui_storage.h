@@ -75,12 +75,19 @@ public:
         if (storage->objectName().isEmpty())
             storage->setObjectName(QStringLiteral("storage"));
         storage->setWindowModality(Qt::NonModal);
+        storage->setEnabled(true);
         storage->resize(600, 400);
         storage->setMaximumSize(QSize(600, 400));
+        storage->setContextMenuPolicy(Qt::CustomContextMenu);
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Normal, QIcon::On);
         storage->setWindowIcon(icon);
+        storage->setWindowOpacity(1);
+        storage->setLayoutDirection(Qt::LeftToRight);
         storage->setAutoFillBackground(false);
+        storage->setStyleSheet(QLatin1String("\n"
+"background-color: rgb(0, 255, 127);\n"
+""));
         storage->setInputMethodHints(Qt::ImhNone);
         gridLayout = new QGridLayout(storage);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -94,6 +101,7 @@ public:
 
         label = new QLabel(storage);
         label->setObjectName(QStringLiteral("label"));
+        label->setStyleSheet(QStringLiteral(""));
         label->setTextFormat(Qt::PlainText);
 
         gridLayout->addWidget(label, 0, 1, 1, 1);
@@ -114,6 +122,7 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         pushButton = new QPushButton(storage);
         pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout->addWidget(pushButton);
 
@@ -123,6 +132,7 @@ public:
 
         pushButton_2 = new QPushButton(storage);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout->addWidget(pushButton_2);
 
@@ -132,6 +142,7 @@ public:
 
         pushButton_3 = new QPushButton(storage);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout->addWidget(pushButton_3);
 
@@ -144,12 +155,14 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         label_2 = new QLabel(storage);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_2->addWidget(label_2);
 
         lineEdit_1 = new QLineEdit(storage);
         lineEdit_1->setObjectName(QStringLiteral("lineEdit_1"));
         lineEdit_1->setAutoFillBackground(false);
+        lineEdit_1->setStyleSheet(QStringLiteral(""));
         lineEdit_1->setInputMethodHints(Qt::ImhHiddenText);
         lineEdit_1->setEchoMode(QLineEdit::Normal);
 
@@ -161,11 +174,13 @@ public:
 
         label_3 = new QLabel(storage);
         label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_2->addWidget(label_3);
 
         lineEdit_2 = new QLineEdit(storage);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+        lineEdit_2->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_2->addWidget(lineEdit_2);
 
@@ -180,11 +195,13 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         label_4 = new QLabel(storage);
         label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_3->addWidget(label_4);
 
         lineEdit_3 = new QLineEdit(storage);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+        lineEdit_3->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_3->addWidget(lineEdit_3);
 
@@ -194,11 +211,13 @@ public:
 
         label_5 = new QLabel(storage);
         label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_3->addWidget(label_5);
 
         lineEdit_4 = new QLineEdit(storage);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+        lineEdit_4->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_3->addWidget(lineEdit_4);
 
@@ -213,11 +232,13 @@ public:
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         label_6 = new QLabel(storage);
         label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(label_6);
 
         lineEdit_5 = new QLineEdit(storage);
         lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+        lineEdit_5->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(lineEdit_5);
 
@@ -227,11 +248,13 @@ public:
 
         label_7 = new QLabel(storage);
         label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(label_7);
 
         lineEdit_6 = new QLineEdit(storage);
         lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+        lineEdit_6->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_5->addWidget(lineEdit_6);
 
@@ -246,11 +269,13 @@ public:
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         label_8 = new QLabel(storage);
         label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_4->addWidget(label_8);
 
         lineEdit_7 = new QLineEdit(storage);
         lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+        lineEdit_7->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_4->addWidget(lineEdit_7);
 
@@ -260,12 +285,14 @@ public:
 
         label_9 = new QLabel(storage);
         label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout_4->addWidget(label_9);
 
         lineEdit_8 = new QLineEdit(storage);
         lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
         lineEdit_8->setEnabled(true);
+        lineEdit_8->setStyleSheet(QStringLiteral(""));
         lineEdit_8->setEchoMode(QLineEdit::NoEcho);
         lineEdit_8->setReadOnly(true);
 

@@ -160,43 +160,45 @@ public:
     QPushButton *pushButton_38;
     QSpacerItem *horizontalSpacer_4;
     QWidget *tab;
-    QGridLayout *gridLayout_8;
-    QPushButton *pushButton_47;
-    QPushButton *pushButton_48;
-    QTableView *tableView_7;
-    QGroupBox *groupBox_8;
-    QWidget *layoutWidget_2;
-    QHBoxLayout *horizontalLayout_18;
-    QLabel *label_11;
-    QLineEdit *lineEdit_11;
-    QPushButton *pushButton_44;
-    QWidget *widget1;
-    QHBoxLayout *horizontalLayout_19;
-    QLabel *label_12;
-    QLineEdit *lineEdit_12;
-    QPushButton *pushButton_45;
-    QGroupBox *groupBox_6;
-    QWidget *widget2;
-    QHBoxLayout *horizontalLayout_17;
-    QLabel *label_7;
-    QLineEdit *lineEdit_7;
-    QPushButton *pushButton_46;
-    QWidget *widget3;
-    QHBoxLayout *horizontalLayout_16;
-    QLabel *label_8;
-    QLineEdit *lineEdit_8;
-    QPushButton *pushButton_41;
+    QVBoxLayout *verticalLayout_11;
+    QHBoxLayout *horizontalLayout_21;
+    QVBoxLayout *verticalLayout_10;
     QGroupBox *groupBox_7;
-    QWidget *widget4;
+    QGridLayout *gridLayout_11;
     QHBoxLayout *horizontalLayout_14;
     QLabel *label_9;
     QLineEdit *lineEdit_9;
     QPushButton *pushButton_49;
-    QWidget *widget5;
     QHBoxLayout *horizontalLayout_15;
     QLabel *label_10;
     QLineEdit *lineEdit_10;
     QPushButton *pushButton_43;
+    QGroupBox *groupBox_6;
+    QGridLayout *gridLayout_12;
+    QHBoxLayout *horizontalLayout_17;
+    QLabel *label_7;
+    QLineEdit *lineEdit_7;
+    QPushButton *pushButton_46;
+    QHBoxLayout *horizontalLayout_16;
+    QLabel *label_8;
+    QLineEdit *lineEdit_8;
+    QPushButton *pushButton_41;
+    QGroupBox *groupBox_8;
+    QGridLayout *gridLayout_13;
+    QHBoxLayout *horizontalLayout_19;
+    QLabel *label_12;
+    QLineEdit *lineEdit_12;
+    QPushButton *pushButton_45;
+    QHBoxLayout *horizontalLayout_18;
+    QLabel *label_11;
+    QLineEdit *lineEdit_11;
+    QPushButton *pushButton_44;
+    QGridLayout *gridLayout_14;
+    QHBoxLayout *horizontalLayout_20;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *pushButton_48;
+    QPushButton *pushButton_47;
+    QTableView *tableView_7;
     QWidget *tab_2;
     QHBoxLayout *horizontalLayout_2;
     QTableView *tableView;
@@ -422,8 +424,7 @@ public:
         gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
 
         QIcon icon;
-        icon.addFile(QStringLiteral(":/icons/(5@79@2K3OH)}[LRI2I]4UJ.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Selected, QIcon::Off);
+        icon.addFile(QStringLiteral(":/icons/s1.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabWidget->addTab(widget, icon, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
@@ -543,9 +544,10 @@ public:
         tableView_2->setFont(font1);
         tableView_2->setFocusPolicy(Qt::WheelFocus);
         tableView_2->setStyleSheet(QString::fromUtf8("selection-background-color: rgb(170, 0, 127);\n"
-"border-image: url(:/icons/\345\233\276\347\211\2071.jpg);\n"
 "font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
-"color: rgb(0, 170, 0);"));
+"border-image: url(:/icons/cy.jpg);\n"
+"color: rgb(255, 0, 0);\n"
+""));
         tableView_2->setFrameShape(QFrame::Box);
         tableView_2->setSortingEnabled(true);
         tableView_2->setWordWrap(true);
@@ -553,7 +555,7 @@ public:
         gridLayout_3->addWidget(tableView_2, 3, 0, 1, 4);
 
         QIcon icon1;
-        icon1.addFile(QStringLiteral(":/icons/1@45`1YI[Q~8JT8{]6ARJ0X.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral(":/icons/s2.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabWidget->addTab(tab_3, icon1, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
@@ -796,7 +798,7 @@ public:
         gridLayout_7->addLayout(horizontalLayout_8, 0, 0, 1, 1);
 
         QIcon icon2;
-        icon2.addFile(QStringLiteral(":/icons/7O$7Q345[(P`U`5(YE[U5B0.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon2.addFile(QStringLiteral(":/icons/s3.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabWidget->addTab(tab_4, icon2, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
@@ -905,163 +907,62 @@ public:
         verticalLayout_9->addWidget(groupBox_5);
 
         QIcon icon3;
-        icon3.addFile(QStringLiteral(":/icons/PD9%ATGCO4EZ$NIRF534~$M.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon3.addFile(QStringLiteral(":/icons/s4.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabWidget->addTab(tab_5, icon3, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        gridLayout_8 = new QGridLayout(tab);
-        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
-        pushButton_47 = new QPushButton(tab);
-        pushButton_47->setObjectName(QStringLiteral("pushButton_47"));
-
-        gridLayout_8->addWidget(pushButton_47, 0, 2, 1, 1);
-
-        pushButton_48 = new QPushButton(tab);
-        pushButton_48->setObjectName(QStringLiteral("pushButton_48"));
-
-        gridLayout_8->addWidget(pushButton_48, 0, 1, 1, 1);
-
-        tableView_7 = new QTableView(tab);
-        tableView_7->setObjectName(QStringLiteral("tableView_7"));
-
-        gridLayout_8->addWidget(tableView_7, 1, 1, 3, 2);
-
-        groupBox_8 = new QGroupBox(tab);
-        groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        layoutWidget_2 = new QWidget(groupBox_8);
-        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(10, 80, 282, 25));
-        horizontalLayout_18 = new QHBoxLayout(layoutWidget_2);
-        horizontalLayout_18->setObjectName(QStringLiteral("horizontalLayout_18"));
-        horizontalLayout_18->setContentsMargins(0, 0, 0, 0);
-        label_11 = new QLabel(layoutWidget_2);
-        label_11->setObjectName(QStringLiteral("label_11"));
-
-        horizontalLayout_18->addWidget(label_11);
-
-        lineEdit_11 = new QLineEdit(layoutWidget_2);
-        lineEdit_11->setObjectName(QStringLiteral("lineEdit_11"));
-
-        horizontalLayout_18->addWidget(lineEdit_11);
-
-        pushButton_44 = new QPushButton(layoutWidget_2);
-        pushButton_44->setObjectName(QStringLiteral("pushButton_44"));
-
-        horizontalLayout_18->addWidget(pushButton_44);
-
-        widget1 = new QWidget(groupBox_8);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(11, 40, 282, 25));
-        horizontalLayout_19 = new QHBoxLayout(widget1);
-        horizontalLayout_19->setObjectName(QStringLiteral("horizontalLayout_19"));
-        horizontalLayout_19->setContentsMargins(0, 0, 0, 0);
-        label_12 = new QLabel(widget1);
-        label_12->setObjectName(QStringLiteral("label_12"));
-
-        horizontalLayout_19->addWidget(label_12);
-
-        lineEdit_12 = new QLineEdit(widget1);
-        lineEdit_12->setObjectName(QStringLiteral("lineEdit_12"));
-
-        horizontalLayout_19->addWidget(lineEdit_12);
-
-        pushButton_45 = new QPushButton(widget1);
-        pushButton_45->setObjectName(QStringLiteral("pushButton_45"));
-
-        horizontalLayout_19->addWidget(pushButton_45);
-
-
-        gridLayout_8->addWidget(groupBox_8, 3, 0, 1, 1);
-
-        groupBox_6 = new QGroupBox(tab);
-        groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        widget2 = new QWidget(groupBox_6);
-        widget2->setObjectName(QStringLiteral("widget2"));
-        widget2->setGeometry(QRect(11, 40, 282, 25));
-        horizontalLayout_17 = new QHBoxLayout(widget2);
-        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
-        horizontalLayout_17->setContentsMargins(0, 0, 0, 0);
-        label_7 = new QLabel(widget2);
-        label_7->setObjectName(QStringLiteral("label_7"));
-
-        horizontalLayout_17->addWidget(label_7);
-
-        lineEdit_7 = new QLineEdit(widget2);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
-
-        horizontalLayout_17->addWidget(lineEdit_7);
-
-        pushButton_46 = new QPushButton(widget2);
-        pushButton_46->setObjectName(QStringLiteral("pushButton_46"));
-
-        horizontalLayout_17->addWidget(pushButton_46);
-
-        widget3 = new QWidget(groupBox_6);
-        widget3->setObjectName(QStringLiteral("widget3"));
-        widget3->setGeometry(QRect(10, 80, 282, 25));
-        horizontalLayout_16 = new QHBoxLayout(widget3);
-        horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
-        horizontalLayout_16->setContentsMargins(0, 0, 0, 0);
-        label_8 = new QLabel(widget3);
-        label_8->setObjectName(QStringLiteral("label_8"));
-
-        horizontalLayout_16->addWidget(label_8);
-
-        lineEdit_8 = new QLineEdit(widget3);
-        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
-
-        horizontalLayout_16->addWidget(lineEdit_8);
-
-        pushButton_41 = new QPushButton(widget3);
-        pushButton_41->setObjectName(QStringLiteral("pushButton_41"));
-
-        horizontalLayout_16->addWidget(pushButton_41);
-
-
-        gridLayout_8->addWidget(groupBox_6, 2, 0, 1, 1);
-
+        verticalLayout_11 = new QVBoxLayout(tab);
+        verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
+        horizontalLayout_21 = new QHBoxLayout();
+        horizontalLayout_21->setObjectName(QStringLiteral("horizontalLayout_21"));
+        verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         groupBox_7 = new QGroupBox(tab);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
-        widget4 = new QWidget(groupBox_7);
-        widget4->setObjectName(QStringLiteral("widget4"));
-        widget4->setGeometry(QRect(10, 50, 251, 27));
-        horizontalLayout_14 = new QHBoxLayout(widget4);
+        QSizePolicy sizePolicy2(QSizePolicy::Maximum, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(groupBox_7->sizePolicy().hasHeightForWidth());
+        groupBox_7->setSizePolicy(sizePolicy2);
+        groupBox_7->setMaximumSize(QSize(16777214, 16777215));
+        groupBox_7->setStyleSheet(QStringLiteral(""));
+        gridLayout_11 = new QGridLayout(groupBox_7);
+        gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
+        horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setObjectName(QStringLiteral("horizontalLayout_14"));
-        horizontalLayout_14->setContentsMargins(0, 0, 0, 0);
-        label_9 = new QLabel(widget4);
+        label_9 = new QLabel(groupBox_7);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         horizontalLayout_14->addWidget(label_9);
 
-        lineEdit_9 = new QLineEdit(widget4);
+        lineEdit_9 = new QLineEdit(groupBox_7);
         lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
 
         horizontalLayout_14->addWidget(lineEdit_9);
 
-        pushButton_49 = new QPushButton(widget4);
+        pushButton_49 = new QPushButton(groupBox_7);
         pushButton_49->setObjectName(QStringLiteral("pushButton_49"));
         pushButton_49->setMinimumSize(QSize(25, 25));
         pushButton_49->setStyleSheet(QStringLiteral("border-image: url(:/icons/timg (1).jpg);"));
 
         horizontalLayout_14->addWidget(pushButton_49);
 
-        widget5 = new QWidget(groupBox_7);
-        widget5->setObjectName(QStringLiteral("widget5"));
-        widget5->setGeometry(QRect(10, 90, 231, 27));
-        horizontalLayout_15 = new QHBoxLayout(widget5);
+
+        gridLayout_11->addLayout(horizontalLayout_14, 0, 0, 1, 1);
+
+        horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
-        horizontalLayout_15->setContentsMargins(0, 0, 0, 0);
-        label_10 = new QLabel(widget5);
+        label_10 = new QLabel(groupBox_7);
         label_10->setObjectName(QStringLiteral("label_10"));
 
         horizontalLayout_15->addWidget(label_10);
 
-        lineEdit_10 = new QLineEdit(widget5);
+        lineEdit_10 = new QLineEdit(groupBox_7);
         lineEdit_10->setObjectName(QStringLiteral("lineEdit_10"));
 
         horizontalLayout_15->addWidget(lineEdit_10);
 
-        pushButton_43 = new QPushButton(widget5);
+        pushButton_43 = new QPushButton(groupBox_7);
         pushButton_43->setObjectName(QStringLiteral("pushButton_43"));
         pushButton_43->setMinimumSize(QSize(25, 25));
         pushButton_43->setStyleSheet(QStringLiteral("border-image: url(:/icons/timg (1).jpg);"));
@@ -1069,18 +970,152 @@ public:
         horizontalLayout_15->addWidget(pushButton_43);
 
 
-        gridLayout_8->addWidget(groupBox_7, 0, 0, 2, 1);
+        gridLayout_11->addLayout(horizontalLayout_15, 1, 0, 1, 1);
+
+
+        verticalLayout_10->addWidget(groupBox_7);
+
+        groupBox_6 = new QGroupBox(tab);
+        groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
+        sizePolicy2.setHeightForWidth(groupBox_6->sizePolicy().hasHeightForWidth());
+        groupBox_6->setSizePolicy(sizePolicy2);
+        gridLayout_12 = new QGridLayout(groupBox_6);
+        gridLayout_12->setObjectName(QStringLiteral("gridLayout_12"));
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
+        label_7 = new QLabel(groupBox_6);
+        label_7->setObjectName(QStringLiteral("label_7"));
+
+        horizontalLayout_17->addWidget(label_7);
+
+        lineEdit_7 = new QLineEdit(groupBox_6);
+        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+
+        horizontalLayout_17->addWidget(lineEdit_7);
+
+        pushButton_46 = new QPushButton(groupBox_6);
+        pushButton_46->setObjectName(QStringLiteral("pushButton_46"));
+
+        horizontalLayout_17->addWidget(pushButton_46);
+
+
+        gridLayout_12->addLayout(horizontalLayout_17, 0, 0, 1, 1);
+
+        horizontalLayout_16 = new QHBoxLayout();
+        horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
+        label_8 = new QLabel(groupBox_6);
+        label_8->setObjectName(QStringLiteral("label_8"));
+
+        horizontalLayout_16->addWidget(label_8);
+
+        lineEdit_8 = new QLineEdit(groupBox_6);
+        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+
+        horizontalLayout_16->addWidget(lineEdit_8);
+
+        pushButton_41 = new QPushButton(groupBox_6);
+        pushButton_41->setObjectName(QStringLiteral("pushButton_41"));
+
+        horizontalLayout_16->addWidget(pushButton_41);
+
+
+        gridLayout_12->addLayout(horizontalLayout_16, 1, 0, 1, 1);
+
+
+        verticalLayout_10->addWidget(groupBox_6);
+
+        groupBox_8 = new QGroupBox(tab);
+        groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
+        sizePolicy2.setHeightForWidth(groupBox_8->sizePolicy().hasHeightForWidth());
+        groupBox_8->setSizePolicy(sizePolicy2);
+        gridLayout_13 = new QGridLayout(groupBox_8);
+        gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
+        horizontalLayout_19 = new QHBoxLayout();
+        horizontalLayout_19->setObjectName(QStringLiteral("horizontalLayout_19"));
+        label_12 = new QLabel(groupBox_8);
+        label_12->setObjectName(QStringLiteral("label_12"));
+
+        horizontalLayout_19->addWidget(label_12);
+
+        lineEdit_12 = new QLineEdit(groupBox_8);
+        lineEdit_12->setObjectName(QStringLiteral("lineEdit_12"));
+
+        horizontalLayout_19->addWidget(lineEdit_12);
+
+        pushButton_45 = new QPushButton(groupBox_8);
+        pushButton_45->setObjectName(QStringLiteral("pushButton_45"));
+
+        horizontalLayout_19->addWidget(pushButton_45);
+
+
+        gridLayout_13->addLayout(horizontalLayout_19, 0, 0, 1, 1);
+
+        horizontalLayout_18 = new QHBoxLayout();
+        horizontalLayout_18->setObjectName(QStringLiteral("horizontalLayout_18"));
+        label_11 = new QLabel(groupBox_8);
+        label_11->setObjectName(QStringLiteral("label_11"));
+
+        horizontalLayout_18->addWidget(label_11);
+
+        lineEdit_11 = new QLineEdit(groupBox_8);
+        lineEdit_11->setObjectName(QStringLiteral("lineEdit_11"));
+
+        horizontalLayout_18->addWidget(lineEdit_11);
+
+        pushButton_44 = new QPushButton(groupBox_8);
+        pushButton_44->setObjectName(QStringLiteral("pushButton_44"));
+
+        horizontalLayout_18->addWidget(pushButton_44);
+
+
+        gridLayout_13->addLayout(horizontalLayout_18, 1, 0, 1, 1);
+
+
+        verticalLayout_10->addWidget(groupBox_8);
+
+
+        horizontalLayout_21->addLayout(verticalLayout_10);
+
+        gridLayout_14 = new QGridLayout();
+        gridLayout_14->setObjectName(QStringLiteral("gridLayout_14"));
+        horizontalLayout_20 = new QHBoxLayout();
+        horizontalLayout_20->setObjectName(QStringLiteral("horizontalLayout_20"));
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_20->addItem(horizontalSpacer_8);
+
+        pushButton_48 = new QPushButton(tab);
+        pushButton_48->setObjectName(QStringLiteral("pushButton_48"));
+
+        horizontalLayout_20->addWidget(pushButton_48);
+
+        pushButton_47 = new QPushButton(tab);
+        pushButton_47->setObjectName(QStringLiteral("pushButton_47"));
+
+        horizontalLayout_20->addWidget(pushButton_47);
+
+
+        gridLayout_14->addLayout(horizontalLayout_20, 0, 0, 1, 1);
+
+        tableView_7 = new QTableView(tab);
+        tableView_7->setObjectName(QStringLiteral("tableView_7"));
+        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(tableView_7->sizePolicy().hasHeightForWidth());
+        tableView_7->setSizePolicy(sizePolicy3);
+
+        gridLayout_14->addWidget(tableView_7, 1, 0, 1, 1);
+
+
+        horizontalLayout_21->addLayout(gridLayout_14);
+
+
+        verticalLayout_11->addLayout(horizontalLayout_21);
 
         QIcon icon4;
-        icon4.addFile(QStringLiteral(":/icons/`_11_%}7%H@(8JKDNL%)YMO.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon4.addFile(QStringLiteral(":/icons/s5.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabWidget->addTab(tab, icon4, QString());
-        tableView_7->raise();
-        toolBox->raise();
-        groupBox_6->raise();
-        groupBox_7->raise();
-        groupBox_8->raise();
-        pushButton_47->raise();
-        pushButton_48->raise();
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         horizontalLayout_2 = new QHBoxLayout(tab_2);
@@ -1101,7 +1136,7 @@ public:
         horizontalLayout_2->addWidget(pushButton_4);
 
         QIcon icon5;
-        icon5.addFile(QStringLiteral(":/icons/1S7FKIM1V{FGRY%)$[[$L5M.png"), QSize(), QIcon::Active, QIcon::On);
+        icon5.addFile(QStringLiteral(":/icons/s6.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabWidget->addTab(tab_2, icon5, QString());
 
         gridLayout_2->addWidget(tabWidget, 0, 1, 1, 1);
@@ -1110,8 +1145,8 @@ public:
         retranslateUi(GraphicsWidget);
         QObject::connect(toolBox, SIGNAL(currentChanged(int)), tabWidget, SLOT(setCurrentIndex(int)));
 
-        toolBox->setCurrentIndex(0);
-        tabWidget->setCurrentIndex(3);
+        toolBox->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(GraphicsWidget);
@@ -1235,23 +1270,23 @@ public:
         pushButton_37->setText(QApplication::translate("GraphicsWidget", "\346\237\245\350\257\242", 0));
         pushButton_38->setText(QApplication::translate("GraphicsWidget", "\345\205\250\351\203\250", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QString());
-        pushButton_47->setText(QApplication::translate("GraphicsWidget", "\345\257\274\345\207\272\346\225\260\346\215\256", 0));
-        pushButton_48->setText(QApplication::translate("GraphicsWidget", "\346\230\276\347\244\272\346\211\200\346\234\211", 0));
-        groupBox_8->setTitle(QApplication::translate("GraphicsWidget", "\345\210\240\351\231\244\346\240\207\347\255\276", 0));
-        label_11->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\240\207\350\257\206\357\274\232", 0));
-        pushButton_44->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));
-        label_12->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232", 0));
-        pushButton_45->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));
+        groupBox_7->setTitle(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\237\245\350\257\242", 0));
+        label_9->setText(QApplication::translate("GraphicsWidget", "<html><head/><body><p><span style=\" font-size:12pt;\">\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232</span></p></body></html>", 0));
+        pushButton_49->setText(QString());
+        label_10->setText(QApplication::translate("GraphicsWidget", "<html><head/><body><p><span style=\" font-size:12pt;\">\346\240\207\347\255\276\346\240\207\350\257\206\357\274\232</span></p></body></html>", 0));
+        pushButton_43->setText(QString());
         groupBox_6->setTitle(QApplication::translate("GraphicsWidget", "\346\226\260\345\242\236\346\240\207\347\255\276", 0));
         label_7->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232", 0));
         pushButton_46->setText(QApplication::translate("GraphicsWidget", "\345\217\226\346\266\210", 0));
         label_8->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\240\207\350\257\206\357\274\232", 0));
         pushButton_41->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));
-        groupBox_7->setTitle(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\237\245\350\257\242", 0));
-        label_9->setText(QApplication::translate("GraphicsWidget", "<html><head/><body><p><span style=\" font-size:12pt;\">\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232</span></p></body></html>", 0));
-        pushButton_49->setText(QString());
-        label_10->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\240\207\350\257\206\357\274\232", 0));
-        pushButton_43->setText(QString());
+        groupBox_8->setTitle(QApplication::translate("GraphicsWidget", "\345\210\240\351\231\244\346\240\207\347\255\276", 0));
+        label_12->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232", 0));
+        pushButton_45->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));
+        label_11->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\240\207\350\257\206\357\274\232", 0));
+        pushButton_44->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));
+        pushButton_48->setText(QApplication::translate("GraphicsWidget", "\346\230\276\347\244\272\346\211\200\346\234\211", 0));
+        pushButton_47->setText(QApplication::translate("GraphicsWidget", "\345\257\274\345\207\272\346\225\260\346\215\256", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QString());
         pushButton_6->setText(QApplication::translate("GraphicsWidget", "slect 2", 0));
         pushButton_4->setText(QApplication::translate("GraphicsWidget", "slect 1", 0));

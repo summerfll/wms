@@ -36,6 +36,7 @@ public:
             storage_delete->setObjectName(QStringLiteral("storage_delete"));
         storage_delete->resize(391, 205);
         storage_delete->setMaximumSize(QSize(391, 205));
+        storage_delete->setStyleSheet(QStringLiteral(""));
         label = new QLabel(storage_delete);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(150, 30, 121, 16));

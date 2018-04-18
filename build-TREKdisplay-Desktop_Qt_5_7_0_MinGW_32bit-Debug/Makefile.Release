@@ -63,7 +63,8 @@ SOURCES       = F:\git\uwb_qt\Deca\main.cpp \
 		F:\git\uwb_qt\Deca\views\storage.cpp \
 		F:\git\uwb_qt\Deca\views\storage_modify.cpp \
 		F:\git\uwb_qt\Deca\views\storage_modify2.cpp \
-		F:\git\uwb_qt\Deca\views\storage_delete.cpp release\qrc_resources.cpp \
+		F:\git\uwb_qt\Deca\views\storage_delete.cpp \
+		F:\git\uwb_qt\Deca\views\tag_add.cpp release\qrc_resources.cpp \
 		release\moc_RTLSDisplayApplication.cpp \
 		release\moc_mainwindow.cpp \
 		release\moc_RTLSClient.cpp \
@@ -82,7 +83,8 @@ SOURCES       = F:\git\uwb_qt\Deca\main.cpp \
 		release\moc_storage.cpp \
 		release\moc_storage_modify.cpp \
 		release\moc_storage_modify2.cpp \
-		release\moc_storage_delete.cpp
+		release\moc_storage_delete.cpp \
+		release\moc_tag_add.cpp
 OBJECTS       = release/main.o \
 		release/RTLSDisplayApplication.o \
 		release/mainwindow.o \
@@ -104,6 +106,7 @@ OBJECTS       = release/main.o \
 		release/storage_modify.o \
 		release/storage_modify2.o \
 		release/storage_delete.o \
+		release/tag_add.o \
 		release/qrc_resources.o \
 		release/moc_RTLSDisplayApplication.o \
 		release/moc_mainwindow.o \
@@ -123,7 +126,8 @@ OBJECTS       = release/main.o \
 		release/moc_storage.o \
 		release/moc_storage_modify.o \
 		release/moc_storage_modify2.o \
-		release/moc_storage_delete.o
+		release/moc_storage_delete.o \
+		release/moc_tag_add.o
 
 DIST          =  F:\git\uwb_qt\Deca\RTLSDisplayApplication.h \
 		F:\git\uwb_qt\Deca\views\mainwindow.h \
@@ -145,7 +149,8 @@ DIST          =  F:\git\uwb_qt\Deca\RTLSDisplayApplication.h \
 		F:\git\uwb_qt\Deca\views\storage.h \
 		F:\git\uwb_qt\Deca\views\storage_modify.h \
 		F:\git\uwb_qt\Deca\views\storage_modify2.h \
-		F:\git\uwb_qt\Deca\views\storage_delete.h F:\git\uwb_qt\Deca\main.cpp \
+		F:\git\uwb_qt\Deca\views\storage_delete.h \
+		F:\git\uwb_qt\Deca\views\tag_add.h F:\git\uwb_qt\Deca\main.cpp \
 		F:\git\uwb_qt\Deca\RTLSDisplayApplication.cpp \
 		F:\git\uwb_qt\Deca\views\mainwindow.cpp \
 		F:\git\uwb_qt\Deca\network\RTLSClient.cpp \
@@ -165,7 +170,8 @@ DIST          =  F:\git\uwb_qt\Deca\RTLSDisplayApplication.h \
 		F:\git\uwb_qt\Deca\views\storage.cpp \
 		F:\git\uwb_qt\Deca\views\storage_modify.cpp \
 		F:\git\uwb_qt\Deca\views\storage_modify2.cpp \
-		F:\git\uwb_qt\Deca\views\storage_delete.cpp
+		F:\git\uwb_qt\Deca\views\storage_delete.cpp \
+		F:\git\uwb_qt\Deca\views\tag_add.cpp
 QMAKE_TARGET  = DecaRangeRTLS
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = DecaRangeRTLS.exe
@@ -176,7 +182,7 @@ DESTDIR_TARGET = release\DecaRangeRTLS.exe
 first: all
 all: Makefile.Release  $(DESTDIR_TARGET)
 
-$(DESTDIR_TARGET): D:/setup/qt5.7.0/5.7/mingw53_32/lib/libQt5AxContainer.a D:/setup/qt5.7.0/5.7/mingw53_32/lib/libQt5AxBase.a ui_mainwindow.h ui_GraphicsWidget.h ui_ViewSettingsWidget.h ui_connectionwidget.h ui_storage.h ui_storage_modify.h ui_storage_modify2.h ui_storage_delete.h $(OBJECTS) 
+$(DESTDIR_TARGET): D:/setup/qt5.7.0/5.7/mingw53_32/lib/libQt5AxContainer.a D:/setup/qt5.7.0/5.7/mingw53_32/lib/libQt5AxBase.a ui_mainwindow.h ui_GraphicsWidget.h ui_ViewSettingsWidget.h ui_connectionwidget.h ui_storage.h ui_storage_modify.h ui_storage_modify2.h ui_storage_delete.h ui_tag_add.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) object_script.DecaRangeRTLS.Release  $(LIBS)
 
 qmake: FORCE
@@ -188,7 +194,7 @@ dist:
 	$(ZIP) DecaRangeRTLS.zip $(SOURCES) $(DIST) F:\git\uwb_qt\Deca\TREKdisplay.pro D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\spec_pre.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\qdevice.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\device_config.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\common\angle.conf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\qconfig.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3drender.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_axbase.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_axserver.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_charts.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_charts_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_clucene_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_core.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_core_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_datavisualization.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_datavisualization_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_dbus.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_designer.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_gui.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_help.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_help_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_location.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_location_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_network.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_network_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_nfc.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_opengl.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_platformsupport_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_positioning.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_purchasing.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_purchasing_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qml.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quick.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_script.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_script_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_scripttools.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_scripttools_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_scxml.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_sensors.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_serialport.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_sql.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_svg.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_testlib.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_uitools.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_websockets.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_widgets.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_winextras.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_xml.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\qt_functions.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\qt_config.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\win32\qt_config.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\win32-g++\qmake.conf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\spec_post.prf .qmake.cache .qmake.stash D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\exclusive_builds.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\default_pre.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\win32\default_pre.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\resolve_config.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\exclusive_builds_post.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\default_post.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\build_pass.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\qml_debug.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\win32\rtti.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\precompile_header.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\warn_on.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\qt.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\resources.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\moc.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\win32\opengl.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\uic.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\win32\dumpcpp.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\file_copies.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\win32\windows.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\testcase_targets.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\exceptions.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\yacc.prf D:\setup\qt5.7.0\5.7\mingw53_32\mkspecs\features\lex.prf F:\git\uwb_qt\Deca\TREKdisplay.pro F:\git\uwb_qt\Deca\res\resources.qrc D:\setup\qt5.7.0\5.7\mingw53_32\lib\qtmain.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5AxContainer.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5AxBase.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5Widgets.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5Gui.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5Network.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5Xml.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5SerialPort.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5Sql.prl D:\setup\qt5.7.0\5.7\mingw53_32\lib\Qt5Core.prl  NO_PCH_SOURCES RESOURCES TYPELIBS HEADERS TYPELIBS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.o release\RTLSDisplayApplication.o release\mainwindow.o release\RTLSClient.o release\GraphicsView.o release\GraphicsWidget.o release\ViewSettingsWidget.o release\MinimapView.o release\connectionwidget.o release\ViewSettings.o release\OriginTool.o release\RubberBandTool.o release\ScaleTool.o release\QPropertyModel.o release\SerialConnection.o release\trilateration.o release\connect_database.o release\storage.o release\storage_modify.o release\storage_modify2.o release\storage_delete.o release\qrc_resources.o release\moc_RTLSDisplayApplication.o release\moc_mainwindow.o release\moc_RTLSClient.o release\moc_GraphicsView.o release\moc_GraphicsWidget.o release\moc_ViewSettingsWidget.o release\moc_MinimapView.o release\moc_connectionwidget.o release\moc_ViewSettings.o release\moc_AbstractTool.o release\moc_OriginTool.o release\moc_RubberBandTool.o release\moc_ScaleTool.o release\moc_QPropertyModel.o release\moc_SerialConnection.o release\moc_storage.o release\moc_storage_modify.o release\moc_storage_modify2.o release\moc_storage_delete.o
+	-$(DEL_FILE) release\main.o release\RTLSDisplayApplication.o release\mainwindow.o release\RTLSClient.o release\GraphicsView.o release\GraphicsWidget.o release\ViewSettingsWidget.o release\MinimapView.o release\connectionwidget.o release\ViewSettings.o release\OriginTool.o release\RubberBandTool.o release\ScaleTool.o release\QPropertyModel.o release\SerialConnection.o release\trilateration.o release\connect_database.o release\storage.o release\storage_modify.o release\storage_modify2.o release\storage_delete.o release\tag_add.o release\qrc_resources.o release\moc_RTLSDisplayApplication.o release\moc_mainwindow.o release\moc_RTLSClient.o release\moc_GraphicsView.o release\moc_GraphicsWidget.o release\moc_ViewSettingsWidget.o release\moc_MinimapView.o release\moc_connectionwidget.o release\moc_ViewSettings.o release\moc_AbstractTool.o release\moc_OriginTool.o release\moc_RubberBandTool.o release\moc_ScaleTool.o release\moc_QPropertyModel.o release\moc_SerialConnection.o release\moc_storage.o release\moc_storage_modify.o release\moc_storage_modify2.o release\moc_storage_delete.o release\moc_tag_add.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -214,14 +220,20 @@ release/qrc_resources.cpp: F:/git/uwb_qt/Deca/res/resources.qrc \
 		D:/setup/qt5.7.0/5.7/mingw53_32/bin/rcc.exe \
 		F:/git/uwb_qt/Deca/res/splash.png \
 		F:/git/uwb_qt/Deca/res/logo.jpg \
-		F:/git/uwb_qt/Deca/res/DWctrler.ico
+		F:/git/uwb_qt/Deca/res/DWctrler.ico \
+		F:/git/uwb_qt/Deca/res/delet.png \
+		F:/git/uwb_qt/Deca/res/timg.jpg \
+		F:/git/uwb_qt/Deca/res/reset.jpg \
+		F:/git/uwb_qt/Deca/res/cq.jpg \
+		F:/git/uwb_qt/Deca/res/CQUPT.ico \
+		F:/git/uwb_qt/Deca/res/cy.jpg
 	D:\setup\qt5.7.0\5.7\mingw53_32\bin\rcc.exe -name resources F:\git\uwb_qt\Deca\res\resources.qrc -o release\qrc_resources.cpp
 
 compiler_dumpcpp_decl_make_all:
 compiler_dumpcpp_decl_clean:
-compiler_moc_header_make_all: release/moc_RTLSDisplayApplication.cpp release/moc_mainwindow.cpp release/moc_RTLSClient.cpp release/moc_GraphicsView.cpp release/moc_GraphicsWidget.cpp release/moc_ViewSettingsWidget.cpp release/moc_MinimapView.cpp release/moc_connectionwidget.cpp release/moc_ViewSettings.cpp release/moc_AbstractTool.cpp release/moc_OriginTool.cpp release/moc_RubberBandTool.cpp release/moc_ScaleTool.cpp release/moc_QPropertyModel.cpp release/moc_SerialConnection.cpp release/moc_storage.cpp release/moc_storage_modify.cpp release/moc_storage_modify2.cpp release/moc_storage_delete.cpp
+compiler_moc_header_make_all: release/moc_RTLSDisplayApplication.cpp release/moc_mainwindow.cpp release/moc_RTLSClient.cpp release/moc_GraphicsView.cpp release/moc_GraphicsWidget.cpp release/moc_ViewSettingsWidget.cpp release/moc_MinimapView.cpp release/moc_connectionwidget.cpp release/moc_ViewSettings.cpp release/moc_AbstractTool.cpp release/moc_OriginTool.cpp release/moc_RubberBandTool.cpp release/moc_ScaleTool.cpp release/moc_QPropertyModel.cpp release/moc_SerialConnection.cpp release/moc_storage.cpp release/moc_storage_modify.cpp release/moc_storage_modify2.cpp release/moc_storage_delete.cpp release/moc_tag_add.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_RTLSDisplayApplication.cpp release\moc_mainwindow.cpp release\moc_RTLSClient.cpp release\moc_GraphicsView.cpp release\moc_GraphicsWidget.cpp release\moc_ViewSettingsWidget.cpp release\moc_MinimapView.cpp release\moc_connectionwidget.cpp release\moc_ViewSettings.cpp release\moc_AbstractTool.cpp release\moc_OriginTool.cpp release\moc_RubberBandTool.cpp release\moc_ScaleTool.cpp release\moc_QPropertyModel.cpp release\moc_SerialConnection.cpp release\moc_storage.cpp release\moc_storage_modify.cpp release\moc_storage_modify2.cpp release\moc_storage_delete.cpp
+	-$(DEL_FILE) release\moc_RTLSDisplayApplication.cpp release\moc_mainwindow.cpp release\moc_RTLSClient.cpp release\moc_GraphicsView.cpp release\moc_GraphicsWidget.cpp release\moc_ViewSettingsWidget.cpp release\moc_MinimapView.cpp release\moc_connectionwidget.cpp release\moc_ViewSettings.cpp release\moc_AbstractTool.cpp release\moc_OriginTool.cpp release\moc_RubberBandTool.cpp release\moc_ScaleTool.cpp release\moc_QPropertyModel.cpp release\moc_SerialConnection.cpp release\moc_storage.cpp release\moc_storage_modify.cpp release\moc_storage_modify2.cpp release\moc_storage_delete.cpp release\moc_tag_add.cpp
 release/moc_RTLSDisplayApplication.cpp: D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -1528,6 +1540,10 @@ release/moc_GraphicsWidget.cpp: D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidget
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		F:/git/uwb_qt/Deca/views/GraphicsWidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/bin/moc.exe
 	D:\setup\qt5.7.0\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/win32-g++ -IF:/git/uwb_qt/Deca -IF:/git/uwb_qt/Deca/models -IF:/git/uwb_qt/Deca/network -IF:/git/uwb_qt/Deca/views -IF:/git/uwb_qt/Deca/util -IF:/git/uwb_qt/Deca/tools -IF:/git/uwb_qt/Deca/armadillo-3.930.0/include -ID:/setup/qt5.7.0/5.7/mingw53_32/include -ID:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtANGLE -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtNetwork -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtXml -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtSerialPort -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore -I. -ID:/setup/qt5.7.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/setup/qt5.7.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward F:\git\uwb_qt\Deca\views\GraphicsWidget.h -o release\moc_GraphicsWidget.cpp
@@ -2706,13 +2722,114 @@ release/moc_storage_delete.cpp: D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidget
 		D:/setup/qt5.7.0/5.7/mingw53_32/bin/moc.exe
 	D:\setup\qt5.7.0\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/win32-g++ -IF:/git/uwb_qt/Deca -IF:/git/uwb_qt/Deca/models -IF:/git/uwb_qt/Deca/network -IF:/git/uwb_qt/Deca/views -IF:/git/uwb_qt/Deca/util -IF:/git/uwb_qt/Deca/tools -IF:/git/uwb_qt/Deca/armadillo-3.930.0/include -ID:/setup/qt5.7.0/5.7/mingw53_32/include -ID:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtANGLE -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtNetwork -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtXml -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtSerialPort -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore -I. -ID:/setup/qt5.7.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/setup/qt5.7.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward F:\git\uwb_qt\Deca\views\storage_delete.h -o release\moc_storage_delete.cpp
 
+release/moc_tag_add.cpp: D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qwindowdefs.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qglobal.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qconfig.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfeatures.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsystemdetection.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qprocessordetection.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcompilerdetection.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qtypeinfo.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qtypetraits.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qisenum.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsysinfo.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qlogging.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qflags.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qbasicatomic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qgenericatomic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic_msvc.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qglobalstatic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmutex.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qnumeric.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qversiontagging.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobjectdefs.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qnamespace.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobject.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstring.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qchar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qbytearray.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qrefcount.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qarraydata.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstringbuilder.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qlist.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qalgorithms.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qiterator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qhashfunctions.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qpair.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qbytearraylist.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstringlist.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregexp.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstringmatcher.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreevent.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qscopedpointer.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmetatype.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qvarlengtharray.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcontainerfwd.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobject_impl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmargins.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpaintdevice.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qrect.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsize.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qpoint.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpalette.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qcolor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qrgb.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qrgba64.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qbrush.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qvector.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qmatrix.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpolygon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qregion.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatastream.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qiodevice.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qline.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtransform.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpainterpath.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qimage.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpixelformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpixmap.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsharedpointer.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qshareddata.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qhash.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qfont.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qfontmetrics.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qfontinfo.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qkeysequence.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qevent.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qvariant.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmap.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdebug.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qtextstream.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qlocale.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qset.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcontiguouscache.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qurl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qurlquery.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfile.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfiledevice.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvector2d.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
+		F:/git/uwb_qt/Deca/views/tag_add.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/bin/moc.exe
+	D:\setup\qt5.7.0\5.7\mingw53_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/setup/qt5.7.0/5.7/mingw53_32/mkspecs/win32-g++ -IF:/git/uwb_qt/Deca -IF:/git/uwb_qt/Deca/models -IF:/git/uwb_qt/Deca/network -IF:/git/uwb_qt/Deca/views -IF:/git/uwb_qt/Deca/util -IF:/git/uwb_qt/Deca/tools -IF:/git/uwb_qt/Deca/armadillo-3.930.0/include -ID:/setup/qt5.7.0/5.7/mingw53_32/include -ID:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtANGLE -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtNetwork -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtXml -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtSerialPort -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql -ID:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore -I. -ID:/setup/qt5.7.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/setup/qt5.7.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/setup/qt5.7.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward F:\git\uwb_qt\Deca\views\tag_add.h -o release\moc_tag_add.cpp
+
 compiler_dumpcpp_impl_make_all:
 compiler_dumpcpp_impl_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_GraphicsWidget.h ui_ViewSettingsWidget.h ui_connectionwidget.h ui_storage.h ui_storage_modify.h ui_storage_modify2.h ui_storage_delete.h
+compiler_uic_make_all: ui_mainwindow.h ui_GraphicsWidget.h ui_ViewSettingsWidget.h ui_connectionwidget.h ui_storage.h ui_storage_modify.h ui_storage_modify2.h ui_storage_delete.h ui_tag_add.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_GraphicsWidget.h ui_ViewSettingsWidget.h ui_connectionwidget.h ui_storage.h ui_storage_modify.h ui_storage_modify2.h ui_storage_delete.h
+	-$(DEL_FILE) ui_mainwindow.h ui_GraphicsWidget.h ui_ViewSettingsWidget.h ui_connectionwidget.h ui_storage.h ui_storage_modify.h ui_storage_modify2.h ui_storage_delete.h ui_tag_add.h
 ui_mainwindow.h: F:/git/uwb_qt/Deca/views/mainwindow.ui \
 		D:/setup/qt5.7.0/5.7/mingw53_32/bin/uic.exe \
 		F:/git/uwb_qt/Deca/views/ViewSettingsWidget.h \
@@ -3332,6 +3449,10 @@ ui_mainwindow.h: F:/git/uwb_qt/Deca/views/mainwindow.ui \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGraphicsView \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgraphicsview.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmetatype.h \
@@ -3671,6 +3792,10 @@ ui_storage_modify2.h: F:/git/uwb_qt/Deca/views/storage_modify2.ui \
 ui_storage_delete.h: F:/git/uwb_qt/Deca/views/storage_delete.ui \
 		D:/setup/qt5.7.0/5.7/mingw53_32/bin/uic.exe
 	D:\setup\qt5.7.0\5.7\mingw53_32\bin\uic.exe F:\git\uwb_qt\Deca\views\storage_delete.ui -o ui_storage_delete.h
+
+ui_tag_add.h: F:/git/uwb_qt/Deca/views/tag_add.ui \
+		D:/setup/qt5.7.0/5.7/mingw53_32/bin/uic.exe
+	D:\setup\qt5.7.0\5.7\mingw53_32\bin\uic.exe F:\git\uwb_qt\Deca\views\tag_add.ui -o ui_tag_add.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -4360,6 +4485,10 @@ release/RTLSDisplayApplication.o: F:/git/uwb_qt/Deca/RTLSDisplayApplication.cpp 
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QMetaProperty \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmetaobject.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDesktopWidget
@@ -4917,6 +5046,10 @@ release/mainwindow.o: F:/git/uwb_qt/Deca/views/mainwindow.cpp F:/git/uwb_qt/Deca
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		F:/git/uwb_qt/Deca/views/MinimapView.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGraphicsScene \
 		F:/git/uwb_qt/Deca/views/ViewSettingsWidget.h \
@@ -6130,6 +6263,10 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		ui_GraphicsWidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
@@ -6144,6 +6281,8 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QComboBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDockWidget \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdockwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
@@ -6151,6 +6290,8 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGroupBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgroupbox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
@@ -6165,10 +6306,6 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTabWidget \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QToolBox \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtoolbox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
@@ -6195,6 +6332,7 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		F:/git/uwb_qt/Deca/views/storage_modify.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QString \
 		F:/git/uwb_qt/Deca/views/storage_delete.h \
+		F:/git/uwb_qt/Deca/views/tag_add.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QFileDialog \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qfiledialog.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdir.h \
@@ -6206,7 +6344,16 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmessagebox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt/QAxObject \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt/qaxobject.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt/qaxbase.h
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/ActiveQt/qaxbase.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlQuery \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquery.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlRecord \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrecord.h \
+		F:/git/uwb_qt/Deca/wms/connect_database.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlDatabase \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDateTime \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatetime.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidgetItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\GraphicsWidget.o F:\git\uwb_qt\Deca\views\GraphicsWidget.cpp
 
 release/ViewSettingsWidget.o: F:/git/uwb_qt/Deca/views/ViewSettingsWidget.cpp F:/git/uwb_qt/Deca/views/ViewSettingsWidget.h \
@@ -6781,6 +6928,10 @@ release/ViewSettingsWidget.o: F:/git/uwb_qt/Deca/views/ViewSettingsWidget.cpp F:
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QFileDialog \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qfiledialog.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdir.h \
@@ -8620,8 +8771,153 @@ release/storage_delete.o: F:/git/uwb_qt/Deca/views/storage_delete.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMessageBox \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmessagebox.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdialog.h
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdialog.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\storage_delete.o F:\git\uwb_qt\Deca\views\storage_delete.cpp
+
+release/tag_add.o: F:/git/uwb_qt/Deca/views/tag_add.cpp F:/git/uwb_qt/Deca/views/tag_add.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qwindowdefs.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qglobal.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qconfig.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfeatures.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsystemdetection.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qprocessordetection.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcompilerdetection.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qtypeinfo.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qtypetraits.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qisenum.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsysinfo.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qlogging.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qflags.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qbasicatomic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qgenericatomic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qatomic_msvc.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qglobalstatic.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmutex.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qnumeric.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qversiontagging.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobjectdefs.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qnamespace.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobject.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstring.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qchar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qbytearray.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qrefcount.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qarraydata.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstringbuilder.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qlist.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qalgorithms.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qiterator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qhashfunctions.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qpair.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qbytearraylist.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstringlist.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregexp.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qstringmatcher.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreevent.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qscopedpointer.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmetatype.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qvarlengtharray.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcontainerfwd.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qobject_impl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmargins.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpaintdevice.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qrect.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsize.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qpoint.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpalette.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qcolor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qrgb.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qrgba64.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qbrush.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qvector.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qmatrix.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpolygon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qregion.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatastream.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qiodevice.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qline.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtransform.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpainterpath.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qimage.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpixelformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpixmap.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsharedpointer.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qshareddata.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qhash.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qfont.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qfontmetrics.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qfontinfo.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qkeysequence.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qevent.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qvariant.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qmap.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdebug.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qtextstream.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qlocale.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qset.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcontiguouscache.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qurl.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qurlquery.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfile.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfiledevice.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvector2d.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
+		ui_tag_add.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qeventloop.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tag_add.o F:\git\uwb_qt\Deca\views\tag_add.cpp
 
 release/qrc_resources.o: release/qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_resources.o release\qrc_resources.cpp
@@ -8682,6 +8978,9 @@ release/moc_storage_modify2.o: release/moc_storage_modify2.cpp
 
 release/moc_storage_delete.o: release/moc_storage_delete.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_storage_delete.o release\moc_storage_delete.cpp
+
+release/moc_tag_add.o: release/moc_tag_add.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_tag_add.o release\moc_tag_add.cpp
 
 ####### Install
 
