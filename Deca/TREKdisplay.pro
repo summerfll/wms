@@ -42,7 +42,8 @@ SOURCES += main.cpp\
     views/storage.cpp \
     views/storage_modify.cpp \
     views/storage_modify2.cpp \
-    views/storage_delete.cpp
+    views/storage_delete.cpp \
+    views/tag_add.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -65,7 +66,8 @@ HEADERS  += \
     views/storage.h \
     views/storage_modify.h \
     views/storage_modify2.h \
-    views/storage_delete.h
+    views/storage_delete.h \
+    views/tag_add.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
@@ -74,7 +76,8 @@ FORMS    += \
     views/storage.ui \
     views/storage_modify.ui \
     views/storage_modify2.ui \
-    views/storage_delete.ui
+    views/storage_delete.ui \
+    views/tag_add.ui
 
 
 RESOURCES += \

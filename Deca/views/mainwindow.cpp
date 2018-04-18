@@ -27,7 +27,7 @@
 
 #include "wms/connect_database.h"
 
-
+#include"storage_modify2.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)

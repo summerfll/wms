@@ -33,7 +33,7 @@
 #include<QDesktopWidget>
 #include "storage_modify.h"
 #include "storage_delete.h"
-
+#include "tag_add.h"
 
 #include <QFileDialog>
 #include <QDesktopServices>
@@ -1821,13 +1821,14 @@ void GraphicsWidget::on_pushButton_13_clicked()
     model1->setTable("storage_copy");
     model1->select();
 }
-
 void GraphicsWidget::on_pushButton_8_clicked()
 {
     storage *add_storage=new storage();
     add_storage->show();
     add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
                       (QApplication::desktop()->height() - add_storage->height()) / 2);
+
+
 
 }
 
@@ -2660,5 +2661,14 @@ void GraphicsWidget::on_pushButton_43_clicked()
     model->setQuery("select * from biaoshi where 标签标识='"+qurey_text+"'");
     ui->tableView_7->setModel(model);
     ui->lineEdit_10->clear();
+
+}
+
+void GraphicsWidget::on_pushButton_41_clicked()
+{
+    tag_add *tags=new tag_add();
+    tags->show();
+    tags->move((QApplication::desktop()->width() - tags->width()) / 2,
+                      (QApplication::desktop()->height() - tags->height()) / 2);
 
 }

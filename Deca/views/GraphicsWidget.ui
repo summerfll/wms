@@ -292,7 +292,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>5</number>
      </property>
      <property name="iconSize">
       <size>
@@ -321,8 +321,7 @@
      <widget class="QWidget" name="widget">
       <attribute name="icon">
        <iconset resource="../res/resources.qrc">
-        <normaloff>:/icons/(5@79@2K3OH)}[LRI2I]4UJ.png</normaloff>
-        <selectedoff>:/icons/CQUPT.ico</selectedoff>:/icons/(5@79@2K3OH)}[LRI2I]4UJ.png</iconset>
+        <normaloff>:/icons/s1.png</normaloff>:/icons/s1.png</iconset>
       </attribute>
       <attribute name="title">
        <string/>
@@ -491,7 +490,7 @@
      <widget class="QWidget" name="tab_3">
       <attribute name="icon">
        <iconset resource="../res/resources.qrc">
-        <normaloff>:/icons/1@45`1YI[Q~8JT8{]6ARJ0X.png</normaloff>:/icons/1@45`1YI[Q~8JT8{]6ARJ0X.png</iconset>
+        <normaloff>:/icons/s2.png</normaloff>:/icons/s2.png</iconset>
       </attribute>
       <attribute name="title">
        <string/>
@@ -729,9 +728,8 @@ color: rgb(255, 0, 0);
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="icon">
-       <iconset>
-        <normalon>:/icons/7O$7Q345[(P`U`5(YE[U5B0.png</normalon>
-       </iconset>
+       <iconset resource="../res/resources.qrc">
+        <normaloff>:/icons/s3.png</normaloff>:/icons/s3.png</iconset>
       </attribute>
       <attribute name="title">
        <string/>
@@ -1158,9 +1156,8 @@ color: rgb(0, 170, 0);</string>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="icon">
-       <iconset>
-        <normalon>:/icons/PD9%ATGCO4EZ$NIRF534~$M.png</normalon>
-       </iconset>
+       <iconset resource="../res/resources.qrc">
+        <normaloff>:/icons/s4.png</normaloff>:/icons/s4.png</iconset>
       </attribute>
       <attribute name="title">
        <string/>
@@ -1372,9 +1369,8 @@ color: rgb(0, 170, 0);</string>
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="icon">
-       <iconset>
-        <normalon>:/icons/`_11_%}7%H@(8JKDNL%)YMO.png</normalon>
-       </iconset>
+       <iconset resource="../res/resources.qrc">
+        <normaloff>:/icons/s5.png</normaloff>:/icons/s5.png</iconset>
       </attribute>
       <attribute name="title">
        <string/>
@@ -1636,9 +1632,8 @@ color: rgb(0, 170, 0);</string>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
-       <iconset>
-        <activeon>:/icons/1S7FKIM1V{FGRY%)$[[$L5M.png</activeon>
-       </iconset>
+       <iconset resource="../res/resources.qrc">
+        <normaloff>:/icons/s6.png</normaloff>:/icons/s6.png</iconset>
       </attribute>
       <attribute name="title">
        <string/>
