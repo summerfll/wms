@@ -12,8 +12,19 @@ class storage : public QWidget
     Q_OBJECT
 
 public:
-    explicit storage(QWidget *parent = 0);
     ~storage();
+    static storage* ShowWin()  //单例模式，只能产生一个窗口
+    {
+        if(Instance1==NULL)
+            Instance1=new storage();
+        return Instance1;
+    }
+
+private:
+    explicit storage(QWidget *parent = 0);
+private:
+    static storage* Instance1;
+
 
 private slots:
     void on_pushButton_3_clicked();
@@ -21,6 +32,8 @@ private slots:
     void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+
 
 private:
     Ui::storage *ui;

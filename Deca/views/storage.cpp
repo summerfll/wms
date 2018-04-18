@@ -5,6 +5,11 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QDateTime>
+
+
+storage*  storage::Instance1=NULL;
+
+
 storage::storage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::storage)

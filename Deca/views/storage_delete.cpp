@@ -3,6 +3,9 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include <QDebug>
+
+storage_delete* storage_delete::Instance1=NULL;
+
 storage_delete::storage_delete(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::storage_delete)

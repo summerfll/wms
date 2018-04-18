@@ -1823,11 +1823,16 @@ void GraphicsWidget::on_pushButton_13_clicked()
 }
 void GraphicsWidget::on_pushButton_8_clicked()
 {
-    storage *add_storage=new storage();
-    add_storage->show();
-    add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
-                      (QApplication::desktop()->height() - add_storage->height()) / 2);
 
+
+    storage* add_storage=storage::ShowWin();
+    add_storage->setWindowFlags(add_storage->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
+
+    add_storage->show();
+
+
+    add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
+                      (QApplication::desktop()->height() - add_storage->height()) / 2);//桌面正中
 
 
 }
@@ -1848,7 +1853,9 @@ void GraphicsWidget::on_pushButton_7_clicked()
 void GraphicsWidget::on_pushButton_11_clicked()
 {
 
-    storage_modify *modify = new storage_modify();
+    storage_modify *modify = storage_modify::ShowWin();
+    modify->setWindowFlags(modify->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
+
     modify->show();
     modify->move((QApplication::desktop()->width() - modify->width()) / 2,
                  (QApplication::desktop()->height() - modify->height()) / 2);
@@ -1862,7 +1869,8 @@ void GraphicsWidget::on_pushButton_9_clicked()
 
 void GraphicsWidget::on_pushButton_10_clicked()
 {
-    storage_delete *deletes = new storage_delete();
+    storage_delete *deletes =storage_delete::ShowWin() ;
+    deletes->setWindowFlags(deletes->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
     deletes->show();
     deletes->move((QApplication::desktop()->width() - deletes->width()) / 2,
                   (QApplication::desktop()->height() - deletes->height()) / 2);

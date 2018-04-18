@@ -5,6 +5,10 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <Qstring>
+
+storage_modify* storage_modify::Instance1=NULL;
+
+
 storage_modify::storage_modify(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::storage_modify)

@@ -12,8 +12,13 @@ class storage_delete : public QWidget
     Q_OBJECT
 
 public:
-    explicit storage_delete(QWidget *parent = 0);
     ~storage_delete();
+    static storage_delete* ShowWin()  //单例模式，只能产生一个窗口
+    {
+        if(Instance1==NULL)
+            Instance1=new storage_delete();
+        return Instance1;
+    }
 
 private slots:
     void on_pushButton_2_clicked();
@@ -22,6 +27,9 @@ private slots:
 
 private:
     Ui::storage_delete *ui;
+    explicit storage_delete(QWidget *parent = 0);
+    static storage_delete* Instance1;
+
 };
 
 #endif // STORAGE_DELETE_H
