@@ -38,6 +38,8 @@ void storage_modify::on_pushButton_clicked()
     {
         storage_modify2 *modify = new storage_modify2();
         modify->show();
+        modify->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+
         modify->move((QApplication::desktop()->width() - modify->width()) / 2,
                   (QApplication::desktop()->height() - modify->height()) / 2);
         connect(this,SIGNAL(sendOrderID(QString)),modify,SLOT(displayAllInformation(QString)));

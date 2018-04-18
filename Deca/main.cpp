@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
     RTLSDisplayApplication app(argc, argv);
 
     app.mainWindow()->show();
+    app.setQuitOnLastWindowClosed(true);
+
+    app.mainWindow()->setAttribute(Qt::WA_QuitOnClose,true); //最后一个窗口关闭时关闭程序.
 
     return app.QApplication::exec();
 }

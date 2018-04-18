@@ -1146,7 +1146,7 @@ public:
         QObject::connect(toolBox, SIGNAL(currentChanged(int)), tabWidget, SLOT(setCurrentIndex(int)));
 
         toolBox->setCurrentIndex(2);
-        tabWidget->setCurrentIndex(5);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(GraphicsWidget);
@@ -1277,9 +1277,9 @@ public:
         pushButton_43->setText(QString());
         groupBox_6->setTitle(QApplication::translate("GraphicsWidget", "\346\226\260\345\242\236\346\240\207\347\255\276", 0));
         label_7->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232", 0));
-        pushButton_46->setText(QApplication::translate("GraphicsWidget", "\345\217\226\346\266\210", 0));
+        pushButton_46->setText(QApplication::translate("GraphicsWidget", "\351\207\215\347\275\256", 0));
         label_8->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\346\240\207\350\257\206\357\274\232", 0));
-        pushButton_41->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));
+        pushButton_41->setText(QApplication::translate("GraphicsWidget", "\345\242\236\345\212\240", 0));
         groupBox_8->setTitle(QApplication::translate("GraphicsWidget", "\345\210\240\351\231\244\346\240\207\347\255\276", 0));
         label_12->setText(QApplication::translate("GraphicsWidget", "\346\240\207\347\255\276\347\274\226\345\217\267\357\274\232", 0));
         pushButton_45->setText(QApplication::translate("GraphicsWidget", "\347\241\256\350\256\244", 0));

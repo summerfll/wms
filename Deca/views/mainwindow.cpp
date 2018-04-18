@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
+
+
     ConnectDatabase::openDatabase();
 
 
@@ -75,6 +77,8 @@ MainWindow::MainWindow(QWidget *parent) :
                      this, SLOT(connectionStateChanged(SerialConnection::ConnectionState)));
 
     RTLSDisplayApplication::connectReady(this, "onReady()");
+
+
 }
 
 void MainWindow::onReady()

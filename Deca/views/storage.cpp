@@ -19,6 +19,8 @@ storage::storage(QWidget *parent) :
     QFont ft;
     ft.setPointSize(18);
     ui->label->setFont(ft);
+
+
 }
 
 storage::~storage()

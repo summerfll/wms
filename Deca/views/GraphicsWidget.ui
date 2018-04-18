@@ -292,7 +292,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <property name="iconSize">
       <size>
@@ -1491,7 +1491,7 @@ color: rgb(0, 170, 0);</string>
                 <item>
                  <widget class="QPushButton" name="pushButton_46">
                   <property name="text">
-                   <string>取消</string>
+                   <string>重置</string>
                   </property>
                  </widget>
                 </item>
@@ -1512,7 +1512,7 @@ color: rgb(0, 170, 0);</string>
                 <item>
                  <widget class="QPushButton" name="pushButton_41">
                   <property name="text">
-                   <string>确认</string>
+                   <string>增加</string>
                   </property>
                  </widget>
                 </item>

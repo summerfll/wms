@@ -1828,11 +1828,16 @@ void GraphicsWidget::on_pushButton_8_clicked()
     storage* add_storage=storage::ShowWin();
     add_storage->setWindowFlags(add_storage->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
 
-    add_storage->show();
 
-
+    add_storage->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
                       (QApplication::desktop()->height() - add_storage->height()) / 2);//桌面正中
+
+   // Qt::WindowFlags flags=Qt::Dialog;
+    //add_storage->setWindowFlags(flags);
+    add_storage->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    add_storage->show();
+
 
 
 }
@@ -1856,9 +1861,14 @@ void GraphicsWidget::on_pushButton_11_clicked()
     storage_modify *modify = storage_modify::ShowWin();
     modify->setWindowFlags(modify->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
 
-    modify->show();
     modify->move((QApplication::desktop()->width() - modify->width()) / 2,
                  (QApplication::desktop()->height() - modify->height()) / 2);
+    modify->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    modify->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    modify->show();
+
+
+
 }
 
 void GraphicsWidget::on_pushButton_9_clicked()
@@ -1871,9 +1881,13 @@ void GraphicsWidget::on_pushButton_10_clicked()
 {
     storage_delete *deletes =storage_delete::ShowWin() ;
     deletes->setWindowFlags(deletes->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
+    deletes->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+
     deletes->show();
+    deletes->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     deletes->move((QApplication::desktop()->width() - deletes->width()) / 2,
                   (QApplication::desktop()->height() - deletes->height()) / 2);
+
 }
 
 void GraphicsWidget::outputQtableviewtoexcel(QTableView *table,QString title)
@@ -2674,9 +2688,99 @@ void GraphicsWidget::on_pushButton_43_clicked()
 
 void GraphicsWidget::on_pushButton_41_clicked()
 {
+    QString id1,id2;
+    id1=ui->lineEdit_7->text().trimmed();
+    id2=ui->lineEdit_8->text().trimmed();
     tag_add *tags=new tag_add();
+    tags->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+
     tags->show();
     tags->move((QApplication::desktop()->width() - tags->width()) / 2,
                       (QApplication::desktop()->height() - tags->height()) / 2);
+    connect(this,SIGNAL(sendOrderID(QString,QString)),tags,SLOT(showid(QString,QString)));
+    emit sendOrderID(id1,id2);
+    ui->lineEdit_7->clear();
+    ui->lineEdit_8->clear();
 
+}
+
+void GraphicsWidget::on_pushButton_45_clicked()
+{
+    QString id=ui->lineEdit_12->text().trimmed();
+    QSqlQuery query;
+    query.exec("select 标签编号 from biaoshi where 标签编号 ='"+id+"'");
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("信息确认！");
+    msgBox.setText("确定删除标签编号为'"+id+"'的标签吗？");
+   // msgBox.setInformativeText("确定删除标签编号为x的标签吗？");
+    msgBox.setStandardButtons(QMessageBox::Yes|QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Cancel);
+    int ret=msgBox.exec();
+    switch(ret)
+    {
+    case QMessageBox::Yes:
+    {
+        if(query.next())
+        {
+            query.prepare("delete from biaoshi where 标签编号 = :id");
+            query.bindValue(":id",id);
+            query.exec();
+            if(query.isActive()){
+                QMessageBox::information(this, tr("消息"), tr("成功删除！"));
+            }
+        }
+        else
+            QMessageBox::warning(this, tr("错误"), tr("没有此标签编号，不能删除！"));
+
+    }
+    case QMessageBox::Cancel:
+        break;
+
+    }
+    ui->lineEdit_12->clear();
+
+}
+
+void GraphicsWidget::on_pushButton_44_clicked()
+{
+    QString id=ui->lineEdit_11->text().trimmed();
+    QSqlQuery query;
+    query.exec("select 标签标识 from biaoshi where 标签标识 ='"+id+"'");
+
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("信息确认！");
+    msgBox.setText("确定删除标签标识为'"+id+"'的标签吗？");
+   // msgBox.setInformativeText("确定删除标签编号为x的标签吗？");
+    msgBox.setStandardButtons(QMessageBox::Yes|QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Cancel);
+    int ret=msgBox.exec();
+    switch(ret)
+    {
+    case QMessageBox::Yes:
+    {
+        if(query.next())
+        {
+            query.prepare("delete from biaoshi where 标签标识 = :id");
+            query.bindValue(":id",id);
+            query.exec();
+            if(query.isActive()){
+                QMessageBox::information(this, tr("消息"), tr("成功删除！"));
+            }
+        }
+        else
+            QMessageBox::warning(this, tr("错误"), tr("没有此标签标识对应的标签，不能删除！"));
+
+    }
+    case QMessageBox::Cancel:
+        break;
+
+    }
+    ui->lineEdit_11->clear();
+}
+
+void GraphicsWidget::on_pushButton_46_clicked()
+{
+    ui->lineEdit_7->clear();
+    ui->lineEdit_8->clear();
 }
