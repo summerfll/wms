@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -29,17 +30,10 @@ class Ui_storage
 {
 public:
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer_7;
-    QSpacerItem *horizontalSpacer_8;
-    QLabel *label;
-    QSpacerItem *verticalSpacer_4;
     QSpacerItem *verticalSpacer_5;
-    QSpacerItem *verticalSpacer_6;
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
-    QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
-    QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_3;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_2;
@@ -61,14 +55,19 @@ public:
     QLineEdit *lineEdit_5;
     QSpacerItem *horizontalSpacer_6;
     QLabel *label_7;
-    QLineEdit *lineEdit_6;
+    QComboBox *comboBox;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_8;
-    QLineEdit *lineEdit_7;
+    QComboBox *comboBox_2;
     QSpacerItem *horizontalSpacer_5;
     QLabel *label_9;
     QLineEdit *lineEdit_8;
+    QLabel *label;
+    QSpacerItem *horizontalSpacer_7;
+    QSpacerItem *horizontalSpacer_8;
+    QSpacerItem *verticalSpacer_4;
+    QSpacerItem *verticalSpacer_6;
 
     void setupUi(QWidget *storage)
     {
@@ -76,73 +75,95 @@ public:
             storage->setObjectName(QStringLiteral("storage"));
         storage->setWindowModality(Qt::NonModal);
         storage->setEnabled(true);
-        storage->resize(600, 400);
+        storage->resize(500, 300);
         storage->setMaximumSize(QSize(600, 400));
         storage->setContextMenuPolicy(Qt::CustomContextMenu);
         QIcon icon;
-        icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Normal, QIcon::On);
+        icon.addFile(QString::fromUtf8(":/qt \345\233\276\346\240\207/\346\226\260\345\242\236.jpg"), QSize(), QIcon::Normal, QIcon::Off);
         storage->setWindowIcon(icon);
         storage->setWindowOpacity(1);
         storage->setLayoutDirection(Qt::LeftToRight);
         storage->setAutoFillBackground(false);
-        storage->setStyleSheet(QLatin1String("\n"
-"background-color: rgb(0, 255, 127);\n"
+        storage->setStyleSheet(QString::fromUtf8("\n"
+"font: 75 12pt \"\346\245\267\344\275\223\";\n"
+"background-color: rgb(144, 144, 144);\n"
+"color:rgb(0, 0, 0)\n"
 ""));
         storage->setInputMethodHints(Qt::ImhNone);
         gridLayout = new QGridLayout(storage);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalSpacer_7 = new QSpacerItem(78, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_7, 2, 2, 1, 1);
-
-        horizontalSpacer_8 = new QSpacerItem(58, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_8, 2, 0, 1, 1);
-
-        label = new QLabel(storage);
-        label->setObjectName(QStringLiteral("label"));
-        label->setStyleSheet(QStringLiteral(""));
-        label->setTextFormat(Qt::PlainText);
-
-        gridLayout->addWidget(label, 0, 1, 1, 1);
-
-        verticalSpacer_4 = new QSpacerItem(20, 47, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_4, 1, 1, 1, 1);
-
-        verticalSpacer_5 = new QSpacerItem(20, 47, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout->addItem(verticalSpacer_5, 3, 1, 1, 1);
-
-        verticalSpacer_6 = new QSpacerItem(20, 47, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_6, 5, 1, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         pushButton = new QPushButton(storage);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setStyleSheet(QStringLiteral(""));
+        pushButton->setMinimumSize(QSize(50, 25));
+        pushButton->setMaximumSize(QSize(50, 25));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font: 75 11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"color:rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);\n"
+"border-radius: 8px;\n"
+"border: 3px groove rgb(98, 98, 98);\n"
+"border-style: outset;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"border-style: inset;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+""));
 
         horizontalLayout->addWidget(pushButton);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
-
         pushButton_2 = new QPushButton(storage);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setStyleSheet(QStringLiteral(""));
+        pushButton_2->setMinimumSize(QSize(50, 25));
+        pushButton_2->setMaximumSize(QSize(50, 25));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font: 75 11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"color:rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);\n"
+"border-radius: 8px;\n"
+"border: 3px groove rgb(98, 98, 98);\n"
+"border-style: outset;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"border-style: inset;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+""));
 
         horizontalLayout->addWidget(pushButton_2);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
         pushButton_3 = new QPushButton(storage);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setStyleSheet(QStringLiteral(""));
+        pushButton_3->setMinimumSize(QSize(50, 25));
+        pushButton_3->setMaximumSize(QSize(50, 25));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font: 75 11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"color:rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);\n"
+"border-radius: 8px;\n"
+"border: 3px groove rgb(98, 98, 98);\n"
+"border-style: outset;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"border-style: inset;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+""));
 
         horizontalLayout->addWidget(pushButton_3);
 
@@ -252,11 +273,11 @@ public:
 
         horizontalLayout_5->addWidget(label_7);
 
-        lineEdit_6 = new QLineEdit(storage);
-        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
-        lineEdit_6->setStyleSheet(QStringLiteral(""));
+        comboBox = new QComboBox(storage);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setMinimumSize(QSize(140, 0));
 
-        horizontalLayout_5->addWidget(lineEdit_6);
+        horizontalLayout_5->addWidget(comboBox);
 
 
         verticalLayout->addLayout(horizontalLayout_5);
@@ -273,11 +294,11 @@ public:
 
         horizontalLayout_4->addWidget(label_8);
 
-        lineEdit_7 = new QLineEdit(storage);
-        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
-        lineEdit_7->setStyleSheet(QStringLiteral(""));
+        comboBox_2 = new QComboBox(storage);
+        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        comboBox_2->setMinimumSize(QSize(145, 0));
 
-        horizontalLayout_4->addWidget(lineEdit_7);
+        horizontalLayout_4->addWidget(comboBox_2);
 
         horizontalSpacer_5 = new QSpacerItem(68, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -304,6 +325,36 @@ public:
 
         gridLayout->addLayout(verticalLayout, 2, 1, 1, 1);
 
+        label = new QLabel(storage);
+        label->setObjectName(QStringLiteral("label"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\346\245\267\344\275\223"));
+        font.setPointSize(15);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(9);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("font: 75 15pt \"\346\245\267\344\275\223\";"));
+        label->setTextFormat(Qt::PlainText);
+
+        gridLayout->addWidget(label, 0, 1, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(78, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_7, 2, 2, 1, 1);
+
+        horizontalSpacer_8 = new QSpacerItem(58, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_8, 2, 0, 1, 1);
+
+        verticalSpacer_4 = new QSpacerItem(20, 30, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_4, 1, 1, 1, 1);
+
+        verticalSpacer_6 = new QSpacerItem(20, 30, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_6, 5, 1, 1, 1);
+
         label->raise();
 
         retranslateUi(storage);
@@ -314,7 +365,6 @@ public:
     void retranslateUi(QWidget *storage)
     {
         storage->setWindowTitle(QApplication::translate("storage", "Form", 0));
-        label->setText(QApplication::translate("storage", "             \350\264\247\347\211\251\345\205\245\345\272\223\347\231\273\350\256\260", 0));
         pushButton->setText(QApplication::translate("storage", "\347\241\256\345\256\232", 0));
         pushButton_2->setText(QApplication::translate("storage", "\351\207\215\347\275\256", 0));
         pushButton_3->setText(QApplication::translate("storage", "\345\217\226\346\266\210", 0));
@@ -330,6 +380,7 @@ public:
         label_9->setText(QApplication::translate("storage", "\345\205\245\345\272\223\346\227\266\351\227\264", 0));
         lineEdit_8->setText(QString());
         lineEdit_8->setPlaceholderText(QApplication::translate("storage", "NOW DATE", 0));
+        label->setText(QApplication::translate("storage", "                 \350\264\247\347\211\251\345\205\245\345\272\223\347\231\273\350\256\260", 0));
     } // retranslateUi
 
 };

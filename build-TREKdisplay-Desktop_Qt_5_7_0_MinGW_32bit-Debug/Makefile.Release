@@ -218,6 +218,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_resources.cpp
 release/qrc_resources.cpp: F:/git/uwb_qt/Deca/res/resources.qrc \
 		D:/setup/qt5.7.0/5.7/mingw53_32/bin/rcc.exe \
+		F:/git/uwb_qt/Deca/res/cqupt.png \
 		F:/git/uwb_qt/Deca/res/splash.png \
 		F:/git/uwb_qt/Deca/res/logo.jpg \
 		F:/git/uwb_qt/Deca/res/s1.png \
@@ -4613,10 +4614,10 @@ release/mainwindow.o: F:/git/uwb_qt/Deca/views/mainwindow.cpp F:/git/uwb_qt/Deca
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSerialPort/qserialportglobal.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QStringList \
 		ui_mainwindow.h \
-		F:/git/uwb_qt/Deca/views/connectionwidget.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QWidget \
-		F:/git/uwb_qt/Deca/network/SerialConnection.h \
-		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -4624,7 +4625,12 @@ release/mainwindow.o: F:/git/uwb_qt/Deca/views/mainwindow.cpp F:/git/uwb_qt/Deca
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAbstractItemView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDockWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdockwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
@@ -4639,6 +4645,423 @@ release/mainwindow.o: F:/git/uwb_qt/Deca/views/mainwindow.cpp F:/git/uwb_qt/Deca
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMenu \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmenu.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMenuBar \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmenubar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QStatusBar \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstatusbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QToolBar \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtoolbar.h \
+		F:/git/uwb_qt/Deca/views/GraphicsWidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGraphicsRectItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgraphicsitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAbstractItemView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGraphicsView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgraphicsview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpainter.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgraphicsscene.h \
+		F:/git/uwb_qt/Deca/network/RTLSClient.h \
+		F:/git/uwb_qt/Deca/network/SerialConnection.h \
+		F:/git/uwb_qt/Deca/tools/trilateration.h \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/config.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/compiler_setup.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/undefine_conflicts.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/include_atlas.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/forward_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_static_check.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/typedef_elem.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/typedef_elem_check.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/typedef_mat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/format_wrap.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_version.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_config.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/traits.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/promote_type.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/upgrade_val.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/restrictors.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/access.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/span.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/distr_param.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/constants.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/constants_compat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_rng_cxx11.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_rng.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_rng_cxx98.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Base_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/BaseCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpBase_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/blas_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/lapack_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/atlas_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/blas_wrapper.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/lapack_wrapper.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/atlas_wrapper.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/cond_rel_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arrayops_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/podarray_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/auxlib_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/injector_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Mat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Col_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Row_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Cube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/xvec_htrans_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SizeMat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SizeCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpValProxy_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpMat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpCol_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpRow_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpSubview_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/typedef_mat_fixed.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/field_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_elem1_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_elem2_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_field_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_cube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/diagview_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_each_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/diskio_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/wall_clock_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/running_stat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/running_stat_vec_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Op_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/OpCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpOp_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eOp_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eOpCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtOp_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtOpCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtSpOp_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Glue_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eGlue_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtGlue_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpGlue_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/GlueCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eGlueCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtGlueCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eop_core_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eglue_core_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Gen_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/GenCube_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_diagmat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_diagvec_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_dot_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_inv_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_htrans_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_max_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_min_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_mean_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_median_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_sort_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_sum_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_stddev_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_strans_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_var_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_repmat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_reshape_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_vectorise_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_resize_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cov_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cor_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_shuffle_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_prod_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_pinv_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_dotext_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_flip_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_princomp_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_misc_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_relational_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_find_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_chol_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cx_scalar_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_trimat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cumsum_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_symmat_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_hist_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_unique_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_toeplitz_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_fft_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_any_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_all_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_times_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_mixed_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_cov_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_cor_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_kron_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_cross_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_join_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_relational_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_solve_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_conv_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_toeplitz_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_hist_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_histc_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_max_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_min_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_max_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_min_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_sum_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_strans_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_htrans_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_misc_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_mean_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_var_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spglue_plus_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spglue_minus_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spglue_times_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/debug.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/memory.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/cmath_wrap.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/unwrap.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/unwrap_cube.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/unwrap_spmat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Proxy.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/ProxyCube.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpProxy.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/diagmat_proxy.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/strip.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Op_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/OpCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpOp_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtOp_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtOpCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtSpOp_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Glue_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/GlueCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpGlue_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eop_aux.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eOp_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eOpCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eGlue_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eGlueCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtGlue_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mtGlueCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Base_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/BaseCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpBase_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Gen_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/GenCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_ostream_bones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arma_ostream_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_n_unique.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_plus.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_minus.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_times.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_schur.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_div.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_relational.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_cube_plus.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_cube_minus.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_cube_times.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_cube_schur.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_cube_div.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_cube_relational.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/operator_ostream.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_conv_to.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_min.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_max.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_accu.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_sum.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_diagmat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_diagvec.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_inv.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_trace.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_trans.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_det.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_log_det.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_eig.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_lu.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_zeros.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_ones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_eye.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_misc.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_elem.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_norm.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_dot.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_randu.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_randn.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_trig.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_mean.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_median.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_stddev.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_var.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_sort.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_sort_index.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_strans.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_chol.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_qr.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_svd.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_solve.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_repmat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_reshape.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_vectorise.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_resize.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_cov.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_cor.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_shuffle.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_prod.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_eps.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_pinv.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_rank.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_kron.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_flip.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_as_scalar.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_princomp.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_cross.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_join.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_conv.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_trunc_exp.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_trunc_log.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_toeplitz.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_trimat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_cumsum.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_symmat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_syl_lyap.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_hist.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_histc.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_unique.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_fft.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_fft2.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_any.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_all.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_size.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_numel.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_inplace_strans.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_inplace_trans.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_randi.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_speye.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_spones.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_sprandn.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fn_sprandu.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/hdf5_misc.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/fft_engine.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mul_gemv.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mul_gemm.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mul_gemm_mixed.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mul_syrk.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/mul_herk.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eop_core_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/eglue_core_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/cond_rel_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/arrayops_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/podarray_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/auxlib_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/injector_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Mat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Col_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Row_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/Cube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/xvec_htrans_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SizeMat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SizeCube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/field_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_elem1_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_elem2_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_field_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_cube_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/diagview_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/subview_each_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpValProxy_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpMat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpMat_iterators_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpCol_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpRow_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpSubview_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/SpSubview_iterators_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/diskio_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/wall_clock_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/running_stat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/running_stat_vec_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_diagmat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_diagvec_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_dot_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_inv_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_htrans_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_max_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_min_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_mean_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_median_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_sort_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_sum_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_stddev_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_strans_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_var_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_repmat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_reshape_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_vectorise_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_resize_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cov_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cor_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_shuffle_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_prod_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_pinv_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_dotext_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_flip_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_princomp_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_misc_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_relational_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_find_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_chol_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cx_scalar_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_trimat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_cumsum_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_symmat_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_hist_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_unique_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_toeplitz_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_fft_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_any_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/op_all_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_times_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_mixed_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_cov_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_cor_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_kron_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_cross_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_join_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_relational_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_solve_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_conv_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_toeplitz_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_hist_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_histc_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_max_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/glue_min_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_max_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_min_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_sum_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_strans_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_htrans_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_misc_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_mean_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spop_var_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spglue_plus_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spglue_minus_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/spglue_times_meat.hpp \
+		F:/git/uwb_qt/Deca/armadillo-3.930.0/include/armadillo_bits/compiler_setup_post.hpp \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlTableModel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqltablemodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
+		F:/git/uwb_qt/Deca/views/MinimapView.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGraphicsScene \
+		F:/git/uwb_qt/Deca/views/ViewSettingsWidget.h \
+		F:/git/uwb_qt/Deca/views/connectionwidget.h \
+		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qthread.h \
 		F:/git/uwb_qt/Deca/models/ViewSettings.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDebug \
@@ -4656,8 +5079,6 @@ release/mainwindow.o: F:/git/uwb_qt/Deca/views/mainwindow.cpp F:/git/uwb_qt/Deca
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QFile \
 		F:/git/uwb_qt/Deca/wms/connect_database.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlDatabase \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		F:/git/uwb_qt/Deca/views/storage_modify2.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o F:\git\uwb_qt\Deca\views\mainwindow.cpp
@@ -5856,7 +6277,10 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidget \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtablewidget.h \
 		ui_GraphicsWidget.h \
-		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -5864,6 +6288,39 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QComboBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDockWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdockwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGroupBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgroupbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTabWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QToolBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtoolbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
+		F:/git/uwb_qt/Deca/views/GraphicsView.h \
+		F:/git/uwb_qt/Deca/views/ViewSettingsWidget.h \
+		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qthread.h \
 		F:/git/uwb_qt/Deca/models/ViewSettings.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDebug \
@@ -5877,11 +6334,9 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QInputDialog \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qinputdialog.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdialog.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QFile \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/QPen \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlQueryModel \
 		F:/git/uwb_qt/Deca/views/storage.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDesktopWidget \
 		F:/git/uwb_qt/Deca/views/storage_modify.h \
@@ -5908,7 +6363,13 @@ release/GraphicsWidget.o: F:/git/uwb_qt/Deca/views/GraphicsWidget.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlDatabase \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDateTime \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatetime.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidgetItem
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableWidgetItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlRelationalTableModel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlRelationalDelegate \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlistview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\GraphicsWidget.o F:\git\uwb_qt\Deca\views\GraphicsWidget.cpp
 
 release/ViewSettingsWidget.o: F:/git/uwb_qt/Deca/views/ViewSettingsWidget.cpp F:/git/uwb_qt/Deca/views/ViewSettingsWidget.h \
@@ -6010,7 +6471,11 @@ release/ViewSettingsWidget.o: F:/git/uwb_qt/Deca/views/ViewSettingsWidget.cpp F:
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvector2d.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
 		ui_ViewSettingsWidget.h \
-		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -6018,24 +6483,50 @@ release/ViewSettingsWidget.o: F:/git/uwb_qt/Deca/views/ViewSettingsWidget.cpp F:
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAbstractItemView \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QCheckBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcheckbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QComboBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDoubleSpinBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QRadioButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qradiobutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpinBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTabWidget \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
+		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAbstractItemView \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qthread.h \
 		F:/git/uwb_qt/Deca/util/QPropertyModel.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QAbstractItemModel \
@@ -6712,7 +7203,11 @@ release/connectionwidget.o: F:/git/uwb_qt/Deca/views/connectionwidget.cpp F:/git
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSerialPort/qserialportglobal.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QStringList \
 		ui_connectionwidget.h \
-		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -6720,32 +7215,46 @@ release/connectionwidget.o: F:/git/uwb_qt/Deca/views/connectionwidget.cpp F:/git
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAbstractItemView \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QComboBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		F:/git/uwb_qt/Deca/RTLSDisplayApplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAbstractItemView \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qthread.h \
 		F:/git/uwb_qt/Deca/views/mainwindow.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMainWindow \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmainwindow.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtNetwork/QAbstractSocket \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtNetwork/qabstractsocket.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
 		F:/git/uwb_qt/Deca/network/serialconnection.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QSettings \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qsettings.h \
@@ -7744,6 +8253,57 @@ release/storage.o: F:/git/uwb_qt/Deca/views/storage.cpp F:/git/uwb_qt/Deca/views
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvector2d.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
 		ui_storage.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qeventloop.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/QFont \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMessageBox \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmessagebox.h \
@@ -7754,7 +8314,22 @@ release/storage.o: F:/git/uwb_qt/Deca/views/storage.cpp F:/git/uwb_qt/Deca/views
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDateTime \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatetime.h
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatetime.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlTableModel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqltablemodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlRelationalTableModel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlRelationalDelegate \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlistview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDebug \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlRecord \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrecord.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\storage.o F:\git\uwb_qt\Deca\views\storage.cpp
 
 release/storage_modify.o: F:/git/uwb_qt/Deca/views/storage_modify.cpp F:/git/uwb_qt/Deca/views/storage_modify.h \
@@ -7857,9 +8432,58 @@ release/storage_modify.o: F:/git/uwb_qt/Deca/views/storage_modify.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QString \
 		ui_storage_modify.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qeventloop.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
 		F:/git/uwb_qt/Deca/views/storage_modify2.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDesktopWidget \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMessageBox \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmessagebox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdialog.h \
@@ -7970,6 +8594,57 @@ release/storage_modify2.o: F:/git/uwb_qt/Deca/views/storage_modify2.cpp F:/git/u
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QString \
 		ui_storage_modify2.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qeventloop.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlQuery \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquery.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
@@ -8078,6 +8753,49 @@ release/storage_delete.o: F:/git/uwb_qt/Deca/views/storage_delete.cpp F:/git/uwb
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvector2d.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
 		ui_storage_delete.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qeventloop.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlQuery \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquery.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
@@ -8186,7 +8904,65 @@ release/tag_add.o: F:/git/uwb_qt/Deca/views/tag_add.cpp F:/git/uwb_qt/Deca/views
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qfiledevice.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvector2d.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_tag_add.h
+		ui_tag_add.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QVariant \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QAction \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qaction.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qicon.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qactiongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QApplication \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qcoreapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qeventloop.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qguiapplication.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlineedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextcursor.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextformat.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qpen.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qtextoption.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QPushButton \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qpushbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QSpacerItem \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QVBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/QSqlQuery \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlquery.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsql.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqldatabase.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QMessageBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qmessagebox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tag_add.o F:\git\uwb_qt\Deca\views\tag_add.cpp
 
 release/qrc_resources.o: release/qrc_resources.cpp 

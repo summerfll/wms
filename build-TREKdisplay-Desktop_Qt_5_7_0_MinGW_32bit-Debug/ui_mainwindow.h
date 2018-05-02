@@ -50,7 +50,9 @@ public:
         QIcon icon;
         icon.addFile(QStringLiteral(":/icons/CQUPT.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
-        MainWindow->setStyleSheet(QStringLiteral(""));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color:rgb(76, 76, 76);\n"
+"font: 75 10pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"color:rgb(255, 255, 255)"));
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QStringLiteral("actionAbout"));
         actionConfig = new QAction(MainWindow);
@@ -60,7 +62,7 @@ public:
         MainWindow->setCentralWidget(graphicsWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 23));
+        menuBar->setGeometry(QRect(0, 0, 400, 25));
         viewMenu = new QMenu(menuBar);
         viewMenu->setObjectName(QStringLiteral("viewMenu"));
         helpMenu = new QMenu(menuBar);

@@ -25,33 +25,76 @@ class Ui_storage_delete
 {
 public:
     QLabel *label;
-    QLineEdit *lineEdit;
     QLabel *label_2;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QLineEdit *lineEdit1;
 
     void setupUi(QWidget *storage_delete)
     {
         if (storage_delete->objectName().isEmpty())
             storage_delete->setObjectName(QStringLiteral("storage_delete"));
-        storage_delete->resize(391, 205);
-        storage_delete->setMaximumSize(QSize(391, 205));
-        storage_delete->setStyleSheet(QStringLiteral(""));
+        storage_delete->resize(300, 205);
+        storage_delete->setMaximumSize(QSize(300, 205));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/qt \345\233\276\346\240\207/Button Cancel.png"), QSize(), QIcon::Normal, QIcon::On);
+        storage_delete->setWindowIcon(icon);
+        storage_delete->setStyleSheet(QString::fromUtf8("font: 75 12pt \"\346\245\267\344\275\223\";\n"
+"background-color: rgb(144, 144, 144);\n"
+"color:rgb(0, 0, 0)"));
         label = new QLabel(storage_delete);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(150, 30, 121, 16));
-        lineEdit = new QLineEdit(storage_delete);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(180, 80, 113, 20));
+        label->setGeometry(QRect(90, 20, 121, 16));
+        label->setStyleSheet(QString::fromUtf8("font: 75 14pt \"\346\245\267\344\275\223\";"));
         label_2 = new QLabel(storage_delete);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(110, 80, 71, 16));
+        label_2->setGeometry(QRect(60, 80, 71, 16));
+        label_2->setStyleSheet(QString::fromUtf8("font: 12pt \"\346\245\267\344\275\223\";"));
         pushButton = new QPushButton(storage_delete);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(100, 140, 75, 23));
+        pushButton->setGeometry(QRect(70, 140, 50, 25));
+        pushButton->setMinimumSize(QSize(50, 25));
+        pushButton->setMaximumSize(QSize(50, 25));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font: 75 11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"color:rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);\n"
+"border-radius: 8px;\n"
+"border: 3px groove rgb(98, 98, 98);\n"
+"border-style: outset;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"border-style: inset;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+""));
         pushButton_2 = new QPushButton(storage_delete);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(230, 140, 75, 23));
+        pushButton_2->setGeometry(QRect(180, 140, 50, 25));
+        pushButton_2->setMinimumSize(QSize(50, 25));
+        pushButton_2->setMaximumSize(QSize(50, 25));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"font: 75 11pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
+"color:rgb(255, 255, 255);\n"
+"background-color: rgb(83, 83, 83);\n"
+"border-radius: 8px;\n"
+"border: 3px groove rgb(98, 98, 98);\n"
+"border-style: outset;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"border-style: inset;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+""));
+        lineEdit1 = new QLineEdit(storage_delete);
+        lineEdit1->setObjectName(QStringLiteral("lineEdit1"));
+        lineEdit1->setGeometry(QRect(130, 80, 113, 20));
 
         retranslateUi(storage_delete);
 
