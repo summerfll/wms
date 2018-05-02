@@ -2886,7 +2886,6 @@ void GraphicsWidget::on_pushButton_40_clicked()
 
     }
 
-
     ui->tableView_7->setModel(model2);
 }
 

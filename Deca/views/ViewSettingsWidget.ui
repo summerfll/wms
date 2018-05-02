@@ -23,7 +23,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="config_tab">
       <attribute name="title">
@@ -166,7 +166,7 @@
         <rect>
          <x>20</x>
          <y>430</y>
-         <width>109</width>
+         <width>151</width>
          <height>17</height>
         </rect>
        </property>
@@ -182,7 +182,7 @@
         <rect>
          <x>20</x>
          <y>460</y>
-         <width>109</width>
+         <width>241</width>
          <height>17</height>
         </rect>
        </property>
@@ -201,7 +201,7 @@
         <rect>
          <x>20</x>
          <y>490</y>
-         <width>191</width>
+         <width>251</width>
          <height>17</height>
         </rect>
        </property>
@@ -231,7 +231,7 @@
       <widget class="QComboBox" name="filtering">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>130</x>
          <y>260</y>
          <width>111</width>
          <height>22</height>
@@ -243,7 +243,7 @@
         <rect>
          <x>20</x>
          <y>260</y>
-         <width>81</width>
+         <width>111</width>
          <height>20</height>
         </rect>
        </property>
@@ -286,7 +286,7 @@
       <widget class="QPushButton" name="logging_pb">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>130</x>
          <y>300</y>
          <width>111</width>
          <height>23</height>
