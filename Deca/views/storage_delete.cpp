@@ -24,19 +24,25 @@ void storage_delete::on_pushButton_2_clicked()
 {
     this->close();
 }
+void storage_delete::disPlayImformation(QString value)
+{
+    QString orderValue = value;
+    ui->lineEdit1->setText(orderValue);
+     qDebug()<<"--------------orderValue    orderValue----------"<<orderValue;
+}
 
 void storage_delete::on_pushButton_clicked()
 {
     QString order_id;
     QSqlQuery query;
 
-    order_id=ui->lineEdit->text().trimmed();
+    order_id=ui->lineEdit1->text().trimmed();
     query.exec("select 订单号 from storage_copy where 订单号 ='"+order_id+"'");
     if(query.next())
     {
         query.prepare("delete from storage_copy where 订单号 = :id");
         query.bindValue(":id",order_id);
-        query.exec();
+        query.exec();       
         if(query.isActive()){
             QMessageBox::information(this, tr("消息"), tr("成功删除！"));
             this->close();
@@ -44,5 +50,6 @@ void storage_delete::on_pushButton_clicked()
     }
     else
         QMessageBox::warning(this, tr("错误"), tr("没有此订单号，不能删除！"));
+    ui->lineEdit1->setText(NULL);
 }
 

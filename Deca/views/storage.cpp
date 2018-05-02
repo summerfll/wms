@@ -5,8 +5,12 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QDateTime>
-
-
+#include<QSqlTableModel>
+#include<QSqlRelationalTableModel>
+#include <QSqlRelationalDelegate>
+#include<QTableView>
+#include<QDebug>
+#include<QSqlRecord>
 storage*  storage::Instance1=NULL;
 
 
@@ -19,6 +23,34 @@ storage::storage(QWidget *parent) :
     QFont ft;
     ft.setPointSize(18);
     ui->label->setFont(ft);
+
+    QSqlQuery query1;
+    QSqlQueryModel *model = new QSqlQueryModel();
+    query1.exec("select 员工名 from staff_management");
+
+    while(query1.next())
+    {
+        QString str1 = query1.value(0).toString();
+        ui->comboBox_2->addItem(str1);
+     }
+    model->setQuery("select 仓库名称 from stores_management");
+    int rowNum = model->rowCount();
+    for(int i = 0;i<rowNum;i++)
+    {
+        QString str2 = model->record(i).value(0).toString();
+        ui->comboBox->addItem(str2);
+     }
+    /*
+     * QSqlRelationalTableModel *model = new QSqlRelationalTableModel(this);
+    model->setTable("storage_copy");
+    model->setRelation(5,QSqlRelation("stores_management","仓库编号","仓库名称"));
+    model->select();
+
+   QTableView *view = new QTableView(this);
+   view ->setModel(model);
+
+    //ui->label_10->setItemDelegate(new setItemDelegate(ui->label_10));
+*/
 
 
 }
@@ -49,8 +81,8 @@ void storage::on_pushButton_clicked()
     str3=ui->lineEdit_3->text().trimmed();
     str4=ui->lineEdit_4->text().trimmed();
     str5=ui->lineEdit_5->text().trimmed();
-    str6=ui->lineEdit_6->text().trimmed();
-    str7=ui->lineEdit_7->text().trimmed();
+    str6=ui->comboBox->currentText().trimmed();
+    str7=ui->comboBox_2->currentText().trimmed();
     QDateTime current_data=QDateTime::currentDateTime();
     QString current=current_data.toString("yyyy-MM-dd hh:mm:ss");
     str8=current;
@@ -93,8 +125,8 @@ void storage::on_pushButton_clicked()
     ui->lineEdit_3->clear();
     ui->lineEdit_4->clear();
     ui->lineEdit_5->clear();
-    ui->lineEdit_6->clear();
-    ui->lineEdit_7->clear();
+    //ui->lineEdit_6->clear();
+    //ui->lineEdit_7->clear();
 
 
 
@@ -107,7 +139,7 @@ void storage::on_pushButton_2_clicked()
     ui->lineEdit_3->setText("");
     ui->lineEdit_4->setText("");
     ui->lineEdit_5->setText("");
-    ui->lineEdit_6->setText("");
-    ui->lineEdit_7->setText("");
+    //ui->lineEdit_6->setText("");
+    //ui->lineEdit_7->setText("");
     ui->lineEdit_8->setText("");
 }

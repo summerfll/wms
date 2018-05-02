@@ -22,6 +22,11 @@ storage_modify::~storage_modify()
 {
     delete ui;
 }
+void storage_modify::disPlayImformation(QString value)
+{
+
+    ui->lineEdit->setText(value);
+}
 
 void storage_modify::on_pushButton_2_clicked()
 {

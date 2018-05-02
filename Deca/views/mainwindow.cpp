@@ -285,10 +285,10 @@ void MainWindow::onAboutAction()
 {
     _infoLabel->setText(tr("Invoked <b>Help|About</b>"));
     QMessageBox::about(this, tr("About"),
-            tr("<b>DecaRangeRTLS</b>"
-               "<br>version 3.6 (" __DATE__
-               ") <br>Copyright (C) 2016, Decawave Ltd.\n"
-               "<br>www.decawave.com"));
+            tr("<b>CQUPT WMS</b>"
+               "<br>version 1.2 </br> "
+               "<br>2018.4.24</br>"
+               ));
 }
 
 void MainWindow::loadConfigFile(QString filename)

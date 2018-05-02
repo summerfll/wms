@@ -13,6 +13,7 @@ class storage : public QWidget
 
 public:
     ~storage();
+    explicit storage(QWidget *parent = 0);
     static storage* ShowWin()  //单例模式，只能产生一个窗口
     {
         if(Instance1==NULL)
@@ -21,7 +22,7 @@ public:
     }
 
 private:
-    explicit storage(QWidget *parent = 0);
+
 private:
     static storage* Instance1;
 

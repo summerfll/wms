@@ -123,6 +123,8 @@ public:
 
     void hideTACorrectionTable(bool hidden);
 
+    void compare(QString,QString);
+
 
     void outputQtableviewtoexcel(QTableView *table,QString title);//导出excel表格
     void outputQtablewidgettoexcel(QTableWidget *table,QString title);
@@ -136,6 +138,7 @@ signals:
     void centerRect(const QRectF &visibleRect);
 
     void setTagHistory(int h);
+    void sendOrderValue(QString);
 
 public slots:
 
@@ -259,6 +262,14 @@ private slots:
     void on_pushButton_44_clicked();
 
     void on_pushButton_46_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_pushButton_14_clicked();
+
+    void on_comboBox_activated(const QString &arg1);
+
+    void on_toolBox_destroyed();
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识

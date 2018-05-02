@@ -13,6 +13,7 @@ class storage_modify : public QWidget
 
 public:
     ~storage_modify();
+    explicit storage_modify(QWidget *parent = 0);
     static storage_modify* ShowWin()  //单例模式，只能产生一个窗口
     {
         if(Instance1==NULL)
@@ -24,10 +25,11 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
+    void disPlayImformation(QString value);
 
 private:
     Ui::storage_modify *ui;
-    explicit storage_modify(QWidget *parent = 0);
+
     static storage_modify* Instance1;
 signals:
     void sendOrderID(QString);

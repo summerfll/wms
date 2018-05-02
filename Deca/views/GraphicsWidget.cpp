@@ -25,6 +25,7 @@
 #include <QInputDialog>
 #include <QFile>
 #include <QPen>
+#include<QSqlQueryModel>
 
 #include <QSqlTableModel>
 
@@ -44,6 +45,9 @@
 #include "wms/connect_database.h"
 #include <QDateTime>
 #include <QTableWidgetItem>
+#include<QSqlTableModel>
+#include<QSqlRelationalTableModel>
+#include <QSqlRelationalDelegate>
 
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
@@ -54,6 +58,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui(new Ui::GraphicsWidget)
 {
     ui->setupUi(this);
+
 
     model=new QSqlTableModel(this);
     model->setTable("input");
@@ -1825,11 +1830,11 @@ void GraphicsWidget::on_pushButton_8_clicked()
 {
 
 
-    storage* add_storage=storage::ShowWin();
-    add_storage->setWindowFlags(add_storage->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
+    //storage* add_storage=storage::ShowWin();
+    //add_storage->setWindowFlags(add_storage->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
 
-
-    add_storage->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    storage* add_storage = new storage();
+    //add_storage->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
                       (QApplication::desktop()->height() - add_storage->height()) / 2);//桌面正中
 
@@ -1857,15 +1862,23 @@ void GraphicsWidget::on_pushButton_7_clicked()
 
 void GraphicsWidget::on_pushButton_11_clicked()
 {
-
+    /*
     storage_modify *modify = storage_modify::ShowWin();
     modify->setWindowFlags(modify->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
-
+    */
+    storage_modify *modify = new storage_modify();
     modify->move((QApplication::desktop()->width() - modify->width()) / 2,
                  (QApplication::desktop()->height() - modify->height()) / 2);
     modify->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     modify->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     modify->show();
+    QSqlQueryModel *model = new QSqlQueryModel(this);
+      model->setQuery("select *from storage_copy");
+      int curRow = ui->tableView_2->currentIndex().row();
+      QString value = model->record(curRow).value("订单号").toString();
+       connect(this,SIGNAL(sendOrderValue(QString)),modify,SLOT(disPlayImformation(QString)));
+      emit sendOrderValue(value);
+
 
 
 
@@ -1873,20 +1886,38 @@ void GraphicsWidget::on_pushButton_11_clicked()
 
 void GraphicsWidget::on_pushButton_9_clicked()
 {
+    QSqlQuery query;
+    query.exec("select * from storage_copy");
+    while(query.next())
+     {
+       query.exec("delete from storage_copy where 数量 = 0");
+    }
     model1->setTable("storage_copy");
     model1->select();
 }
 
 void GraphicsWidget::on_pushButton_10_clicked()
 {
-    storage_delete *deletes =storage_delete::ShowWin() ;
-    deletes->setWindowFlags(deletes->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
+
+    /*storage_delete *deletes =storage_delete::ShowWin();
+    deletes->setWindowFlags(deletes->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前*/
+    storage_delete *deletes = new storage_delete();
     deletes->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
 
     deletes->show();
     deletes->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     deletes->move((QApplication::desktop()->width() - deletes->width()) / 2,
                   (QApplication::desktop()->height() - deletes->height()) / 2);
+
+  QSqlQueryModel *model = new QSqlQueryModel(this);
+    model->setQuery("select *from storage_copy");
+    int curRow = ui->tableView_2->currentIndex().row();
+    QString value = model->record(curRow).value("订单号").toString();
+
+    connect(this,SIGNAL(sendOrderValue(QString)),deletes,SLOT(disPlayImformation(QString)));
+    emit sendOrderValue(value);
+
+
 
 }
 
@@ -2147,8 +2178,15 @@ void GraphicsWidget::on_pushButton_12_clicked()
 
 void GraphicsWidget::on_pushButton_22_clicked()
 {
+    QSqlQuery query;
+    query.exec("select * from storage_copy");
+    while(query.next())
+     {
+       query.exec("delete from storage_copy where 数量 = 0");
+    }
     model2->setTable("storage_copy");
     model2->select();
+
 }
 
 void GraphicsWidget::empytOrdermap()
@@ -2453,9 +2491,17 @@ void GraphicsWidget::on_pushButton_19_clicked()
         }
         int order_num_out=str5.toInt();
         int order_num_new=order_num-order_num_out;
+        if(order_num_new!=0)
+        {
         query.prepare("update storage_copy set 数量 = :one where 订单号 ='"+order_id+"'");
         query.bindValue(":one",order_num_new);
         query.exec();
+
+        }
+        else
+        {
+            query.exec("delete from storage_copy where 订单号 ='"+order_id+"'");
+        }
         model2->setTable("storage_copy");  //刷新当前库存
         model2->select();
     }
@@ -2658,8 +2704,12 @@ void GraphicsWidget::on_pushButton_37_clicked()
 
 void GraphicsWidget::on_pushButton_48_clicked()
 {
+
+
+
     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_7);
-    model->setQuery("select * from biaoshi");
+    model->setQuery("select *from biaoshi");
+
     ui->tableView_7->setModel(model);
 }
 
@@ -2689,18 +2739,35 @@ void GraphicsWidget::on_pushButton_43_clicked()
 void GraphicsWidget::on_pushButton_41_clicked()
 {
     QString id1,id2;
+    QSqlQuery query;
     id1=ui->lineEdit_7->text().trimmed();
     id2=ui->lineEdit_8->text().trimmed();
-    tag_add *tags=new tag_add();
-    tags->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    query.exec("select *from biaoshi where 标签编号 = '"+id1+"'||标签标识='"+id2+"'");
+    if(id1 == NULL||id2==NULL)
+    {
+        QMessageBox::information(this, tr("消息"), tr("请先输入标签编号及标签标识！"));
+    }
+    else if(query.next())
+    {
+        QMessageBox::warning(this, tr("警告"), tr("标签编号或标签标识已存在！"));
+        ui->lineEdit_7->setText(NULL);
+        ui->lineEdit_8->setText(NULL);
+    }
+    else
+    {
 
-    tags->show();
-    tags->move((QApplication::desktop()->width() - tags->width()) / 2,
-                      (QApplication::desktop()->height() - tags->height()) / 2);
-    connect(this,SIGNAL(sendOrderID(QString,QString)),tags,SLOT(showid(QString,QString)));
-    emit sendOrderID(id1,id2);
-    ui->lineEdit_7->clear();
-    ui->lineEdit_8->clear();
+        tag_add *tags=new tag_add();
+        tags->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+
+        tags->show();
+        tags->move((QApplication::desktop()->width() - tags->width()) / 2,
+                          (QApplication::desktop()->height() - tags->height()) / 2);
+        connect(this,SIGNAL(sendOrderID(QString,QString)),tags,SLOT(showid(QString,QString)));
+        emit sendOrderID(id1,id2);
+        ui->lineEdit_7->clear();
+        ui->lineEdit_8->clear();
+    }
+
 
 }
 
@@ -2784,3 +2851,44 @@ void GraphicsWidget::on_pushButton_46_clicked()
     ui->lineEdit_7->clear();
     ui->lineEdit_8->clear();
 }
+
+void GraphicsWidget::on_pushButton_40_clicked()
+{
+
+    QSqlQueryModel *model1 = new QSqlQueryModel(this);
+    model1->setQuery("select *from storage_copy");
+    int rowNum1 = model1->rowCount();
+    QSqlQueryModel *model2 = new QSqlQueryModel(ui->tableView_7);
+    model2->setQuery("select *from biaoshi");
+    int rowNum2 = model2->rowCount();
+    QSqlQuery query1;
+    for(int i=0;i<rowNum2;i++)
+    {
+        int flag = 1;
+        QString value2 = model2->record(i).value("标签编号").toString();
+        for(int j=0;j<rowNum1;j++)
+        {
+           QString value1 = model1->record(j).value("标签编号").toString();
+           if(value1 == value2)
+           {
+               flag = 0;
+               QString state1 = "使用中";
+               query1.exec("update biaoshi set 标签状态 = '"+state1+"' where 标签编号 = '"+value2+"' ");
+           }
+           if(j==rowNum1-1&&value1!=value2&&flag==1)
+           {
+
+               QString state2 = "未使用";
+               query1.exec("update biaoshi set 标签状态 = '"+state2+"' where 标签编号 = '"+value2+"' ");
+           }
+
+        }
+
+    }
+
+
+    ui->tableView_7->setModel(model2);
+}
+
+
+

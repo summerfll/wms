@@ -2,6 +2,20 @@
     <qresource prefix="/">
         <file>splash.png</file>
         <file>logo.jpg</file>
+        <file>qt 图标/Button Cancel.png</file>
+        <file>qt 图标/Customize.png</file>
+        <file>qt 图标/Delete.png</file>
+        <file>qt 图标/Downloads.png</file>
+        <file>qt 图标/Find.png</file>
+        <file>qt 图标/man key.png</file>
+        <file>qt 图标/删除图标.jpg</file>
+        <file>qt 图标/修改.png</file>
+        <file>qt 图标/修改图标.jpg</file>
+        <file>图片1.png</file>
+        <file>图片2.png</file>
+        <file>cqupt.png</file>
+        <file>qt 图标/新增.jpg</file>
+        <file>qt 图标/标签.jpg</file>
     </qresource>
     <qresource prefix="/icons">
         <file>DWctrler.ico</file>
@@ -24,5 +38,9 @@
         <file>s4.png</file>
         <file>s5.png</file>
         <file>s6.png</file>
+        <file>出库.png</file>
+        <file>动态盘点.png</file>
+        <file>人员定位.png</file>
+        <file>入库.png</file>
     </qresource>
 </RCC>

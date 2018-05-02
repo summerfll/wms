@@ -94,8 +94,10 @@ void storage_modify2::on_pushButton_clicked()
         this->close();
     }
     else
+    {
         QMessageBox::warning(this, tr("警告"), tr("订单信息修改失败！"));
 
 
+    }
 
 }

@@ -18,7 +18,9 @@
     <normaloff>:/icons/CQUPT.ico</normaloff>:/icons/CQUPT.ico</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color:rgb(76, 76, 76);
+font: 75 10pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255)</string>
   </property>
   <widget class="GraphicsWidget" name="graphicsWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -27,7 +29,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="viewMenu">
