@@ -465,6 +465,7 @@ void GraphicsWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 72: _t->on_pushButton_44_clicked(); break;
         case 73: _t->on_pushButton_46_clicked(); break;
         case 74: _t->on_pushButton_40_clicked(); break;
+
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

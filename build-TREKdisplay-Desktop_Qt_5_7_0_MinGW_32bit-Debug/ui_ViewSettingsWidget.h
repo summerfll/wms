@@ -141,16 +141,16 @@ public:
         tagHistoryN->setValue(20);
         showTagTable = new QCheckBox(config_tab);
         showTagTable->setObjectName(QStringLiteral("showTagTable"));
-        showTagTable->setGeometry(QRect(20, 430, 109, 17));
+        showTagTable->setGeometry(QRect(20, 430, 151, 17));
         showTagTable->setChecked(false);
         showAnchorTable = new QCheckBox(config_tab);
         showAnchorTable->setObjectName(QStringLiteral("showAnchorTable"));
-        showAnchorTable->setGeometry(QRect(20, 460, 109, 17));
+        showAnchorTable->setGeometry(QRect(20, 460, 241, 17));
         showAnchorTable->setChecked(false);
         showAnchorTagCorrectionTable = new QCheckBox(config_tab);
         showAnchorTagCorrectionTable->setObjectName(QStringLiteral("showAnchorTagCorrectionTable"));
         showAnchorTagCorrectionTable->setEnabled(true);
-        showAnchorTagCorrectionTable->setGeometry(QRect(20, 490, 191, 17));
+        showAnchorTagCorrectionTable->setGeometry(QRect(20, 490, 251, 17));
         showAnchorTagCorrectionTable->setChecked(false);
         showNavigationMode = new QCheckBox(config_tab);
         showNavigationMode->setObjectName(QStringLiteral("showNavigationMode"));
@@ -158,10 +158,10 @@ public:
         showNavigationMode->setChecked(true);
         filtering = new QComboBox(config_tab);
         filtering->setObjectName(QStringLiteral("filtering"));
-        filtering->setGeometry(QRect(120, 260, 111, 22));
+        filtering->setGeometry(QRect(130, 260, 111, 22));
         label_z1_2 = new QLabel(config_tab);
         label_z1_2->setObjectName(QStringLiteral("label_z1_2"));
-        label_z1_2->setGeometry(QRect(20, 260, 81, 20));
+        label_z1_2->setGeometry(QRect(20, 260, 111, 20));
         useAutoPos = new QCheckBox(config_tab);
         useAutoPos->setObjectName(QStringLiteral("useAutoPos"));
         useAutoPos->setEnabled(true);
@@ -172,7 +172,7 @@ public:
         label_logingstatus->setGeometry(QRect(20, 300, 91, 20));
         logging_pb = new QPushButton(config_tab);
         logging_pb->setObjectName(QStringLiteral("logging_pb"));
-        logging_pb->setGeometry(QRect(120, 300, 111, 23));
+        logging_pb->setGeometry(QRect(130, 300, 111, 23));
         label_logingstatus_2 = new QLabel(config_tab);
         label_logingstatus_2->setObjectName(QStringLiteral("label_logingstatus_2"));
         label_logingstatus_2->setGeometry(QRect(20, 400, 51, 20));
@@ -382,7 +382,7 @@ public:
 
         retranslateUi(ViewSettingsWidget);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(ViewSettingsWidget);

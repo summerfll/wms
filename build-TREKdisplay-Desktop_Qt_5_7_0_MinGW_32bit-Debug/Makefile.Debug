@@ -8267,19 +8267,8 @@ debug/storage.o: F:/git/uwb_qt/Deca/views/storage.cpp F:/git/uwb_qt/Deca/views/s
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QComboBox \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -8291,6 +8280,19 @@ debug/storage.o: F:/git/uwb_qt/Deca/views/storage.cpp F:/git/uwb_qt/Deca/views/s
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabbar.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qrubberband.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qframe.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qboxlayout.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHBoxLayout \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QHeaderView \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qheaderview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLabel \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlabel.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QLineEdit \
@@ -8324,7 +8326,6 @@ debug/storage.o: F:/git/uwb_qt/Deca/views/storage.cpp F:/git/uwb_qt/Deca/views/s
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qitemdelegate.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlistview.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qcombobox.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QTableView \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qtableview.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/QDebug \
@@ -8919,6 +8920,12 @@ debug/tag_add.o: F:/git/uwb_qt/Deca/views/tag_add.cpp F:/git/uwb_qt/Deca/views/t
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qinputmethod.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QButtonGroup \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QDateEdit \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qdatetimeedit.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qdatetime.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
+		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/QGridLayout \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qgridlayout.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qlayout.h \
@@ -8934,9 +8941,6 @@ debug/tag_add.o: F:/git/uwb_qt/Deca/views/tag_add.cpp F:/git/uwb_qt/Deca/views/t
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyleoption.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtGui/qvalidator.h \
-		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtCore/qregularexpression.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qslider.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qabstractslider.h \
 		D:/setup/qt5.7.0/5.7/mingw53_32/include/QtWidgets/qstyle.h \

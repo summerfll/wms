@@ -21,12 +21,14 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBox>
+#include <QtWidgets/QTreeView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "GraphicsView.h"
@@ -38,6 +40,34 @@ class Ui_GraphicsWidget
 {
 public:
     QGridLayout *gridLayout_2;
+    QToolBox *toolBox;
+    QWidget *page;
+    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_5;
+    QWidget *page_2;
+    QWidget *page_3;
+    QWidget *layoutWidget1;
+    QVBoxLayout *verticalLayout_6;
+    QPushButton *pushButton_28;
+    QPushButton *pushButton_27;
+    QWidget *page_4;
+    QWidget *layoutWidget2;
+    QVBoxLayout *verticalLayout_7;
+    QPushButton *pushButton_26;
+    QPushButton *pushButton_29;
+    QPushButton *pushButton_32;
+    QPushButton *pushButton_39;
+    QWidget *page_5;
+    QPushButton *pushButton_33;
+    QWidget *page_7;
+    QWidget *layoutWidget3;
+    QVBoxLayout *verticalLayout_8;
+    QPushButton *pushButton_34;
+    QPushButton *pushButton_35;
     QTabWidget *tabWidget;
     QWidget *widget;
     QGridLayout *gridLayout;
@@ -177,35 +207,9 @@ public:
     QPushButton *pushButton_4;
     QWidget *tab_6;
     QWidget *tab_7;
+    QTreeView *treeView;
+    QListWidget *listWidget;
     QWidget *tab_8;
-    QToolBox *toolBox;
-    QWidget *page;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_5;
-    QWidget *page_2;
-    QWidget *page_3;
-    QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout_6;
-    QPushButton *pushButton_28;
-    QPushButton *pushButton_27;
-    QWidget *page_4;
-    QWidget *layoutWidget2;
-    QVBoxLayout *verticalLayout_7;
-    QPushButton *pushButton_26;
-    QPushButton *pushButton_29;
-    QPushButton *pushButton_32;
-    QPushButton *pushButton_39;
-    QWidget *page_5;
-    QPushButton *pushButton_33;
-    QWidget *page_7;
-    QWidget *layoutWidget3;
-    QVBoxLayout *verticalLayout_8;
-    QPushButton *pushButton_34;
-    QPushButton *pushButton_35;
 
     void setupUi(QWidget *GraphicsWidget)
     {
@@ -215,6 +219,166 @@ public:
         GraphicsWidget->setStyleSheet(QStringLiteral("background-color: rgb(76, 76, 76);"));
         gridLayout_2 = new QGridLayout(GraphicsWidget);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        toolBox = new QToolBox(GraphicsWidget);
+        toolBox->setObjectName(QStringLiteral("toolBox"));
+        toolBox->setEnabled(true);
+        toolBox->setMinimumSize(QSize(85, 330));
+        toolBox->setMaximumSize(QSize(69, 343));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setPointSize(10);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(50);
+        toolBox->setFont(font);
+        toolBox->setMouseTracking(false);
+        toolBox->setAutoFillBackground(false);
+        toolBox->setStyleSheet(QLatin1String("\n"
+"QToolBox#page_2{\n"
+"border-style: inset;\n"
+"}\n"
+"QToolBox:hover{\n"
+"background-color:rgb(255, 170, 0);\n"
+"}\n"
+"\n"
+""));
+        toolBox->setFrameShape(QFrame::NoFrame);
+        toolBox->setFrameShadow(QFrame::Raised);
+        toolBox->setLineWidth(1);
+        toolBox->setMidLineWidth(0);
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        page->setGeometry(QRect(0, 0, 85, 168));
+        page->setStyleSheet(QLatin1String("TitleBar{\n"
+"background-color: rgb(0, 0, 0);\n"
+"}"));
+        layoutWidget = new QWidget(page);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 10, 87, 128));
+        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton = new QPushButton(layoutWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setFlat(true);
+
+        verticalLayout->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(layoutWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setFlat(true);
+
+        verticalLayout->addWidget(pushButton_2);
+
+        pushButton_3 = new QPushButton(layoutWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setFlat(true);
+
+        verticalLayout->addWidget(pushButton_3);
+
+        pushButton_5 = new QPushButton(layoutWidget);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setFlat(true);
+
+        verticalLayout->addWidget(pushButton_5);
+
+        toolBox->addItem(page, QString::fromUtf8("  \345\205\250\345\261\200\345\234\260\345\233\276"));
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        page_2->setGeometry(QRect(0, 0, 85, 168));
+        page_2->setStyleSheet(QStringLiteral("border-radius: 8px;"));
+        toolBox->addItem(page_2, QString::fromUtf8("  \345\205\245\345\272\223\347\256\241\347\220\206"));
+        page_3 = new QWidget();
+        page_3->setObjectName(QStringLiteral("page_3"));
+        page_3->setGeometry(QRect(0, 0, 85, 168));
+        layoutWidget1 = new QWidget(page_3);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(0, 10, 77, 62));
+        verticalLayout_6 = new QVBoxLayout(layoutWidget1);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        pushButton_28 = new QPushButton(layoutWidget1);
+        pushButton_28->setObjectName(QStringLiteral("pushButton_28"));
+        pushButton_28->setFlat(true);
+
+        verticalLayout_6->addWidget(pushButton_28);
+
+        pushButton_27 = new QPushButton(layoutWidget1);
+        pushButton_27->setObjectName(QStringLiteral("pushButton_27"));
+        pushButton_27->setFlat(true);
+
+        verticalLayout_6->addWidget(pushButton_27);
+
+        toolBox->addItem(page_3, QString::fromUtf8("  \345\207\272\345\272\223\347\256\241\347\220\206"));
+        page_4 = new QWidget();
+        page_4->setObjectName(QStringLiteral("page_4"));
+        page_4->setGeometry(QRect(0, 0, 85, 168));
+        layoutWidget2 = new QWidget(page_4);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(0, 10, 81, 128));
+        verticalLayout_7 = new QVBoxLayout(layoutWidget2);
+        verticalLayout_7->setSpacing(0);
+        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
+        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
+        pushButton_26 = new QPushButton(layoutWidget2);
+        pushButton_26->setObjectName(QStringLiteral("pushButton_26"));
+        pushButton_26->setFlat(true);
+
+        verticalLayout_7->addWidget(pushButton_26);
+
+        pushButton_29 = new QPushButton(layoutWidget2);
+        pushButton_29->setObjectName(QStringLiteral("pushButton_29"));
+        pushButton_29->setFlat(true);
+
+        verticalLayout_7->addWidget(pushButton_29);
+
+        pushButton_32 = new QPushButton(layoutWidget2);
+        pushButton_32->setObjectName(QStringLiteral("pushButton_32"));
+        pushButton_32->setFlat(true);
+
+        verticalLayout_7->addWidget(pushButton_32);
+
+        pushButton_39 = new QPushButton(layoutWidget2);
+        pushButton_39->setObjectName(QStringLiteral("pushButton_39"));
+        pushButton_39->setAutoDefault(false);
+        pushButton_39->setFlat(true);
+
+        verticalLayout_7->addWidget(pushButton_39);
+
+        toolBox->addItem(page_4, QString::fromUtf8("  \345\212\250\346\200\201\347\233\230\347\202\271"));
+        page_5 = new QWidget();
+        page_5->setObjectName(QStringLiteral("page_5"));
+        page_5->setGeometry(QRect(0, 0, 85, 168));
+        pushButton_33 = new QPushButton(page_5);
+        pushButton_33->setObjectName(QStringLiteral("pushButton_33"));
+        pushButton_33->setGeometry(QRect(0, 10, 75, 23));
+        pushButton_33->setFlat(true);
+        toolBox->addItem(page_5, QString::fromUtf8("  \346\240\207\350\257\206\347\256\241\347\220\206"));
+        page_7 = new QWidget();
+        page_7->setObjectName(QStringLiteral("page_7"));
+        page_7->setGeometry(QRect(0, 0, 85, 168));
+        layoutWidget3 = new QWidget(page_7);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(0, 0, 77, 62));
+        verticalLayout_8 = new QVBoxLayout(layoutWidget3);
+        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
+        pushButton_34 = new QPushButton(layoutWidget3);
+        pushButton_34->setObjectName(QStringLiteral("pushButton_34"));
+        pushButton_34->setFlat(true);
+
+        verticalLayout_8->addWidget(pushButton_34);
+
+        pushButton_35 = new QPushButton(layoutWidget3);
+        pushButton_35->setObjectName(QStringLiteral("pushButton_35"));
+        pushButton_35->setFlat(true);
+
+        verticalLayout_8->addWidget(pushButton_35);
+
+        toolBox->addItem(page_7, QString::fromUtf8("  \345\256\232\344\275\215\347\256\241\347\220\206"));
+
+        gridLayout_2->addWidget(toolBox, 0, 0, 1, 1, Qt::AlignTop);
+
         tabWidget = new QTabWidget(GraphicsWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setMinimumSize(QSize(20, 10));
@@ -268,13 +432,13 @@ public:
         anchorTable->setSizePolicy(sizePolicy);
         anchorTable->setMinimumSize(QSize(370, 112));
         anchorTable->setMaximumSize(QSize(350, 16777215));
-        QFont font;
-        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font.setPointSize(10);
-        font.setBold(false);
-        font.setItalic(false);
-        font.setWeight(9);
-        anchorTable->setFont(font);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(10);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(9);
+        anchorTable->setFont(font1);
         anchorTable->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         anchorTable->setAlternatingRowColors(true);
         anchorTable->setRowCount(4);
@@ -297,7 +461,7 @@ public:
         tagTable->setSizePolicy(sizePolicy);
         tagTable->setMinimumSize(QSize(660, 112));
         tagTable->setMaximumSize(QSize(700, 16777215));
-        tagTable->setFont(font);
+        tagTable->setFont(font1);
         tagTable->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         tagTable->setAlternatingRowColors(true);
         tagTable->setRowCount(0);
@@ -325,13 +489,13 @@ public:
         label = new QLabel(tab_3);
         label->setObjectName(QStringLiteral("label"));
         label->setMaximumSize(QSize(70, 40));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
-        font1.setPointSize(11);
-        font1.setBold(false);
-        font1.setItalic(false);
-        font1.setWeight(9);
-        label->setFont(font1);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
+        font2.setPointSize(11);
+        font2.setBold(false);
+        font2.setItalic(false);
+        font2.setWeight(9);
+        label->setFont(font2);
         label->setStyleSheet(QString::fromUtf8("\n"
 "font: 75 11pt \"\351\273\221\344\275\223\";"));
 
@@ -538,13 +702,13 @@ public:
         tableView_2 = new QTableView(tab_3);
         tableView_2->setObjectName(QStringLiteral("tableView_2"));
         tableView_2->setEnabled(true);
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(12);
-        font2.setBold(false);
-        font2.setItalic(false);
-        font2.setWeight(9);
-        tableView_2->setFont(font2);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(12);
+        font3.setBold(false);
+        font3.setItalic(false);
+        font3.setWeight(9);
+        tableView_2->setFont(font3);
         tableView_2->setFocusPolicy(Qt::WheelFocus);
         tableView_2->setStyleSheet(QString::fromUtf8("selection-background-color: rgb(170, 0, 127);\n"
 "font: 75 12pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";\n"
@@ -1689,6 +1853,12 @@ public:
         tabWidget->addTab(tab_6, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
+        treeView = new QTreeView(tab_7);
+        treeView->setObjectName(QStringLiteral("treeView"));
+        treeView->setGeometry(QRect(140, 70, 256, 192));
+        listWidget = new QListWidget(tab_7);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(550, 80, 256, 192));
         tabWidget->addTab(tab_7, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
@@ -1696,176 +1866,16 @@ public:
 
         gridLayout_2->addWidget(tabWidget, 0, 1, 1, 1);
 
-        toolBox = new QToolBox(GraphicsWidget);
-        toolBox->setObjectName(QStringLiteral("toolBox"));
-        toolBox->setEnabled(true);
-        toolBox->setMinimumSize(QSize(85, 330));
-        toolBox->setMaximumSize(QSize(69, 343));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(10);
-        font3.setBold(false);
-        font3.setItalic(false);
-        font3.setWeight(50);
-        toolBox->setFont(font3);
-        toolBox->setMouseTracking(false);
-        toolBox->setAutoFillBackground(false);
-        toolBox->setStyleSheet(QLatin1String("\n"
-"QToolBox#page_2{\n"
-"border-style: inset;\n"
-"}\n"
-"QToolBox:hover{\n"
-"background-color:rgb(255, 170, 0);\n"
-"}\n"
-"\n"
-""));
-        toolBox->setFrameShape(QFrame::NoFrame);
-        toolBox->setFrameShadow(QFrame::Raised);
-        toolBox->setLineWidth(1);
-        toolBox->setMidLineWidth(0);
-        page = new QWidget();
-        page->setObjectName(QStringLiteral("page"));
-        page->setGeometry(QRect(0, 0, 85, 168));
-        page->setStyleSheet(QLatin1String("TitleBar{\n"
-"background-color: rgb(0, 0, 0);\n"
-"}"));
-        layoutWidget = new QWidget(page);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 10, 87, 128));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setFlat(true);
-
-        verticalLayout->addWidget(pushButton);
-
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setFlat(true);
-
-        verticalLayout->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(layoutWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setFlat(true);
-
-        verticalLayout->addWidget(pushButton_3);
-
-        pushButton_5 = new QPushButton(layoutWidget);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setFlat(true);
-
-        verticalLayout->addWidget(pushButton_5);
-
-        toolBox->addItem(page, QString::fromUtf8("  \345\205\250\345\261\200\345\234\260\345\233\276"));
-        page_2 = new QWidget();
-        page_2->setObjectName(QStringLiteral("page_2"));
-        page_2->setGeometry(QRect(0, 0, 85, 168));
-        page_2->setStyleSheet(QStringLiteral("border-radius: 8px;"));
-        toolBox->addItem(page_2, QString::fromUtf8("  \345\205\245\345\272\223\347\256\241\347\220\206"));
-        page_3 = new QWidget();
-        page_3->setObjectName(QStringLiteral("page_3"));
-        page_3->setGeometry(QRect(0, 0, 85, 168));
-        layoutWidget1 = new QWidget(page_3);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(0, 10, 77, 62));
-        verticalLayout_6 = new QVBoxLayout(layoutWidget1);
-        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        pushButton_28 = new QPushButton(layoutWidget1);
-        pushButton_28->setObjectName(QStringLiteral("pushButton_28"));
-        pushButton_28->setFlat(true);
-
-        verticalLayout_6->addWidget(pushButton_28);
-
-        pushButton_27 = new QPushButton(layoutWidget1);
-        pushButton_27->setObjectName(QStringLiteral("pushButton_27"));
-        pushButton_27->setFlat(true);
-
-        verticalLayout_6->addWidget(pushButton_27);
-
-        toolBox->addItem(page_3, QString::fromUtf8("  \345\207\272\345\272\223\347\256\241\347\220\206"));
-        page_4 = new QWidget();
-        page_4->setObjectName(QStringLiteral("page_4"));
-        page_4->setGeometry(QRect(0, 0, 85, 168));
-        layoutWidget2 = new QWidget(page_4);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(0, 10, 81, 128));
-        verticalLayout_7 = new QVBoxLayout(layoutWidget2);
-        verticalLayout_7->setSpacing(0);
-        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
-        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
-        pushButton_26 = new QPushButton(layoutWidget2);
-        pushButton_26->setObjectName(QStringLiteral("pushButton_26"));
-        pushButton_26->setFlat(true);
-
-        verticalLayout_7->addWidget(pushButton_26);
-
-        pushButton_29 = new QPushButton(layoutWidget2);
-        pushButton_29->setObjectName(QStringLiteral("pushButton_29"));
-        pushButton_29->setFlat(true);
-
-        verticalLayout_7->addWidget(pushButton_29);
-
-        pushButton_32 = new QPushButton(layoutWidget2);
-        pushButton_32->setObjectName(QStringLiteral("pushButton_32"));
-        pushButton_32->setFlat(true);
-
-        verticalLayout_7->addWidget(pushButton_32);
-
-        pushButton_39 = new QPushButton(layoutWidget2);
-        pushButton_39->setObjectName(QStringLiteral("pushButton_39"));
-        pushButton_39->setAutoDefault(false);
-        pushButton_39->setFlat(true);
-
-        verticalLayout_7->addWidget(pushButton_39);
-
-        toolBox->addItem(page_4, QString::fromUtf8("  \345\212\250\346\200\201\347\233\230\347\202\271"));
-        page_5 = new QWidget();
-        page_5->setObjectName(QStringLiteral("page_5"));
-        page_5->setGeometry(QRect(0, 0, 85, 168));
-        pushButton_33 = new QPushButton(page_5);
-        pushButton_33->setObjectName(QStringLiteral("pushButton_33"));
-        pushButton_33->setGeometry(QRect(0, 10, 75, 23));
-        pushButton_33->setFlat(true);
-        toolBox->addItem(page_5, QString::fromUtf8("  \346\240\207\350\257\206\347\256\241\347\220\206"));
-        page_7 = new QWidget();
-        page_7->setObjectName(QStringLiteral("page_7"));
-        page_7->setGeometry(QRect(0, 0, 85, 168));
-        layoutWidget3 = new QWidget(page_7);
-        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(0, 0, 77, 62));
-        verticalLayout_8 = new QVBoxLayout(layoutWidget3);
-        verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
-        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
-        pushButton_34 = new QPushButton(layoutWidget3);
-        pushButton_34->setObjectName(QStringLiteral("pushButton_34"));
-        pushButton_34->setFlat(true);
-
-        verticalLayout_8->addWidget(pushButton_34);
-
-        pushButton_35 = new QPushButton(layoutWidget3);
-        pushButton_35->setObjectName(QStringLiteral("pushButton_35"));
-        pushButton_35->setFlat(true);
-
-        verticalLayout_8->addWidget(pushButton_35);
-
-        toolBox->addItem(page_7, QString::fromUtf8("  \345\256\232\344\275\215\347\256\241\347\220\206"));
-
-        gridLayout_2->addWidget(toolBox, 0, 0, 1, 1, Qt::AlignTop);
-
 
         retranslateUi(GraphicsWidget);
         QObject::connect(toolBox, SIGNAL(currentChanged(int)), tabWidget, SLOT(setCurrentIndex(int)));
 
-        tabWidget->setCurrentIndex(6);
         toolBox->setCurrentIndex(0);
         toolBox->layout()->setSpacing(0);
         pushButton_26->setDefault(false);
         pushButton_29->setDefault(false);
         pushButton_32->setDefault(false);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(GraphicsWidget);
@@ -1874,6 +1884,28 @@ public:
     void retranslateUi(QWidget *GraphicsWidget)
     {
         GraphicsWidget->setWindowTitle(QApplication::translate("GraphicsWidget", "Form", 0));
+        pushButton->setText(QApplication::translate("GraphicsWidget", "Setting", 0));
+        pushButton_2->setText(QApplication::translate("GraphicsWidget", "AnchorTable", 0));
+        pushButton_3->setText(QApplication::translate("GraphicsWidget", "TagTable", 0));
+        pushButton_5->setText(QApplication::translate("GraphicsWidget", "CloseAll", 0));
+        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("GraphicsWidget", "  \345\205\250\345\261\200\345\234\260\345\233\276", 0));
+        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("GraphicsWidget", "  \345\205\245\345\272\223\347\256\241\347\220\206", 0));
+        pushButton_28->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\346\223\215\344\275\234", 0));
+        pushButton_27->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\346\212\245\350\241\250", 0));
+        toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("GraphicsWidget", "  \345\207\272\345\272\223\347\256\241\347\220\206", 0));
+        pushButton_26->setText(QApplication::translate("GraphicsWidget", "\345\272\223\345\255\230\347\233\230\347\202\271", 0));
+        pushButton_29->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\347\233\230\347\202\271", 0));
+        pushButton_32->setText(QApplication::translate("GraphicsWidget", "\347\247\273\345\272\223\347\256\241\347\220\206", 0));
+        pushButton_39->setText(QApplication::translate("GraphicsWidget", "\345\205\250\351\203\250\346\230\276\347\244\272", 0));
+        toolBox->setItemText(toolBox->indexOf(page_4), QApplication::translate("GraphicsWidget", "  \345\212\250\346\200\201\347\233\230\347\202\271", 0));
+        pushButton_33->setText(QApplication::translate("GraphicsWidget", "\345\256\232\344\275\215\346\240\207\347\255\276", 0));
+        toolBox->setItemText(toolBox->indexOf(page_5), QApplication::translate("GraphicsWidget", "  \346\240\207\350\257\206\347\256\241\347\220\206", 0));
+#ifndef QT_NO_WHATSTHIS
+        page_7->setWhatsThis(QApplication::translate("GraphicsWidget", "<html><head/><body><p><br/></p></body></html>", 0));
+#endif // QT_NO_WHATSTHIS
+        pushButton_34->setText(QApplication::translate("GraphicsWidget", "\350\264\247\347\211\251\345\256\232\344\275\215", 0));
+        pushButton_35->setText(QApplication::translate("GraphicsWidget", "\344\272\272\345\221\230\345\256\232\344\275\215", 0));
+        toolBox->setItemText(toolBox->indexOf(page_7), QApplication::translate("GraphicsWidget", "  \345\256\232\344\275\215\347\256\241\347\220\206", 0));
         tabWidget->setTabText(tabWidget->indexOf(widget), QString());
         label->setText(QApplication::translate("GraphicsWidget", "\345\205\245\345\272\223\345\215\225\345\217\267\357\274\232", 0));
         pushButton_7->setText(QApplication::translate("GraphicsWidget", "\346\237\245\350\257\242", 0));
@@ -1993,28 +2025,6 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("GraphicsWidget", "\351\241\265", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("GraphicsWidget", "\351\241\265", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("GraphicsWidget", "\351\241\265", 0));
-        pushButton->setText(QApplication::translate("GraphicsWidget", "Setting", 0));
-        pushButton_2->setText(QApplication::translate("GraphicsWidget", "AnchorTable", 0));
-        pushButton_3->setText(QApplication::translate("GraphicsWidget", "TagTable", 0));
-        pushButton_5->setText(QApplication::translate("GraphicsWidget", "CloseAll", 0));
-        toolBox->setItemText(toolBox->indexOf(page), QApplication::translate("GraphicsWidget", "  \345\205\250\345\261\200\345\234\260\345\233\276", 0));
-        toolBox->setItemText(toolBox->indexOf(page_2), QApplication::translate("GraphicsWidget", "  \345\205\245\345\272\223\347\256\241\347\220\206", 0));
-        pushButton_28->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\346\223\215\344\275\234", 0));
-        pushButton_27->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\346\212\245\350\241\250", 0));
-        toolBox->setItemText(toolBox->indexOf(page_3), QApplication::translate("GraphicsWidget", "  \345\207\272\345\272\223\347\256\241\347\220\206", 0));
-        pushButton_26->setText(QApplication::translate("GraphicsWidget", "\345\272\223\345\255\230\347\233\230\347\202\271", 0));
-        pushButton_29->setText(QApplication::translate("GraphicsWidget", "\345\207\272\345\272\223\347\233\230\347\202\271", 0));
-        pushButton_32->setText(QApplication::translate("GraphicsWidget", "\347\247\273\345\272\223\347\256\241\347\220\206", 0));
-        pushButton_39->setText(QApplication::translate("GraphicsWidget", "\345\205\250\351\203\250\346\230\276\347\244\272", 0));
-        toolBox->setItemText(toolBox->indexOf(page_4), QApplication::translate("GraphicsWidget", "  \345\212\250\346\200\201\347\233\230\347\202\271", 0));
-        pushButton_33->setText(QApplication::translate("GraphicsWidget", "\345\256\232\344\275\215\346\240\207\347\255\276", 0));
-        toolBox->setItemText(toolBox->indexOf(page_5), QApplication::translate("GraphicsWidget", "  \346\240\207\350\257\206\347\256\241\347\220\206", 0));
-#ifndef QT_NO_WHATSTHIS
-        page_7->setWhatsThis(QApplication::translate("GraphicsWidget", "<html><head/><body><p><br/></p></body></html>", 0));
-#endif // QT_NO_WHATSTHIS
-        pushButton_34->setText(QApplication::translate("GraphicsWidget", "\350\264\247\347\211\251\345\256\232\344\275\215", 0));
-        pushButton_35->setText(QApplication::translate("GraphicsWidget", "\344\272\272\345\221\230\345\256\232\344\275\215", 0));
-        toolBox->setItemText(toolBox->indexOf(page_7), QApplication::translate("GraphicsWidget", "  \345\256\232\344\275\215\347\256\241\347\220\206", 0));
     } // retranslateUi
 
 };
