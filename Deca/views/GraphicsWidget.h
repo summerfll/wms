@@ -22,7 +22,7 @@
 #include <QTableView>
 #include <QTableWidget>
 #include <QSerialPort>
-
+#include "storage.h"
 namespace Ui {
 class GraphicsWidget;
 }
@@ -132,8 +132,7 @@ public:
 
     static QSerialPort *Serial;
 
-    bool serial_flag=false;
-
+    static bool serial_flag;
 
 signals:
     void updateAnchorXYZ(int id, int x, double value);
@@ -274,6 +273,8 @@ private slots:
     void on_comboBox_activated(const QString &arg1);
 
     void on_toolBox_destroyed();
+
+    void trans_serialdata();
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识

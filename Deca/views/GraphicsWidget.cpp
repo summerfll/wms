@@ -54,7 +54,7 @@
 #define FONT_SIZE (10)
 
 QSerialPort *GraphicsWidget::Serial = new QSerialPort;
-
+bool GraphicsWidget::serial_flag=false;
 
 GraphicsWidget::GraphicsWidget(QWidget *parent) :
     QWidget(parent),
@@ -187,8 +187,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
 
 
-    if(serial_flag==false)
-    {
+
     //串口初始化
     Serial->setPortName("COM14");   //串口名字
     Serial->open(QIODevice::ReadWrite);
@@ -197,10 +196,15 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     Serial->setParity(QSerialPort::NoParity);//校验位
     Serial->setStopBits(QSerialPort::OneStop);//停止位设置为1
     Serial->setFlowControl(QSerialPort::NoFlowControl);//设置为无流控制
-    serial_flag=true;
-    }
 
 
+
+}
+
+void GraphicsWidget::trans_serialdata()
+{
+    QString buf;
+    buf=GraphicsWidget::Serial->readAll();
 }
 
 void GraphicsWidget::onReady()
@@ -1853,17 +1857,14 @@ void GraphicsWidget::on_pushButton_8_clicked()
     //add_storage->setWindowFlags(add_storage->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
 
     storage* add_storage = new storage();
-    //add_storage->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    add_storage->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
                       (QApplication::desktop()->height() - add_storage->height()) / 2);//桌面正中
 
    // Qt::WindowFlags flags=Qt::Dialog;
     //add_storage->setWindowFlags(flags);
-    add_storage->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+   // add_storage->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     add_storage->show();
-
-
-
     connect(Serial, SIGNAL(readyRead()), add_storage, SLOT(show_serialdata()));
 
 

@@ -53,17 +53,7 @@ storage::storage(QWidget *parent) :
 
     //ui->label_10->setItemDelegate(new setItemDelegate(ui->label_10));
 */
-/*
-    Serial = new QSerialPort;
-    Serial->setPortName("COM14");   //串口名字
-    Serial->open(QIODevice::ReadWrite);
-    Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
-    Serial->setDataBits(QSerialPort::Data8);//设置数据位8
-    Serial->setParity(QSerialPort::NoParity);//校验位
-    Serial->setStopBits(QSerialPort::OneStop);//停止位设置为1
-    Serial->setFlowControl(QSerialPort::NoFlowControl);//设置为无流控制
-    QObject::connect(Serial, &QSerialPort::readyRead, this, &storage::show_serialdata);
-    */
+setAttribute(Qt::WA_DeleteOnClose);
 }
 
 storage::~storage()
@@ -157,14 +147,13 @@ void storage::on_pushButton_2_clicked()
     ui->lineEdit_8->setText("");
 }
 
-void storage::show_serialdata()
+void storage::show_serialdata()//显示串口采集扫码器数据
 {
 
     QString buf;
     buf=GraphicsWidget::Serial->readAll();
-
+    qDebug()<<"serial::"<<buf;
     ui->lineEdit_1->setText(buf);
     ui->lineEdit_2->setText("ssssssss");
 
 }
-

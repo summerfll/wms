@@ -23,7 +23,6 @@ public:
     }
 
 
-private:
 
 private:
     static storage* Instance1;
@@ -37,7 +36,6 @@ private slots:
     void on_pushButton_2_clicked();
 
     void show_serialdata();
-
 
 private:
     Ui::storage *ui;
