@@ -53,6 +53,9 @@
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
 
+QSerialPort *GraphicsWidget::Serial = new QSerialPort;
+
+
 GraphicsWidget::GraphicsWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphicsWidget)
@@ -181,6 +184,22 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui->dockWidget->hide();
 
     this->empytOrdermap();
+
+
+
+    if(serial_flag==false)
+    {
+    //串口初始化
+    Serial->setPortName("COM14");   //串口名字
+    Serial->open(QIODevice::ReadWrite);
+    Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
+    Serial->setDataBits(QSerialPort::Data8);//设置数据位8
+    Serial->setParity(QSerialPort::NoParity);//校验位
+    Serial->setStopBits(QSerialPort::OneStop);//停止位设置为1
+    Serial->setFlowControl(QSerialPort::NoFlowControl);//设置为无流控制
+    serial_flag=true;
+    }
+
 
 }
 
@@ -1842,6 +1861,10 @@ void GraphicsWidget::on_pushButton_8_clicked()
     //add_storage->setWindowFlags(flags);
     add_storage->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     add_storage->show();
+
+
+
+    connect(Serial, SIGNAL(readyRead()), add_storage, SLOT(show_serialdata()));
 
 
 

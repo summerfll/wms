@@ -2,6 +2,7 @@
 #define STORAGE_H
 
 #include <QWidget>
+#include <QSerialPort>
 //入库管理
 namespace Ui {
 class storage;
@@ -21,6 +22,7 @@ public:
         return Instance1;
     }
 
+
 private:
 
 private:
@@ -34,6 +36,7 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void show_serialdata();
 
 
 private:

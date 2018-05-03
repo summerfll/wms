@@ -87,3 +87,4 @@ QT   +=sql
 
 
 CONFIG += qaxcontainer #导出excel
+QT+ =serialport

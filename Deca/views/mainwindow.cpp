@@ -24,10 +24,10 @@
 #include <QMessageBox>
 #include <QDomDocument>
 #include <QFile>
-
 #include "wms/connect_database.h"
 
 #include"storage_modify2.h"
+#include"storage.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -77,7 +77,6 @@ MainWindow::MainWindow(QWidget *parent) :
                      this, SLOT(connectionStateChanged(SerialConnection::ConnectionState)));
 
     RTLSDisplayApplication::connectReady(this, "onReady()");
-
 
 }
 

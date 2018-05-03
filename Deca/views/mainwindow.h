@@ -17,6 +17,7 @@
 #include <QAbstractSocket>
 #include <QLabel>
 #include "serialconnection.h"
+#include <QSerialPort>
 
 namespace Ui {
 class MainWindow;

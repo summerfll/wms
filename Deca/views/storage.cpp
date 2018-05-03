@@ -11,6 +11,8 @@
 #include<QTableView>
 #include<QDebug>
 #include<QSqlRecord>
+#include<QSerialPort>
+#include "GraphicsWidget.h"
 storage*  storage::Instance1=NULL;
 
 
@@ -51,8 +53,17 @@ storage::storage(QWidget *parent) :
 
     //ui->label_10->setItemDelegate(new setItemDelegate(ui->label_10));
 */
-
-
+/*
+    Serial = new QSerialPort;
+    Serial->setPortName("COM14");   //串口名字
+    Serial->open(QIODevice::ReadWrite);
+    Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
+    Serial->setDataBits(QSerialPort::Data8);//设置数据位8
+    Serial->setParity(QSerialPort::NoParity);//校验位
+    Serial->setStopBits(QSerialPort::OneStop);//停止位设置为1
+    Serial->setFlowControl(QSerialPort::NoFlowControl);//设置为无流控制
+    QObject::connect(Serial, &QSerialPort::readyRead, this, &storage::show_serialdata);
+    */
 }
 
 storage::~storage()
@@ -67,6 +78,7 @@ void storage::on_pushButton_3_clicked()
 
 void storage::on_pushButton_clicked()
 {
+
     QString str1;
     QString str2;
     QString str3;
@@ -134,6 +146,7 @@ void storage::on_pushButton_clicked()
 
 void storage::on_pushButton_2_clicked()
 {
+
     ui->lineEdit_1->setText("");
     ui->lineEdit_2->setText("");
     ui->lineEdit_3->setText("");
@@ -143,3 +156,15 @@ void storage::on_pushButton_2_clicked()
     //ui->lineEdit_7->setText("");
     ui->lineEdit_8->setText("");
 }
+
+void storage::show_serialdata()
+{
+
+    QString buf;
+    buf=GraphicsWidget::Serial->readAll();
+
+    ui->lineEdit_1->setText(buf);
+    ui->lineEdit_2->setText("ssssssss");
+
+}
+

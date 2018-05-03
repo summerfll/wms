@@ -21,6 +21,7 @@
 #include <QSqlTableModel>
 #include <QTableView>
 #include <QTableWidget>
+#include <QSerialPort>
 
 namespace Ui {
 class GraphicsWidget;
@@ -129,6 +130,9 @@ public:
     void outputQtableviewtoexcel(QTableView *table,QString title);//导出excel表格
     void outputQtablewidgettoexcel(QTableWidget *table,QString title);
 
+    static QSerialPort *Serial;
+
+    bool serial_flag=false;
 
 
 signals:
@@ -317,5 +321,4 @@ private:
 
 
 };
-
 #endif // GRAPHICSWIDGET_H
