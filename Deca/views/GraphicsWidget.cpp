@@ -35,6 +35,10 @@
 #include "storage_modify.h"
 #include "storage_delete.h"
 #include "tag_add.h"
+#include "management/add_staff.h"
+#include "management/product_modify.h"
+#include "management/staff_modify.h"
+#include "management/store_modify.h"
 
 #include <QFileDialog>
 #include <QDesktopServices>
@@ -53,6 +57,8 @@
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
 
+
+
 QSerialPort *GraphicsWidget::Serial = new QSerialPort;
 bool GraphicsWidget::serial_flag=false;
 
@@ -62,6 +68,18 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    model_staff = new QSqlTableModel(this);
+    model_staff->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+    model_store = new QSqlTableModel(this);
+    model_store->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+    model_product = new QSqlTableModel(this);
+    model_product->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+    model_staffquery = new QSqlQueryModel(this);
+    model_productquery=new QSqlQueryModel(this);
+    model_storequery = new QSqlQueryModel(this);
 
     model=new QSqlTableModel(this);
     model->setTable("input");
@@ -189,7 +207,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
 
     //串口初始化
-    Serial->setPortName("COM14");   //串口名字
+    Serial->setPortName("COM6");   //串口名字
     Serial->open(QIODevice::ReadWrite);
     Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
     Serial->setDataBits(QSerialPort::Data8);//设置数据位8
@@ -1861,9 +1879,8 @@ void GraphicsWidget::on_pushButton_8_clicked()
     add_storage->move((QApplication::desktop()->width() - add_storage->width()) / 2,
                       (QApplication::desktop()->height() - add_storage->height()) / 2);//桌面正中
 
-   // Qt::WindowFlags flags=Qt::Dialog;
-    //add_storage->setWindowFlags(flags);
-   // add_storage->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+
+    add_storage->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     add_storage->show();
     connect(Serial, SIGNAL(readyRead()), add_storage, SLOT(show_serialdata()));
 
@@ -1933,7 +1950,7 @@ void GraphicsWidget::on_pushButton_10_clicked()
     deletes->move((QApplication::desktop()->width() - deletes->width()) / 2,
                   (QApplication::desktop()->height() - deletes->height()) / 2);
 
-  QSqlQueryModel *model = new QSqlQueryModel(this);
+    QSqlQueryModel *model = new QSqlQueryModel(this);
     model->setQuery("select *from storage_copy");
     int curRow = ui->tableView_2->currentIndex().row();
     QString value = model->record(curRow).value("订单号").toString();
@@ -2915,3 +2932,169 @@ void GraphicsWidget::on_pushButton_40_clicked()
 
 
 
+
+void GraphicsWidget::on_pushButton_50_clicked()
+{
+    model_staff->setTable(MODEL_STAFF);
+    model_staff->select();
+    ui->tableView_8->setModel(model_staff);
+}
+
+void GraphicsWidget::on_pushButton_56_clicked()
+{
+    model_store->setTable(MODEL_STORE);
+    model_store->select();
+    ui->tableView_9->setModel(model_store);
+}
+
+void GraphicsWidget::on_pushButton_61_clicked()
+{
+    model_product->setTable(MODEL_PRODUCT);
+    model_product->select();
+    ui->tableView_10->setModel(model_product);
+}
+
+
+void GraphicsWidget::on_pushButton_52_clicked()
+{
+
+    int curRow = ui->tableView_8->currentIndex().row();
+    if(curRow==-1)
+    {
+        QMessageBox::information(this,tr("未选择删除行"),tr("请选择要删除的内容！"));
+
+    }
+    else
+    {
+         model_staff->setTable(MODEL_STAFF);
+         model_staff->select();
+        model_staff->removeRow(curRow);
+        int ok =QMessageBox::warning(this,tr("删除当前行！"),tr("你确定删除当前行？"),
+                                     QMessageBox::Yes,QMessageBox::No);
+        if(ok==QMessageBox::No)
+        {
+            model_staff->revertAll();
+        }
+        else
+        {
+            model_staff->submitAll();
+
+        }
+    }
+
+}
+
+void GraphicsWidget::on_pushButton_57_clicked()
+{
+
+    int curRow = ui->tableView_9->currentIndex().row();
+    if(curRow<0)
+    {
+        QMessageBox::information(this,tr("未选择删除行"),tr("请选择要删除的内容！"));
+
+    }
+    else
+    {
+        model_store->setTable(MODEL_STORE);
+        model_store->select();
+        model_store->removeRow(curRow);
+        int ok =QMessageBox::warning(this,tr("删除当前行！"),tr("你确定删除当前行？"),
+                                     QMessageBox::Yes,QMessageBox::No);
+        if(ok==QMessageBox::No)
+        {
+            model_store->revertAll();
+        }
+        else
+        {
+            model_store->submitAll();
+
+        }
+    }
+}
+
+
+void GraphicsWidget::on_pushButton_14_clicked()
+{
+    int curRow = ui->tableView_10->currentIndex().row();
+    if(curRow==-1)
+    {
+        QMessageBox::information(this,tr("未选择删除行"),tr("请选择要删除的内容！"));
+
+    }
+    else
+    {
+        model_product->setTable(MODEL_PRODUCT);
+        model_product->select();
+        model_product->removeRow(curRow);
+        int ok =QMessageBox::warning(this,tr("删除当前行！"),tr("你确定删除当前行？"),
+                                     QMessageBox::Yes,QMessageBox::No);
+        if(ok==QMessageBox::No)
+        {
+            model_product->revertAll();
+        }
+        else
+        {
+            model_product->submitAll();
+
+        }
+    }
+}
+
+void GraphicsWidget::on_pushButton_63_clicked()
+{
+    product_modify *product_mdf = new product_modify();
+    product_mdf->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    product_mdf->move((QApplication::desktop()->width() - product_mdf->width()) / 2,
+                      (QApplication::desktop()->height() - product_mdf->height()) / 2);//桌面正中
+    product_mdf->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    product_mdf->show();
+    model_productquery->setQuery("select *from "+MODEL_PRODUCT+"");
+    int curRow = ui->tableView_10->currentIndex().row();
+    if(curRow>=0)
+    {
+        QString product_id = model_productquery->record(curRow).value("产品编号").toString();
+        connect(this,SIGNAL(sendProductID(QString)),product_mdf,SLOT(disPlayImformation(QString)));
+        emit sendProductID(product_id);
+    }
+
+
+}
+
+void GraphicsWidget::on_pushButton_53_clicked()
+{
+    staff_modify *staff_mdf = new staff_modify();
+    staff_mdf->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    staff_mdf->move((QApplication::desktop()->width() - staff_mdf->width()) / 2,
+                      (QApplication::desktop()->height() - staff_mdf->height()) / 2);//桌面正中
+    staff_mdf->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    staff_mdf->show();
+    model_staffquery->setQuery("select *from "+MODEL_STAFF+"");
+    int curRow = ui->tableView_8->currentIndex().row();
+    if(curRow>=0)
+    {
+        QString staff_id = model_staffquery->record(curRow).value("员工编号").toString();
+        connect(this,SIGNAL(sendStaffID(QString)),staff_mdf,SLOT(disPlayImformation(QString)));
+        emit sendStaffID(staff_id);
+    }
+
+}
+
+void GraphicsWidget::on_pushButton_58_clicked()
+{
+    store_modify *store_mdf = new store_modify();
+    store_mdf->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    store_mdf->move((QApplication::desktop()->width() - store_mdf->width()) / 2,
+                      (QApplication::desktop()->height() - store_mdf->height()) / 2);//桌面正中
+    store_mdf->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    store_mdf->show();
+    model_storequery->setQuery("select *from "+MODEL_STORE+"");
+    int curRow = ui->tableView_9->currentIndex().row();
+    if(curRow>=0)
+    {
+        QString store_id = model_storequery->record(curRow).value("仓库编号").toString();
+        connect(this,SIGNAL(sendStoreID(QString)),store_mdf,SLOT(disPlayImformation(QString)));
+        emit sendStoreID(store_id);
+    }
+
+
+}

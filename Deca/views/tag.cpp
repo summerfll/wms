@@ -1,7 +1,7 @@
 #include "tag.h"
 #include "ui_tag.h"
 
-Tag_add::Tag(QWidget *parent) :
+Tag::Tag(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Tag)
 {

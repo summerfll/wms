@@ -6,6 +6,7 @@
 cache()
 
 QT       += core gui network xml serialport
+QT += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -43,7 +44,12 @@ SOURCES += main.cpp\
     views/storage_modify.cpp \
     views/storage_modify2.cpp \
     views/storage_delete.cpp \
-    views/tag_add.cpp
+    views/tag_add.cpp \
+    management/product_modify.cpp \
+    management/staff_modify.cpp \
+    management/store_modify.cpp \
+    views/tag.cpp \
+    management/add_staff.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -67,7 +73,12 @@ HEADERS  += \
     views/storage_modify.h \
     views/storage_modify2.h \
     views/storage_delete.h \
-    views/tag_add.h
+    views/tag_add.h \
+    views/tag.h \
+    management/product_modify.h \
+    management/store_modify.h \
+    management/staff_modify.h \
+    management/add_staff.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
@@ -77,12 +88,17 @@ FORMS    += \
     views/storage_modify.ui \
     views/storage_modify2.ui \
     views/storage_delete.ui \
-    views/tag_add.ui
+    views/tag_add.ui \
+    management/product_modify.ui \
+    management/staff_modify.ui \
+    management/store_modify.ui \
+    views/tag.ui \
+    management/add_staff.ui
 
 
 RESOURCES += \
     res/resources.qrc
-QT   +=sql
+    QT   +=sql
 
 
 

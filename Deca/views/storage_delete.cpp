@@ -28,7 +28,6 @@ void storage_delete::disPlayImformation(QString value)
 {
     QString orderValue = value;
     ui->lineEdit1->setText(orderValue);
-     qDebug()<<"--------------orderValue    orderValue----------"<<orderValue;
 }
 
 void storage_delete::on_pushButton_clicked()

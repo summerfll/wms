@@ -53,7 +53,7 @@ storage::storage(QWidget *parent) :
 
     //ui->label_10->setItemDelegate(new setItemDelegate(ui->label_10));
 */
-setAttribute(Qt::WA_DeleteOnClose);
+    setAttribute(Qt::WA_DeleteOnClose);
 }
 
 storage::~storage()

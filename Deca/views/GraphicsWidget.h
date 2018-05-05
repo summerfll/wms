@@ -18,8 +18,8 @@
 #include <QAbstractItemView>
 #include <QGraphicsView>
 #include "RTLSClient.h"
-#include <QSqlTableModel>
 #include <QTableView>
+#include <QSqlTableModel>
 #include <QTableWidget>
 #include <QSerialPort>
 #include "storage.h"
@@ -142,6 +142,9 @@ signals:
 
     void setTagHistory(int h);
     void sendOrderValue(QString);
+    void sendStaffID(QString);
+    void sendStoreID(QString);
+    void sendProductID(QString);
 
 public slots:
 
@@ -276,6 +279,24 @@ private slots:
 
     void trans_serialdata();
 
+    void on_pushButton_50_clicked();
+
+    void on_pushButton_56_clicked();
+
+    void on_pushButton_61_clicked();
+
+    void on_pushButton_62_clicked();
+
+    void on_pushButton_52_clicked();
+
+    void on_pushButton_57_clicked();
+
+    void on_pushButton_63_clicked();
+
+    void on_pushButton_53_clicked();
+
+    void on_pushButton_58_clicked();
+
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
 
@@ -317,9 +338,20 @@ private:
     QVector<QString>   order_id;
     void empytOrdermap();
 
+    /*
 
+    部分数据库表
+    */
+      QSqlTableModel *model_staff;
+      QSqlTableModel *model_product;
+      QSqlTableModel *model_store;
+      QSqlQueryModel *model_staffquery;
+      QSqlQueryModel *model_productquery;
+      QSqlQueryModel *model_storequery;
 
-
+      QString MODEL_STAFF = "staff_management";
+      QString MODEL_PRODUCT = "product_imformation";
+      QString MODEL_STORE = "stores_management";
 
 };
 #endif // GRAPHICSWIDGET_H
