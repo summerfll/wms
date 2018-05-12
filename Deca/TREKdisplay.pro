@@ -49,7 +49,12 @@ SOURCES += main.cpp\
     management/staff_modify.cpp \
     management/store_modify.cpp \
     views/tag.cpp \
-    management/add_staff.cpp
+    management/add_staff.cpp \
+    management/staff_modify2.cpp \
+    management/store_modify2.cpp \
+    management/product_modify2.cpp \
+    management/add_store.cpp \
+    management/add_product.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -78,7 +83,12 @@ HEADERS  += \
     management/product_modify.h \
     management/store_modify.h \
     management/staff_modify.h \
-    management/add_staff.h
+    management/add_staff.h \
+    management/staff_modify2.h \
+    management/store_modify2.h \
+    management/product_modify2.h \
+    management/add_store.h \
+    management/add_product.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
@@ -93,7 +103,12 @@ FORMS    += \
     management/staff_modify.ui \
     management/store_modify.ui \
     views/tag.ui \
-    management/add_staff.ui
+    management/add_staff.ui \
+    management/staff_modify2.ui \
+    management/store_modify2.ui \
+    management/product_modify2.ui \
+    management/add_store.ui \
+    management/add_product.ui
 
 
 RESOURCES += \

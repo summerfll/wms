@@ -17,8 +17,12 @@ public:
 
 private:
     Ui::store_modify *ui;
+signals:
+    void sendStoreID(QString);
 private slots:
     void disPlayImformation(QString store_id);
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 };
 
 #endif // STORE_MODIFY_H

@@ -20,6 +20,10 @@ private:
 
 private slots:
     void disPlayImformation(QString product_id);
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+signals:
+    void sendProductID(QString);
 };
 
 #endif // PRODUCT_MODIFY_H

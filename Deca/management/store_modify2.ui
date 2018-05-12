@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>add_staff</class>
- <widget class="QWidget" name="add_staff">
+ <class>store_modify2</class>
+ <widget class="QWidget" name="store_modify2">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>461</width>
+    <width>400</width>
     <height>300</height>
    </rect>
   </property>
@@ -19,14 +19,20 @@ background-color: rgb(144, 144, 144);
 color:rgb(0, 0, 0)</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="8" column="1">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>电   话：</string>
+   <item row="8" column="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-    </widget>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
-   <item row="13" column="2">
+   <item row="2" column="2">
     <spacer name="verticalSpacer_5">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -39,7 +45,7 @@ color:rgb(0, 0, 0)</string>
      </property>
     </spacer>
    </item>
-   <item row="0" column="2">
+   <item row="4" column="2">
     <spacer name="verticalSpacer_4">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -53,6 +59,9 @@ color:rgb(0, 0, 0)</string>
     </spacer>
    </item>
    <item row="3" column="2">
+    <widget class="QLineEdit" name="lineEdit_3"/>
+   </item>
+   <item row="6" column="2">
     <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -65,89 +74,27 @@ color:rgb(0, 0, 0)</string>
      </property>
     </spacer>
    </item>
-   <item row="1" column="0">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="cursor">
+      <cursorShape>ForbiddenCursor</cursorShape>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>密   码：</string>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
      </property>
     </widget>
    </item>
-   <item row="4" column="4">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>确认密码：</string>
-     </property>
-    </widget>
+   <item row="1" column="5">
+    <widget class="QLineEdit" name="lineEdit_2"/>
    </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>员工编号：</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>真实名字：</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="6">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="8" column="4">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>角   色：</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4">
+   <item row="3" column="4">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>邮   箱：</string>
+      <string>现有库存：</string>
      </property>
     </widget>
    </item>
-   <item row="8" column="5">
-    <widget class="QComboBox" name="comboBox">
-     <item>
-      <property name="text">
-       <string>员工</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>主管</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="1" column="3">
+   <item row="1" column="0">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -160,21 +107,20 @@ color:rgb(0, 0, 0)</string>
      </property>
     </spacer>
    </item>
-   <item row="12" column="1">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>备   注：</string>
+   <item row="1" column="6">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>员 工 名：</string>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
      </property>
-    </widget>
+    </spacer>
    </item>
-   <item row="18" column="2">
+   <item row="0" column="2">
     <spacer name="verticalSpacer_6">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -187,7 +133,7 @@ color:rgb(0, 0, 0)</string>
      </property>
     </spacer>
    </item>
-   <item row="14" column="1" colspan="5">
+   <item row="11" column="1" colspan="5">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="pushButton_2">
@@ -284,7 +230,78 @@ background-color:rgb(0, 0, 0);
      </item>
     </layout>
    </item>
-   <item row="11" column="2">
+   <item row="12" column="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>管 理 员：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5">
+    <widget class="QLineEdit" name="lineEdit_6"/>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>仓库名称：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>仓库编号：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>备    注：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>仓库类型：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QLineEdit" name="lineEdit_4"/>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>库存容量：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLineEdit" name="lineEdit_5"/>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>状   态：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2">
     <spacer name="verticalSpacer_7">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -298,72 +315,33 @@ background-color:rgb(0, 0, 0);
     </spacer>
    </item>
    <item row="7" column="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
+    <widget class="QComboBox" name="comboBox">
+     <item>
+      <property name="text">
+       <string>请选择管理员</string>
+      </property>
+     </item>
+    </widget>
    </item>
-   <item row="5" column="2">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
+   <item row="9" column="2" colspan="4">
+    <widget class="QLineEdit" name="lineEdit_9"/>
    </item>
-   <item row="1" column="2">
-    <widget class="QLineEdit" name="lineEdit">
+   <item row="7" column="4">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>联系电话：</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="5">
+    <widget class="QLineEdit" name="lineEdit_7">
      <property name="cursor">
       <cursorShape>ForbiddenCursor</cursorShape>
      </property>
      <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
      </property>
-     <property name="text">
-      <string>系统自动生成</string>
-     </property>
     </widget>
-   </item>
-   <item row="1" column="5">
-    <widget class="QLineEdit" name="lineEdit_2"/>
-   </item>
-   <item row="4" column="2">
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="echoMode">
-      <enum>QLineEdit::PasswordEchoOnEdit</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QLineEdit" name="lineEdit_5"/>
-   </item>
-   <item row="6" column="5">
-    <widget class="QLineEdit" name="lineEdit_6"/>
-   </item>
-   <item row="4" column="5">
-    <widget class="QLineEdit" name="lineEdit_4">
-     <property name="echoMode">
-      <enum>QLineEdit::PasswordEchoOnEdit</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="2">
-    <widget class="QLineEdit" name="lineEdit_7"/>
-   </item>
-   <item row="12" column="2" colspan="4">
-    <widget class="QLineEdit" name="lineEdit_8"/>
    </item>
   </layout>
  </widget>
