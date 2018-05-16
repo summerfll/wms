@@ -16,6 +16,21 @@
         <file>cqupt.png</file>
         <file>qt 图标/新增.jpg</file>
         <file>qt 图标/标签.jpg</file>
+        <file>仓库/仓库管理.png</file>
+        <file>仓库/产品管理.png</file>
+        <file>仓库/人员管理.png</file>
+        <file>toolbox图标/定位.png</file>
+        <file>toolbox图标/folder-house-icon.png</file>
+        <file>toolbox图标/home.ico</file>
+        <file>toolbox图标/logout.ico</file>
+        <file>toolbox图标/maintenance.png</file>
+        <file>toolbox图标/settings.png</file>
+        <file>toolbox图标/地图.png</file>
+        <file>toolbox图标/设置.png</file>
+        <file>toolbox图标/作业.png</file>
+        <file>toolbox图标/homework.ico</file>
+        <file>重邮.jpg</file>
+        <file>重邮.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>DWctrler.ico</file>

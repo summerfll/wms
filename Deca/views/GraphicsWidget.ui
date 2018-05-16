@@ -7,367 +7,17 @@
     <x>0</x>
     <y>0</y>
     <width>1277</width>
-    <height>500</height>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(76, 76, 76);</string>
+   <string notr="true">background-color: rgb(76, 76, 76);
+color: rgb(255, 255, 255);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0" alignment="Qt::AlignTop">
-    <widget class="QToolBox" name="toolBox">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>85</width>
-       <height>330</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>69</width>
-       <height>343</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>微软雅黑</family>
-       <pointsize>10</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QToolBox#page_2{
-border-style: inset;
-}
-QToolBox:hover{
-background-color:rgb(255, 170, 0);
-}
-
-</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="lineWidth">
-      <number>1</number>
-     </property>
-     <property name="midLineWidth">
-      <number>0</number>
-     </property>
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <property name="tabSpacing">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="page">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>168</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">TitleBar{
-background-color: rgb(0, 0, 0);
-}</string>
-      </property>
-      <attribute name="label">
-       <string>  全局地图</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>87</width>
-         <height>128</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Setting</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>AnchorTable</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="text">
-           <string>TagTable</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>CloseAll</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>168</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius: 8px;</string>
-      </property>
-      <attribute name="label">
-       <string>  入库管理</string>
-      </attribute>
-     </widget>
-     <widget class="QWidget" name="page_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>168</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  出库管理</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>77</width>
-         <height>62</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <item>
-         <widget class="QPushButton" name="pushButton_28">
-          <property name="text">
-           <string>出库操作</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_27">
-          <property name="text">
-           <string>出库报表</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>168</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  动态盘点</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>81</width>
-         <height>128</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_7">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="pushButton_26">
-          <property name="text">
-           <string>库存盘点</string>
-          </property>
-          <property name="default">
-           <bool>false</bool>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_29">
-          <property name="text">
-           <string>出库盘点</string>
-          </property>
-          <property name="default">
-           <bool>false</bool>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_32">
-          <property name="text">
-           <string>移库管理</string>
-          </property>
-          <property name="default">
-           <bool>false</bool>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_39">
-          <property name="text">
-           <string>全部显示</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>168</height>
-       </rect>
-      </property>
-      <attribute name="label">
-       <string>  标识管理</string>
-      </attribute>
-      <widget class="QPushButton" name="pushButton_33">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>定位标签</string>
-       </property>
-       <property name="flat">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="page_7">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>85</width>
-        <height>168</height>
-       </rect>
-      </property>
-      <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <attribute name="label">
-       <string>  定位管理</string>
-      </attribute>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>77</width>
-         <height>62</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <item>
-         <widget class="QPushButton" name="pushButton_34">
-          <property name="text">
-           <string>货物定位</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_35">
-          <property name="text">
-           <string>人员定位</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-    </widget>
-   </item>
    <item row="0" column="1">
     <widget class="QTabWidget" name="tabWidget">
      <property name="minimumSize">
@@ -388,30 +38,34 @@ background-color: rgb(0, 0, 0);
      <property name="mouseTracking">
       <bool>false</bool>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color:rgb(250, 250, 250);
 font: 75 10pt &quot;微软雅黑&quot;;
-color:rgb(0, 0, 0)</string>
+color:rgb(0, 0, 0);
+</string>
      </property>
      <property name="inputMethodHints">
       <set>Qt::ImhNone</set>
      </property>
      <property name="tabPosition">
-      <enum>QTabWidget::North</enum>
+      <enum>QTabWidget::East</enum>
      </property>
      <property name="tabShape">
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>6</number>
+      <number>9</number>
      </property>
      <property name="iconSize">
       <size>
-       <width>30</width>
-       <height>30</height>
+       <width>90</width>
+       <height>0</height>
       </size>
      </property>
      <property name="elideMode">
@@ -618,148 +272,7 @@ color:rgb(0, 0, 0)</string>
        <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="1">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="maximumSize">
-            <size>
-             <width>70</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>黑体</family>
-             <pointsize>11</pointsize>
-             <weight>9</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">
-font: 75 11pt &quot;黑体&quot;;</string>
-           </property>
-           <property name="text">
-            <string>入库单号：</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="maximumSize">
-            <size>
-             <width>134</width>
-             <height>20</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_7">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>75</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="cursor">
-            <cursorShape>ArrowCursor</cursorShape>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-font: 75 10pt &quot;微软雅黑&quot;;
-color:rgb(255, 255, 255);
-background-color: rgb(0, 170, 255);
-border-radius: 8px;
-border: 3px groove rgb(98, 98, 98);
-border-style: outset;
-}
-QPushButton:pressed{
-border-style: inset;
-}
-QPushButton:hover{
-background-color:rgb(255, 170, 0);
-}
-
-</string>
-           </property>
-           <property name="text">
-            <string>查询</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normalon>:/icons/timg (1).jpg</normalon>
-            </iconset>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_13">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>75</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton{ 
-font: 75 10pt &quot;微软雅黑&quot;;
-color:rgb(255, 255, 255);
-background-color: rgb(0, 0, 255);
-border-radius: 8px;
-border-style: outset;
-border: 3px groove gray;
-}
-QPushButton:hover{
-background-color:rgb(255, 170, 0);
-}
-QPushButton:pressed{
-border-style: inset;
-}
-</string>
-           </property>
-           <property name="text">
-            <string>全部</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item row="0" column="0" rowspan="4">
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <property name="spacing">
-          <number>3</number>
-         </property>
-        </layout>
-       </item>
-       <item row="1" column="2" colspan="2">
+       <item row="0" column="3" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QPushButton" name="pushButton_8">
@@ -943,7 +456,224 @@ background-color:rgb(255, 170, 0);
          </item>
         </layout>
        </item>
-       <item row="4" column="0" colspan="4">
+       <item row="6" column="1" colspan="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_29">
+         <item>
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>共</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_36">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_37">
+           <property name="text">
+            <string>页，当前</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_38">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_39">
+           <property name="text">
+            <string>页，每页14行</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_17">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_11">
+           <property name="text">
+            <string>首页</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_21">
+           <property name="maximumSize">
+            <size>
+             <width>30</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_10">
+           <property name="text">
+            <string>跳转</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_12">
+           <property name="text">
+            <string>尾页</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>黑体</family>
+             <pointsize>11</pointsize>
+             <weight>9</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+font: 75 11pt &quot;黑体&quot;;</string>
+           </property>
+           <property name="text">
+            <string>入库单号：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="maximumSize">
+            <size>
+             <width>134</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_7">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>ArrowCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+font: 75 10pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255);
+background-color: rgb(0, 170, 255);
+border-radius: 8px;
+border: 3px groove rgb(98, 98, 98);
+border-style: outset;
+}
+QPushButton:pressed{
+border-style: inset;
+}
+QPushButton:hover{
+background-color:rgb(255, 170, 0);
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string>查询</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normalon>:/icons/timg (1).jpg</normalon>
+            </iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_13">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{ 
+font: 75 10pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255);
+background-color: rgb(0, 0, 255);
+border-radius: 8px;
+border-style: outset;
+border: 3px groove gray;
+}
+QPushButton:hover{
+background-color:rgb(255, 170, 0);
+}
+QPushButton:pressed{
+border-style: inset;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>全部</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0" colspan="5">
         <widget class="QTableView" name="tableView_2">
          <property name="enabled">
           <bool>true</bool>
@@ -1579,47 +1309,49 @@ background-color:rgb(255, 170, 0);
              </item>
             </layout>
            </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <item>
-              <widget class="QLabel" name="label_4">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>23</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>货物数量：</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_4">
-               <property name="maximumSize">
-                <size>
-                 <width>137</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_18">
-               <property name="minimumSize">
-                <size>
-                 <width>50</width>
-                 <height>25</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>75</width>
-                 <height>23</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
+            <widget class="QLabel" name="label_4">
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>23</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>货物数量：</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_4">
+             <property name="maximumSize">
+              <size>
+               <width>137</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_18">
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>23</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
 font: 75 10pt &quot;微软雅黑&quot;;
 color:rgb(255, 255, 255);
 background-color: rgb(0, 170, 0);
@@ -1635,13 +1367,11 @@ background-color:rgb(255, 170, 0);
 }
 
 </string>
-               </property>
-               <property name="text">
-                <string>添加</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+             </property>
+             <property name="text">
+              <string>添加</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -2627,7 +2357,7 @@ border-radius:5px;padding:2px 4px;
      </widget>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
-       <string>人员管理</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="0" rowspan="2">
@@ -2869,6 +2599,7 @@ background-color:rgb(255, 170, 0);
          </property>
          <property name="styleSheet">
           <string notr="true">selection-background-color: rgb(170, 0, 127);
+border-image: url(:/仓库/人员管理.png);
 font: 75 12pt &quot;微软雅黑&quot;;</string>
          </property>
          <property name="textElideMode">
@@ -2980,7 +2711,7 @@ font: 75 12pt &quot;微软雅黑&quot;;</string>
      </widget>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">
-       <string>仓库管理</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_15">
        <item row="0" column="0">
@@ -3216,6 +2947,7 @@ background-color:rgb(255, 170, 0);
            <widget class="QTableView" name="tableView_9">
             <property name="styleSheet">
              <string notr="true">selection-background-color: rgb(170, 0, 127);
+border-image: url(:/仓库/仓库管理.png);
 font: 75 12pt &quot;微软雅黑&quot;;</string>
             </property>
             <property name="textElideMode">
@@ -3313,7 +3045,7 @@ font: 75 12pt &quot;微软雅黑&quot;;</string>
      </widget>
      <widget class="QWidget" name="tab_8">
       <attribute name="title">
-       <string>产品管理</string>
+       <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_16">
        <item row="0" column="0">
@@ -3549,7 +3281,8 @@ background-color:rgb(255, 170, 0);
            <widget class="QTableView" name="tableView_10">
             <property name="styleSheet">
              <string notr="true">selection-background-color: rgb(170, 0, 127);
-font: 75 12pt &quot;微软雅黑&quot;;</string>
+font: 75 12pt &quot;微软雅黑&quot;;
+border-image: url(:/仓库/产品管理.png);</string>
             </property>
            </widget>
           </item>
@@ -3641,6 +3374,872 @@ font: 75 12pt &quot;微软雅黑&quot;;</string>
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tab_9">
+      <attribute name="title">
+       <string/>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QGraphicsView" name="graphicsView_2">
+         <property name="styleSheet">
+          <string notr="true">background-image: url(:/重邮.png);</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+      <zorder>toolBox</zorder>
+      <zorder>graphicsView_2</zorder>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QToolBox" name="toolBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>90</width>
+       <height>490</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>90</width>
+       <height>500</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolBox::tab{
+border-color: rgb(76, 76, 76);
+	font: 75 11 ;
+
+}
+QToolBox::tab:selected{
+background-color: rgb(34, 34, 34);
+}
+QToolBox::tab:hover{
+background-color: rgb(117, 117, 117);
+}
+
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="tabSpacing">
+      <number>14</number>
+     </property>
+     <widget class="QWidget" name="page_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>90</width>
+        <height>244</height>
+       </rect>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <selectedon>:/toolbox图标/home.ico</selectedon>
+       </iconset>
+      </attribute>
+      <attribute name="label">
+       <string>  首     页</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>81</width>
+         <height>80</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QPushButton" name="pushButton_76">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>系统界面</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_39">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>密码修改</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>90</width>
+        <height>244</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">TitleBar{
+background-color: rgb(0, 0, 0);
+}</string>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <selectedon>:/toolbox图标/地图.png</selectedon>
+       </iconset>
+      </attribute>
+      <attribute name="label">
+       <string> 全局地图</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>81</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_33">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>显示地图</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>Setting</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>AnchorTable</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>TagTable</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}
+</string>
+          </property>
+          <property name="text">
+           <string>CloseAll</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>90</width>
+        <height>244</height>
+       </rect>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <selectedon>:/toolbox图标/maintenance.png</selectedon>
+       </iconset>
+      </attribute>
+      <attribute name="label">
+       <string> 系统设置</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>77</width>
+         <height>109</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_12">
+        <item>
+         <widget class="QPushButton" name="pushButton_67">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>员工管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_62">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>定位管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_75">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>标识管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>90</width>
+        <height>244</height>
+       </rect>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <selectedon>:/toolbox图标/folder-house-icon.png</selectedon>
+       </iconset>
+      </attribute>
+      <attribute name="label">
+       <string> 基本资料</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>77</width>
+         <height>128</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <item>
+         <widget class="QPushButton" name="pushButton_69">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>仓库管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_68">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>产品管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_70">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>计量单位</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_71">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>产品类别</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>90</width>
+        <height>244</height>
+       </rect>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <selectedon>:/toolbox图标/homework.ico</selectedon>
+       </iconset>
+      </attribute>
+      <attribute name="label">
+       <string> 仓库作业</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>77</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_16">
+        <item>
+         <widget class="QPushButton" name="pushButton_72">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>入库管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_73">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>出库管理</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_28">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>出库操作</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_27">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>出库报表</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_74">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>库存盘货</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_26">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>库存盘点</string>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_29">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>出库盘点</string>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_32">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{ 
+background-color: rgb(76, 76, 76);
+	font: 9pt &quot;微软雅黑&quot;;
+border-radius: 8px;
+border-style: outset;
+}
+QPushButton:hover{
+background-color:rgb(117, 117, 117);
+}
+QPushButton:pressed{
+background-color: rgb(35, 35, 35);
+}</string>
+          </property>
+          <property name="text">
+           <string>移库管理</string>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>90</width>
+        <height>244</height>
+       </rect>
+      </property>
+      <attribute name="icon">
+       <iconset>
+        <selectedon>:/toolbox图标/logout.ico</selectedon>
+       </iconset>
+      </attribute>
+      <attribute name="label">
+       <string> 退出系统</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>77</width>
+         <height>95</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPushButton" name="pushButton_35">
+          <property name="text">
+           <string>重新登陆</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_34">
+          <property name="text">
+           <string>退出程序</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </widget>
    </item>
   </layout>
@@ -3661,22 +4260,5 @@ font: 75 12pt &quot;微软雅黑&quot;;</string>
  <resources>
   <include location="../res/resources.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>toolBox</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>tabWidget</receiver>
-   <slot>setCurrentIndex(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>72</x>
-     <y>180</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>106</x>
-     <y>181</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

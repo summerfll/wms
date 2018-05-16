@@ -63,6 +63,7 @@
 #define STAFF_LINE 12
 #define STORE_LINE 12
 #define PRODUCT_LINE 12
+#define STORAGE_LINE 14
 
 
 QSerialPort *GraphicsWidget::Serial = new QSerialPort;
@@ -89,6 +90,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model_staffquery0 = new QSqlQueryModel(this);
     model_productquery0=new QSqlQueryModel(this);
     model_storequery0 = new QSqlQueryModel(this);
+    model_storagequery0 = new QSqlQueryModel(this);
 
     model=new QSqlTableModel(this);
     model->setTable("input");
@@ -227,12 +229,18 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
    staff_totalline=model_staffquery0->rowCount();//staff表的总行数
    staff_totalpage=staff_totalline/STAFF_LINE+1;//staff表的总页数
    model_storequery0->setQuery("select *from "+MODEL_STORE+"");
-   store_totallline=model_storequery0->rowCount();
-   store_totalpage=store_totallline/STORE_LINE+1;
+   store_totalline=model_storequery0->rowCount();
+   store_totalpage=store_totalline/STORE_LINE+1;
    model_productquery0->setQuery("select *from "+MODEL_PRODUCT+"");
    product_totalline=model_productquery0->rowCount();
    product_totalpage=product_totalline/PRODUCT_LINE+1;
+   model_storagequery0->setQuery("select *from "+MODEL_STORAGE+"");//入库表的总行数，总页数
+   storage_totalline=model_storagequery0->rowCount();
+   storage_totalpage=storage_totalline/STORAGE_LINE+1;
 
+
+   //设置表格格式
+   //ui->tableView_8->->resizeSection(1,127);//设置第二列宽
 
 
 
@@ -1954,6 +1962,9 @@ void GraphicsWidget::on_pushButton_9_clicked()
     }
     model1->setTable("storage_copy");
     model1->select();
+    ui->label_36->setText(QString::number(storage_totalpage));
+    ui->label_38->setText("1");
+    ui->lineEdit_21->setText("1");
 }
 
 void GraphicsWidget::on_pushButton_10_clicked()
@@ -2693,11 +2704,6 @@ void GraphicsWidget::on_pushButton_29_clicked()
         ui->groupBox_4->hide();
 }
 
-void GraphicsWidget::on_pushButton_39_clicked()
-{
-    ui->groupBox_4->show();
-    ui->groupBox_5->show();
-}
 
 void GraphicsWidget::on_pushButton_36_clicked()
 {
@@ -3234,8 +3240,8 @@ void GraphicsWidget::on_toolButton_5_clicked()
     ui->label_26->setText(QString::number(store_totalpage));
     model_storequery->setQuery("select *from "+MODEL_STORE+" limit 12");
     ui->tableView_9->setModel(model_storequery);
-    ui->lineEdit_18->setText("1");
-    ui->label_23->setText("1");
+    ui->lineEdit_19->setText("1");
+    ui->label_28->setText("1");
 }
 
 void GraphicsWidget::on_toolButton_4_clicked()
@@ -3307,4 +3313,117 @@ void GraphicsWidget::on_toolButton_8_clicked()
         ui->tableView_10->setModel(model_productquery);
         ui->label_34->setText(QString::number(read_num));
     }
+}
+
+void GraphicsWidget::on_pushButton_51_clicked()
+{
+    QString title=" 人员管理信息表";
+    QTableView *table;
+    table=ui->tableView_8;
+    outputQtableviewtoexcel(table,title);
+}
+
+void GraphicsWidget::on_pushButton_42_clicked()
+{
+    QString title=" 仓库管理信息表";
+    QTableView *table1;
+    table1=ui->tableView_9;
+    GraphicsWidget::outputQtableviewtoexcel(table1,title);
+}
+
+void GraphicsWidget::on_pushButton_66_clicked()
+{
+    QString title=" 产品管理信息表";
+    QTableView *table2;
+    table2=ui->tableView_10;
+    GraphicsWidget::outputQtableviewtoexcel(table2,title);
+}
+
+void GraphicsWidget::on_pushButton_72_clicked()
+{
+    int click_num = 1;
+    connect(this,SIGNAL(send_click(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click(click_num);
+    ui->label_36->setText(QString::number(storage_totalpage));
+    QString storage_line = QString::number(STORAGE_LINE);
+    model_storagequery0->setQuery("select *from "+MODEL_STORAGE+" limit "+storage_line+"");
+    ui->tableView_2->setModel(model_storagequery0);
+    ui->lineEdit_21->setText("1");
+    ui->label_38->setText("1");
+
+}
+
+void GraphicsWidget::on_pushButton_73_clicked()
+{
+    int click_num = 2;
+    connect(this,SIGNAL(send_click2(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click2(click_num);
+}
+
+void GraphicsWidget::on_pushButton_74_clicked()
+{
+    int click_num = 3;
+    connect(this,SIGNAL(send_click3(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click3(click_num);
+}
+
+void GraphicsWidget::on_pushButton_75_clicked()
+{
+    int click_num = 4;
+    connect(this,SIGNAL(send_click4(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click4(click_num);
+}
+
+void GraphicsWidget::on_pushButton_62_clicked()
+{
+    int click_num = 5;
+    connect(this,SIGNAL(send_click5(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click5(click_num);
+}
+
+void GraphicsWidget::on_pushButton_67_clicked()
+{
+    int click_num = 6;
+    connect(this,SIGNAL(send_click6(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click6(click_num);
+}
+
+void GraphicsWidget::on_pushButton_69_clicked()
+{
+    int click_num = 7;
+    connect(this,SIGNAL(send_click7(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click7(click_num);
+}
+
+void GraphicsWidget::on_pushButton_68_clicked()
+{
+    int click_num = 8;
+    connect(this,SIGNAL(send_click8(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click8(click_num);
+}
+
+void GraphicsWidget::on_pushButton_33_clicked()
+{
+    int click_num = 0;
+    connect(this,SIGNAL(send_click0(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click0(click_num);
+}
+
+void GraphicsWidget::on_toolButton_11_clicked()
+{
+    ui->label_36->setText(QString::number(storage_totalpage));
+    QString storage_line = QString::number(STORAGE_LINE);
+    model_storagequery0->setQuery("select *from "+MODEL_STORAGE+" limit "+storage_line+"");
+    ui->tableView_2->setModel(model_storagequery0);
+    ui->lineEdit_21->setText("1");
+    ui->label_38->setText("1");
+}
+
+
+
+void GraphicsWidget::on_pushButton_76_clicked()
+{
+    int click_num = 9;
+    connect(this,SIGNAL(send_click9(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click9(click_num);
 }

@@ -327,9 +327,50 @@ private slots:
 
     void on_toolButton_8_clicked();
 
+    void on_pushButton_51_clicked();
+
+    void on_pushButton_42_clicked();
+
+    void on_pushButton_66_clicked();
+
+    void on_pushButton_72_clicked();
+
+    void on_pushButton_73_clicked();
+
+    void on_pushButton_74_clicked();
+
+    void on_pushButton_75_clicked();
+
+    void on_pushButton_67_clicked();
+
+    void on_pushButton_69_clicked();
+
+    void on_pushButton_68_clicked();
+
+    void on_pushButton_34_clicked();
+
+    void on_pushButton_33_clicked();
+
+    void on_toolButton_11_clicked();
+
+    void on_pushButton_32_clicked();
+
+    void on_pushButton_76_clicked();
+
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
-
+    //toolbox发送index给tabwidget
+    void send_click0(int);
+    void send_click(int);
+    void send_click2(int);
+    void send_click3(int);
+    void send_click4(int);
+    void send_click5(int);
+    void send_click6(int);
+    void send_click7(int);
+    void send_click8(int);
+    void send_click9(int);
+    void send_click10(int);
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;
@@ -382,18 +423,22 @@ private:
       QSqlQueryModel *model_staffquery0;//用于查询表的总行数
       QSqlQueryModel *model_productquery0;
       QSqlQueryModel *model_storequery0;
+      QSqlQueryModel *model_storagequery0;
    /*
     * 员工表，产品信息表，仓库表
     */
       QString MODEL_STAFF = "staff_management";
       QString MODEL_PRODUCT = "product_imformation";
       QString MODEL_STORE = "stores_management";
+      QString MODEL_STORAGE = "storage_copy";
+
      /*
       * 全局变量各个表的总行数，总页数
       */
       long int staff_totalline,staff_totalpage;
-      long int store_totallline,store_totalpage;
+      long int store_totalline,store_totalpage;
       long int product_totalline,product_totalpage;
+      long int storage_totalline,storage_totalpage;
 
 };
 #endif // GRAPHICSWIDGET_H
