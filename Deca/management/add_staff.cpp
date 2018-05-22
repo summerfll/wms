@@ -72,11 +72,11 @@ void add_staff::on_pushButton_2_clicked()
             if(query.isActive())
                 {
                 query.numRowsAffected();
-                QMessageBox::information(this, tr("信息"), tr("员工信息添加成功！"));
+                QMessageBox::information(this, tr("信息"), tr("信息注册成功！"));
                 this->close();
                 }
             else
-                QMessageBox::warning(this, tr("警告"), tr("添加失败！"));
+                QMessageBox::warning(this, tr("警告"), tr("注册失败！"));
         }
 
 

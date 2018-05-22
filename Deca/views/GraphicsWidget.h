@@ -134,6 +134,7 @@ public:
 
     static bool serial_flag;
 
+
 signals:
     void updateAnchorXYZ(int id, int x, double value);
     void updateTagCorrection(int aid, int tid, int value);
@@ -175,6 +176,10 @@ public slots:
     void setAlarm(bool in, bool out);
 
     void ancRanges(int a01, int a02, int a12);
+
+    //出库管理
+    void outstore_management(int num);
+    void outstore_management2(int num);
 protected slots:
     void onReady();
 
@@ -356,6 +361,10 @@ private slots:
     void on_pushButton_32_clicked();
 
     void on_pushButton_76_clicked();
+
+    void stocking_1(int num);
+     void stocking_2(int num);
+
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识

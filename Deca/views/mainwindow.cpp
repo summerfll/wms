@@ -17,6 +17,7 @@
 #include "serialconnection.h"
 #include "RTLSDisplayApplication.h"
 #include "ViewSettings.h"
+#include "login/administrator.h"
 
 #include <QShortcut>
 #include <QSettings>
@@ -60,6 +61,8 @@ MainWindow::MainWindow(QWidget *parent) :
     //add connection widget to the main window
     _cWidget = new ConnectionWidget(this);
     ui->mainToolBar->addWidget(_cWidget);
+    administrator *admin=new administrator(this);
+    ui->mainToolBar->addWidget(admin);
 
     QObject::connect(RTLSDisplayApplication::instance(), SIGNAL(aboutToQuit()), SLOT(saveSettings()));
 

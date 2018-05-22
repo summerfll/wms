@@ -2613,48 +2613,30 @@ void GraphicsWidget::on_pushButton_25_clicked()
 
 void GraphicsWidget::on_pushButton_27_clicked()
 {
-    if(ui->groupBox_3->isHidden())
-    {
-        ui->groupBox_3->show();
-    }
-    else
-   {
-       ui->groupBox_3->hide();
-   }
-}
+    int click_num = 2;
+    connect(this,SIGNAL(send_click2(int)),this,SLOT(outstore_management2(int)));
+    emit send_click2(click_num);
 
-void GraphicsWidget::on_pushButton_28_clicked()
+}
+void GraphicsWidget::outstore_management2(int num)
 {
-    if(ui->groupBox_2->isHidden())
-    {
-        ui->groupBox_2->show();
-        ui->groupBox->show();
-        ui->pushButton_15->show();
-        ui->pushButton_16->show();
-        ui->pushButton_19->show();
-        ui->label_3->show();
-        ui->label_4->show();
-        ui->lineEdit_3->show();
-        ui->lineEdit_4->show();
-        ui->pushButton_17->show();
-        ui->pushButton_18->show();
+    ui->tabWidget->setCurrentIndex(num);
 
-    }
-    else
-   {
-       ui->groupBox_2->hide();
-       ui->groupBox->hide();
-       ui->pushButton_15->hide();
-       ui->pushButton_16->hide();
-       ui->pushButton_19->hide();
-       ui->label_3->hide();
-       ui->label_4->hide();
-       ui->lineEdit_3->hide();
-       ui->lineEdit_4->hide();
-       ui->pushButton_17->hide();
-       ui->pushButton_18->hide();
-   }
+    ui->groupBox_2->hide();
+    ui->groupBox->hide();
+    ui->pushButton_15->hide();
+    ui->pushButton_16->hide();
+    ui->pushButton_19->hide();
+    ui->label_3->hide();
+    ui->label_4->hide();
+    ui->lineEdit_3->hide();
+    ui->lineEdit_4->hide();
+    ui->pushButton_17->hide();
+    ui->pushButton_18->hide();
+    ui->groupBox_3->show();
+
 }
+
 
 void GraphicsWidget::on_pushButton_31_clicked()
 {
@@ -2683,27 +2665,30 @@ void GraphicsWidget::on_pushButton_31_clicked()
 
 void GraphicsWidget::on_pushButton_26_clicked()
 {
-    if(ui->groupBox_4->isHidden())
-    {
-        ui->groupBox_4->show();
-        ui->groupBox_5->hide();
-    }
-    else
-    ui->groupBox_5->hide();
-
+    int click_num = 3;
+    connect(this,SIGNAL(send_click3(int)),this,SLOT(stocking_1(int)));
+    emit send_click3(click_num);
 }
+void GraphicsWidget::stocking_1(int num)
+{
+    ui->tabWidget->setCurrentIndex(num);
+    ui->groupBox_4->show();
+    ui->groupBox_5->hide();
+}
+
 
 void GraphicsWidget::on_pushButton_29_clicked()
 {
-    if(ui->groupBox_5->isHidden())
-    {
-        ui->groupBox_5->show();
-        ui->groupBox_4->hide();
-    }
-    else
-        ui->groupBox_4->hide();
+    int click_num = 3;
+    connect(this,SIGNAL(send_click3(int)),this,SLOT(stocking_2(int)));
+    emit send_click3(click_num);
 }
-
+void GraphicsWidget::stocking_2(int num)
+{
+    ui->tabWidget->setCurrentIndex(num);
+    ui->groupBox_5->show();
+    ui->groupBox_4->hide();
+}
 
 void GraphicsWidget::on_pushButton_36_clicked()
 {
@@ -3356,16 +3341,26 @@ void GraphicsWidget::on_pushButton_72_clicked()
 void GraphicsWidget::on_pushButton_73_clicked()
 {
     int click_num = 2;
-    connect(this,SIGNAL(send_click2(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    connect(this,SIGNAL(send_click2(int)),this,SLOT(outstore_management(int)));
     emit send_click2(click_num);
 }
-
-void GraphicsWidget::on_pushButton_74_clicked()
+void GraphicsWidget::outstore_management(int num)
 {
-    int click_num = 3;
-    connect(this,SIGNAL(send_click3(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
-    emit send_click3(click_num);
+    ui->tabWidget->setCurrentIndex(num);
+    ui->groupBox_2->show();
+    ui->groupBox->show();
+    ui->pushButton_15->show();
+    ui->pushButton_16->show();
+    ui->pushButton_19->show();
+    ui->label_3->show();
+    ui->label_4->show();
+    ui->lineEdit_3->show();
+    ui->lineEdit_4->show();
+    ui->pushButton_17->show();
+    ui->pushButton_18->show();
+    ui->groupBox_3->hide();
 }
+
 
 void GraphicsWidget::on_pushButton_75_clicked()
 {

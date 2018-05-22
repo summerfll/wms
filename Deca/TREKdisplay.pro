@@ -54,7 +54,11 @@ SOURCES += main.cpp\
     management/store_modify2.cpp \
     management/product_modify2.cpp \
     management/add_store.cpp \
-    management/add_product.cpp
+    management/add_product.cpp \
+    login/logindialog.cpp \
+    login/administrator.cpp \
+    login/find_password.cpp \
+    login/find_result.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -88,7 +92,11 @@ HEADERS  += \
     management/store_modify2.h \
     management/product_modify2.h \
     management/add_store.h \
-    management/add_product.h
+    management/add_product.h \
+    login/logindialog.h \
+    login/administrator.h \
+    login/find_password.h \
+    login/find_result.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
@@ -108,7 +116,11 @@ FORMS    += \
     management/store_modify2.ui \
     management/product_modify2.ui \
     management/add_store.ui \
-    management/add_product.ui
+    management/add_product.ui \
+    login/logindialog.ui \
+    login/administrator.ui \
+    login/find_password.ui \
+    login/find_result.ui
 
 
 RESOURCES += \

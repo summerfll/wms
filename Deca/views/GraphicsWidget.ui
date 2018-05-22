@@ -60,7 +60,7 @@ color:rgb(0, 0, 0);
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>9</number>
+      <number>0</number>
      </property>
      <property name="iconSize">
       <size>
@@ -88,7 +88,7 @@ color:rgb(0, 0, 0);
      </property>
      <widget class="QWidget" name="widget">
       <attribute name="icon">
-       <iconset resource="../res/resources.qrc">
+       <iconset>
         <normaloff>:/icons/s1.png</normaloff>:/icons/s1.png</iconset>
       </attribute>
       <attribute name="title">
@@ -265,7 +265,7 @@ color:rgb(0, 0, 0);
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="icon">
-       <iconset resource="../res/resources.qrc">
+       <iconset>
         <normaloff>:/icons/s2.png</normaloff>:/icons/s2.png</iconset>
       </attribute>
       <attribute name="title">
@@ -715,7 +715,7 @@ border-image: url(:/cqupt.png);
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="icon">
-       <iconset resource="../res/resources.qrc">
+       <iconset>
         <normaloff>:/icons/s3.png</normaloff>:/icons/s3.png</iconset>
       </attribute>
       <attribute name="title">
@@ -733,9 +733,6 @@ border-image: url(:/cqupt.png);
                <width>200</width>
                <height>0</height>
               </size>
-             </property>
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;导出EXCEL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="title">
               <string>当前库存</string>
@@ -808,6 +805,9 @@ background-color:rgb(255, 170, 0);
                   <width>50</width>
                   <height>25</height>
                  </size>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;导出EXCEL&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton{
@@ -1443,7 +1443,7 @@ background-color:rgb(255, 170, 0);
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="icon">
-       <iconset resource="../res/resources.qrc">
+       <iconset>
         <normaloff>:/icons/s4.png</normaloff>:/icons/s4.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1750,7 +1750,7 @@ border-style: inset;
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="icon">
-       <iconset resource="../res/resources.qrc">
+       <iconset>
         <normaloff>:/icons/s5.png</normaloff>:/icons/s5.png</iconset>
       </attribute>
       <attribute name="title">
@@ -2221,7 +2221,7 @@ background-color:rgb(255, 170, 0);
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
-       <iconset resource="../res/resources.qrc">
+       <iconset>
         <normaloff>:/icons/s6.png</normaloff>:/icons/s6.png</iconset>
       </attribute>
       <attribute name="title">
@@ -3387,8 +3387,6 @@ border-image: url(:/仓库/产品管理.png);</string>
         </widget>
        </item>
       </layout>
-      <zorder>toolBox</zorder>
-      <zorder>graphicsView_2</zorder>
      </widget>
     </widget>
    </item>
@@ -3455,7 +3453,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -3982,7 +3980,7 @@ background-color: rgb(35, 35, 35);
          <x>0</x>
          <y>0</y>
          <width>77</width>
-         <height>251</height>
+         <height>241</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_16">
@@ -4035,30 +4033,6 @@ background-color: rgb(35, 35, 35);
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_28">
-          <property name="styleSheet">
-           <string notr="true">QPushButton{ 
-background-color: rgb(76, 76, 76);
-	font: 9pt &quot;微软雅黑&quot;;
-border-radius: 8px;
-border-style: outset;
-}
-QPushButton:hover{
-background-color:rgb(117, 117, 117);
-}
-QPushButton:pressed{
-background-color: rgb(35, 35, 35);
-}</string>
-          </property>
-          <property name="text">
-           <string>出库操作</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="pushButton_27">
           <property name="styleSheet">
            <string notr="true">QPushButton{ 
@@ -4076,30 +4050,6 @@ background-color: rgb(35, 35, 35);
           </property>
           <property name="text">
            <string>出库报表</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_74">
-          <property name="styleSheet">
-           <string notr="true">QPushButton{ 
-background-color: rgb(76, 76, 76);
-	font: 9pt &quot;微软雅黑&quot;;
-border-radius: 8px;
-border-style: outset;
-}
-QPushButton:hover{
-background-color:rgb(117, 117, 117);
-}
-QPushButton:pressed{
-background-color: rgb(35, 35, 35);
-}</string>
-          </property>
-          <property name="text">
-           <string>库存盘货</string>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -4257,8 +4207,6 @@ background-color: rgb(35, 35, 35);
    <header>GraphicsView.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../res/resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
