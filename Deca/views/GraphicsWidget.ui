@@ -60,7 +60,7 @@ color:rgb(0, 0, 0);
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>5</number>
      </property>
      <property name="iconSize">
       <size>
@@ -88,7 +88,7 @@ color:rgb(0, 0, 0);
      </property>
      <widget class="QWidget" name="widget">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/s1.png</normaloff>:/icons/s1.png</iconset>
       </attribute>
       <attribute name="title">
@@ -265,7 +265,7 @@ color:rgb(0, 0, 0);
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/s2.png</normaloff>:/icons/s2.png</iconset>
       </attribute>
       <attribute name="title">
@@ -715,7 +715,7 @@ border-image: url(:/cqupt.png);
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/s3.png</normaloff>:/icons/s3.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1443,7 +1443,7 @@ background-color:rgb(255, 170, 0);
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/s4.png</normaloff>:/icons/s4.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1750,7 +1750,7 @@ border-style: inset;
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/s5.png</normaloff>:/icons/s5.png</iconset>
       </attribute>
       <attribute name="title">
@@ -2221,7 +2221,7 @@ background-color:rgb(255, 170, 0);
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../res/resources.qrc">
         <normaloff>:/icons/s6.png</normaloff>:/icons/s6.png</iconset>
       </attribute>
       <attribute name="title">
@@ -4207,6 +4207,8 @@ background-color: rgb(35, 35, 35);
    <header>GraphicsView.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
