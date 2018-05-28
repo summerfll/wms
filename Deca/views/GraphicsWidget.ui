@@ -60,7 +60,7 @@ color:rgb(0, 0, 0);
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>8</number>
      </property>
      <property name="iconSize">
       <size>
@@ -306,6 +306,7 @@ background-color:rgb(255, 170, 0);
            <property name="icon">
             <iconset>
              <disabledoff>:/qt 图标/新增.jpg</disabledoff>
+             <activeon>:/qt 图标/add1.ico</activeon>
             </iconset>
            </property>
           </widget>
@@ -341,7 +342,7 @@ background-color:rgb(255, 170, 0);
            </property>
            <property name="icon">
             <iconset>
-             <normalon>:/qt 图标/Customize.png</normalon>
+             <activeon>:/qt 图标/修改图标/document-write.ico</activeon>
             </iconset>
            </property>
           </widget>
@@ -377,7 +378,7 @@ background-color:rgb(255, 170, 0);
            </property>
            <property name="icon">
             <iconset>
-             <normalon>:/qt 图标/删除图标.jpg</normalon>
+             <normalon>:/qt 图标/yellow-24.png</normalon>
             </iconset>
            </property>
           </widget>
@@ -413,7 +414,7 @@ background-color:rgb(255, 170, 0);
            </property>
            <property name="icon">
             <iconset>
-             <normalon>:/icons/timg (3).jpg</normalon>
+             <normalon>:/qt 图标/更新图标/refresh.ico</normalon>
             </iconset>
            </property>
           </widget>
@@ -449,7 +450,7 @@ background-color:rgb(255, 170, 0);
            </property>
            <property name="icon">
             <iconset>
-             <normalon>:/qt 图标/Downloads.png</normalon>
+             <normalon>:/qt 图标/更新图标/export.ico</normalon>
             </iconset>
            </property>
           </widget>
@@ -617,7 +618,7 @@ background-color:rgb(255, 170, 0);
            </property>
            <property name="icon">
             <iconset>
-             <normalon>:/icons/timg (1).jpg</normalon>
+             <normalon>:/qt 图标/更新图标/45.ico</normalon>
             </iconset>
            </property>
           </widget>
@@ -681,7 +682,7 @@ border-style: inset;
          <property name="font">
           <font>
            <family>微软雅黑</family>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>9</weight>
            <italic>false</italic>
            <bold>false</bold>
@@ -694,9 +695,25 @@ border-style: inset;
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;fgs gfg&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="styleSheet">
-          <string notr="true">selection-background-color: rgb(170, 0, 127);
-font: 75 12pt &quot;微软雅黑&quot;;
-border-image: url(:/cqupt.png);
+          <string notr="true">QHeaderView::section{  
+    background: rgb(76, 76, 76);
+    color: rgb(240, 240, 240);  
+    padding-left: 4px;  
+    border: 1px solid #C07010;  
+    min-height: 30px;  
+}  /*表头*/
+QTableView{  
+    color: rgb(0, 0, 0);  
+    border: 1px solid #C07010;          /*边框颜色*/  
+    gridline-color:#C07010;             /*grid线颜色*/  
+    background-color: rgb(76, 76, 76); 
+    alternate-background-color: rgb(200, 200, 200); /*行交替颜色*/  
+    selection-background-color: rgb(130, 190, 100); /*选中行背景颜色*/  
+}  
+  
+QTableView::item:!alternate:!selected{  
+    background-color: rgb(220, 220, 220);    /*交替行的另一颜色*/  
+}  
 
 </string>
          </property>
@@ -2229,7 +2246,11 @@ background-color:rgb(255, 170, 0);
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QTableView" name="tableView"/>
+        <widget class="QTableView" name="tableView">
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>27</number>
+         </attribute>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_6">
@@ -2417,6 +2438,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>查询</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/更新图标/filer.png</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -2461,6 +2487,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>新增</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/add1.ico</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -2491,6 +2522,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>编辑</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/compose.png</activeon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -2523,6 +2559,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>删除</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/yellow-24.png</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -2553,6 +2594,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>刷新</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/更新图标/refresh.ico</activeon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -2585,6 +2631,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>导出</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/更新图标/export.ico</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
            </layout>
@@ -2598,9 +2649,26 @@ background-color:rgb(255, 170, 0);
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">selection-background-color: rgb(170, 0, 127);
-border-image: url(:/仓库/人员管理.png);
-font: 75 12pt &quot;微软雅黑&quot;;</string>
+          <string notr="true">QHeaderView::section{  
+    background: rgb(76, 76, 76);
+    color: rgb(240, 240, 240);  
+    padding-left: 4px;  
+    border: 1px solid #C07010;  
+    min-height: 30px;  
+}  /*表头*/
+QTableView{  
+    color: rgb(0, 0, 0);  
+    border: 1px solid #C07010;          /*边框颜色*/  
+    gridline-color:#C07010;             /*grid线颜色*/  
+    background-color: rgb(76, 76, 76); 
+    alternate-background-color: rgb(200, 200, 200); /*行交替颜色*/  
+    selection-background-color: rgb(130, 190, 100); /*选中行背景颜色*/  
+}  
+  
+QTableView::item:!alternate:!selected{  
+    background-color: rgb(220, 220, 220);    /*交替行的另一颜色*/  
+}  
+</string>
          </property>
          <property name="textElideMode">
           <enum>Qt::ElideMiddle</enum>
@@ -2657,7 +2725,7 @@ font: 75 12pt &quot;微软雅黑&quot;;</string>
          <item>
           <widget class="QLabel" name="label_19">
            <property name="text">
-            <string>每页12行</string>
+            <string>每页14行</string>
            </property>
           </widget>
          </item>
@@ -2771,6 +2839,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>查询</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <disabledon>:/qt 图标/更新图标/filer.png</disabledon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -2815,6 +2888,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>新增</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <disabledon>:/qt 图标/add1.ico</disabledon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -2845,6 +2923,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>编辑</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <disabledon>:/qt 图标/修改图标/write.ico</disabledon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -2877,6 +2960,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>删除</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <disabledon>:/qt 图标/yellow-24.png</disabledon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -2907,6 +2995,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>刷新</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <disabledon>:/qt 图标/更新图标/refresh.ico</disabledon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -2939,6 +3032,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>导出</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <disabledon>:/qt 图标/更新图标/export.ico</disabledon>
+               </iconset>
+              </property>
              </widget>
             </item>
            </layout>
@@ -2946,13 +3044,36 @@ background-color:rgb(255, 170, 0);
           <item>
            <widget class="QTableView" name="tableView_9">
             <property name="styleSheet">
-             <string notr="true">selection-background-color: rgb(170, 0, 127);
-border-image: url(:/仓库/仓库管理.png);
-font: 75 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">QHeaderView::section{  
+    background: rgb(76, 76, 76);
+    color: rgb(240, 240, 240);  
+    padding-left: 4px;  
+    border: 1px solid #C07010;  
+    min-height: 30px;  
+}  /*表头*/
+QTableView{  
+    color: rgb(0, 0, 0);  
+    border: 1px solid #C07010;          /*边框颜色*/  
+    gridline-color:#C07010;             /*grid线颜色*/  
+    background-color: rgb(76, 76, 76); 
+    alternate-background-color: rgb(200, 200, 200); /*行交替颜色*/  
+    selection-background-color: rgb(130, 190, 100); /*选中行背景颜色*/  
+}  
+  
+QTableView::item:!alternate:!selected{  
+    background-color: rgb(220, 220, 220);    /*交替行的另一颜色*/  
+}  
+</string>
             </property>
             <property name="textElideMode">
              <enum>Qt::ElideMiddle</enum>
             </property>
+            <attribute name="horizontalHeaderMinimumSectionSize">
+             <number>27</number>
+            </attribute>
+            <attribute name="verticalHeaderMinimumSectionSize">
+             <number>27</number>
+            </attribute>
            </widget>
           </item>
          </layout>
@@ -2991,7 +3112,7 @@ font: 75 12pt &quot;微软雅黑&quot;;</string>
          <item>
           <widget class="QLabel" name="label_29">
            <property name="text">
-            <string>页，每页12行</string>
+            <string>页，每页14行</string>
            </property>
           </widget>
          </item>
@@ -3105,6 +3226,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>查询</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/更新图标/filer.png</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -3149,6 +3275,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>新增</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <normalon>:/qt 图标/add1.ico</normalon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -3179,6 +3310,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>编辑</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/修改图标/document-write.ico</activeon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -3211,6 +3347,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>删除</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/yellow-24.png</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
             <item>
@@ -3241,6 +3382,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>刷新</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/更新图标/refresh.ico</activeon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -3273,6 +3419,11 @@ background-color:rgb(255, 170, 0);
               <property name="text">
                <string>导出</string>
               </property>
+              <property name="icon">
+               <iconset>
+                <activeon>:/qt 图标/更新图标/export.ico</activeon>
+               </iconset>
+              </property>
              </widget>
             </item>
            </layout>
@@ -3280,9 +3431,26 @@ background-color:rgb(255, 170, 0);
           <item>
            <widget class="QTableView" name="tableView_10">
             <property name="styleSheet">
-             <string notr="true">selection-background-color: rgb(170, 0, 127);
-font: 75 12pt &quot;微软雅黑&quot;;
-border-image: url(:/仓库/产品管理.png);</string>
+             <string notr="true">QHeaderView::section{  
+    background: rgb(76, 76, 76);
+    color: rgb(240, 240, 240);  
+    padding-left: 4px;  
+    border: 1px solid #C07010;  
+    min-height: 30px;  
+}  /*表头*/
+QTableView{  
+    color: rgb(0, 0, 0);  
+    border: 1px solid #C07010;          /*边框颜色*/  
+    gridline-color:#C07010;             /*grid线颜色*/  
+    background-color: rgb(76, 76, 76); 
+    alternate-background-color: rgb(200, 200, 200); /*行交替颜色*/  
+    selection-background-color: rgb(130, 190, 100); /*选中行背景颜色*/  
+}  
+  
+QTableView::item:!alternate:!selected{  
+    background-color: rgb(220, 220, 220);    /*交替行的另一颜色*/  
+}  
+</string>
             </property>
            </widget>
           </item>
@@ -3322,7 +3490,7 @@ border-image: url(:/仓库/产品管理.png);</string>
          <item>
           <widget class="QLabel" name="label_33">
            <property name="text">
-            <string>页，每页12行</string>
+            <string>页，每页14行</string>
            </property>
           </widget>
          </item>
@@ -3453,7 +3621,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>

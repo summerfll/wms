@@ -18,7 +18,7 @@ public:
 private slots:
     void on_pushButton_clicked();
 signals:
-    void sendpassword(QString);
+    void sendpassword(QString,QString);
 
 private:
     Ui::find_password *ui;

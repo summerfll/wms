@@ -32,6 +32,21 @@
         <file>重邮.jpg</file>
         <file>重邮.png</file>
         <file>登陆/登陆.jpg</file>
+        <file>qt 图标/修改图标/document-edit (1).png</file>
+        <file>qt 图标/修改图标/document-edit (2).png</file>
+        <file>qt 图标/修改图标/document-edit.png</file>
+        <file>qt 图标/修改图标/document-write.ico</file>
+        <file>qt 图标/修改图标/file_edit.ico</file>
+        <file>qt 图标/修改图标/write.ico</file>
+        <file>qt 图标/compose.png</file>
+        <file>qt 图标/toggle-expand-alt.png</file>
+        <file>qt 图标/yellow-24.png</file>
+        <file>qt 图标/更新图标/45.ico</file>
+        <file>qt 图标/更新图标/export.ico</file>
+        <file>qt 图标/更新图标/filer.png</file>
+        <file>qt 图标/更新图标/refresh.ico</file>
+        <file>qt 图标/更新图标/search-good.ico</file>
+        <file>qt 图标/add1.ico</file>
     </qresource>
     <qresource prefix="/icons">
         <file>DWctrler.ico</file>

@@ -58,7 +58,8 @@ SOURCES += main.cpp\
     login/logindialog.cpp \
     login/administrator.cpp \
     login/find_password.cpp \
-    login/find_result.cpp
+    login/find_result.cpp \
+    login/modify_password.cpp
 
 HEADERS  += \
     RTLSDisplayApplication.h \
@@ -96,7 +97,8 @@ HEADERS  += \
     login/logindialog.h \
     login/administrator.h \
     login/find_password.h \
-    login/find_result.h
+    login/find_result.h \
+    login/modify_password.h
 FORMS    += \
     views/mainwindow.ui \
     views/GraphicsWidget.ui \
@@ -120,7 +122,8 @@ FORMS    += \
     login/logindialog.ui \
     login/administrator.ui \
     login/find_password.ui \
-    login/find_result.ui
+    login/find_result.ui \
+    login/modify_password.ui
 
 
 RESOURCES += \

@@ -30,12 +30,16 @@ void find_password::on_pushButton_clicked()
     if(!query.next())
     {
         QMessageBox::warning(this,tr("错误"),tr("请输入正确的登陆名"));
+        ui->lineEdit->setText(NULL);
+        ui->lineEdit_2->setText(NULL);
     }
     else
     {
         if(query.record().value("真实名字").toString()!=true_name)
             {
             QMessageBox::warning(this,tr("错误"),tr("输入的真实姓名与登陆名不匹配"));
+            ui->lineEdit->setText(NULL);
+            ui->lineEdit_2->setText(NULL);
         }
         else
         {
@@ -46,8 +50,10 @@ void find_password::on_pushButton_clicked()
             findresult->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
             findresult->show();
             QString password = query.record().value("密码").toString();
-            connect(this,SIGNAL(sendpassword(QString)),findresult,SLOT(displayPassword(QString)));
-            emit(sendpassword(password));
+
+            connect(this,SIGNAL(sendpassword(QString,QString)),findresult,SLOT(displayPassword(QString,QString)));
+            emit(sendpassword(password,staff_name));
+            this->close();
         }
     }
 }

@@ -15,9 +15,15 @@ public:
     explicit find_result(QWidget *parent = 0);
     ~find_result();
 private slots:
-    void displayPassword(QString password);
+    void displayPassword(QString password,QString staff_name);
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::find_result *ui;
+signals:
+    void sendMessage(QString,QString);
 };
 
 #endif // FIND_RESULT_H

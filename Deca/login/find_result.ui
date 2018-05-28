@@ -6,12 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>305</width>
-    <height>162</height>
+    <width>321</width>
+    <height>200</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/qt 图标/Find.png</normalon>
+   </iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: qlineargradient(spread:pad, x1:0.500273, y1:0.438, x2:0.500727, y2:0.909, stop:0 rgba(190, 154, 124, 255), stop:0.971591 rgba(96, 71, 62, 255));</string>
@@ -20,13 +25,13 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>50</y>
-     <width>101</width>
-     <height>16</height>
+     <y>80</y>
+     <width>131</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 75 10pt &quot;楷体&quot;;
+    <string notr="true">font: 75 11pt &quot;楷体&quot;;
 color: rgb(255, 255, 255);
 background-color:rgb(190, 154, 124, 255);
 </string>
@@ -38,8 +43,8 @@ background-color:rgb(190, 154, 124, 255);
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>50</y>
+     <x>170</x>
+     <y>80</y>
      <width>113</width>
      <height>20</height>
     </rect>
@@ -54,8 +59,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
+     <x>50</x>
+     <y>140</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -111,8 +116,8 @@ border-radius:5px;padding:2px 4px;
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>100</y>
+     <x>200</x>
+     <y>140</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -163,6 +168,40 @@ border-radius:5px;padding:2px 4px;
    </property>
    <property name="text">
     <string>退出</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 11pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+background-color:rgb(190, 154, 124, 255);</string>
+   </property>
+   <property name="text">
+    <string>  登   录   名：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>30</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius:5px;padding:2px 4px;
+font: 75 10pt &quot;楷体&quot;;
+background-color:rgb(158, 158, 118);
+color: rgb(255, 255, 255);</string>
    </property>
   </widget>
  </widget>

@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <activeon>:/qt 图标/add1.ico</activeon>
+   </iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">font: 75 12pt &quot;楷体&quot;;
 background-color: rgb(144, 144, 144);

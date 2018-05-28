@@ -15,6 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
+    <normalon>:/qt 图标/man key.png</normalon>
     <activeon>:/icons/CQUPT.ico</activeon>
    </iconset>
   </property>

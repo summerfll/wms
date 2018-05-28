@@ -91,6 +91,11 @@ public:
 
     QSqlTableModel *model5;
 
+    float page0;
+    float page1;
+    float page2;
+    float page3;
+
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -366,6 +371,10 @@ private slots:
      void stocking_2(int num);
 
 
+     void on_toolButton_10_clicked();
+
+     void on_toolButton_12_clicked();
+
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
     //toolbox发送index给tabwidget
@@ -428,11 +437,13 @@ private:
       QSqlQueryModel *model_staffquery;
       QSqlQueryModel *model_productquery;
       QSqlQueryModel *model_storequery;
+      QSqlQueryModel *model_storagequery;
 
       QSqlQueryModel *model_staffquery0;//用于查询表的总行数
       QSqlQueryModel *model_productquery0;
       QSqlQueryModel *model_storequery0;
       QSqlQueryModel *model_storagequery0;
+
    /*
     * 员工表，产品信息表，仓库表
     */
@@ -444,10 +455,9 @@ private:
      /*
       * 全局变量各个表的总行数，总页数
       */
-      long int staff_totalline,staff_totalpage;
-      long int store_totalline,store_totalpage;
-      long int product_totalline,product_totalpage;
-      long int storage_totalline,storage_totalpage;
+      float staff_totalline,store_totalline,product_totalline,storage_totalline;
+      int staff_totalpage,store_totalpage,product_totalpage,storage_totalpage;
+
 
 };
 #endif // GRAPHICSWIDGET_H

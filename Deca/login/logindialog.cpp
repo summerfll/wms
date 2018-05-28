@@ -16,8 +16,8 @@ loginDialog::loginDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("用户登陆");
-    ui->lineEdit_2->setText("Username");
-    ui->lineEdit->setText("Password");
+    ui->lineEdit_2->setPlaceholderText("Username");//设置当鼠标点击文本时设置内容消失
+    ui->lineEdit->setPlaceholderText("Password");
 }
 
 loginDialog::~loginDialog()
@@ -60,8 +60,8 @@ void loginDialog::on_pushButton_clicked()
                 else
                 {
                     QMessageBox::warning(this, tr("错误"), tr("请输入正确的密码再登陆!"));
-                    ui->lineEdit->clear();
-                    ui->lineEdit_2->clear();
+                   ui->lineEdit->clear();
+                   // ui->lineEdit_2->clear();
                 }
             }
 

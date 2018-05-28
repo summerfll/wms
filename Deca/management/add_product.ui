@@ -6,12 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>463</width>
+    <width>486</width>
     <height>320</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <activeon>:/qt 图标/新增.jpg</activeon>
+   </iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">font: 75 12pt &quot;楷体&quot;;
