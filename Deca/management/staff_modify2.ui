@@ -87,6 +87,11 @@ color:rgb(0, 0, 0)</string>
     <widget class="QComboBox" name="comboBox">
      <item>
       <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>员工</string>
       </property>
      </item>

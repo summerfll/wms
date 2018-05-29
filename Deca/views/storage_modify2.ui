@@ -181,7 +181,19 @@ color:rgb(0, 0, 0)</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit6"/>
+        <widget class="QComboBox" name="comboBox">
+         <property name="minimumSize">
+          <size>
+           <width>135</width>
+           <height>0</height>
+          </size>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
      </item>
@@ -208,7 +220,19 @@ color:rgb(0, 0, 0)</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit7"/>
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="minimumSize">
+          <size>
+           <width>135</width>
+           <height>0</height>
+          </size>
+         </property>
+         <item>
+          <property name="text">
+           <string/>
+          </property>
+         </item>
+        </widget>
        </item>
        <item>
         <spacer name="horizontalSpacer_16">

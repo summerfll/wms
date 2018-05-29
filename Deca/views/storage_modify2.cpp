@@ -3,6 +3,8 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include<QSqlQueryModel>
+#include<QSqlRecord>
 #include <cstdio>
 storage_modify2::storage_modify2(QWidget *parent) :
     QWidget(parent),
@@ -14,6 +16,23 @@ storage_modify2::storage_modify2(QWidget *parent) :
     QFont ft;
     ft.setPointSize(18);
     ui->label->setFont(ft);
+    //向combobox中添加元素
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("select 仓库名称 from stores_management");
+    int rowNum = model->rowCount();
+    for(int i = 0;i<rowNum;i++)
+    {
+        QString str = model->record(i).value(0).toString();
+        ui->comboBox->addItem(str);
+     }
+    QSqlQueryModel *model1 = new QSqlQueryModel();
+    model1->setQuery("select 员工名 from staff_management");
+    int rowNum1 = model1->rowCount();
+    for(int i = 0;i<rowNum1;i++)
+    {
+        QString str1 = model1->record(i).value(0).toString();
+        ui->comboBox_2->addItem(str1);
+     }
 }
 
 void storage_modify2:: displayAllInformation(QString data)
@@ -29,8 +48,8 @@ void storage_modify2:: displayAllInformation(QString data)
         ui->lineEdit3->setText(query.value(2).toString());
         ui->lineEdit4->setText(query.value(3).toString());
         ui->lineEdit5->setText(query.value(4).toString());
-        ui->lineEdit6->setText(query.value(5).toString());
-        ui->lineEdit7->setText(query.value(6).toString());
+        ui->comboBox->setItemText(0,query.value("仓库").toString());
+        ui->comboBox_2->setItemText(0,query.value("管理员").toString());
         ui->lineEdit8->setText(query.value(7).toString());
     }
     else
@@ -54,8 +73,7 @@ void storage_modify2::on_pushButton_2_clicked()
     ui->lineEdit3->setText("");
     ui->lineEdit4->setText("");
     ui->lineEdit5->setText("");
-    ui->lineEdit6->setText("");
-    ui->lineEdit7->setText("");
+
 }
 
 void storage_modify2::on_pushButton_clicked()
@@ -74,8 +92,8 @@ void storage_modify2::on_pushButton_clicked()
     str3=ui->lineEdit3->text();
     str4=ui->lineEdit4->text();
     str5=ui->lineEdit5->text();
-    str6=ui->lineEdit6->text();
-    str7=ui->lineEdit7->text();
+    str6=ui->comboBox->currentText().trimmed();
+    str7 = ui->comboBox_2->currentText().trimmed();
     str8=ui->lineEdit8->text();
 
     query.prepare("update storage_copy set 产品名称 = :two,产品编号 = :three,标签编号 = :four,数量 = :five,仓库 = :six,管理员 = :seven,入库时间 = :eight where 订单号 = :one");

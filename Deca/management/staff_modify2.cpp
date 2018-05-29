@@ -31,6 +31,7 @@ void staff_modify2::displayImformation(QString staff_id)
         ui->lineEdit_3->setText(query.value("员工名").toString());
         ui->lineEdit_4->setText(query.value("邮箱").toString());
         ui->lineEdit_5->setText(query.value("电话").toString());
+        ui->comboBox->setItemText(0,query.value("角色").toString());
     }
 
 }

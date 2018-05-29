@@ -81,7 +81,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>4</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -862,7 +862,7 @@ color:rgb(0, 0, 0);
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>8</number>
      </property>
      <property name="iconSize">
       <size>

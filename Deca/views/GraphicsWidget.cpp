@@ -1964,12 +1964,15 @@ void GraphicsWidget::on_pushButton_11_clicked()
     modify->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
     modify->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     modify->show();
-    QSqlQueryModel *model = new QSqlQueryModel(this);
-      model->setQuery("select *from storage_copy");
-      int curRow = ui->tableView_2->currentIndex().row();
-      QString value = model->record(curRow).value("订单号").toString();
-       connect(this,SIGNAL(sendOrderValue(QString)),modify,SLOT(disPlayImformation(QString)));
-      emit sendOrderValue(value);
+    int read_num = ui->lineEdit_21->text().toInt();
+    int num = (read_num-1)*STORAGE_LINE;
+    QString storage_line = QString::number(STORAGE_LINE);
+    QString limit_num = QString::number(num);
+    model_storagequery->setQuery("select *from "+MODEL_STORAGE+" limit "+limit_num+","+storage_line+"");
+    int curRow = ui->tableView_2->currentIndex().row();
+    QString value = model_storagequery->record(curRow).value("订单号").toString();
+    connect(this,SIGNAL(sendOrderValue(QString)),modify,SLOT(disPlayImformation(QString)));
+    emit sendOrderValue(value);
 
 
 
@@ -1978,14 +1981,19 @@ void GraphicsWidget::on_pushButton_11_clicked()
 
 void GraphicsWidget::on_pushButton_9_clicked()
 {
-    QSqlQuery query;
-    query.exec("select * from storage_copy");
-    while(query.next())
-     {
-       query.exec("delete from storage_copy where 数量 = 0");
-    }
-    model1->setTable("storage_copy");
-    model1->select();
+
+    int read_num = ui->lineEdit_21->text().toInt();
+    int num = (read_num-1)*STORAGE_LINE;
+    QString storage_line = QString::number(STORAGE_LINE);
+    QString limit_num = QString::number(num);
+    model_storagequery->setQuery("select *from "+MODEL_STORAGE+" limit "+limit_num+","+storage_line+"");
+    ui->tableView_2->setModel(model_storagequery);
+    model_storagequery0->setQuery("select *from "+MODEL_STORAGE+"");//刷新入库表的总行数，总页数
+    storage_totalline=model_storagequery0->rowCount();
+    page3 = storage_totalline/STORAGE_LINE;
+    storage_totalpage=ceil(page3);
+    ui->label_36->setText(QString::number(storage_totalpage));
+
 }
 
 void GraphicsWidget::on_pushButton_10_clicked()
@@ -2605,6 +2613,14 @@ void GraphicsWidget::on_pushButton_19_clicked()
         }
         model2->setTable("storage_copy");  //刷新当前库存
         model2->select();
+        ui->tableView_3->setColumnWidth(0,130);
+        ui->tableView_3->setColumnWidth(1,130);
+        ui->tableView_3->setColumnWidth(2,130);
+        ui->tableView_3->setColumnWidth(3,130);
+        ui->tableView_3->setColumnWidth(4,140);
+        ui->tableView_3->setColumnWidth(5,140);
+        ui->tableView_3->setColumnWidth(6,140);
+        ui->tableView_3->setColumnWidth(7,220);
     }
 
 
@@ -2622,7 +2638,14 @@ void GraphicsWidget::on_pushButton_19_clicked()
     model3->setTable("outstorage");
     model3->select();
 
-
+    ui->tableView_5->setColumnWidth(0, 130);//设置表的每一列的宽度
+    ui->tableView_5->setColumnWidth(1, 140);
+    ui->tableView_5->setColumnWidth(2, 140);
+    ui->tableView_5->setColumnWidth(3, 140);
+    ui->tableView_5->setColumnWidth(4, 140);
+    ui->tableView_5->setColumnWidth(5, 200);
+    ui->tableView_5->setColumnWidth(6, 140);
+    ui->tableView_5->setColumnWidth(7, 130);
 
 
 }
@@ -2654,6 +2677,17 @@ void GraphicsWidget::on_pushButton_27_clicked()
     int click_num = 2;
     connect(this,SIGNAL(send_click2(int)),this,SLOT(outstore_management2(int)));
     emit send_click2(click_num);
+
+    model3->setTable("outstorage");
+    model3->select();
+    ui->tableView_5->setColumnWidth(0, 130);//设置表的每一列的宽度
+    ui->tableView_5->setColumnWidth(1, 140);
+    ui->tableView_5->setColumnWidth(2, 140);
+    ui->tableView_5->setColumnWidth(3, 140);
+    ui->tableView_5->setColumnWidth(4, 140);
+    ui->tableView_5->setColumnWidth(5, 200);
+    ui->tableView_5->setColumnWidth(6, 140);
+    ui->tableView_5->setColumnWidth(7, 130);
 
 }
 void GraphicsWidget::outstore_management2(int num)
@@ -3013,11 +3047,12 @@ void GraphicsWidget::on_pushButton_40_clicked()
 
 void GraphicsWidget::on_pushButton_50_clicked()
 {
+    int read_num = ui->lineEdit_18->text().toInt();
+    int num = (read_num-1)*STAFF_LINE;
+    QString limit_num = QString::number(num);
     QString staff_line = QString::number(STAFF_LINE);
-    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+staff_line+"");
+    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
     ui->tableView_8->setModel(model_staffquery);
-    ui->lineEdit_18->setText("1");
-    ui->label_23->setText("1");
     model_staffquery0->setQuery("select *from "+MODEL_STAFF+"");
     staff_totalline=model_staffquery0->rowCount();//staff表的总行数
     page0 = staff_totalline/STAFF_LINE;
@@ -3028,31 +3063,47 @@ void GraphicsWidget::on_pushButton_50_clicked()
 
 void GraphicsWidget::on_pushButton_56_clicked()
 {
+    int read_num = ui->lineEdit_19->text().toInt();
     QString store_line = QString::number(STORE_LINE);
-    model_storequery->setQuery("select *from "+MODEL_STORE+" limit "+store_line+"");
+    int num = (read_num-1)*STORE_LINE;
+    QString limit_num = QString::number(num);
+    model_storequery->setQuery("select *from "+MODEL_STORE+" limit "+limit_num+","+store_line+"");
     ui->tableView_9->setModel(model_storequery);
-    ui->label_26->setText(QString::number(store_totalpage));
-    ui->lineEdit_19->setText("1");
-    ui->label_28->setText("1");
-    model_storequery0->setQuery("select *from "+MODEL_STORE+"");
+    model_storequery0->setQuery("select 仓库名称 from "+MODEL_STORE+"");//刷新总页码和总行数
     store_totalline=model_storequery0->rowCount();
     page1 = store_totalline/STORE_LINE;
     store_totalpage=ceil(page1);
+    ui->label_26->setText(QString::number(store_totalpage));
+    /*
+    for(int i;i<store_totalline;i++)
+    {
+       QString store_name[i] = model_storequery0->record(i).value(0).toString();
+       if()
+       {
+
+       }
+       else
+       {
+
+       }
+    }
+    */
 
 }
 
 void GraphicsWidget::on_pushButton_61_clicked()
 {
+    int read_num = ui->lineEdit_20->text().toInt();
+    int num = (read_num-1)*PRODUCT_LINE;
     QString product_line = QString::number(PRODUCT_LINE);
-    model_productquery->setQuery("select *from "+MODEL_PRODUCT+" limit "+product_line+"");
+    QString limit_num = QString::number(num);
+    model_productquery->setQuery("select *from "+MODEL_PRODUCT+" limit "+limit_num+","+product_line+"");
     ui->tableView_10->setModel(model_productquery);
-    ui->label_30->setText(QString::number(product_totalpage));
-    ui->lineEdit_20->setText("1");
-    ui->label_34->setText("1");
-    model_productquery0->setQuery("select *from "+MODEL_PRODUCT+"");
+    model_productquery0->setQuery("select *from "+MODEL_PRODUCT+"");//刷新总页数和总行数
     product_totalline=model_productquery0->rowCount();
     page2 = product_totalline/PRODUCT_LINE;
     product_totalpage=ceil(page2);
+    ui->label_30->setText(QString::number(product_totalpage));
 }
 
 
@@ -3148,11 +3199,15 @@ void GraphicsWidget::on_pushButton_63_clicked()
     product_mdf->move((QApplication::desktop()->width() - product_mdf->width()) / 2,
                       (QApplication::desktop()->height() - product_mdf->height()) / 2);//桌面正中
     product_mdf->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
-    product_mdf->show();    
+    product_mdf->show();
+    int read_num = ui->lineEdit_20->text().toInt();
     int curRow = ui->tableView_10->currentIndex().row();
     if(curRow>=0)
     {
-        model_productquery->setQuery("select *from "+MODEL_PRODUCT+"");
+        int num = (read_num-1)*PRODUCT_LINE;
+        QString product_line = QString::number(PRODUCT_LINE);
+        QString limit_num = QString::number(num);
+        model_productquery->setQuery("select *from "+MODEL_PRODUCT+" limit "+limit_num+","+product_line+"");
         QString product_id = model_productquery->record(curRow).value("产品编号").toString();
         connect(this,SIGNAL(sendProductID(QString)),product_mdf,SLOT(disPlayImformation(QString)));
         emit sendProductID(product_id);
@@ -3169,10 +3224,14 @@ void GraphicsWidget::on_pushButton_53_clicked()
                       (QApplication::desktop()->height() - staff_mdf->height()) / 2);//桌面正中
     staff_mdf->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     staff_mdf->show();
+    int read_num = ui->lineEdit_18->text().toInt();
     int curRow = ui->tableView_8->currentIndex().row();
     if(curRow>=0)
     {
-        model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+"");
+        int num = (read_num-1)*STAFF_LINE;
+        QString limit_num = QString::number(num);
+        QString staff_line = QString::number(STAFF_LINE);
+        model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
         QString staff_id = model_staffquery->record(curRow).value("员工编号").toString();
         connect(this,SIGNAL(sendStaffID(QString)),staff_mdf,SLOT(disPlayImformation(QString)));
         emit sendStaffID(staff_id);
@@ -3187,11 +3246,15 @@ void GraphicsWidget::on_pushButton_58_clicked()
     store_mdf->move((QApplication::desktop()->width() - store_mdf->width()) / 2,
                       (QApplication::desktop()->height() - store_mdf->height()) / 2);//桌面正中
     store_mdf->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
-    store_mdf->show();    
+    store_mdf->show();
+    int read_num = ui->lineEdit_19->text().toInt();
     int curRow = ui->tableView_9->currentIndex().row();
     if(curRow>=0)
     {
-        model_storequery->setQuery("select *from "+MODEL_STORE+"");
+        QString store_line = QString::number(STORE_LINE);
+        int num = (read_num-1)*STORE_LINE;
+        QString limit_num = QString::number(num);
+        model_storequery->setQuery("select *from "+MODEL_STORE+" limit "+limit_num+","+store_line+"");
         QString store_id = model_storequery->record(curRow).value("仓库编号").toString();
         connect(this,SIGNAL(sendStoreID(QString)),store_mdf,SLOT(disPlayImformation(QString)));
         emit sendStoreID(store_id);
@@ -3446,6 +3509,16 @@ void GraphicsWidget::on_pushButton_73_clicked()
     int click_num = 2;
     connect(this,SIGNAL(send_click2(int)),this,SLOT(outstore_management(int)));
     emit send_click2(click_num);
+    model2->setTable("storage_copy");
+    model2->select();
+    ui->tableView_3->setColumnWidth(0,130);
+    ui->tableView_3->setColumnWidth(1,130);
+    ui->tableView_3->setColumnWidth(2,130);
+    ui->tableView_3->setColumnWidth(3,130);
+    ui->tableView_3->setColumnWidth(4,140);
+    ui->tableView_3->setColumnWidth(5,140);
+    ui->tableView_3->setColumnWidth(6,140);
+    ui->tableView_3->setColumnWidth(7,220);
 }
 void GraphicsWidget::outstore_management(int num)
 {
@@ -3577,6 +3650,7 @@ void GraphicsWidget::on_pushButton_76_clicked()
 
 void GraphicsWidget::on_toolButton_10_clicked()
 {
+
     int read_num = ui->lineEdit_21->text().toInt();
     ui->label_36->setText(QString::number(storage_totalpage));
     if(read_num>storage_totalpage||read_num<=0)
@@ -3586,6 +3660,7 @@ void GraphicsWidget::on_toolButton_10_clicked()
     }
     else
     {
+
         int num = (read_num-1)*STORAGE_LINE;
         QString storage_line = QString::number(STORAGE_LINE);
         QString limit_num = QString::number(num);

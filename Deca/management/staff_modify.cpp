@@ -12,7 +12,7 @@ staff_modify::staff_modify(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("员工信息修改");
-    setAttribute(Qt::WA_DeleteOnClose);//delete staff_mdf
+   // setAttribute(Qt::WA_DeleteOnClose);//delete staff_mdf
 }
 
 staff_modify::~staff_modify()
