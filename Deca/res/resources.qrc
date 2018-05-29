@@ -47,6 +47,9 @@
         <file>qt 图标/更新图标/refresh.ico</file>
         <file>qt 图标/更新图标/search-good.ico</file>
         <file>qt 图标/add1.ico</file>
+        <file>qt 图标/更新图标/navigate-down.ico</file>
+        <file>qt 图标/更新图标/sign-down-icon.png</file>
+        <file>qt 图标/更新图标/sign-up-icon.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>DWctrler.ico</file>

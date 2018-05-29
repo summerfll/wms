@@ -247,9 +247,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
 
 
-   //设置表格格式
-   //ui->tableView_8->->resizeSection(1,127);//设置第二列宽
-   //ui->tableView_10->setColumnWidth(0, 200);
+   //设置表格格式,间隔行不同颜色
    ui->tableView_2->setAlternatingRowColors(true);
    ui->tableView_8->setAlternatingRowColors(true);
    ui->tableView_9->setAlternatingRowColors(true);
@@ -260,6 +258,15 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
    ui->tableView_5->setAlternatingRowColors(true);
    ui->tableView_6->setAlternatingRowColors(true);
 
+//设置表格每列的宽度
+   ui->tableWidget_4->setColumnWidth(0,130);
+   ui->tableWidget_4->setColumnWidth(1,130);
+   ui->tableWidget_4->setColumnWidth(2,130);
+   ui->tableWidget_4->setColumnWidth(3,130);
+   ui->tableWidget_4->setColumnWidth(4,140);
+   ui->tableWidget_4->setColumnWidth(5,240);
+   ui->tableWidget_4->setColumnWidth(6,140);
+   ui->tableWidget_4->setColumnWidth(7,140);
 
 }
 
@@ -2271,6 +2278,15 @@ void GraphicsWidget::on_pushButton_22_clicked()
     }
     model2->setTable("storage_copy");
     model2->select();
+    ui->tableView_3->setColumnWidth(0,130);
+    ui->tableView_3->setColumnWidth(1,130);
+    ui->tableView_3->setColumnWidth(2,130);
+    ui->tableView_3->setColumnWidth(3,130);
+    ui->tableView_3->setColumnWidth(4,140);
+    ui->tableView_3->setColumnWidth(5,140);
+    ui->tableView_3->setColumnWidth(6,140);
+    ui->tableView_3->setColumnWidth(7,220);
+
 
 }
 
@@ -2324,7 +2340,6 @@ void GraphicsWidget::on_pushButton_15_clicked()               //从库存添加�
 
     order_itera=order_num_map.find(order_id);//find 订单号
     order_num_all=1+order_itera.value();
-    qDebug() << "order_num--------" << order_num ;
 
     if(order_num_all<=order_num)
     {
@@ -2374,6 +2389,7 @@ void GraphicsWidget::on_pushButton_15_clicked()               //从库存添加�
         order_num_all=order_num_all-1;
 
     }
+
 
 }
 
@@ -2615,6 +2631,14 @@ void GraphicsWidget::on_pushButton_24_clicked()
 {
     model3->setTable("outstorage");
     model3->select();
+    ui->tableView_5->setColumnWidth(0, 130);//设置表的每一列的宽度
+    ui->tableView_5->setColumnWidth(1, 140);
+    ui->tableView_5->setColumnWidth(2, 140);
+    ui->tableView_5->setColumnWidth(3, 140);
+    ui->tableView_5->setColumnWidth(4, 140);
+    ui->tableView_5->setColumnWidth(5, 200);
+    ui->tableView_5->setColumnWidth(6, 140);
+    ui->tableView_5->setColumnWidth(7, 130);
 }
 
 void GraphicsWidget::on_pushButton_25_clicked()
@@ -2709,7 +2733,14 @@ void GraphicsWidget::on_pushButton_36_clicked()
     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_6);
     model->setQuery("select * from storage_copy");
     ui->tableView_6->setModel(model);
-
+    ui->tableView_6->setColumnWidth(0,130);
+    ui->tableView_6->setColumnWidth(1,140);
+    ui->tableView_6->setColumnWidth(2,140);
+    ui->tableView_6->setColumnWidth(3,140);
+    ui->tableView_6->setColumnWidth(4,140);
+    ui->tableView_6->setColumnWidth(5,140);
+    ui->tableView_6->setColumnWidth(6,140);
+    ui->tableView_6->setColumnWidth(7,200);
 
 }
 
@@ -2718,6 +2749,14 @@ void GraphicsWidget::on_pushButton_38_clicked()
     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_4);
     model->setQuery("select * from outstorage");
     ui->tableView_4->setModel(model);
+    ui->tableView_4->setColumnWidth(0,130);
+    ui->tableView_4->setColumnWidth(1,140);
+    ui->tableView_4->setColumnWidth(2,140);
+    ui->tableView_4->setColumnWidth(3,140);
+    ui->tableView_4->setColumnWidth(4,140);
+    ui->tableView_4->setColumnWidth(5,140);
+    ui->tableView_4->setColumnWidth(6,140);
+    ui->tableView_4->setColumnWidth(7,200);
 }
 
 
@@ -2742,7 +2781,14 @@ void GraphicsWidget::on_pushButton_30_clicked()
     model->select(); //选取整个表的所有行
     ui->tableView_6->setModel(model);
     ui->lineEdit_5->clear();
-
+    ui->tableView_6->setColumnWidth(0,130);
+    ui->tableView_6->setColumnWidth(1,140);
+    ui->tableView_6->setColumnWidth(2,140);
+    ui->tableView_6->setColumnWidth(3,140);
+    ui->tableView_6->setColumnWidth(4,140);
+    ui->tableView_6->setColumnWidth(5,140);
+    ui->tableView_6->setColumnWidth(6,140);
+    ui->tableView_6->setColumnWidth(7,200);
 }
 
 void GraphicsWidget::on_pushButton_37_clicked()
@@ -2765,6 +2811,14 @@ void GraphicsWidget::on_pushButton_37_clicked()
     model->select(); //选取整个表的所有行
     ui->tableView_4->setModel(model);
     ui->lineEdit_6->clear();
+    ui->tableView_4->setColumnWidth(0,130);
+    ui->tableView_4->setColumnWidth(1,140);
+    ui->tableView_4->setColumnWidth(2,140);
+    ui->tableView_4->setColumnWidth(3,140);
+    ui->tableView_4->setColumnWidth(4,140);
+    ui->tableView_4->setColumnWidth(5,140);
+    ui->tableView_4->setColumnWidth(6,140);
+    ui->tableView_4->setColumnWidth(7,200);
 }
 
 void GraphicsWidget::on_pushButton_48_clicked()
@@ -3551,4 +3605,9 @@ void GraphicsWidget::on_toolButton_12_clicked()
     ui->tableView_2->setModel(model_storagequery);
     ui->label_36->setText(QString::number(storage_totalpage));
     ui->lineEdit_21->setText(QString::number(storage_totalpage));
+}
+
+void GraphicsWidget::on_pushButton_34_clicked()
+{
+    connect(ui->pushButton_34,SIGNAL(clicked()),this,SLOT(close()));
 }

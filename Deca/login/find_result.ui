@@ -19,7 +19,17 @@
    </iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.500273, y1:0.438, x2:0.500727, y2:0.909, stop:0 rgba(190, 154, 124, 255), stop:0.971591 rgba(96, 71, 62, 255));</string>
+   <string notr="true">QWidget::QMessageBox {   border-color:#32435E; border-width:1px; border-radius: 3px;
+  min-width:30px; min-height:23px;
+  /*font-family:&quot;宋体&quot;;font-size:36px;*/
+  border-image:url(./config/qss/style_1/images/messageBox_background.png);
+  height: 300px;
+  width: 200px;
+  border: none;
+}
+QWidget{
+background-color: qlineargradient(spread:pad, x1:0.500273, y1:0.438, x2:0.500727, y2:0.909, stop:0 rgba(190, 154, 124, 255), stop:0.971591 rgba(96, 71, 62, 255));
+}</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
