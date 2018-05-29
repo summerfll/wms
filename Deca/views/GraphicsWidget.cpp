@@ -213,7 +213,6 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     //stt
     ui->tagTable->hide();
     ui->anchorTable->hide();
-    ui->dockWidget->hide();
 
     this->empytOrdermap();
 
@@ -1852,15 +1851,7 @@ void GraphicsWidget::anchTableEditing(bool enable)
 void GraphicsWidget::on_pushButton_clicked()
 {
 
-    bool flag=ui->dockWidget->isHidden();
-    if(flag)
-    {
-        ui->dockWidget->show();
-    }
-    if(!flag)
-    {
-        ui->dockWidget->hide();
-    }
+
 }
 
 void GraphicsWidget::on_pushButton_2_clicked()
@@ -1899,7 +1890,6 @@ void GraphicsWidget::on_pushButton_5_clicked()
 {
     ui->tagTable->hide();
     ui->anchorTable->hide();
-    ui->dockWidget->hide();
 }
 
 
@@ -3075,9 +3065,11 @@ void GraphicsWidget::on_pushButton_56_clicked()
     store_totalpage=ceil(page1);
     ui->label_26->setText(QString::number(store_totalpage));
     /*
-    for(int i;i<store_totalline;i++)
+    for(int i;i<store_totalline;i++)//更新现有库存
     {
        QString store_name[i] = model_storequery0->record(i).value(0).toString();
+       QSqlQuery query;
+       query.exec("select 数量,仓库 from ");
        if()
        {
 

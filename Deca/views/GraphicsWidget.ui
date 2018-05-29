@@ -81,7 +81,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>1</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -862,7 +862,7 @@ color:rgb(0, 0, 0);
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>8</number>
+      <number>0</number>
      </property>
      <property name="iconSize">
       <size>
@@ -897,17 +897,6 @@ color:rgb(0, 0, 0);
        <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="1">
-        <widget class="QDockWidget" name="dockWidget">
-         <property name="maximumSize">
-          <size>
-           <width>350</width>
-           <height>800</height>
-          </size>
-         </property>
-         <widget class="ViewSettingsWidget" name="dockWidgetContents"/>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="GraphicsView" name="graphicsView"/>
        </item>
@@ -4588,12 +4577,6 @@ QTableView::item:!alternate:!selected{
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>ViewSettingsWidget</class>
-   <extends>QWidget</extends>
-   <header>ViewSettingsWidget.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>GraphicsView</class>
    <extends>QGraphicsView</extends>
