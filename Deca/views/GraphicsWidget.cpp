@@ -1850,8 +1850,7 @@ void GraphicsWidget::anchTableEditing(bool enable)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void GraphicsWidget::on_pushButton_clicked()
 {
-
-
+   emit sendsetting();
 }
 
 void GraphicsWidget::on_pushButton_2_clicked()

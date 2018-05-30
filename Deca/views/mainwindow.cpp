@@ -79,6 +79,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(RTLSDisplayApplication::serialConnection(), SIGNAL(connectionStateChanged(SerialConnection::ConnectionState)),
                      this, SLOT(connectionStateChanged(SerialConnection::ConnectionState)));
 
+
+
+   QObject::connect(graphicsWidget(),SIGNAL(sendsetting()),this,SLOT(show_settings()));
     RTLSDisplayApplication::connectReady(this, "onReady()");
 
 }
@@ -416,4 +419,19 @@ void MainWindow::saveConfigFile(QString filename, QString cfg)
 void MainWindow::statusBarMessage(QString status)
 {
     ui->statusBar->showMessage(status);
+}
+
+bool settings=false;
+void MainWindow::show_settings(){
+    if(settings==false)
+    {
+         ui->viewSettings_dw->show();
+         settings=true;
+    }
+    else
+    {
+        ui->viewSettings_dw->hide();
+        settings=false;
+    }
+
 }

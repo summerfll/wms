@@ -152,6 +152,8 @@ signals:
     void sendStoreID(QString);
     void sendProductID(QString);
 
+    void sendsetting();
+
 public slots:
 
     void centerOnAnchors(void);
@@ -204,7 +206,7 @@ private slots:
 
     void on_pushButton_5_clicked();
 
-    void on_toolBox_2_destroyed();
+    //void on_toolBox_2_destroyed();
 
     void on_pushButton_6_clicked();
 
@@ -248,7 +250,7 @@ private slots:
 
     void on_pushButton_27_clicked();
 
-    void on_pushButton_28_clicked();
+   // void on_pushButton_28_clicked();
 
     void on_pushButton_31_clicked();
 
@@ -347,7 +349,7 @@ private slots:
 
     void on_pushButton_73_clicked();
 
-    void on_pushButton_74_clicked();
+   // void on_pushButton_74_clicked();
 
     void on_pushButton_75_clicked();
 

@@ -80,6 +80,9 @@ protected slots:
 
     void statusBarMessage(QString status);
 
+
+    void show_settings();
+
 private:
     Ui::MainWindow *const ui;
     QMenu *_helpMenu;
