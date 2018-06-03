@@ -3929,7 +3929,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -3954,10 +3954,10 @@ background-color: rgb(117, 117, 117);
       <widget class="QWidget" name="verticalLayoutWidget_5">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>81</width>
-         <height>80</height>
+         <x>10</x>
+         <y>0</y>
+         <width>71</width>
+         <height>81</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_6">
