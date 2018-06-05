@@ -49,6 +49,8 @@ struct Tag
     QAbstractGraphicsShapeItem *avgp;
     QAbstractGraphicsShapeItem *r95p;   //r95 circle around the average point, average of 100
     QAbstractGraphicsShapeItem *geop;   //geofencing circle around the (geofencing) anchor
+
+    QAbstractGraphicsShapeItem *postion_tag;//用来跟踪tag
     bool r95Show;
 
     double tsPrev; //previous timestamp in sec

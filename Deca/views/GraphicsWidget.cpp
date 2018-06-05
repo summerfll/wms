@@ -270,7 +270,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
    ui->tableWidget_4->setColumnWidth(6,140);
    ui->tableWidget_4->setColumnWidth(7,140);
 
-   ui->doubleSpinBox->setValue(0.2);
+   ui->doubleSpinBox->setValue(0.5);
 
 }
 
@@ -451,6 +451,21 @@ void GraphicsWidget::clearTags(void)
                 delete(tag->r95p);
                 tag->r95p = NULL;
             }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+            if(tag->postion_tag) //remove postion_tag
+            {
+                //re-size the elipse... with a new rad value...
+                tag->postion_tag->setOpacity(0); //hide it
+
+                this->_scene->removeItem(tag->postion_tag);
+                delete(tag->postion_tag);
+                tag->postion_tag = NULL;
+            }
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
             if(tag->avgp) //remove average
             {
                 //re-size the elipse... with a new rad value...
@@ -855,6 +870,14 @@ void GraphicsWidget::addNewTag(quint64 tagId)
     tag->r95Show = false;
     tag->showLabel = (taglabel != NULL) ? true : false;
     tag->tagLabelStr = taglabel;
+
+ /////////////////////////////////////////////////////////////////////////////////////
+    //add ellipse for the R95 - set to transparent until we get proper r95 data
+    tag->postion_tag = this->_scene->addEllipse(-0.1, -0.1, 0, 0);
+    tag->postion_tag->setOpacity(0);
+    tag->postion_tag->setPen(Qt::NoPen);
+    tag->postion_tag->setBrush(Qt::NoBrush);
+//////////////////////////////////////////////////////////////////////////////////////
     //add ellipse for the R95 - set to transparent until we get proper r95 data
     tag->r95p = this->_scene->addEllipse(-0.1, -0.1, 0, 0);
     tag->r95p->setOpacity(0);
@@ -962,6 +985,66 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
 
         _ignore = true;
 
+
+        /*---------------------tag 查找-----------------------------------*/
+
+        if(tag)
+        {
+
+
+
+         double r1=ui->doubleSpinBox->value();
+         QString text;
+         text=ui->lineEdit_22->text();
+         quint64 position_tag_id=text.toInt();
+         int rad=r1*2;
+
+
+
+
+         if(tag->postion_tag)
+         {
+             //re-size the elipse... with a new rad value...
+             tag->postion_tag->setOpacity(0); //hide it
+
+             this->_scene->removeItem(tag->postion_tag);
+             delete(tag->postion_tag);
+             tag->postion_tag = NULL;
+         }
+
+         tag->postion_tag = this->_scene->addEllipse(-1*r1, -1*r1, rad, rad);
+         tag->postion_tag->setPen(Qt::NoPen);
+         tag->postion_tag->setBrush(Qt::NoBrush);
+
+
+          if(find_tag_flag&&tagId==position_tag_id&&text!="")
+          {
+              QPen pen = QPen(Qt::red);
+              pen.setStyle(Qt::DashDotDotLine);
+              pen.setWidthF(PEN_WIDTH);
+
+              tag->postion_tag->setOpacity(0.5);
+              tag->postion_tag->setPen(pen);
+              //tag->postion_tag->setBrush(QBrush(Qt::green, Qt::Dense7Pattern));
+              tag->postion_tag->setBrush(Qt::NoBrush);
+
+
+           }
+          else
+          {
+
+          }
+          if(tag->postion_tag)
+           tag->postion_tag->setPos(x, y);
+
+        }
+
+
+
+
+        /*--------------------------------------------------------*/
+
+
         ui->tagTable->item(tag->ridx,ColumnX)->setText(QString::number(x, 'f', 3));
         ui->tagTable->item(tag->ridx,ColumnY)->setText(QString::number(y, 'f', 3));
         ui->tagTable->item(tag->ridx,ColumnZ)->setText(QString::number(z, 'f', 3));
@@ -991,12 +1074,12 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
 void GraphicsWidget::tagStats(quint64 tagId, double x, double y, double z, double r95)
 {
 
-    ///////////////
-    r95=ui->doubleSpinBox->value();
-    QString text;
-    text=ui->lineEdit_22->text();
-    int position_tag_id=text.toInt();
-    ////////////////
+    /*--------------------------------------------------------*/
+//    r95=ui->doubleSpinBox->value();
+//    QString text;
+//    text=ui->lineEdit_22->text();
+//    int position_tag_id=text.toInt();
+    /*--------------------------------------------------------*/
     if(_busy)
     {
         qDebug() << "(busy IGNORE) R95: 0x" + QString::number(tagId, 16) << " " << x << " " << y << " " << z << " " << r95;
@@ -1040,19 +1123,19 @@ void GraphicsWidget::tagStats(quint64 tagId, double x, double y, double z, doubl
                 tag->r95p->setPen(Qt::NoPen);
                 tag->r95p->setBrush(Qt::NoBrush);
 
-                //////////////////////////////////////////////////
-                if(find_tag_flag&&tagId==position_tag_id&&text!="")
-                {
-                    QPen pen = QPen(Qt::red);
-                    pen.setStyle(Qt::DashDotDotLine);
-                    pen.setWidthF(PEN_WIDTH);
+                /*--------------------------------------------------------*/
+//                if(find_tag_flag&&tagId==position_tag_id&&text!="")
+//                {
+//                    QPen pen = QPen(Qt::red);
+//                    pen.setStyle(Qt::DashDotDotLine);
+//                    pen.setWidthF(PEN_WIDTH);
 
-                    tag->r95p->setOpacity(0.5);
-                    tag->r95p->setPen(pen);
-                    tag->r95p->setBrush(QBrush(Qt::green, Qt::Dense7Pattern));
-                    tag->r95p->setBrush(Qt::NoBrush);
-                }
-                //////////////////////////////////////////////////
+//                    tag->r95p->setOpacity(0.5);
+//                    tag->r95p->setPen(pen);
+//                    tag->r95p->setBrush(QBrush(Qt::green, Qt::Dense7Pattern));
+//                    tag->r95p->setBrush(Qt::NoBrush);
+//                }
+                /*--------------------------------------------------------*/
 
                 if( tag->r95Show && (rad <= 1))
                 {
