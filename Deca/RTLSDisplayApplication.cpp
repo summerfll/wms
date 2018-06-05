@@ -71,6 +71,12 @@ RTLSDisplayApplication::RTLSDisplayApplication(int &argc, char **argv) : QApplic
     QObject::connect(graphicsWidget(), SIGNAL(updateTagCorrection(int, int, int)), _client, SLOT(updateTagCorrection(int, int, int)));
 
     QObject::connect(_client, SIGNAL(ancRanges(int, int, int)), graphicsWidget(), SLOT(ancRanges(int, int, int)));
+
+
+
+    //tag查找
+    QObject::connect(_client, SIGNAL(send_tag_position(quint64,double,double,double,double)), graphicsWidget(), SLOT(tag_position(quint64,double,double,double,double)));
+
     //emit ready signal so other components can finish initialisation
     emit ready();
 }

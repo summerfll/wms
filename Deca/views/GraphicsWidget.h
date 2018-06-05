@@ -84,6 +84,8 @@ class GraphicsWidget : public QWidget
 
 public:
 
+    bool find_tag_flag=false;
+
     QSqlTableModel *model;
     QSqlTableModel *model1;
     QSqlTableModel *model2;
@@ -95,7 +97,6 @@ public:
     float page1;
     float page2;
     float page3;
-
 
     enum Column {
         ColumnID = 0,   ///< 64 bit address of the anchor (uint64)
@@ -140,6 +141,8 @@ public:
     static bool serial_flag;
 
 
+
+
 signals:
     void updateAnchorXYZ(int id, int x, double value);
     void updateTagCorrection(int aid, int tid, int value);
@@ -153,6 +156,8 @@ signals:
     void sendProductID(QString);
 
     void sendsetting();
+
+
 
 public slots:
 
@@ -187,6 +192,8 @@ public slots:
     //出库管理
     void outstore_management(int num);
     void outstore_management2(int num);
+
+
 protected slots:
     void onReady();
 
@@ -376,6 +383,10 @@ private slots:
      void on_toolButton_10_clicked();
 
      void on_toolButton_12_clicked();
+
+     void on_pushButton_28_clicked();
+
+     void on_pushButton_78_clicked();
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识

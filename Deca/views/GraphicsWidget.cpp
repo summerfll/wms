@@ -58,6 +58,9 @@
 #include <QSqlRelationalDelegate>
 #include <math.h>
 
+#include <QPainter>
+
+
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -166,7 +169,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     ui->anchorTable->setHorizontalHeaderLabels(anchorHeader);
 
     ui->anchorTable->setColumnWidth(ColumnID,100);    //ID
-    ui->anchorTable->setColumnWidth(ColumnX,55); //x
+    ui->anchorTable->setColumnWidth(ColumnX,55); //x   宽度
     ui->anchorTable->setColumnWidth(ColumnY,55); //y
     ui->anchorTable->setColumnWidth(ColumnZ,55); //z
     ui->anchorTable->setColumnWidth(4,55); //t0
@@ -266,6 +269,8 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
    ui->tableWidget_4->setColumnWidth(5,240);
    ui->tableWidget_4->setColumnWidth(6,140);
    ui->tableWidget_4->setColumnWidth(7,140);
+
+   ui->doubleSpinBox->setValue(0.2);
 
 }
 
@@ -891,7 +896,7 @@ void GraphicsWidget::addNewTag(quint64 tagId)
  * */
 void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
 {
-    //qDebug() << "tagPos Tag: 0x" + QString::number(tagId, 16) << " " << x << " " << y << " " << z;
+    //qDebug() << " tagPos Tag: 0x" + QString::number(tagId, 16) << " " << x << " " << y << " " << z;
 
     if(_busy || _geoFencingMode) //don't display position if geofencing is on
     {
@@ -956,6 +961,7 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
         }
 
         _ignore = true;
+
         ui->tagTable->item(tag->ridx,ColumnX)->setText(QString::number(x, 'f', 3));
         ui->tagTable->item(tag->ridx,ColumnY)->setText(QString::number(y, 'f', 3));
         ui->tagTable->item(tag->ridx,ColumnZ)->setText(QString::number(z, 'f', 3));
@@ -984,6 +990,13 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
 
 void GraphicsWidget::tagStats(quint64 tagId, double x, double y, double z, double r95)
 {
+
+    ///////////////
+    r95=ui->doubleSpinBox->value();
+    QString text;
+    text=ui->lineEdit_22->text();
+    int position_tag_id=text.toInt();
+    ////////////////
     if(_busy)
     {
         qDebug() << "(busy IGNORE) R95: 0x" + QString::number(tagId, 16) << " " << x << " " << y << " " << z << " " << r95;
@@ -1023,8 +1036,23 @@ void GraphicsWidget::tagStats(quint64 tagId, double x, double y, double z, doubl
             {
                 //add R95 circle
                 tag->r95p = this->_scene->addEllipse(-1*r95, -1*r95, rad, rad);
+
                 tag->r95p->setPen(Qt::NoPen);
                 tag->r95p->setBrush(Qt::NoBrush);
+
+                //////////////////////////////////////////////////
+                if(find_tag_flag&&tagId==position_tag_id&&text!="")
+                {
+                    QPen pen = QPen(Qt::red);
+                    pen.setStyle(Qt::DashDotDotLine);
+                    pen.setWidthF(PEN_WIDTH);
+
+                    tag->r95p->setOpacity(0.5);
+                    tag->r95p->setPen(pen);
+                    tag->r95p->setBrush(QBrush(Qt::green, Qt::Dense7Pattern));
+                    tag->r95p->setBrush(Qt::NoBrush);
+                }
+                //////////////////////////////////////////////////
 
                 if( tag->r95Show && (rad <= 1))
                 {
@@ -3676,4 +3704,30 @@ void GraphicsWidget::on_toolButton_12_clicked()
 void GraphicsWidget::on_pushButton_34_clicked()
 {
     connect(ui->pushButton_34,SIGNAL(clicked()),this,SLOT(close()));
+}
+
+
+void GraphicsWidget::on_pushButton_28_clicked()
+{
+
+    find_tag_flag=true;
+    QString text;
+    text=ui->lineEdit_22->text();
+    int position_tag_id=text.toInt();
+
+    //QString xn = (ui->anchorTable->item(1,1)->text());
+
+   // double x = (ui->anchorTable->item(1,1)->text()).toDouble();
+   // double y = (ui->anchorTable->item(1,2)->text()).toDouble();
+
+
+
+
+}
+
+void GraphicsWidget::on_pushButton_78_clicked()
+{
+    find_tag_flag=false;
+    ui->lineEdit_22->clear();
+
 }
