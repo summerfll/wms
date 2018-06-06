@@ -272,6 +272,9 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
    ui->doubleSpinBox->setValue(0.5);
 
+   ui->groupBox_12->hide();
+   ui->groupBox_13->hide();
+
 }
 
 void GraphicsWidget::trans_serialdata()
@@ -991,16 +994,12 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
         if(tag)
         {
 
-
-
          double r1=ui->doubleSpinBox->value();
          QString text;
          text=ui->lineEdit_22->text();
+
          quint64 position_tag_id=text.toInt();
          int rad=r1*2;
-
-
-
 
          if(tag->postion_tag)
          {
@@ -1022,12 +1021,10 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
               QPen pen = QPen(Qt::red);
               pen.setStyle(Qt::DashDotDotLine);
               pen.setWidthF(PEN_WIDTH);
-
               tag->postion_tag->setOpacity(0.5);
               tag->postion_tag->setPen(pen);
               //tag->postion_tag->setBrush(QBrush(Qt::green, Qt::Dense7Pattern));
               tag->postion_tag->setBrush(Qt::NoBrush);
-
 
            }
           else
@@ -1038,9 +1035,6 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
            tag->postion_tag->setPos(x, y);
 
         }
-
-
-
 
         /*--------------------------------------------------------*/
 
@@ -3467,8 +3461,6 @@ void GraphicsWidget::on_toolButton_3_clicked()
         model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
         ui->tableView_8->setModel(model_staffquery);
         ui->label_23->setText(QString::number(read_num));
-
-
     }
 }
 
@@ -3584,7 +3576,7 @@ void GraphicsWidget::on_pushButton_66_clicked()
 
 void GraphicsWidget::on_pushButton_72_clicked()
 {
-    int click_num = 1;
+    int click_num = 2;
     connect(this,SIGNAL(send_click(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click(click_num);
     ui->label_36->setText(QString::number(storage_totalpage));
@@ -3602,13 +3594,11 @@ void GraphicsWidget::on_pushButton_72_clicked()
     ui->tableView_2->setColumnWidth(6, 140);
     ui->tableView_2->setColumnWidth(7, 220);
 
-
-
 }
 
 void GraphicsWidget::on_pushButton_73_clicked()
 {
-    int click_num = 2;
+    int click_num = 1;
     connect(this,SIGNAL(send_click2(int)),this,SLOT(outstore_management(int)));
     emit send_click2(click_num);
     model2->setTable("storage_copy");
@@ -3727,6 +3717,8 @@ void GraphicsWidget::on_pushButton_33_clicked()
     int click_num = 0;
     connect(this,SIGNAL(send_click0(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click0(click_num);
+    ui->groupBox_12->hide();
+    ui->groupBox_13->hide();
 }
 
 void GraphicsWidget::on_toolButton_11_clicked()
@@ -3739,16 +3731,12 @@ void GraphicsWidget::on_toolButton_11_clicked()
     ui->label_38->setText("1");
 }
 
-
-
 void GraphicsWidget::on_pushButton_76_clicked()
 {
     int click_num = 9;
     connect(this,SIGNAL(send_click9(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click9(click_num);
 }
-
-
 
 void GraphicsWidget::on_toolButton_10_clicked()
 {
@@ -3794,18 +3782,74 @@ void GraphicsWidget::on_pushButton_28_clicked()
 {
 
     find_tag_flag=true;
+
     QString text;
-    text=ui->lineEdit_22->text();
-    int position_tag_id=text.toInt();
+    text=ui->lineEdit_22->text().trimmed();
+    QString tag_id;
+    QString order_id;
+    QSqlQuery query;
+    QString product_name;
+    QString product_id;
+    QString product_num;
+    QString house_num;
+    QString people;
+    QString input_time;
 
-    //QString xn = (ui->anchorTable->item(1,1)->text());
+    QDateTime current_data=QDateTime::currentDateTime();
+    QString current_time=current_data.toString("yyyy-MM-dd hh:mm:ss");
 
-   // double x = (ui->anchorTable->item(1,1)->text()).toDouble();
-   // double y = (ui->anchorTable->item(1,2)->text()).toDouble();
+    if(ui->radioButton_2->isChecked())
+    {
+        tag_id=text;
+        query.exec("select 订单号 from storage_copy where 标签编号 ='"+text+"'");
+        if(query.next())
+        {
+            QSqlRecord record=query.record();
+            order_id=query.value(record.indexOf("订单号")).toString();
+        }
+
+    }
+    else if(ui->radioButton->isChecked())
+    {
+        order_id=text;
+        query.exec("select 标签编号 from storage_copy where 订单号 ='"+text+"'");
+        if(query.next())
+        {
+            QSqlRecord record=query.record();
+            tag_id=query.value(record.indexOf("标签编号")).toString();
+        }
+    }
+    if(tag_id!="")
+        query.exec("select 产品名称,产品编号,数量,仓库,管理员,入库时间 from storage_copy where 标签编号 ='"+tag_id+"'");
+    if(query.next())
+    {
+        QSqlRecord record=query.record();
+        product_name=query.value(record.indexOf("产品名称")).toString();
+        product_id=query.value(record.indexOf("产品编号")).toString();
+        product_num=query.value(record.indexOf("数量")).toString();
+        house_num=query.value(record.indexOf("仓库")).toString();
+        people=query.value(record.indexOf("管理员")).toString();
+        input_time=query.value(record.indexOf("入库时间")).toString();
+
+    }
 
 
+    if(!ui->lineEdit_22->text().isEmpty())
+    {
+        QString xyz="(0.00,0.00)";
 
+        ui->pushButton_79->setText(xyz);
 
+        ui->pushButton_80->setText(current_time);
+        ui->pushButton_81->setText(order_id);
+        ui->pushButton_82->setText(tag_id);
+        ui->pushButton_83->setText(product_name);
+        ui->pushButton_84->setText(product_id);
+        ui->pushButton_85->setText(product_num);
+        ui->pushButton_86->setText(house_num);
+        ui->pushButton_87->setText(people);
+        ui->pushButton_88->setText(input_time);
+    }
 }
 
 void GraphicsWidget::on_pushButton_78_clicked()
@@ -3813,4 +3857,94 @@ void GraphicsWidget::on_pushButton_78_clicked()
     find_tag_flag=false;
     ui->lineEdit_22->clear();
 
+    ui->pushButton_79->setText("");
+    ui->pushButton_80->setText("");
+    ui->pushButton_81->setText("");
+    ui->pushButton_82->setText("");
+    ui->pushButton_83->setText("");
+    ui->pushButton_84->setText("");
+    ui->pushButton_85->setText("");
+    ui->pushButton_86->setText("");
+    ui->pushButton_87->setText("");
+    ui->pushButton_88->setText("");
+
+}
+
+void GraphicsWidget::on_pushButton_74_clicked()
+{
+    ui->groupBox_12->show();
+    ui->groupBox_13->hide();
+}
+
+void GraphicsWidget::on_pushButton_77_clicked()
+{
+    ui->groupBox_13->show();
+    ui->groupBox_12->hide();
+}
+
+void GraphicsWidget::on_pushButton_82_clicked()
+{
+
+    QSqlQuery query;
+
+    QString tag_id=ui->pushButton_82->text().trimmed();
+    QString tag_oid,tag_type,tag_state,tag_fac,tag_date,tag_other;
+
+    ui->groupBox_14->setTitle("定位标签(标签号："+tag_id+")详情");
+    query.exec("select 标签标识,标签类型,标签状态,生产厂商,生产日期,备注 from biaoshi where 标签编号 ='"+tag_id+"'");
+    if(query.next())
+    {
+        QSqlRecord record=query.record();
+        tag_oid=query.value(record.indexOf("标签标识")).toString();
+        tag_type=query.value(record.indexOf("标签类型")).toString();
+        tag_state=query.value(record.indexOf("标签状态")).toString();
+        tag_fac=query.value(record.indexOf("生产厂商")).toString();
+        tag_date=query.value(record.indexOf("生产日期")).toString();
+        tag_other=query.value(record.indexOf("备注")).toString();
+    }
+    ui->label_52->setText("标签编号: "+tag_id+"");
+    ui->label_53->setText("标签标识: "+tag_oid+"");
+    ui->label_54->setText("标签类型: "+tag_type+"");
+    ui->label_55->setText("标签状态: "+tag_state+"");
+    ui->label_56->setText("生产厂商: "+tag_fac+"");
+    ui->label_57->setText("生产日期: "+tag_date+"");
+    ui->label_58->setText("备注: "+tag_other+"");
+    ui->label_59->setText("");
+}
+
+void GraphicsWidget::on_pushButton_82_released()
+{
+
+}
+
+void GraphicsWidget::on_pushButton_86_clicked()
+{
+    QSqlQuery query;
+
+    QString house_name=ui->pushButton_86->text().trimmed();
+    QString house_id,house_type,existing_stocks,max_stocks,house_state,admin,other;
+
+    query.exec("select 仓库编号,仓库类型,现有库存,库存容量,状态,管理员,备注 from stores_management where 仓库名称 ='"+house_name+"'");
+    if(query.next())
+    {
+        QSqlRecord record=query.record();
+        house_id=query.value(record.indexOf("仓库编号")).toString();
+        house_type=query.value(record.indexOf("仓库类型")).toString();
+        existing_stocks=query.value(record.indexOf("现有库存")).toString();
+        max_stocks=query.value(record.indexOf("库存容量")).toString();
+        house_state=query.value(record.indexOf("状态")).toString();
+        admin=query.value(record.indexOf("管理员")).toString();
+        other=query.value(record.indexOf("备注")).toString();
+
+    }
+    ui->groupBox_14->setTitle("仓库(编号："+house_id+")详情");
+
+    ui->label_52->setText("仓库编号: "+house_id+"");
+    ui->label_53->setText("仓库名称: "+house_name+"");
+    ui->label_54->setText("仓库类型: "+house_type+"");
+    ui->label_55->setText("现有库存: "+existing_stocks+"");
+    ui->label_56->setText("库存容量: "+max_stocks+"");
+    ui->label_57->setText("状态: "+house_state+"");
+    ui->label_58->setText("管理员: "+admin+"");
+    ui->label_59->setText("备注: "+other+"");
 }

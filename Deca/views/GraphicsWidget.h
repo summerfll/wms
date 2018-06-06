@@ -390,6 +390,16 @@ private slots:
 
      void on_pushButton_78_clicked();
 
+     void on_pushButton_74_clicked();
+
+     void on_pushButton_77_clicked();
+
+     void on_pushButton_82_clicked();
+
+     void on_pushButton_82_released();
+
+     void on_pushButton_86_clicked();
+
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
     //toolbox发送index给tabwidget
