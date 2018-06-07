@@ -221,7 +221,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
 
     //串口初始化
-    Serial->setPortName("COM6");   //串口名字
+    Serial->setPortName("COM14");   //串口名字
     Serial->open(QIODevice::ReadWrite);
     Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
     Serial->setDataBits(QSerialPort::Data8);//设置数据位8

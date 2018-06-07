@@ -13,6 +13,8 @@
 #include<QSqlRecord>
 #include<QSerialPort>
 #include "GraphicsWidget.h"
+#include "wms/connect_database.h"
+
 storage*  storage::Instance1=NULL;
 
 
@@ -54,6 +56,10 @@ storage::storage(QWidget *parent) :
     //ui->label_10->setItemDelegate(new setItemDelegate(ui->label_10));
 */
     setAttribute(Qt::WA_DeleteOnClose);
+
+
+    ui->lineEdit_1->setText("自动生成订单号");
+    ui->lineEdit_1->setEnabled(false);
 }
 
 storage::~storage()
@@ -92,10 +98,13 @@ void storage::on_pushButton_clicked()
     query.exec("select 订单号 from storage_copy where 订单号='"+str1+"'");
     if(!query.next())
     {
-        if(str1!=""&&str2!=""&&str3!=""&&str4!=""&&str5!=""&&str6!=""&&str7!=""&&str8!="")
+        //if(str1!=""&&str2!=""&&str3!=""&&str4!=""&&str5!=""&&str6!=""&&str7!=""&&str8!="")
+        if(str2!=""&&str3!=""&&str4!=""&&str5!=""&&str6!=""&&str7!=""&&str8!="")
         {
+            //query.prepare(tr("insert into storage_copy values(:two,:three,:four,:five,:six,:seven,:eight)"));
             query.prepare(tr("insert into storage_copy values(:one,:two,:three,:four,:five,:six,:seven,:eight)"));
-            query.bindValue(":one",str1);
+
+            //query.bindValue(":one",str1);
             query.bindValue(":two",str2);
             query.bindValue(":three",str3);
             query.bindValue(":four",str4);
@@ -122,13 +131,17 @@ void storage::on_pushButton_clicked()
         QMessageBox::warning(this, tr("警告"), tr("订单号是唯一的，不能重复！"));
         return ;
     }
-    ui->lineEdit_1->clear();
+   // ui->lineEdit_1->clear();
     ui->lineEdit_2->clear();
     ui->lineEdit_3->clear();
     ui->lineEdit_4->clear();
     ui->lineEdit_5->clear();
     //ui->lineEdit_6->clear();
     //ui->lineEdit_7->clear();
+    ui->lineEdit_6->clear();
+    ui->lineEdit_7->clear();
+    ui->lineEdit_9->clear();
+    ui->lineEdit_10->clear();
 
 
 
@@ -137,7 +150,7 @@ void storage::on_pushButton_clicked()
 void storage::on_pushButton_2_clicked()
 {
 
-    ui->lineEdit_1->setText("");
+   // ui->lineEdit_1->setText("");
     ui->lineEdit_2->setText("");
     ui->lineEdit_3->setText("");
     ui->lineEdit_4->setText("");
@@ -145,15 +158,42 @@ void storage::on_pushButton_2_clicked()
     //ui->lineEdit_6->setText("");
     //ui->lineEdit_7->setText("");
     ui->lineEdit_8->setText("");
+    ui->lineEdit_6->clear();
+    ui->lineEdit_7->clear();
+    ui->lineEdit_9->clear();
+    ui->lineEdit_10->clear();
 }
 
 void storage::show_serialdata()//显示串口采集扫码器数据
 {
 
+    ConnectDatabase::openDatabase();
+    QSqlQuery query;
     QString buf;
-    buf=GraphicsWidget::Serial->readAll();
+    buf=GraphicsWidget::Serial->readAll().trimmed();
     qDebug()<<"serial::"<<buf;
-    ui->lineEdit_1->setText(buf);
-    ui->lineEdit_2->setText("ssssssss");
+    QString name,type,unit1,data1,fc,num;
+    query.exec("select * from product_imformation where 产品编号 ='"+buf+"'");
+    if(query.next())
+    {
+       QSqlRecord record=query.record();
+       name=query.value(record.indexOf("产品名称")).toString();
+       type=query.value(record.indexOf("类别")).toString();
+       unit1=query.value(record.indexOf("单位")).toString();
+       data1=query.value(record.indexOf("生产日期")).toString();
+       fc=query.value(record.indexOf("生产厂商")).toString();
+       num=query.value(record.indexOf("数量")).toString();
+    }
+    else
+    {
+         QMessageBox::warning(this, tr("警告"), tr("没有该商品编号，请先录入！"));
+    }
+    ui->lineEdit_2->setText(name);
+    ui->lineEdit_3->setText(buf);
+    ui->lineEdit_6->setText(type);
+    ui->lineEdit_7->setText(unit1);
+    ui->lineEdit_9->setText(data1);
+    ui->lineEdit_10->setText(fc);
+    ui->lineEdit_5->setText(num);
 
 }
