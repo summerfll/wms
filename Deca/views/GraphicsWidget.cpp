@@ -221,7 +221,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
 
     //串口初始化
-    Serial->setPortName("COM14");   //串口名字
+    Serial->setPortName("COM6");   //串口名字
     Serial->open(QIODevice::ReadWrite);
     Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
     Serial->setDataBits(QSerialPort::Data8);//设置数据位8
@@ -2007,11 +2007,7 @@ void GraphicsWidget::on_pushButton_6_clicked()
 
 }
 
-void GraphicsWidget::on_pushButton_13_clicked()
-{
-    model1->setTable("storage_copy");
-    model1->select();
-}
+
 void GraphicsWidget::on_pushButton_8_clicked()
 {
 
@@ -2035,14 +2031,12 @@ void GraphicsWidget::on_pushButton_8_clicked()
 
 void GraphicsWidget::on_pushButton_7_clicked()
 {
-    QString query_text;
-    QString slect_text;
-    query_text=ui->lineEdit->text();
-    slect_text="订单号 like'"+query_text+"%'";
-    model1->setFilter(slect_text);
-    model1->select();
-    ui->lineEdit->clear();
 
+    QString inquery_id = ui->lineEdit->text().trimmed();
+    model_storagequery->setQuery("select *from "+MODEL_STORAGE+" "
+                                       "where 订单号='"+inquery_id+"'");
+    ui->tableView_2->setModel(model_storagequery);
+    ui->lineEdit->setText(NULL);
 
 }
 
@@ -2768,10 +2762,12 @@ void GraphicsWidget::on_pushButton_25_clicked()
 
 void GraphicsWidget::on_pushButton_27_clicked()
 {
-    int click_num = 2;
+    int click_num = 1;
     connect(this,SIGNAL(send_click2(int)),this,SLOT(outstore_management2(int)));
     emit send_click2(click_num);
-
+    ui->groupBox_3->show();
+    ui->groupBox->hide();
+    ui->groupBox_2->hide();
     model3->setTable("outstorage");
     model3->select();
     ui->tableView_5->setColumnWidth(0, 130);//设置表的每一列的宽度
@@ -3872,14 +3868,20 @@ void GraphicsWidget::on_pushButton_78_clicked()
 
 void GraphicsWidget::on_pushButton_74_clicked()
 {
-    ui->groupBox_12->show();
+    int click_num = 0;
+    connect(this,SIGNAL(send_click0(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click0(click_num);
     ui->groupBox_13->hide();
+    ui->groupBox_12->show();
 }
 
 void GraphicsWidget::on_pushButton_77_clicked()
 {
-    ui->groupBox_13->show();
+    int click_num = 0;
+    connect(this,SIGNAL(send_click0(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click0(click_num);
     ui->groupBox_12->hide();
+    ui->groupBox_13->show();
 }
 
 void GraphicsWidget::on_pushButton_82_clicked()

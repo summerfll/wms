@@ -1,140 +1,209 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat MySQL Data Transfer
 
-Source Server         : aaa
-Source Server Version : 50624
-Source Host           : localhost:3306
-Source Database       : wms
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50624
+ Source Host           : localhost:3306
+ Source Schema         : wms
 
-Target Server Type    : MYSQL
-Target Server Version : 50624
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 50624
+ File Encoding         : 65001
 
-Date: 2018-04-21 14:48:09
+ Date: 07/06/2018 17:13:43
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for biaoshi
 -- ----------------------------
 DROP TABLE IF EXISTS `biaoshi`;
-CREATE TABLE `biaoshi` (
-  `标签编号` varchar(255) NOT NULL,
-  `标签标识` varchar(255) DEFAULT NULL,
-  `标签类型` varchar(255) DEFAULT NULL,
-  `标签状态` varchar(255) DEFAULT NULL,
-  `生产厂商` varchar(255) DEFAULT NULL,
-  `生产日期` date DEFAULT NULL,
-  `备注` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`标签编号`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `biaoshi`  (
+  `标签编号` int(255) NOT NULL,
+  `标签标识` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `标签类型` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `标签状态` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `生产厂商` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `生产日期` date NULL DEFAULT NULL,
+  `备注` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`标签编号`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of biaoshi
 -- ----------------------------
-INSERT INTO `biaoshi` VALUES ('12', '12', '11', '22', '33', '0000-00-00', '44');
-INSERT INTO `biaoshi` VALUES ('1212', '1212', '', '', '', '0000-00-00', '');
-INSERT INTO `biaoshi` VALUES ('122', 'AAAA FFFF DERGF', '', '', '', '0000-00-00', '');
-INSERT INTO `biaoshi` VALUES ('3', 'AAFFFEE', 'RFID', '正常', 'dd', '2018-03-15', '没有');
-INSERT INTO `biaoshi` VALUES ('4', 'AAFFFEA', null, null, null, null, null);
-INSERT INTO `biaoshi` VALUES ('5', 'AFAAA', 'DD', 'NO', 'SSS', '0000-00-00', 'DFADFSADFADFASDF AFD');
-INSERT INTO `biaoshi` VALUES ('6', '6', 'sdfdasd', 'adf', 'adf', '2012-12-12', '');
+INSERT INTO `biaoshi` VALUES (1, '1', '2', '使用中', '2', '2005-01-01', '');
+INSERT INTO `biaoshi` VALUES (2, '2', '2', '未使用', '2', '2000-01-01', '');
+INSERT INTO `biaoshi` VALUES (3, 'AAFFFEE', 'RFID', '使用中', 'dd', '2018-03-15', '没有');
+INSERT INTO `biaoshi` VALUES (4, '4', '2', '未使用', '34', '2011-05-04', '');
+INSERT INTO `biaoshi` VALUES (5, 'AFAAA', 'DD', '使用中', 'SSS', '0000-00-00', 'DFADFSADFADFASDF AFD');
+INSERT INTO `biaoshi` VALUES (6, '6', 'sdfdasd', '未使用', 'adf', '2012-12-12', '');
+INSERT INTO `biaoshi` VALUES (12, '12', '43', '未使用', '34', '2000-01-01', '');
+INSERT INTO `biaoshi` VALUES (23, 'AEEF', 'FR', '未使用', 'sda', '2018-04-03', NULL);
+INSERT INTO `biaoshi` VALUES (32, '34', '', '未使用', '', '2000-01-01', '');
+INSERT INTO `biaoshi` VALUES (314, '3412', '', '未使用', '', '2000-01-01', '');
+INSERT INTO `biaoshi` VALUES (432, '32', '3', '未使用', '1', '2019-04-03', '');
+INSERT INTO `biaoshi` VALUES (555, '555', '', '未使用', '', '2005-01-01', '');
 
 -- ----------------------------
 -- Table structure for outstorage
 -- ----------------------------
 DROP TABLE IF EXISTS `outstorage`;
-CREATE TABLE `outstorage` (
-  `订单号` char(7) DEFAULT NULL,
-  `产品名称` varchar(50) DEFAULT NULL,
-  `产品编号` char(15) DEFAULT NULL,
-  `标签编号` char(15) DEFAULT NULL,
-  `出库数量` varchar(7) DEFAULT NULL,
-  `出库时间` varchar(50) DEFAULT NULL,
-  `仓库` varchar(50) DEFAULT NULL,
-  `管理员` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `outstorage`  (
+  `订单号` char(7) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `产品名称` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `产品编号` char(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `标签编号` char(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `出库数量` varchar(7) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `出库时间` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `仓库` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `管理员` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of outstorage
 -- ----------------------------
 INSERT INTO `outstorage` VALUES ('1002', 'ipad mini', '313', '131', '1', '2018-01-24 20:30:57', '13', '13');
 INSERT INTO `outstorage` VALUES ('0012', '123', '12', '21', '2', '2018-01-24 20:31:05', '12', '122');
-INSERT INTO `outstorage` VALUES ('0011', '123', '12', '21', '1', '2018-01-24 20:31:09', '12', '122');
-INSERT INTO `outstorage` VALUES ('0009', 'vivo', '1115', '1100', '1', '2018-01-24 20:31:11', '1212', 'stt');
 INSERT INTO `outstorage` VALUES ('0008', '电视', '0018', '0123', '4', '2018-01-24 20:31:12', '1122', 'stt');
 INSERT INTO `outstorage` VALUES ('0003', '华为', '2235', '1232', '1', '2018-01-25 10:07:55', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0004', '华为', '1234', '1232', '1', '2018-01-25 10:07:57', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-01-25 10:26:41', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0003', '华为', '2235', '1232', '2', '2018-01-25 10:26:44', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0004', '华为', '1234', '1232', '2', '2018-01-25 10:26:47', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-01-25 10:28:38', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0004', '华为', '1234', '1232', '3', '2018-01-25 10:28:40', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '1', '2018-01-25 11:05:55', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '1', '2018-01-25 11:06:07', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '2', '2018-01-25 11:07:14', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '2', '2018-01-25 11:12:56', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '2', '2018-01-25 11:14:15', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '2', '2018-01-25 11:14:33', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '2', '2018-01-25 11:15:43', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '4', '2018-01-25 11:16:49', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-01-25 11:17:03', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0004', '华为', '1234', '1232', '5', '2018-01-25 11:17:10', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '6', '2018-01-25 11:17:21', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0003', '华为', '2235', '1232', '3', '2018-01-25 11:17:26', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-01-25 11:17:36', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0003', '华为', '2235', '1232', '3', '2018-01-25 11:17:39', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '2', '2018-01-25 11:18:46', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '2', '2018-01-25 11:19:20', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-01-25 16:11:59', '0002', '小王');
 INSERT INTO `outstorage` VALUES ('2018', '笔记本', '1233', '12', '12', '2018-01-25 16:48:45', '5', 'stt1');
 INSERT INTO `outstorage` VALUES ('0006', 'Iphone', '1112', '1212', '5', '2018-01-27 14:09:29', '0008', 'bob');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '5', '2018-03-15 15:53:24', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '95', '2018-03-24 22:46:23', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-03-29 09:44:43', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1232', '3', '2018-03-29 16:53:21', '0002', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '4', '2018-03-29 16:53:33', '0003', '小王');
-INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '1', '2018-04-13 17:26:34', '0003', '小王');
 INSERT INTO `outstorage` VALUES ('0001', '华为', '1234', '1232', '19', '2018-04-14 22:43:47', '0003', '小王');
+INSERT INTO `outstorage` VALUES ('0002', '华为', '1234', '1', '10', '2018-04-21 16:17:09', '0002', '小王');
+INSERT INTO `outstorage` VALUES ('0010', '三星', '2348', '1233', '11', '2018-04-23 14:47:11', '11', 'llj');
+INSERT INTO `outstorage` VALUES ('0004', '华为', '1234', '1232', '1', '2018-04-23 15:03:01', '0002', '小王');
+INSERT INTO `outstorage` VALUES ('0003', '华为', '2235', '1', '1', '2018-04-23 19:33:09', '0002', '小王');
+INSERT INTO `outstorage` VALUES ('0003', '华为', '2235', '5', '24', '2018-04-24 14:55:23', '0002', '小王');
+INSERT INTO `outstorage` VALUES ('5', '5', '5', '5', '5', '2018-04-25 19:26:14', '5', '5');
+INSERT INTO `outstorage` VALUES ('0007', 'oppo', '1112', '6', '92', '2018-04-25 19:38:16', '1322', 'stt2018');
+INSERT INTO `outstorage` VALUES ('15', '2', '1', '5', '1', '2018-04-25 19:58:13', '1', '1');
+INSERT INTO `outstorage` VALUES ('1', '3', '3', '4', '3', '2018-04-25 19:58:56', '2', '2');
+INSERT INTO `outstorage` VALUES ('6', '5', '5', '5', '4', '2018-04-25 20:00:17', '5', '5');
+INSERT INTO `outstorage` VALUES ('6', '5', '5', '5', '1', '2018-04-25 20:02:01', '5', '5');
+INSERT INTO `outstorage` VALUES ('4', '4', '44', '4', '4', '2018-04-25 20:02:07', '4', '4');
+INSERT INTO `outstorage` VALUES ('0004', '华为', '12', '121', '3', '2018-04-25 20:02:16', '0002', '小王');
+INSERT INTO `outstorage` VALUES ('0006', 'Iphone', '1112', '3', '2', '2018-04-25 20:02:26', '0008', 'bob');
+INSERT INTO `outstorage` VALUES ('0006', 'Iphone', '1112', '3', '6', '2018-05-21 13:49:54', '0008', 'bob');
+INSERT INTO `outstorage` VALUES ('0004', '华为', '12', '121', '1', '2018-05-29 08:24:48', '0002', '小王');
+INSERT INTO `outstorage` VALUES ('0006', 'Iphone', '1112', '3', '1', '2018-05-29 10:44:43', '0008', 'bob');
+INSERT INTO `outstorage` VALUES ('2', '2', '2', '22', '1', '2018-05-29 11:21:34', '2', '2');
+INSERT INTO `outstorage` VALUES ('0006', 'Iphone', '1112', '3', '1', '2018-05-29 11:25:11', '0008', 'bob');
+INSERT INTO `outstorage` VALUES ('0006', 'Iphone', '1112', '3', '1', '2018-05-29 11:25:22', '0008', 'bob');
+INSERT INTO `outstorage` VALUES ('2', '2', '2', '22', '1', '2018-05-29 11:30:03', '2', '2');
+INSERT INTO `outstorage` VALUES ('234', '2', '2', '1', '1', '2018-05-29 11:33:27', 'B仓', '1');
+INSERT INTO `outstorage` VALUES ('323', '22', '11', '223', '4', '2018-05-29 11:34:45', 'A仓', '小张');
+
+-- ----------------------------
+-- Table structure for product_imformation
+-- ----------------------------
+DROP TABLE IF EXISTS `product_imformation`;
+CREATE TABLE `product_imformation`  (
+  `产品编号` int(255) NOT NULL,
+  `产品名称` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `类别` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `单位` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `数量` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `进货价（元）` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `批发价（元）` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `零售价（元）` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `生产日期` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `生产厂商` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `备注` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`产品编号`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of product_imformation
+-- ----------------------------
+INSERT INTO `product_imformation` VALUES (1, '阿三', '电子产品', '袋', '43', '1', '1', '2', '2019/09/10', '111', '');
+INSERT INTO `product_imformation` VALUES (34, '23', '服装', '箱', '223', '32', '34', '234', '2007/04/04', '234', '');
+INSERT INTO `product_imformation` VALUES (213, 'SSS', '五金', '箱', '23', '534', '222', '3435', '2016/01/01', 'FSFD', '');
+
+-- ----------------------------
+-- Table structure for staff_management
+-- ----------------------------
+DROP TABLE IF EXISTS `staff_management`;
+CREATE TABLE `staff_management`  (
+  `员工编号` int(255) NOT NULL AUTO_INCREMENT,
+  `员工名` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `真实名字` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `角色` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `邮箱` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `电话` int(255) NULL DEFAULT NULL,
+  `备注` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `密码` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `确认密码` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`员工编号`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1021 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of staff_management
+-- ----------------------------
+INSERT INTO `staff_management` VALUES (1003, '43', '32', '员工', '43', 43, '', '11', '11');
+INSERT INTO `staff_management` VALUES (1005, 'as', '阿三', '主管', '432432', 2343234, '', '22', '22');
+INSERT INTO `staff_management` VALUES (1006, 'qw', '千瓦', '主管', '2323243', 4343, '', '23', '23');
+INSERT INTO `staff_management` VALUES (1007, '33', '环境', '员工', '43', 43, '', '22', '22');
+INSERT INTO `staff_management` VALUES (1008, '4fd', '热恩', '员工', 'asd', 213213, '', '3', '3');
+INSERT INTO `staff_management` VALUES (1009, '222', 'f对方的', '员工', '222', 3434, '', '33', '33');
+INSERT INTO `staff_management` VALUES (1010, 'fg', '规划', '员工', '34343', 232323, '', '3', '3');
+INSERT INTO `staff_management` VALUES (1011, '45454', '忽然', '员工', '5454', 22221, '', '22', '22');
+INSERT INTO `staff_management` VALUES (1012, 'gfd', '观湖国际', '员工', '34342', 3232, '', '22', '22');
+INSERT INTO `staff_management` VALUES (1014, 'sdfds', '共和国和', '员工', '2132', 1212, '', '232', '232');
+INSERT INTO `staff_management` VALUES (1015, '安安', '安安', '员工', '2131234', 312414, '', '23', '23');
+INSERT INTO `staff_management` VALUES (1017, '嗷嗷', '飒飒', '主管', '421413', 3141341, '', '21', '21');
+INSERT INTO `staff_management` VALUES (1018, '11', '32', '员工', '2223', 4343, '', '2', '2');
+INSERT INTO `staff_management` VALUES (1019, '阿三', '哎哎哎', '主管', '21414', 111223, '', '21', '21');
+INSERT INTO `staff_management` VALUES (1020, '请求', '全球', '主管', '1234343', 3431413, '', '2', '2');
 
 -- ----------------------------
 -- Table structure for storage_copy
 -- ----------------------------
 DROP TABLE IF EXISTS `storage_copy`;
-CREATE TABLE `storage_copy` (
-  `订单号` char(7) NOT NULL,
-  `产品名称` varchar(50) DEFAULT NULL,
-  `产品编号` char(15) DEFAULT NULL,
-  `标签编号` char(15) DEFAULT NULL,
-  `数量` int(7) DEFAULT NULL,
-  `仓库` varchar(50) DEFAULT NULL,
-  `管理员` varchar(50) DEFAULT NULL,
-  `入库时间` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`订单号`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `storage_copy`  (
+  `订单号` int(11) NOT NULL AUTO_INCREMENT,
+  `产品名称` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `产品编号` char(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `标签编号` int(15) NULL DEFAULT NULL,
+  `数量` int(7) NULL DEFAULT NULL,
+  `仓库` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `管理员` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `入库时间` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`订单号`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1001 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of storage_copy
 -- ----------------------------
-INSERT INTO `storage_copy` VALUES ('0001', '华为', '1234', '1', '100', '0003', '小王', '2018-01-03');
-INSERT INTO `storage_copy` VALUES ('0002', '华为', '1234', '1', '10', '0002', '小王', '2018-01-03');
-INSERT INTO `storage_copy` VALUES ('0003', '华为', '2235', '1', '25', '0002', '小王', '2018-01-03');
-INSERT INTO `storage_copy` VALUES ('0004', '华为', '1234', '1232', '28', '0002', '小王', '2018-01-03');
-INSERT INTO `storage_copy` VALUES ('0005', '小米', '1235', '1234', '22', '0002', '小张', '2018-02-02');
-INSERT INTO `storage_copy` VALUES ('0006', 'Iphone', '1112', '1212', '28', '0008', 'bob', '2018-01-09');
-INSERT INTO `storage_copy` VALUES ('0007', 'oppo', '1112', '1132', '92', '1322', 'stt2018', '2018-01-03 16:41:53');
-INSERT INTO `storage_copy` VALUES ('0008', '电视', '0018', '0123', '1231', '1122', 'stt', '2018-01-03 17:11:46');
-INSERT INTO `storage_copy` VALUES ('0009', 'vivo', '1115', '1100', '22', '1212', 'stt', '2018-01-04 21:48:25');
-INSERT INTO `storage_copy` VALUES ('0010', '三星', '2348', '1233', '11', '11', 'llj', '2018-01-05 14:36:22');
-INSERT INTO `storage_copy` VALUES ('0011', '123', '12', '21', '2', '12', '122', '2018-01-10 21:36:37');
-INSERT INTO `storage_copy` VALUES ('0012', '123', '12', '21', '2', '12', '122', '2018-01-10 21:36:51');
-INSERT INTO `storage_copy` VALUES ('0014', '123', '12', '21', '2', '12', '122', '2018-01-10 21:37:00');
-INSERT INTO `storage_copy` VALUES ('0015', '1212', '121', '2212', '1212', '121', '21212', '2018-01-05 14:36:52');
-INSERT INTO `storage_copy` VALUES ('1231', '211', '213', '1231', '313', '131', '23123', '2018-01-25 16:46:41');
-INSERT INTO `storage_copy` VALUES ('1234', 'qbb', '415415', '46', '40000', '561', '151', '2018-01-09 18:29:28');
-INSERT INTO `storage_copy` VALUES ('2018', '笔记本', '1233', '12', '0', '5', 'stt1', '2018-01-25 16:39:59');
-INSERT INTO `storage_copy` VALUES ('8888', '888', '888', '88', '88', '88', '888', '2018-01-25 16:46:22');
-INSERT INTO `storage_copy` VALUES ('8889', '8889', '8889', '8889', '8889', '88898', '889', '2018-01-30 16:08:07');
-INSERT INTO `storage_copy` VALUES ('kkkkkkk', 'kkkkkkkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkk', '0', 'kkkkkkkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkkkkk', '2018-04-16 17:14:25');
-INSERT INTO `storage_copy` VALUES ('TTTTTTT', 'TTTTTTTTTTTT', 'TTTTTTTTTTTTT', 'TTTTTTTTTTT', '0', 'TTTTTTTTTT', 'TTTTTTTTTTTTTTT', '2018-04-18 10:24:54');
+INSERT INTO `storage_copy` VALUES (4, '华为', '12', 121, 23, 'C仓', '4fd', '2018-01-03');
+INSERT INTO `storage_copy` VALUES (6, 'Iphone', '1112', 3, 17, 'C仓', '安安', '2018-01-09');
+
+-- ----------------------------
+-- Table structure for stores_management
+-- ----------------------------
+DROP TABLE IF EXISTS `stores_management`;
+CREATE TABLE `stores_management`  (
+  `仓库编号` int(255) NOT NULL AUTO_INCREMENT,
+  `仓库名称` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `仓库类型` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `现有库存` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `库存容量` int(255) NULL DEFAULT NULL,
+  `状态` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `管理员` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `联系电话` int(255) NULL DEFAULT NULL,
+  `备注` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`仓库编号`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of stores_management
+-- ----------------------------
+INSERT INTO `stores_management` VALUES (1, 'C仓', '冷冻库', '23', 500, '100', '33', 55, '');
+INSERT INTO `stores_management` VALUES (2, 'b仓', '电子产品', '300', 1000, '使用中', '嗷嗷', 3141341, '');
+INSERT INTO `stores_management` VALUES (3, 'd仓', '熟食', '200', 700, '使用中', '3', 4, '');
+INSERT INTO `stores_management` VALUES (4, 'e仓', '电子', '100', 1000, '使用中', 'qw', 4343, '');
+
+SET FOREIGN_KEY_CHECKS = 1;

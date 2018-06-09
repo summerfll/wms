@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>444</width>
+    <height>553</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@ color: rgb(255, 255, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>444</width>
      <height>23</height>
     </rect>
    </property>
@@ -70,9 +70,13 @@ color: rgb(255, 255, 255);
    </property>
    <property name="maximumSize">
     <size>
-     <width>76</width>
+     <width>350</width>
      <height>1000</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(250, 250, 250);
+color: rgb(0, 0, 0);</string>
    </property>
    <property name="windowTitle">
     <string>Settings</string>

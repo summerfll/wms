@@ -23,19 +23,19 @@ int main(int argc, char *argv[])
 {
     RTLSDisplayApplication app(argc, argv);
     loginDialog lgn;
-   // if(lgn.exec()==QDialog::Accepted)
-  //  {
+    if(lgn.exec()==QDialog::Accepted)
+    {
         app.mainWindow()->show();
         app.setQuitOnLastWindowClosed(true);
         return app.QApplication::exec();
-  //  }
-  //  else
-  //  {
-  //      return 0;
-  //  }
-//
+    }
+    else
+    {
+       return 0;
+   }
 
-    //app.mainWindow()->setAttribute(Qt::WA_QuitOnClose,true); //最后一个窗口关闭时关闭程序.
+
+    app.mainWindow()->setAttribute(Qt::WA_QuitOnClose,true); //最后一个窗口关闭时关闭程序.
 
 
 }

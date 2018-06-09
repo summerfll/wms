@@ -24,9 +24,6 @@ storage::storage(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("货物入库");
-    QFont ft;
-    ft.setPointSize(18);
-    ui->label->setFont(ft);
 
     QSqlQuery query1;
     QSqlQueryModel *model = new QSqlQueryModel();
