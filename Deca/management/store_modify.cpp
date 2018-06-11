@@ -11,6 +11,7 @@ store_modify::store_modify(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("仓库信息修改");
+     ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
     setAttribute(Qt::WA_DeleteOnClose);//delete store_mdf
 }
 

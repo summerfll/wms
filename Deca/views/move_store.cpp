@@ -21,6 +21,7 @@ move_store::move_store(QWidget *parent) :
         QString str = model_storequery->record(i).value(0).toString();
         ui->comboBox->addItem(str);
      }
+     ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 move_store::~move_store()
@@ -53,6 +54,8 @@ void move_store::on_pushButton_2_clicked()
     QString read_number_2 = ui->lineEdit_4->text().trimmed();
     QString store_new = ui->comboBox->currentText().trimmed();
     QString store_old = ui->lineEdit_3->text().trimmed();
+    int read_num = read_number.toInt();
+    int read_num2 = read_number_2.toInt();
     int store_num;
     QSqlQuery query;
     query.exec("select *from stores_management where 仓库名称='"+store_new+"'");
@@ -72,11 +75,15 @@ void move_store::on_pushButton_2_clicked()
     {
         QMessageBox::information(this,tr("提醒信息"),tr("请填写移库数量"));
     }
+    else if(read_num>read_num2)
+    {
+        QMessageBox::warning(this, tr("警告"), tr("移库数量不能超过库存数量！"));
+        ui->lineEdit_5->setText(NULL);
+    }
     else
     {
 
-        int read_num = read_number.toInt();
-        int read_num2 = read_number_2.toInt();
+
         QString storage_number = QString::number(read_num2 - read_num);
         QString store_number = QString::number(store_num + read_num);
         QSqlQuery query_1,query_2;

@@ -12,7 +12,7 @@ storage_delete::storage_delete(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("订单修改");
-
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 storage_delete::~storage_delete()

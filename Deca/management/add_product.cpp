@@ -13,6 +13,7 @@ add_product::add_product(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("新增仓库信息");
     ui->dateEdit->setDisplayFormat("yyyy/MM/dd");
+     ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 add_product::~add_product()

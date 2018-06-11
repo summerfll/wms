@@ -15,6 +15,7 @@ find_result::find_result(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("查询结果");
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 find_result::~find_result()

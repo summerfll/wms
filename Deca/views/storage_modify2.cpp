@@ -33,6 +33,7 @@ storage_modify2::storage_modify2(QWidget *parent) :
         QString str1 = model1->record(i).value(0).toString();
         ui->comboBox_2->addItem(str1);
      }
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 void storage_modify2:: displayAllInformation(QString data)

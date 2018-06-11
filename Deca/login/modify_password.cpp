@@ -13,6 +13,7 @@ modify_password::modify_password(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("密码修改");
+    ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 modify_password::~modify_password()

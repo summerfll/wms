@@ -13,6 +13,7 @@ product_modify2::product_modify2(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("产品信息修改");
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 product_modify2::~product_modify2()

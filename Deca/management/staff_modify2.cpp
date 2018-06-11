@@ -13,6 +13,7 @@ staff_modify2::staff_modify2(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("编辑员工信息");
     setAttribute(Qt::WA_DeleteOnClose);
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 staff_modify2::~staff_modify2()

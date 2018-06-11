@@ -57,6 +57,7 @@ storage::storage(QWidget *parent) :
 
     ui->lineEdit_1->setText("自动生成订单号");
     ui->lineEdit_1->setEnabled(false);
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 storage::~storage()

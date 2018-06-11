@@ -11,6 +11,7 @@ tag_add::tag_add(QWidget *parent) :
     ui->setupUi(this);
     ui->lineEdit->setFocusPolicy(Qt::NoFocus);
     ui->lineEdit_2->setFocusPolicy(Qt::NoFocus);//不可编辑
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 tag_add::~tag_add()

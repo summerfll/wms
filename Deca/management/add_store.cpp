@@ -23,6 +23,7 @@ add_store::add_store(QWidget *parent) :
      }
     connect(ui->comboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(displayphone_num(QString)));
     setAttribute(Qt::WA_DeleteOnClose);
+     ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 void add_store::displayphone_num(QString staff_name)
 {

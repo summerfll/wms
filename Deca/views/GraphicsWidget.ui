@@ -4734,6 +4734,9 @@ QTableView::item:!alternate:!selected{
               </item>
               <item>
                <widget class="QLabel" name="label_79">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 10pt &quot;微软雅黑&quot;;</string>
+                </property>
                 <property name="text">
                  <string>选择查询的仓库：</string>
                 </property>
@@ -4742,16 +4745,18 @@ QTableView::item:!alternate:!selected{
               <item>
                <widget class="QComboBox" name="comboBox_5">
                 <property name="styleSheet">
-                 <string notr="true">QComboBox{border:1px solid #d7d7d7; 
-border-radius: 3px; }
+                 <string notr="true">QComboBox{
+border:1px solid #d7d7d7; 
+border-radius: 3px; 
+}
 QListView::item:!selected{
-color: #19649f
+color: #19649f;
 } 
 QListView::item:selected:active{
-background-color: #1275c3
+background-color: #1275c3;
 }
 QListView::item:selected{
-color: white
+color: white;
 }</string>
                 </property>
                </widget>
@@ -4791,6 +4796,11 @@ background-color:rgb(255, 170, 0);
                 <property name="text">
                  <string>刷新</string>
                 </property>
+                <property name="icon">
+                 <iconset>
+                  <activeoff>:/qt 图标/更新图标/refresh.ico</activeoff>
+                 </iconset>
+                </property>
                </widget>
               </item>
               <item>
@@ -4808,6 +4818,9 @@ background-color:rgb(255, 170, 0);
               </item>
               <item>
                <widget class="QLabel" name="label_80">
+                <property name="styleSheet">
+                 <string notr="true">font: 75 10pt &quot;微软雅黑&quot;;</string>
+                </property>
                 <property name="text">
                  <string>输入或选中移库单号：</string>
                 </property>
@@ -4850,6 +4863,11 @@ background-color:rgb(255, 170, 0);
                 </property>
                 <property name="text">
                  <string>移库</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <activeoff>:/qt 图标/更新图标/export.ico</activeoff>
+                 </iconset>
                 </property>
                </widget>
               </item>
@@ -4941,6 +4959,11 @@ background-color:rgb(255, 170, 0);
               </property>
               <property name="text">
                <string>刷新</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <activeoff>:/qt 图标/更新图标/refresh.ico</activeoff>
+               </iconset>
               </property>
              </widget>
             </item>

@@ -11,6 +11,7 @@ add_staff::add_staff(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("新增员工信息");
     setAttribute(Qt::WA_DeleteOnClose);
+     ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 add_staff::~add_staff()

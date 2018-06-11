@@ -12,6 +12,7 @@ product_modify::product_modify(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("产品信息修改");
     setAttribute(Qt::WA_DeleteOnClose);//delete product_mdf
+     ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
 
 product_modify::~product_modify()

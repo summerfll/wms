@@ -7,6 +7,7 @@ Tag::Tag(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("增加标签");
+     ui->pushButton->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 
 }
 
