@@ -399,6 +399,11 @@ private slots:
      void on_pushButton_82_released();
 
      void on_pushButton_86_clicked();
+     void display(QString store_name);
+
+     void on_pushButton_101_clicked();
+
+     void on_pushButton_102_clicked();
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
@@ -413,7 +418,8 @@ signals:
     void send_click7(int);
     void send_click8(int);
     void send_click9(int);
-    void send_click10(int);
+    void send_click_10(int);
+    void send_num(QString);
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;

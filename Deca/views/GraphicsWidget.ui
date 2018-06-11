@@ -60,7 +60,7 @@ color:rgb(0, 0, 0);
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>10</number>
      </property>
      <property name="iconSize">
       <size>
@@ -4708,6 +4708,274 @@ QTableView::item:!alternate:!selected{
       <attribute name="title">
        <string>页</string>
       </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_20">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_17">
+         <item>
+          <widget class="QGroupBox" name="groupBox_17">
+           <property name="title">
+            <string>库存状态</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_19">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_31">
+              <item>
+               <spacer name="horizontalSpacer_21">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_79">
+                <property name="text">
+                 <string>选择查询的仓库：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="comboBox_5">
+                <property name="styleSheet">
+                 <string notr="true">QComboBox{border:1px solid #d7d7d7; 
+border-radius: 3px; }
+QListView::item:!selected{
+color: #19649f
+} 
+QListView::item:selected:active{
+background-color: #1275c3
+}
+QListView::item:selected{
+color: white
+}</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_102">
+                <property name="minimumSize">
+                 <size>
+                  <width>70</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>70</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+font: 75 11pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255);
+background-color:rgb(170, 0, 255);
+border-radius: 8px;
+border: 3px groove rgb(98, 98, 98);
+border-style: outset;
+}
+QPushButton:pressed{
+border-style: inset;
+}
+QPushButton:hover{
+background-color:rgb(255, 170, 0);
+}
+
+</string>
+                </property>
+                <property name="text">
+                 <string>刷新</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_20">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_80">
+                <property name="text">
+                 <string>输入或选中移库单号：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_24"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_101">
+                <property name="minimumSize">
+                 <size>
+                  <width>70</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>70</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+font: 75 11pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255);
+background-color:rgb(0, 170, 127);
+border-radius: 8px;
+border: 3px groove rgb(98, 98, 98);
+border-style: outset;
+}
+QPushButton:pressed{
+border-style: inset;
+}
+QPushButton:hover{
+background-color:rgb(255, 170, 0);
+}
+
+</string>
+                </property>
+                <property name="text">
+                 <string>移库</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableView" name="tableView_11">
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section{  
+    background: rgb(76, 76, 76);
+    color: rgb(240, 240, 240);  
+    padding-left: 4px;  
+    border: 1px solid #C07010;  
+    min-height: 30px;  
+}  /*表头*/
+QTableView{  
+    color: rgb(0, 0, 0);  
+    border: 1px solid #C07010;          /*边框颜色*/  
+    gridline-color:#C07010;             /*grid线颜色*/  
+    background-color: rgb(76, 76, 76); 
+    alternate-background-color: rgb(200, 200, 200); /*行交替颜色*/  
+    selection-background-color: rgb(130, 190, 100); /*选中行背景颜色*/  
+}  
+  
+QTableView::item:!alternate:!selected{  
+    background-color: rgb(220, 220, 220);    /*交替行的另一颜色*/  
+}  
+</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_16">
+         <property name="title">
+          <string>仓库状态</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_18">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <spacer name="horizontalSpacer_25">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_13">
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>70</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+font: 75 11pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255);
+background-color:rgb(170, 0, 255);
+border-radius: 8px;
+border: 3px groove rgb(98, 98, 98);
+border-style: outset;
+}
+QPushButton:pressed{
+border-style: inset;
+}
+QPushButton:hover{
+background-color:rgb(255, 170, 0);
+}
+
+</string>
+              </property>
+              <property name="text">
+               <string>刷新</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableView" name="tableView_12">
+            <property name="styleSheet">
+             <string notr="true">QHeaderView::section{  
+    background: rgb(76, 76, 76);
+    color: rgb(240, 240, 240);  
+    padding-left: 4px;  
+    border: 1px solid #C07010;  
+    min-height: 30px;  
+}  /*表头*/
+QTableView{  
+    color: rgb(0, 0, 0);  
+    border: 1px solid #C07010;          /*边框颜色*/  
+    gridline-color:#C07010;             /*grid线颜色*/  
+    background-color: rgb(76, 76, 76); 
+    alternate-background-color: rgb(200, 200, 200); /*行交替颜色*/  
+    selection-background-color: rgb(130, 190, 100); /*选中行背景颜色*/  
+}  
+  
+QTableView::item:!alternate:!selected{  
+    background-color: rgb(220, 220, 220);    /*交替行的另一颜色*/  
+}  
+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
@@ -4774,7 +5042,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>4</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -4904,8 +5172,8 @@ background-color: rgb(0, 0, 0);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>81</width>
-          <height>169</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="label">

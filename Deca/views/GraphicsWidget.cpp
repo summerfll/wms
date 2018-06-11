@@ -36,6 +36,7 @@
 #include "storage_modify.h"
 #include "storage_delete.h"
 #include "tag_add.h"
+#include "move_store.h"
 #include "management/add_staff.h"
 #include "management/product_modify.h"
 #include "management/staff_modify.h"
@@ -274,6 +275,16 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
    ui->groupBox_12->hide();
    ui->groupBox_13->hide();
+
+//移库管理中显示查询的仓库
+   model_storequery->setQuery("select 仓库名称 from "+MODEL_STORE+"");
+   int rowNum = model_storequery->rowCount();
+   for(int i = 0;i<rowNum;i++)
+   {
+       QString str = model_storequery->record(i).value(0).toString();
+       ui->comboBox_5->addItem(str);
+    }
+   connect(ui->comboBox_5,SIGNAL(currentIndexChanged(QString)),this,SLOT(display(QString)));
 
 }
 
@@ -3949,4 +3960,81 @@ void GraphicsWidget::on_pushButton_86_clicked()
     ui->label_57->setText("状态: "+house_state+"");
     ui->label_58->setText("管理员: "+admin+"");
     ui->label_59->setText("备注: "+other+"");
+}
+
+void GraphicsWidget::on_pushButton_32_clicked()
+{
+    int click_num = 10;
+    connect(this,SIGNAL(send_click_10(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+    emit send_click_10(click_num);
+}
+
+void GraphicsWidget::display(QString store_name)
+{
+    model_storagequery->setQuery("select *from "+MODEL_STORAGE+" where 仓库 = '"+store_name+"'");
+    ui->tableView_11->setModel(model_storagequery);
+
+    ui->tableView_11->setColumnWidth(0,130);
+    ui->tableView_11->setColumnWidth(1,130);
+    ui->tableView_11->setColumnWidth(2,130);
+    ui->tableView_11->setColumnWidth(3,130);
+    ui->tableView_11->setColumnWidth(4,140);
+    ui->tableView_11->setColumnWidth(5,240);
+    ui->tableView_11->setColumnWidth(6,140);
+    ui->tableView_11->setColumnWidth(7,140);
+
+}
+
+void GraphicsWidget::on_pushButton_101_clicked()
+{
+    QString read_num = ui->lineEdit_24->text().trimmed();
+    QSqlQuery query;
+    query.exec("select *from "+MODEL_STORAGE+" where 订单号 = '"+read_num+"'");
+    if(!query.next())
+    {
+        QMessageBox::warning(this,tr("输入错误"),tr("请重新输入"));
+        ui->lineEdit_24->setText(NULL);
+
+    }
+    else
+    {
+        move_store *ms = new move_store();
+        ms->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+        ms->move((QApplication::desktop()->width() - ms->width()) / 2,
+                          (QApplication::desktop()->height() - ms->height()) / 2);//桌面正中
+        ms->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+        ms->show();
+        connect(this,SIGNAL(send_num(QString)),ms,SLOT(display_imformation(QString)));
+        emit(send_num(read_num));
+    }
+}
+
+void GraphicsWidget::on_pushButton_102_clicked()
+{
+    QString read_store = ui->comboBox_5->currentText().trimmed();
+    model_storagequery->setQuery("select *from "+MODEL_STORAGE+" where 仓库 = '"+read_store+"'");
+    ui->tableView_11->setModel(model_storagequery);
+    ui->tableView_11->setColumnWidth(0,130);
+    ui->tableView_11->setColumnWidth(1,130);
+    ui->tableView_11->setColumnWidth(2,130);
+    ui->tableView_11->setColumnWidth(3,130);
+    ui->tableView_11->setColumnWidth(4,140);
+    ui->tableView_11->setColumnWidth(5,240);
+    ui->tableView_11->setColumnWidth(6,140);
+    ui->tableView_11->setColumnWidth(7,140);
+}
+
+void GraphicsWidget::on_pushButton_13_clicked()
+{
+    model_storequery->setQuery("select *from "+MODEL_STORE+"");
+    ui->tableView_12->setModel(model_storequery);
+    ui->tableView_12->setColumnWidth(0, 115);//设置表的每一列的宽度
+    ui->tableView_12->setColumnWidth(1, 130);
+    ui->tableView_12->setColumnWidth(2, 130);
+    ui->tableView_12->setColumnWidth(3, 130);
+    ui->tableView_12->setColumnWidth(4, 130);
+    ui->tableView_12->setColumnWidth(5, 130);
+    ui->tableView_12->setColumnWidth(6, 130);
+    ui->tableView_12->setColumnWidth(7, 130);
+    ui->tableView_12->setColumnWidth(8, 150);
 }
