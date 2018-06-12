@@ -1,5 +1,6 @@
 #include "add_product.h"
 #include "ui_add_product.h"
+#include "GraphicsWidget.h"
 #include<QSqlQuery>
 #include<QDebug>
 #include<QSqlQueryModel>
@@ -89,4 +90,10 @@ void add_product::on_pushButton_2_clicked()
         }
     }
 
+}
+void add_product::show_serialdata()
+{
+    QString buf;
+    buf=GraphicsWidget::Serial->readAll().trimmed();
+    ui->lineEdit->setText(buf);
 }

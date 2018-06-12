@@ -48,7 +48,6 @@ SOURCES += main.cpp\
     management/product_modify.cpp \
     management/staff_modify.cpp \
     management/store_modify.cpp \
-    views/tag.cpp \
     management/add_staff.cpp \
     management/staff_modify2.cpp \
     management/store_modify2.cpp \
@@ -85,7 +84,6 @@ HEADERS  += \
     views/storage_modify2.h \
     views/storage_delete.h \
     views/tag_add.h \
-    views/tag.h \
     management/product_modify.h \
     management/store_modify.h \
     management/staff_modify.h \
@@ -114,7 +112,6 @@ FORMS    += \
     management/product_modify.ui \
     management/staff_modify.ui \
     management/store_modify.ui \
-    views/tag.ui \
     management/add_staff.ui \
     management/staff_modify2.ui \
     management/store_modify2.ui \

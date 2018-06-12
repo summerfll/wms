@@ -169,7 +169,6 @@ void storage::show_serialdata()//显示串口采集扫码器数据
     QSqlQuery query;
     QString buf;
     buf=GraphicsWidget::Serial->readAll().trimmed();
-    qDebug()<<"serial::"<<buf;
     QString name,type,unit1,data1,fc,num;
     query.exec("select * from product_imformation where 产品编号 ='"+buf+"'");
     if(query.next())

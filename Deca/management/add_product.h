@@ -20,6 +20,7 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void show_serialdata();
 private:
     Ui::add_product *ui;
 };

@@ -103,7 +103,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model->setTable("input");
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model->select(); //选取整个表的所有行
-    ui->tableView->setModel(model);
+    //ui->tableView->setModel(model);
 
     model1=new QSqlTableModel(this);
     model1->setTable("reader");
@@ -2009,16 +2009,6 @@ void GraphicsWidget::on_pushButton_5_clicked()
 
 
 
-void GraphicsWidget::on_pushButton_6_clicked()
-{
-     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView);
-     model->setQuery("select 订单号,产品编号 from storage_copy");
-
-     ui->tableView->setModel(model);
-
-}
-
-
 void GraphicsWidget::on_pushButton_8_clicked()
 {
 
@@ -2053,10 +2043,7 @@ void GraphicsWidget::on_pushButton_7_clicked()
 
 void GraphicsWidget::on_pushButton_11_clicked()
 {
-    /*
-    storage_modify *modify = storage_modify::ShowWin();
-    modify->setWindowFlags(modify->windowFlags()|Qt::WindowStaysOnTopHint);//小窗口总显示在最前
-    */
+
     storage_modify *modify = new storage_modify();
     modify->move((QApplication::desktop()->width() - modify->width()) / 2,
                  (QApplication::desktop()->height() - modify->height()) / 2);
@@ -2064,17 +2051,18 @@ void GraphicsWidget::on_pushButton_11_clicked()
     modify->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     modify->show();
     int read_num = ui->lineEdit_21->text().toInt();
+    int curRow = ui->tableView_2->currentIndex().row();
+    if(curRow>=0)
+    {
     int num = (read_num-1)*STORAGE_LINE;
     QString storage_line = QString::number(STORAGE_LINE);
     QString limit_num = QString::number(num);
     model_storagequery->setQuery("select *from "+MODEL_STORAGE+" limit "+limit_num+","+storage_line+"");
-    int curRow = ui->tableView_2->currentIndex().row();
+
     QString value = model_storagequery->record(curRow).value("订单号").toString();
     connect(this,SIGNAL(sendOrderValue(QString)),modify,SLOT(disPlayImformation(QString)));
     emit sendOrderValue(value);
-
-
-
+    }
 
 }
 
@@ -2959,12 +2947,16 @@ void GraphicsWidget::on_pushButton_37_clicked()
 void GraphicsWidget::on_pushButton_48_clicked()
 {
 
-
-
     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_7);
     model->setQuery("select *from biaoshi");
-
     ui->tableView_7->setModel(model);
+    ui->tableView_7->setColumnWidth(0,100);
+    ui->tableView_7->setColumnWidth(1,100);
+    ui->tableView_7->setColumnWidth(2,100);
+    ui->tableView_7->setColumnWidth(3,100);
+    ui->tableView_7->setColumnWidth(4,100);
+    ui->tableView_7->setColumnWidth(5,100);
+    ui->tableView_7->setColumnWidth(6,100);
 }
 
 void GraphicsWidget::on_pushButton_49_clicked()
@@ -3394,6 +3386,7 @@ void GraphicsWidget::on_pushButton_64_clicked()
                       (QApplication::desktop()->height() - add_pdt->height()) / 2);//桌面正中
     add_pdt->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     add_pdt->show();
+    connect(Serial, SIGNAL(readyRead()), add_pdt, SLOT(show_serialdata()));
 }
 
 void GraphicsWidget::on_pushButton_55_clicked()
@@ -3644,16 +3637,16 @@ void GraphicsWidget::on_pushButton_75_clicked()
     emit send_click4(click_num);
 }
 
-void GraphicsWidget::on_pushButton_62_clicked()
-{
-    int click_num = 5;
-    connect(this,SIGNAL(send_click5(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
-    emit send_click5(click_num);
-}
+//void GraphicsWidget::on_pushButton_62_clicked()
+//{
+//    int click_num = 5;
+ //   connect(this,SIGNAL(send_click5(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
+//    emit send_click5(click_num);
+//}//
 
 void GraphicsWidget::on_pushButton_67_clicked()
 {
-    int click_num = 6;
+    int click_num = 5;
     connect(this,SIGNAL(send_click6(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click6(click_num);
     QString staff_line = QString::number(STAFF_LINE);
@@ -3674,7 +3667,7 @@ void GraphicsWidget::on_pushButton_67_clicked()
 
 void GraphicsWidget::on_pushButton_69_clicked()
 {
-    int click_num = 7;
+    int click_num = 6;
     connect(this,SIGNAL(send_click7(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click7(click_num);
     QString store_line = QString::number(STORE_LINE);
@@ -3697,7 +3690,7 @@ void GraphicsWidget::on_pushButton_69_clicked()
 
 void GraphicsWidget::on_pushButton_68_clicked()
 {
-    int click_num = 8;
+    int click_num = 7;
     connect(this,SIGNAL(send_click8(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click8(click_num);
     QString product_line = QString::number(PRODUCT_LINE);
@@ -3706,7 +3699,7 @@ void GraphicsWidget::on_pushButton_68_clicked()
     ui->label_30->setText(QString::number(product_totalpage));
     ui->lineEdit_20->setText("1");
     ui->label_34->setText("1");
-    ui->tableView_10->setColumnWidth(0, 80);//设置表的每一列的宽度
+    ui->tableView_10->setColumnWidth(0, 150);//设置表的每一列的宽度
     ui->tableView_10->setColumnWidth(1, 120);
     ui->tableView_10->setColumnWidth(2, 100);
     ui->tableView_10->setColumnWidth(3, 80);
@@ -3715,8 +3708,8 @@ void GraphicsWidget::on_pushButton_68_clicked()
     ui->tableView_10->setColumnWidth(6, 100);
     ui->tableView_10->setColumnWidth(7, 100);
     ui->tableView_10->setColumnWidth(8, 120);
-    ui->tableView_10->setColumnWidth(9, 180);
-    ui->tableView_10->setColumnWidth(10, 115);
+    ui->tableView_10->setColumnWidth(9, 150);
+    ui->tableView_10->setColumnWidth(10, 75);
 }
 
 void GraphicsWidget::on_pushButton_33_clicked()
@@ -3740,7 +3733,7 @@ void GraphicsWidget::on_toolButton_11_clicked()
 
 void GraphicsWidget::on_pushButton_76_clicked()
 {
-    int click_num = 9;
+    int click_num = 8;
     connect(this,SIGNAL(send_click9(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click9(click_num);
 }
@@ -3964,7 +3957,7 @@ void GraphicsWidget::on_pushButton_86_clicked()
 
 void GraphicsWidget::on_pushButton_32_clicked()
 {
-    int click_num = 10;
+    int click_num = 9;
     connect(this,SIGNAL(send_click_10(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click_10(click_num);
 }
