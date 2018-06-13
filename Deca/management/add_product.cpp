@@ -6,13 +6,13 @@
 #include<QSqlQueryModel>
 #include<QMessageBox>
 #include<QSqlRecord>
-
+add_product*  add_product::Instance1=NULL;
 add_product::add_product(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::add_product)
 {
     ui->setupUi(this);
-    this->setWindowTitle("新增仓库信息");
+    this->setWindowTitle("新增产品信息");
     ui->dateEdit->setDisplayFormat("yyyy/MM/dd");
      ui->pushButton_2->setShortcut(Qt::Key_Return);//将小键盘回车键与登录按钮绑定在一起
 }
@@ -91,9 +91,4 @@ void add_product::on_pushButton_2_clicked()
     }
 
 }
-void add_product::show_serialdata()
-{
-    QString buf;
-    buf=GraphicsWidget::Serial->readAll().trimmed();
-    ui->lineEdit->setText(buf);
-}
+

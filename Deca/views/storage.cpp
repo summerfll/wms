@@ -119,6 +119,7 @@ void storage::on_pushButton_clicked()
             else
                 QMessageBox::warning(this, tr("警告"), tr("入库失败！"));
 
+
         }
         else
             QMessageBox::warning(this, tr("警告"), tr("输入不能为空！"));
@@ -168,29 +169,42 @@ void storage::show_serialdata()//显示串口采集扫码器数据
     ConnectDatabase::openDatabase();
     QSqlQuery query;
     QString buf;
+    char *buf_1;
     buf=GraphicsWidget::Serial->readAll().trimmed();
+    QByteArray ba = buf.toLatin1(); // qstring to char
+    buf_1=ba.data();
     QString name,type,unit1,data1,fc,num;
-    query.exec("select * from product_imformation where 产品编号 ='"+buf+"'");
-    if(query.next())
+    if(strlen(buf_1)>5)
     {
-       QSqlRecord record=query.record();
-       name=query.value(record.indexOf("产品名称")).toString();
-       type=query.value(record.indexOf("类别")).toString();
-       unit1=query.value(record.indexOf("单位")).toString();
-       data1=query.value(record.indexOf("生产日期")).toString();
-       fc=query.value(record.indexOf("生产厂商")).toString();
-       num=query.value(record.indexOf("数量")).toString();
+        query.exec("select * from product_imformation where 产品编号 ='"+buf+"'");
+        if(query.next())
+        {
+           QSqlRecord record=query.record();
+           name=query.value(record.indexOf("产品名称")).toString();
+           type=query.value(record.indexOf("类别")).toString();
+           unit1=query.value(record.indexOf("单位")).toString();
+           data1=query.value(record.indexOf("生产日期")).toString();
+           fc=query.value(record.indexOf("生产厂商")).toString();
+           num=query.value(record.indexOf("数量")).toString();
+
+        }
+        else
+        {
+             QMessageBox::warning(this, tr("警告"), tr("没有该商品编号，请先录入！"));
+        }
+        ui->lineEdit_2->setText(name);
+        ui->lineEdit_3->setText(buf);
+        ui->lineEdit_6->setText(type);
+        ui->lineEdit_7->setText(unit1);
+        ui->lineEdit_9->setText(data1);
+        ui->lineEdit_10->setText(fc);
+        ui->lineEdit_5->setText(num);
+
     }
     else
     {
-         QMessageBox::warning(this, tr("警告"), tr("没有该商品编号，请先录入！"));
+        ui->lineEdit_4->setText(buf);
     }
-    ui->lineEdit_2->setText(name);
-    ui->lineEdit_3->setText(buf);
-    ui->lineEdit_6->setText(type);
-    ui->lineEdit_7->setText(unit1);
-    ui->lineEdit_9->setText(data1);
-    ui->lineEdit_10->setText(fc);
-    ui->lineEdit_5->setText(num);
+
 
 }

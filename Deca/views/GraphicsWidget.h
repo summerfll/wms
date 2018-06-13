@@ -139,8 +139,8 @@ public:
     void outputQtablewidgettoexcel(QTableWidget *table,QString title);
 
     static QSerialPort *Serial;
-
     static bool serial_flag;
+
 
 
 
@@ -404,6 +404,7 @@ private slots:
      void on_pushButton_101_clicked();
 
      void on_pushButton_102_clicked();
+     void display_biaoshidata();
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识

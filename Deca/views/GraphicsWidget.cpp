@@ -75,6 +75,7 @@
 QSerialPort *GraphicsWidget::Serial = new QSerialPort;
 bool GraphicsWidget::serial_flag=false;
 
+
 GraphicsWidget::GraphicsWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphicsWidget)
@@ -129,6 +130,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     model5->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model5->select(); //选取整个表的所有行
     ui->tableView_7->setModel(model5);
+
 
 
     this->_scene = new QGraphicsScene(this);
@@ -213,6 +215,7 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
     _line01 = NULL;
     _line02 = NULL;
     _line12 = NULL;
+
     RTLSDisplayApplication::connectReady(this, "onReady()");
     //stt
     ui->tagTable->hide();
@@ -222,13 +225,14 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
 
 
     //串口初始化
-    Serial->setPortName("COM6");   //串口名字
+    Serial->setPortName("com6");   //串口名字
     Serial->open(QIODevice::ReadWrite);
     Serial->setBaudRate(QSerialPort::Baud9600);//设置波特率为115200
     Serial->setDataBits(QSerialPort::Data8);//设置数据位8
     Serial->setParity(QSerialPort::NoParity);//校验位
     Serial->setStopBits(QSerialPort::OneStop);//停止位设置为1
     Serial->setFlowControl(QSerialPort::NoFlowControl);//设置为无流控制
+
 
     //各表的总行数
    model_staffquery0->setQuery("select *from "+MODEL_STAFF+"");
@@ -285,14 +289,8 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
        ui->comboBox_5->addItem(str);
     }
    connect(ui->comboBox_5,SIGNAL(currentIndexChanged(QString)),this,SLOT(display(QString)));
-
 }
 
-void GraphicsWidget::trans_serialdata()
-{
-    QString buf;
-    buf=GraphicsWidget::Serial->readAll();
-}
 
 void GraphicsWidget::onReady()
 {
@@ -2946,7 +2944,6 @@ void GraphicsWidget::on_pushButton_37_clicked()
 
 void GraphicsWidget::on_pushButton_48_clicked()
 {
-
     QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_7);
     model->setQuery("select *from biaoshi");
     ui->tableView_7->setModel(model);
@@ -2957,6 +2954,7 @@ void GraphicsWidget::on_pushButton_48_clicked()
     ui->tableView_7->setColumnWidth(4,100);
     ui->tableView_7->setColumnWidth(5,100);
     ui->tableView_7->setColumnWidth(6,100);
+
 }
 
 void GraphicsWidget::on_pushButton_49_clicked()
@@ -3120,12 +3118,14 @@ void GraphicsWidget::on_pushButton_40_clicked()
                flag = 0;
                QString state1 = "使用中";
                query1.exec("update biaoshi set 标签状态 = '"+state1+"' where 标签编号 = '"+value2+"' ");
+
            }
            if(j==rowNum1-1&&value1!=value2&&flag==1)
            {
 
                QString state2 = "未使用";
                query1.exec("update biaoshi set 标签状态 = '"+state2+"' where 标签编号 = '"+value2+"' ");
+
            }
 
         }
@@ -3386,7 +3386,7 @@ void GraphicsWidget::on_pushButton_64_clicked()
                       (QApplication::desktop()->height() - add_pdt->height()) / 2);//桌面正中
     add_pdt->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
     add_pdt->show();
-    connect(Serial, SIGNAL(readyRead()), add_pdt, SLOT(show_serialdata()));
+
 }
 
 void GraphicsWidget::on_pushButton_55_clicked()
