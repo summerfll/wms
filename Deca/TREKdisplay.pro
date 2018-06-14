@@ -134,3 +134,5 @@ RESOURCES += \
 
 CONFIG += qaxcontainer #导出excel
 QT+ =serialport
+QT       += core gui multimedia multimediawidgets
+QT += multimediawidgets

@@ -23,6 +23,16 @@
 #include <QTableWidget>
 #include <QSerialPort>
 #include "storage.h"
+
+#include <QtMultimedia/QCamera>
+
+#include <QtMultimedia/QCameraInfo>
+#include <QCameraViewfinder>
+#include <QtMultimedia/QCameraImageCapture>
+#include <QFileDialog>
+#include <QDebug>
+#include "GraphicsWidget.h"
+
 namespace Ui {
 class GraphicsWidget;
 }
@@ -217,7 +227,7 @@ private slots:
 
     //void on_toolBox_2_destroyed();
 
-    void on_pushButton_6_clicked();
+   // void on_pushButton_6_clicked();
 
     void on_pushButton_13_clicked();
 
@@ -237,7 +247,7 @@ private slots:
 
     void on_pushButton_15_clicked();
 
-    void on_pushButton_15_clicked(bool checked);
+   // void on_pushButton_15_clicked(bool checked);
 
     void on_pushButton_23_clicked();
 
@@ -271,7 +281,7 @@ private slots:
 
     void on_pushButton_38_clicked();
 
-    void on_pushButton_39_clicked();
+   // void on_pushButton_39_clicked();
 
     void on_pushButton_30_clicked();
 
@@ -306,7 +316,7 @@ private slots:
 
     void on_pushButton_61_clicked();
 
-    void on_pushButton_62_clicked();
+   // void on_pushButton_62_clicked();
 
     void on_pushButton_52_clicked();
 
@@ -406,6 +416,10 @@ private slots:
      void on_pushButton_102_clicked();
      void display_biaoshidata();
 
+     void on_takephoto_clicked();
+
+     void on_pushButton_103_clicked();
+
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
     //toolbox发送index给tabwidget
@@ -491,5 +505,17 @@ private:
       int staff_totalpage,store_totalpage,product_totalpage,storage_totalpage;
 
 
+
+      //摄像头部分
+
+      QCameraViewfinder *viewfinder;
+      QCameraImageCapture *imageCapture;
+       QCamera *m_Cam;
+
+
 };
 #endif // GRAPHICSWIDGET_H
+
+
+
+

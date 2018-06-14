@@ -62,6 +62,14 @@
 #include <QPainter>
 
 
+#include <QtMultimedia/QCameraInfo>
+#include <QCameraViewfinder>
+#include <QtMultimedia/QCameraImageCapture>
+#include <QFileDialog>
+#include <QDebug>
+#include "GraphicsWidget.h"
+
+
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
 #define FONT_SIZE (10)
@@ -289,6 +297,28 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
        ui->comboBox_5->addItem(str);
     }
    connect(ui->comboBox_5,SIGNAL(currentIndexChanged(QString)),this,SLOT(display(QString)));
+
+
+
+   //摄像头
+   QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+   if(cameras.count() > 0) {
+       if(cameras.count() > 0) {
+       foreach (const QCameraInfo &cameraInfo, cameras) {
+            qDebug() << cameraInfo.description();
+       }
+
+       m_Cam=new QCamera(this);
+       m_Cam->setCaptureMode(QCamera::CaptureVideo);
+       m_Cam->setViewfinder(ui->widget_2);
+
+       imageCapture = new QCameraImageCapture(m_Cam);
+
+
+       m_Cam->start();
+   }
+   }
+
 }
 
 
@@ -4030,4 +4060,39 @@ void GraphicsWidget::on_pushButton_13_clicked()
     ui->tableView_12->setColumnWidth(6, 130);
     ui->tableView_12->setColumnWidth(7, 130);
     ui->tableView_12->setColumnWidth(8, 150);
+}
+
+void GraphicsWidget::on_takephoto_clicked()
+{
+    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+
+    if(cameras.count() > 0) {
+
+        m_Cam->setCaptureMode(QCamera::CaptureStillImage);
+        QString fileName = QFileDialog::getSaveFileName();
+        m_Cam->searchAndLock();
+    // 必须使用绝对路径
+        imageCapture->capture(fileName);
+         m_Cam->unlock();
+  }
+    else{
+
+    }
+}
+
+
+
+void GraphicsWidget::on_pushButton_103_clicked()
+{
+    static bool flag=false;
+    if(flag==false)
+    {
+        ui->groupBox_18->show();
+        flag=true;
+    }
+    else
+    {
+        ui->groupBox_18->hide();
+        flag=false;
+    }
 }
