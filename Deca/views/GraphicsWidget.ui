@@ -81,7 +81,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -1074,21 +1074,47 @@ color:rgb(0, 0, 0);
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <spacer name="horizontalSpacer_22">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
             <item row="1" column="1">
              <widget class="QPushButton" name="takephoto">
+              <property name="minimumSize">
+               <size>
+                <width>30</width>
+                <height>27</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>60</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>微软雅黑</family>
+                <pointsize>12</pointsize>
+                <weight>9</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+font: 75 12pt &quot;微软雅黑&quot;;
+color:rgb(255, 255, 255);
+background-color: rgb(0, 170, 255);
+border-radius: 8px;
+border: 3px groove rgb(98, 98, 98);
+border-style: outset;
+}
+QPushButton:pressed{
+border-style: inset;
+}
+QPushButton:hover{
+background-color:rgb(255, 170, 0);
+}
+
+</string>
+              </property>
               <property name="text">
                <string>拍照</string>
               </property>
@@ -1115,6 +1141,94 @@ font: 9pt &quot;微软雅黑&quot;;
             <string>位置查找</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
+            <item row="6" column="3">
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>产品编号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="3">
+             <widget class="QLabel" name="label_49">
+              <property name="text">
+               <string>入库时间：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="text">
+               <string>查找范围：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>标注颜色：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+            </item>
+            <item row="0" column="4">
+             <widget class="QComboBox" name="comboBox_3">
+              <property name="styleSheet">
+               <string notr="true">QComboBox{border:1px solid #d7d7d7; 
+border-radius: 3px; }
+QListView::item:!selected{
+color: #19649f
+} 
+QListView::item:selected:active{
+background-color: #1275c3
+}
+QListView::item:selected{
+color: white
+}</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>red</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>yellow</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>blue</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>green</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QRadioButton" name="radioButton">
+              <property name="text">
+               <string>订单号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QRadioButton" name="radioButton_2">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>标签号</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
             <item row="9" column="0" colspan="5">
              <widget class="QGroupBox" name="groupBox_14">
               <property name="minimumSize">
@@ -1192,60 +1306,6 @@ font: 9pt &quot;微软雅黑&quot;;
               </layout>
              </widget>
             </item>
-            <item row="5" column="0">
-             <widget class="QLabel" name="label_42">
-              <property name="text">
-               <string>订 单  号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QPushButton" name="pushButton_79">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	  
-    border-radius: 10px;   
-    border: 2px groove gray;  
- }
-</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" colspan="2">
-             <widget class="QLineEdit" name="lineEdit_22"/>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="label_50">
-              <property name="styleSheet">
-               <string notr="true">font: 9pt &quot;微软雅黑&quot;;</string>
-              </property>
-              <property name="text">
-               <string>当前坐标：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="1">
-             <widget class="QPushButton" name="pushButton_83">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	  
-    border-radius: 10px;   
-    border: 2px groove gray;  
- }</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="label_44">
-              <property name="text">
-               <string>产品名称：</string>
-              </property>
-             </widget>
-            </item>
             <item row="3" column="2">
              <widget class="QPushButton" name="pushButton_28">
               <property name="maximumSize">
@@ -1295,6 +1355,66 @@ border-radius:5px;padding:2px 4px;
                <string>查找</string>
               </property>
              </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QLabel" name="label_51">
+              <property name="text">
+               <string>当前时间：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="pushButton_78">
+              <property name="maximumSize">
+               <size>
+                <width>444444</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QPushButton{  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(140,140,140));  
+border:1px;  
+border-radius:5px;padding:2px 4px;/*border-radius控制圆角大小*/  
+}  
+QPushButton:hover{  /*鼠标放上后*/  
+color:rgb(255, 255, 255);  
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(120,120,120));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+QPushButton:pressed{ /*按下按钮后*/  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(190,190,190),  
+                              stop: 1 rgb(160,160,160));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+ </string>
+              </property>
+              <property name="text">
+               <string>取消</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QLineEdit" name="lineEdit_22"/>
             </item>
             <item row="7" column="0">
              <widget class="QLabel" name="label_46">
@@ -1372,56 +1492,6 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="3" column="3">
-             <widget class="QPushButton" name="pushButton_78">
-              <property name="maximumSize">
-               <size>
-                <width>444444</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">
-QPushButton{  
-color:rgb(255, 255, 255);   
-border-style:solid;  
-border-top-left-radius:2px;  
-border-top-right-radius:2px;  
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
-                            stop: 0.3 rgb(160,160,160),  
-                              stop: 1 rgb(140,140,140));  
-border:1px;  
-border-radius:5px;padding:2px 4px;/*border-radius控制圆角大小*/  
-}  
-QPushButton:hover{  /*鼠标放上后*/  
-color:rgb(255, 255, 255);  
-border-style:solid;  
-border-top-left-radius:2px;  
-border-top-right-radius:2px;  
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
-                            stop: 0.3 rgb(160,160,160),  
-                              stop: 1 rgb(120,120,120));  
-border:1px;  
-border-radius:5px;padding:2px 4px;  
-}  
-QPushButton:pressed{ /*按下按钮后*/  
-color:rgb(255, 255, 255);   
-border-style:solid;  
-border-top-left-radius:2px;  
-border-top-right-radius:2px;  
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
-                            stop: 0.3 rgb(190,190,190),  
-                              stop: 1 rgb(160,160,160));  
-border:1px;  
-border-radius:5px;padding:2px 4px;  
-}  
- </string>
-              </property>
-              <property name="text">
-               <string>取消</string>
-              </property>
-             </widget>
-            </item>
             <item row="5" column="4">
              <widget class="QPushButton" name="pushButton_82">
               <property name="cursor">
@@ -1461,13 +1531,30 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="4" column="4">
-             <widget class="QPushButton" name="pushButton_80">
+            <item row="5" column="3">
+             <widget class="QLabel" name="label_43">
+              <property name="text">
+               <string>标 签  号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="4">
+             <widget class="QPushButton" name="pushButton_86">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{  	  
+               <string notr="true">QPushButton{  	
     border-radius: 10px;   
-    border: 2px groove gray;  
- }</string>
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
               </property>
               <property name="text">
                <string/>
@@ -1497,29 +1584,6 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="7" column="4">
-             <widget class="QPushButton" name="pushButton_86">
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	
-    border-radius: 10px;   
-    border: 2px groove gray;   
- }
-QPushButton:hover{
-	border: 2px groove balck; 
-}
-QPushButton:pressed{
-	border-style: inset;
-	border: 2px groove red; 
-} </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
             <item row="7" column="3">
              <widget class="QLabel" name="label_47">
               <property name="text">
@@ -1527,105 +1591,67 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="5" column="3">
-             <widget class="QLabel" name="label_43">
-              <property name="text">
-               <string>标 签  号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="3">
-             <widget class="QLabel" name="label_45">
-              <property name="text">
-               <string>产品编号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="3">
-             <widget class="QLabel" name="label_49">
-              <property name="text">
-               <string>入库时间：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="3">
-             <widget class="QLabel" name="label_51">
-              <property name="text">
-               <string>当前时间：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3">
-             <widget class="QLabel" name="label_41">
-              <property name="text">
-               <string>标注颜色：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_40">
-              <property name="text">
-               <string>查找范围：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4">
-             <widget class="QComboBox" name="comboBox_3">
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_79">
               <property name="styleSheet">
-               <string notr="true">QComboBox{border:1px solid #d7d7d7; 
-border-radius: 3px; }
-QListView::item:!selected{
-color: #19649f
-} 
-QListView::item:selected:active{
-background-color: #1275c3
-}
-QListView::item:selected{
-color: white
-}</string>
+               <string notr="true">QPushButton{  	  
+    border-radius: 10px;   
+    border: 2px groove gray;  
+ }
+</string>
               </property>
-              <item>
-               <property name="text">
-                <string>red</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>yellow</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>blue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>green</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QRadioButton" name="radioButton">
               <property name="text">
-               <string>订单号</string>
+               <string/>
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <widget class="QRadioButton" name="radioButton_2">
-              <property name="enabled">
-               <bool>true</bool>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_42">
+              <property name="text">
+               <string>订 单  号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QPushButton" name="pushButton_83">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	  
+    border-radius: 10px;   
+    border: 2px groove gray;  
+ }</string>
               </property>
               <property name="text">
-               <string>标签号</string>
+               <string/>
               </property>
-              <property name="checked">
-               <bool>true</bool>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_50">
+              <property name="styleSheet">
+               <string notr="true">font: 9pt &quot;微软雅黑&quot;;</string>
+              </property>
+              <property name="text">
+               <string>当前坐标：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_44">
+              <property name="text">
+               <string>产品名称：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="4">
+             <widget class="QPushButton" name="pushButton_80">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	  
+    border-radius: 10px;   
+    border: 2px groove gray;  
+ }</string>
+              </property>
+              <property name="text">
+               <string/>
               </property>
              </widget>
             </item>
@@ -1644,41 +1670,17 @@ color: white
             <string>轨迹跟踪</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_22">
-            <item row="0" column="3">
-             <widget class="QSpinBox" name="spinBox">
-              <property name="minimum">
-               <number>1</number>
-              </property>
-              <property name="value">
-               <number>20</number>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_75">
+              <property name="text">
+               <string>管理员：</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="label_73">
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_77">
               <property name="text">
-               <string>产品名称：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QPushButton" name="pushButton_98">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QPushButton" name="pushButton_99">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QPushButton" name="pushButton_93">
-              <property name="text">
-               <string/>
+               <string>产品数量：</string>
               </property>
              </widget>
             </item>
@@ -1695,22 +1697,21 @@ color: white
               </property>
              </widget>
             </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="label_77">
-              <property name="text">
-               <string>产品数量：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="label_75">
-              <property name="text">
-               <string>管理员：</string>
-              </property>
-             </widget>
-            </item>
             <item row="6" column="1">
              <widget class="QPushButton" name="pushButton_94">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -1743,6 +1744,177 @@ color: white
               </property>
              </widget>
             </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_91">
+              <property name="styleSheet">
+               <string notr="true">
+QPushButton{  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(140,140,140));  
+border:1px;  
+border-radius:5px;padding:2px 4px;/*border-radius控制圆角大小*/  
+}  
+QPushButton:hover{  /*鼠标放上后*/  
+color:rgb(255, 255, 255);  
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(120,120,120));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+QPushButton:pressed{ /*按下按钮后*/  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(190,190,190),  
+                              stop: 1 rgb(160,160,160));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+ </string>
+              </property>
+              <property name="text">
+               <string>跟踪</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QPushButton" name="pushButton_92">
+              <property name="styleSheet">
+               <string notr="true">
+QPushButton{  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(140,140,140));  
+border:1px;  
+border-radius:5px;padding:2px 4px;/*border-radius控制圆角大小*/  
+}  
+QPushButton:hover{  /*鼠标放上后*/  
+color:rgb(255, 255, 255);  
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(120,120,120));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+QPushButton:pressed{ /*按下按钮后*/  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(190,190,190),  
+                              stop: 1 rgb(160,160,160));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+ </string>
+              </property>
+              <property name="text">
+               <string>结束</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="3">
+             <widget class="QLineEdit" name="lineEdit_23"/>
+            </item>
+            <item row="0" column="3">
+             <widget class="QSpinBox" name="spinBox">
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>20</number>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_73">
+              <property name="text">
+               <string>产品名称：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QPushButton" name="pushButton_93">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_98">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_99">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
             <item row="7" column="0" colspan="5">
              <widget class="QGroupBox" name="groupBox_15">
               <property name="maximumSize">
@@ -1758,130 +1930,165 @@ color: white
                <item row="2" column="0">
                 <widget class="QLabel" name="label_65">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="label_62">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_63">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="label_64">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="1" column="1">
                 <widget class="QLabel" name="label_67">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="2" column="1">
                 <widget class="QLabel" name="label_69">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="3" column="1">
                 <widget class="QLabel" name="label_66">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item row="3" column="0">
                 <widget class="QLabel" name="label_68">
                  <property name="text">
-                  <string>TextLabel</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
               </layout>
              </widget>
             </item>
-            <item row="1" column="4">
-             <widget class="QPushButton" name="pushButton_92">
-              <property name="text">
-               <string>结束</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="3">
-             <widget class="QPushButton" name="pushButton_91">
-              <property name="text">
-               <string>跟踪</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0" colspan="3">
-             <widget class="QLineEdit" name="lineEdit_23"/>
-            </item>
-            <item row="2" column="2">
+            <item row="2" column="3">
              <widget class="QLabel" name="label_76">
               <property name="text">
                <string>标签号：</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="3" colspan="2">
-             <widget class="QPushButton" name="pushButton_100">
+            <item row="3" column="4">
+             <widget class="QPushButton" name="pushButton_97">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
               <property name="text">
                <string/>
               </property>
              </widget>
             </item>
-            <item row="3" column="2">
+            <item row="3" column="3">
              <widget class="QLabel" name="label_72">
               <property name="text">
                <string>产品编号：</string>
               </property>
              </widget>
             </item>
-            <item row="4" column="2">
+            <item row="4" column="3">
              <widget class="QLabel" name="label_74">
               <property name="text">
                <string>仓库：</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="2">
+            <item row="2" column="4">
+             <widget class="QPushButton" name="pushButton_100">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="3">
              <widget class="QLabel" name="label_78">
               <property name="text">
                <string>入库时间：</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="3" colspan="2">
-             <widget class="QPushButton" name="pushButton_97">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="3" colspan="2">
+            <item row="4" column="4">
              <widget class="QPushButton" name="pushButton_95">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
               <property name="text">
                <string/>
               </property>
              </widget>
             </item>
-            <item row="6" column="3" colspan="2">
+            <item row="6" column="4">
              <widget class="QPushButton" name="pushButton_96">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -1901,13 +2108,13 @@ color: white
            <zorder>groupBox_15</zorder>
            <zorder>label_60</zorder>
            <zorder>spinBox</zorder>
-           <zorder>pushButton_100</zorder>
            <zorder>pushButton_97</zorder>
            <zorder>pushButton_95</zorder>
            <zorder>pushButton_96</zorder>
            <zorder>pushButton_92</zorder>
            <zorder>pushButton_91</zorder>
            <zorder>lineEdit_23</zorder>
+           <zorder>pushButton_100</zorder>
            <zorder>label_76</zorder>
            <zorder>label_72</zorder>
            <zorder>label_74</zorder>

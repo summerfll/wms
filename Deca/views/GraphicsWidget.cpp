@@ -4201,3 +4201,64 @@ void GraphicsWidget::on_pushButton_92_clicked()
     ui->pushButton_96->setText("");
 
 }
+
+void GraphicsWidget::on_pushButton_100_clicked()
+{
+    QSqlQuery query;
+
+    QString tag_id=ui->pushButton_100->text().trimmed();
+    QString tag_oid,tag_type,tag_state,tag_fac,tag_date,tag_other;
+
+    ui->groupBox_15->setTitle("定位标签(标签号："+tag_id+")详情");
+    query.exec("select * from biaoshi where 标签编号 ='"+tag_id+"'");
+    if(query.next())
+    {
+        QSqlRecord record=query.record();
+        tag_oid=query.value(record.indexOf("标签标识")).toString();
+        tag_type=query.value(record.indexOf("标签类型")).toString();
+        tag_state=query.value(record.indexOf("标签状态")).toString();
+        tag_fac=query.value(record.indexOf("生产厂商")).toString();
+        tag_date=query.value(record.indexOf("生产日期")).toString();
+        tag_other=query.value(record.indexOf("备注")).toString();
+    }
+    ui->label_63->setText("标签编号: "+tag_id+"");
+    ui->label_64->setText("标签标识: "+tag_oid+"");
+    ui->label_62->setText("标签类型: "+tag_type+"");
+    ui->label_67->setText("标签状态: "+tag_state+"");
+    ui->label_65->setText("生产厂商: "+tag_fac+"");
+    ui->label_69->setText("生产日期: "+tag_date+"");
+    ui->label_68->setText("备注: "+tag_other+"");
+    ui->label_66->setText("");
+}
+
+void GraphicsWidget::on_pushButton_95_clicked()
+{
+    QSqlQuery query;
+
+    QString house_name=ui->pushButton_95->text().trimmed();
+    QString house_id,house_type,existing_stocks,max_stocks,house_state,admin,other;
+
+    query.exec("select * from stores_management where 仓库名称 ='"+house_name+"'");
+    if(query.next())
+    {
+        QSqlRecord record=query.record();
+        house_id=query.value(record.indexOf("仓库编号")).toString();
+        house_type=query.value(record.indexOf("仓库类型")).toString();
+        existing_stocks=query.value(record.indexOf("现有库存")).toString();
+        max_stocks=query.value(record.indexOf("库存容量")).toString();
+        house_state=query.value(record.indexOf("状态")).toString();
+        admin=query.value(record.indexOf("管理员")).toString();
+        other=query.value(record.indexOf("备注")).toString();
+
+    }
+    ui->groupBox_15->setTitle("仓库(编号："+house_id+")详情");
+
+    ui->label_63->setText("仓库编号: "+house_id+"");
+    ui->label_64->setText("仓库名称: "+house_name+"");
+    ui->label_62->setText("仓库类型: "+house_type+"");
+    ui->label_67->setText("现有库存: "+existing_stocks+"");
+    ui->label_65->setText("库存容量: "+max_stocks+"");
+    ui->label_69->setText("状态: "+house_state+"");
+    ui->label_68->setText("管理员: "+admin+"");
+    ui->label_66->setText("备注: "+other+"");
+}

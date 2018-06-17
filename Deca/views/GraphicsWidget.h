@@ -213,7 +213,7 @@ protected:
     void tagHistory(quint64 tagId);
 
 private slots:
-    void on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint);
+   // void on_graphicsView_rubberBandChanged(const QRect &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint);
 
     void on_pushButton_clicked();
 
@@ -304,11 +304,11 @@ private slots:
 
     void on_pushButton_14_clicked();
 
-    void on_comboBox_activated(const QString &arg1);
+   // void on_comboBox_activated(const QString &arg1);
 
-    void on_toolBox_destroyed();
+   // void on_toolBox_destroyed();
 
-    void trans_serialdata();
+  //  void trans_serialdata();
 
     void on_pushButton_50_clicked();
 
@@ -406,7 +406,7 @@ private slots:
 
      void on_pushButton_82_clicked();
 
-     void on_pushButton_82_released();
+    // void on_pushButton_82_released();
 
      void on_pushButton_86_clicked();
      void display(QString store_name);
@@ -414,7 +414,7 @@ private slots:
      void on_pushButton_101_clicked();
 
      void on_pushButton_102_clicked();
-     void display_biaoshidata();
+    // void display_biaoshidata();
 
      void on_takephoto_clicked();
 
@@ -423,6 +423,10 @@ private slots:
      void on_pushButton_91_clicked();
 
      void on_pushButton_92_clicked();
+
+     void on_pushButton_100_clicked();
+
+     void on_pushButton_95_clicked();
 
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
