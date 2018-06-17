@@ -30,16 +30,25 @@
        <string>Configuration</string>
       </attribute>
       <widget class="QCheckBox" name="showTagHistory">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>20</x>
          <y>380</y>
-         <width>109</width>
+         <width>121</width>
          <height>17</height>
         </rect>
        </property>
        <property name="text">
         <string>Show Tag History</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QCheckBox" name="showGeoFencingMode">
@@ -145,7 +154,7 @@
       <widget class="QSpinBox" name="tagHistoryN">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>140</x>
          <y>380</y>
          <width>51</width>
          <height>22</height>

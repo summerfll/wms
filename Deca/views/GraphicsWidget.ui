@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1514</width>
-    <height>1214</height>
+    <height>1278</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -81,7 +81,7 @@ background-color: rgb(117, 117, 117);
       <number>0</number>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <property name="tabSpacing">
       <number>14</number>
@@ -223,7 +223,7 @@ background-color: rgb(0, 0, 0);
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>75</width>
+           <width>71</width>
            <height>161</height>
           </rect>
          </property>
@@ -255,7 +255,7 @@ background-color: rgb(35, 35, 35);
 </string>
             </property>
             <property name="text">
-             <string>map</string>
+             <string>地图</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -294,7 +294,7 @@ background-color: rgb(35, 35, 35);
 }</string>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>地图设置</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -328,7 +328,7 @@ background-color: rgb(35, 35, 35);
 </string>
             </property>
             <property name="text">
-             <string>AnchorTable</string>
+             <string>基站信息</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -352,7 +352,7 @@ background-color: rgb(35, 35, 35);
 }</string>
             </property>
             <property name="text">
-             <string>TagTable</string>
+             <string>标签信息</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -377,7 +377,7 @@ background-color: rgb(35, 35, 35);
 </string>
             </property>
             <property name="text">
-             <string>CloseAll</string>
+             <string>全部关闭</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -392,8 +392,8 @@ background-color: rgb(35, 35, 35);
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>81</width>
-          <height>169</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="label">
@@ -402,9 +402,9 @@ background-color: rgb(35, 35, 35);
         <widget class="QWidget" name="layoutWidget">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>0</x>
            <y>10</y>
-           <width>50</width>
+           <width>71</width>
            <height>101</height>
           </rect>
          </property>
@@ -476,7 +476,7 @@ background-color: rgb(35, 35, 35);
 </string>
             </property>
             <property name="text">
-             <string>历史轨迹</string>
+             <string>轨迹跟踪</string>
             </property>
             <property name="autoDefault">
              <bool>false</bool>
@@ -602,7 +602,7 @@ background-color: rgb(35, 35, 35);
 }</string>
           </property>
           <property name="text">
-           <string>标识管理</string>
+           <string>标签管理</string>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -1050,7 +1050,7 @@ color:rgb(0, 0, 0);
        <string/>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_20">
-       <item row="0" column="0" rowspan="2">
+       <item row="0" column="0" rowspan="3">
         <layout class="QVBoxLayout" name="verticalLayout_8">
          <item>
           <widget class="QGroupBox" name="groupBox_18">
@@ -1098,355 +1098,6 @@ color:rgb(0, 0, 0);
           </widget>
          </item>
          <item>
-          <widget class="QGroupBox" name="groupBox_13">
-           <property name="minimumSize">
-            <size>
-             <width>400</width>
-             <height>28</height>
-            </size>
-           </property>
-           <property name="title">
-            <string>历史轨迹</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_22">
-            <item row="8" column="0" colspan="5">
-             <widget class="QGroupBox" name="groupBox_15">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>300</height>
-               </size>
-              </property>
-              <property name="title">
-               <string>详情</string>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_21">
-               <item row="2" column="0">
-                <widget class="QLabel" name="label_65">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_62">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_63">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label_64">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_67">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="label_69">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="label_66">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_68">
-                 <property name="text">
-                  <string>TextLabel</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="5" column="3">
-             <widget class="QPushButton" name="pushButton_97">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="3">
-             <widget class="QPushButton" name="pushButton_100">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="2">
-             <widget class="QLabel" name="label_74">
-              <property name="text">
-               <string>仓库：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="2">
-             <widget class="QLabel" name="label_78">
-              <property name="text">
-               <string>入库时间：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3">
-             <widget class="QPushButton" name="pushButton_92">
-              <property name="text">
-               <string>取消</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="0">
-             <widget class="QLabel" name="label_75">
-              <property name="text">
-               <string>管理员：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="2">
-             <widget class="QLabel" name="label_72">
-              <property name="text">
-               <string>产品编号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QPushButton" name="pushButton_93">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="2">
-             <widget class="QLabel" name="label_76">
-              <property name="text">
-               <string>标签号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="3">
-             <widget class="QPushButton" name="pushButton_96">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="3">
-             <widget class="QPushButton" name="pushButton_95">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="label_77">
-              <property name="text">
-               <string>产品数量：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="1">
-             <widget class="QPushButton" name="pushButton_99">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="1">
-             <widget class="QPushButton" name="pushButton_94">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="3">
-             <widget class="QDateTimeEdit" name="dateTimeEdit">
-              <property name="dateTime">
-               <datetime>
-                <hour>0</hour>
-                <minute>0</minute>
-                <second>0</second>
-                <year>2018</year>
-                <month>6</month>
-                <day>6</day>
-               </datetime>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="label_71">
-              <property name="text">
-               <string>订单号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" colspan="2">
-             <widget class="QLineEdit" name="lineEdit_23"/>
-            </item>
-            <item row="5" column="0">
-             <widget class="QLabel" name="label_73">
-              <property name="text">
-               <string>产品名称：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_60">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>36</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>起始时间：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1">
-             <widget class="QPushButton" name="pushButton_98">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4">
-             <widget class="QComboBox" name="comboBox_4">
-              <item>
-               <property name="text">
-                <string>red</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>yellow</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>blue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>green</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="1" column="3">
-             <widget class="QLabel" name="label_61">
-              <property name="maximumSize">
-               <size>
-                <width>75</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>终止时间：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4">
-             <widget class="QPushButton" name="pushButton_90">
-              <property name="text">
-               <string>终止时间</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2">
-             <widget class="QPushButton" name="pushButton_91">
-              <property name="text">
-               <string>查找</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3">
-             <widget class="QPushButton" name="pushButton_89">
-              <property name="text">
-               <string>起始时间</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QRadioButton" name="radioButton_3">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>标签号</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="3">
-             <widget class="QLabel" name="label_70">
-              <property name="text">
-               <string>轨迹颜色：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QRadioButton" name="radioButton_4">
-              <property name="text">
-               <string>订单号</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-           <zorder>pushButton_89</zorder>
-           <zorder>dateTimeEdit</zorder>
-           <zorder>pushButton_90</zorder>
-           <zorder>label_60</zorder>
-           <zorder>label_61</zorder>
-           <zorder>radioButton_3</zorder>
-           <zorder>radioButton_4</zorder>
-           <zorder>pushButton_91</zorder>
-           <zorder>lineEdit_23</zorder>
-           <zorder>label_70</zorder>
-           <zorder>comboBox_4</zorder>
-           <zorder>label_71</zorder>
-           <zorder>label_73</zorder>
-           <zorder>pushButton_98</zorder>
-           <zorder>pushButton_99</zorder>
-           <zorder>label_77</zorder>
-           <zorder>label_75</zorder>
-           <zorder>pushButton_94</zorder>
-           <zorder>pushButton_92</zorder>
-           <zorder>pushButton_93</zorder>
-           <zorder>label_76</zorder>
-           <zorder>label_72</zorder>
-           <zorder>label_74</zorder>
-           <zorder>label_78</zorder>
-           <zorder>pushButton_100</zorder>
-           <zorder>pushButton_97</zorder>
-           <zorder>pushButton_95</zorder>
-           <zorder>pushButton_96</zorder>
-           <zorder>groupBox_15</zorder>
-          </widget>
-         </item>
-         <item>
           <widget class="QGroupBox" name="groupBox_12">
            <property name="minimumSize">
             <size>
@@ -1464,261 +1115,7 @@ font: 9pt &quot;微软雅黑&quot;;
             <string>位置查找</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_40">
-              <property name="text">
-               <string>查找范围：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
-            </item>
-            <item row="0" column="3">
-             <widget class="QLabel" name="label_41">
-              <property name="text">
-               <string>标注颜色：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4">
-             <widget class="QComboBox" name="comboBox_3">
-              <property name="styleSheet">
-               <string notr="true">QComboBox{border:1px solid #d7d7d7; 
-border-radius: 3px; }
-QListView::item:!selected{
-color: #19649f
-} 
-QListView::item:selected:active{
-background-color: #1275c3
-}
-QListView::item:selected{
-color: white
-}</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>red</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>yellow</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>blue</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>green</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QRadioButton" name="radioButton">
-              <property name="text">
-               <string>订单号</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QRadioButton" name="radioButton_2">
-              <property name="enabled">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>标签号</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0" colspan="2">
-             <widget class="QLineEdit" name="lineEdit_22"/>
-            </item>
-            <item row="2" column="2">
-             <widget class="QPushButton" name="pushButton_28">
-              <property name="maximumSize">
-               <size>
-                <width>666666</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">
-QPushButton{  
-color:rgb(255, 255, 255);   
-border-style:solid;  
-border-top-left-radius:2px;  
-border-top-right-radius:2px;  
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
-                            stop: 0.3 rgb(160,160,160),  
-                              stop: 1 rgb(140,140,140));  
-border:1px;  
-border-radius:5px;padding:2px 4px;/*border-radius控制圆角大小*/  
-}  
-QPushButton:hover{  /*鼠标放上后*/  
-color:rgb(255, 255, 255);  
-border-style:solid;  
-border-top-left-radius:2px;  
-border-top-right-radius:2px;  
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
-                            stop: 0.3 rgb(160,160,160),  
-                              stop: 1 rgb(120,120,120));  
-border:1px;  
-border-radius:5px;padding:2px 4px;  
-}  
-QPushButton:pressed{ /*按下按钮后*/  
-color:rgb(255, 255, 255);   
-border-style:solid;  
-border-top-left-radius:2px;  
-border-top-right-radius:2px;  
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
-                            stop: 0.3 rgb(190,190,190),  
-                              stop: 1 rgb(160,160,160));  
-border:1px;  
-border-radius:5px;padding:2px 4px;  
-}  
- </string>
-              </property>
-              <property name="text">
-               <string>查找</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="label_50">
-              <property name="styleSheet">
-               <string notr="true">font: 9pt &quot;微软雅黑&quot;;</string>
-              </property>
-              <property name="text">
-               <string>当前坐标：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1">
-             <widget class="QPushButton" name="pushButton_79">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	  
-    border-radius: 10px;   
-    border: 2px groove gray;  
- }
-</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <widget class="QLabel" name="label_42">
-              <property name="text">
-               <string>订 单  号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1">
-             <widget class="QPushButton" name="pushButton_81">
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	
-    border-radius: 10px;   
-    border: 2px groove gray;   
- }
-QPushButton:hover{
-	border: 2px groove balck; 
-}
-QPushButton:pressed{
-	border-style: inset;
-	border: 2px groove red; 
-} </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0">
-             <widget class="QLabel" name="label_44">
-              <property name="text">
-               <string>产品名称：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1">
-             <widget class="QPushButton" name="pushButton_83">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	  
-    border-radius: 10px;   
-    border: 2px groove gray;  
- }</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0">
-             <widget class="QLabel" name="label_46">
-              <property name="text">
-               <string>产品数量：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="1">
-             <widget class="QPushButton" name="pushButton_85">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	
-	font: 9pt &quot;微软雅黑&quot;;
-    border-radius: 10px;   
-    border: 2px groove gray;  
-
- }
-</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="0">
-             <widget class="QLabel" name="label_48">
-              <property name="text">
-               <string>管  理 员：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="1">
-             <widget class="QPushButton" name="pushButton_87">
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	
-    border-radius: 10px;   
-    border: 2px groove gray;   
- }
-QPushButton:hover{
-	border: 2px groove balck; 
-}
-QPushButton:pressed{
-	border-style: inset;
-	border: 2px groove red; 
-} </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="0" colspan="5">
+            <item row="9" column="0" colspan="5">
              <widget class="QGroupBox" name="groupBox_14">
               <property name="minimumSize">
                <size>
@@ -1795,7 +1192,187 @@ QPushButton:pressed{
               </layout>
              </widget>
             </item>
-            <item row="2" column="3">
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_42">
+              <property name="text">
+               <string>订 单  号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_79">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	  
+    border-radius: 10px;   
+    border: 2px groove gray;  
+ }
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QLineEdit" name="lineEdit_22"/>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_50">
+              <property name="styleSheet">
+               <string notr="true">font: 9pt &quot;微软雅黑&quot;;</string>
+              </property>
+              <property name="text">
+               <string>当前坐标：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QPushButton" name="pushButton_83">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	  
+    border-radius: 10px;   
+    border: 2px groove gray;  
+ }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_44">
+              <property name="text">
+               <string>产品名称：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QPushButton" name="pushButton_28">
+              <property name="maximumSize">
+               <size>
+                <width>666666</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QPushButton{  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(140,140,140));  
+border:1px;  
+border-radius:5px;padding:2px 4px;/*border-radius控制圆角大小*/  
+}  
+QPushButton:hover{  /*鼠标放上后*/  
+color:rgb(255, 255, 255);  
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(160,160,160),  
+                              stop: 1 rgb(120,120,120));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+QPushButton:pressed{ /*按下按钮后*/  
+color:rgb(255, 255, 255);   
+border-style:solid;  
+border-top-left-radius:2px;  
+border-top-right-radius:2px;  
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop:0 rgb(226,236,241),   
+                            stop: 0.3 rgb(190,190,190),  
+                              stop: 1 rgb(160,160,160));  
+border:1px;  
+border-radius:5px;padding:2px 4px;  
+}  
+ </string>
+              </property>
+              <property name="text">
+               <string>查找</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_46">
+              <property name="text">
+               <string>产品数量：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QPushButton" name="pushButton_81">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_48">
+              <property name="text">
+               <string>管  理 员：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QPushButton" name="pushButton_85">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+	font: 9pt &quot;微软雅黑&quot;;
+    border-radius: 10px;   
+    border: 2px groove gray;  
+
+ }
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QPushButton" name="pushButton_87">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+    border-radius: 10px;   
+    border: 2px groove gray;   
+ }
+QPushButton:hover{
+	border: 2px groove balck; 
+}
+QPushButton:pressed{
+	border-style: inset;
+	border: 2px groove red; 
+} </string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
              <widget class="QPushButton" name="pushButton_78">
               <property name="maximumSize">
                <size>
@@ -1845,20 +1422,7 @@ border-radius:5px;padding:2px 4px;
               </property>
              </widget>
             </item>
-            <item row="3" column="4">
-             <widget class="QPushButton" name="pushButton_80">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	  
-    border-radius: 10px;   
-    border: 2px groove gray;  
- }</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="4">
+            <item row="5" column="4">
              <widget class="QPushButton" name="pushButton_82">
               <property name="cursor">
                <cursorShape>PointingHandCursor</cursorShape>
@@ -1881,7 +1445,36 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="5" column="4">
+            <item row="8" column="4">
+             <widget class="QPushButton" name="pushButton_88">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	
+	font: 9pt &quot;微软雅黑&quot;;
+    border-radius: 10px;   
+    border: 2px groove gray;  
+
+ }
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="4">
+             <widget class="QPushButton" name="pushButton_80">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{  	  
+    border-radius: 10px;   
+    border: 2px groove gray;  
+ }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="4">
              <widget class="QPushButton" name="pushButton_84">
               <property name="cursor">
                <cursorShape>PointingHandCursor</cursorShape>
@@ -1904,7 +1497,7 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="6" column="4">
+            <item row="7" column="4">
              <widget class="QPushButton" name="pushButton_86">
               <property name="cursor">
                <cursorShape>PointingHandCursor</cursorShape>
@@ -1927,30 +1520,7 @@ QPushButton:pressed{
               </property>
              </widget>
             </item>
-            <item row="7" column="4">
-             <widget class="QPushButton" name="pushButton_88">
-              <property name="styleSheet">
-               <string notr="true">QPushButton{  	
-	font: 9pt &quot;微软雅黑&quot;;
-    border-radius: 10px;   
-    border: 2px groove gray;  
-
- }
-</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
             <item row="7" column="3">
-             <widget class="QLabel" name="label_49">
-              <property name="text">
-               <string>入库时间：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="3">
              <widget class="QLabel" name="label_47">
               <property name="text">
                <string>仓     库：</string>
@@ -1958,27 +1528,390 @@ QPushButton:pressed{
              </widget>
             </item>
             <item row="5" column="3">
-             <widget class="QLabel" name="label_45">
-              <property name="text">
-               <string>产品编号：</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="3">
              <widget class="QLabel" name="label_43">
               <property name="text">
                <string>标 签  号：</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="3">
+            <item row="6" column="3">
+             <widget class="QLabel" name="label_45">
+              <property name="text">
+               <string>产品编号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="3">
+             <widget class="QLabel" name="label_49">
+              <property name="text">
+               <string>入库时间：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
              <widget class="QLabel" name="label_51">
               <property name="text">
                <string>当前时间：</string>
               </property>
              </widget>
             </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>标注颜色：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_40">
+              <property name="text">
+               <string>查找范围：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QComboBox" name="comboBox_3">
+              <property name="styleSheet">
+               <string notr="true">QComboBox{border:1px solid #d7d7d7; 
+border-radius: 3px; }
+QListView::item:!selected{
+color: #19649f
+} 
+QListView::item:selected:active{
+background-color: #1275c3
+}
+QListView::item:selected{
+color: white
+}</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>red</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>yellow</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>blue</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>green</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QRadioButton" name="radioButton">
+              <property name="text">
+               <string>订单号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QRadioButton" name="radioButton_2">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>标签号</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
            </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_13">
+           <property name="minimumSize">
+            <size>
+             <width>400</width>
+             <height>28</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>轨迹跟踪</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_22">
+            <item row="0" column="3">
+             <widget class="QSpinBox" name="spinBox">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>20</number>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_73">
+              <property name="text">
+               <string>产品名称：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="pushButton_98">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QPushButton" name="pushButton_99">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QPushButton" name="pushButton_93">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_60">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>轨迹点数：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_77">
+              <property name="text">
+               <string>产品数量：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="label_75">
+              <property name="text">
+               <string>管理员：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QPushButton" name="pushButton_94">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_71">
+              <property name="text">
+               <string>订单号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QRadioButton" name="radioButton_3">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>标签号</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QRadioButton" name="radioButton_4">
+              <property name="text">
+               <string>订单号</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0" colspan="5">
+             <widget class="QGroupBox" name="groupBox_15">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>300</height>
+               </size>
+              </property>
+              <property name="title">
+               <string>详情</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_21">
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_65">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_62">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_63">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_64">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_67">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="label_69">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLabel" name="label_66">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_68">
+                 <property name="text">
+                  <string>TextLabel</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QPushButton" name="pushButton_92">
+              <property name="text">
+               <string>结束</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_91">
+              <property name="text">
+               <string>跟踪</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="3">
+             <widget class="QLineEdit" name="lineEdit_23"/>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLabel" name="label_76">
+              <property name="text">
+               <string>标签号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3" colspan="2">
+             <widget class="QPushButton" name="pushButton_100">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLabel" name="label_72">
+              <property name="text">
+               <string>产品编号：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QLabel" name="label_74">
+              <property name="text">
+               <string>仓库：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="2">
+             <widget class="QLabel" name="label_78">
+              <property name="text">
+               <string>入库时间：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3" colspan="2">
+             <widget class="QPushButton" name="pushButton_97">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3" colspan="2">
+             <widget class="QPushButton" name="pushButton_95">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="3" colspan="2">
+             <widget class="QPushButton" name="pushButton_96">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+           <zorder>radioButton_3</zorder>
+           <zorder>radioButton_4</zorder>
+           <zorder>label_71</zorder>
+           <zorder>label_73</zorder>
+           <zorder>pushButton_98</zorder>
+           <zorder>pushButton_99</zorder>
+           <zorder>label_77</zorder>
+           <zorder>label_75</zorder>
+           <zorder>pushButton_94</zorder>
+           <zorder>pushButton_93</zorder>
+           <zorder>groupBox_15</zorder>
+           <zorder>label_60</zorder>
+           <zorder>spinBox</zorder>
+           <zorder>pushButton_100</zorder>
+           <zorder>pushButton_97</zorder>
+           <zorder>pushButton_95</zorder>
+           <zorder>pushButton_96</zorder>
+           <zorder>pushButton_92</zorder>
+           <zorder>pushButton_91</zorder>
+           <zorder>lineEdit_23</zorder>
+           <zorder>label_76</zorder>
+           <zorder>label_72</zorder>
+           <zorder>label_74</zorder>
+           <zorder>label_78</zorder>
           </widget>
          </item>
         </layout>
@@ -5476,7 +5409,8 @@ QTableView::item:!alternate:!selected{
        <item>
         <widget class="QGraphicsView" name="graphicsView_2">
          <property name="styleSheet">
-          <string notr="true">background-image: url(:/重邮.png);</string>
+          <string notr="true">border-image: url(:/重邮.png);
+</string>
          </property>
         </widget>
        </item>

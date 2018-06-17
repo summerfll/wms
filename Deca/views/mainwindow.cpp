@@ -81,7 +81,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-   QObject::connect(graphicsWidget(),SIGNAL(sendsetting()),this,SLOT(show_settings()));
+   QObject::connect(graphicsWidget(),SIGNAL(sendsetting()),this,SLOT(show_settings()));//打开设置
+
+   //历史轨迹--暂时
+   QObject::connect(graphicsWidget(), SIGNAL(show_history(QString)), viewSettingsWidget(), SLOT(show_history(QString)));
+   QObject::connect(graphicsWidget(), SIGNAL(unshow_history()), viewSettingsWidget(), SLOT(unshow_history()));
+
+
+
     RTLSDisplayApplication::connectReady(this, "onReady()");
 
 }

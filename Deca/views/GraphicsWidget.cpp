@@ -299,6 +299,9 @@ GraphicsWidget::GraphicsWidget(QWidget *parent) :
    connect(ui->comboBox_5,SIGNAL(currentIndexChanged(QString)),this,SLOT(display(QString)));
 
 
+   //默认关闭视频
+   ui->groupBox_18->hide();
+
 
    //摄像头
    QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
@@ -1037,9 +1040,27 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
          QString text;
          text=ui->lineEdit_22->text();
 
-         quint64 position_tag_id=text.toInt();
-         int rad=r1*2;
+         //quint64 position_tag_id=text.toInt();
+         quint64 position_tag_id;
 
+         QString order_id;
+         if(ui->radioButton_2->isChecked())
+         {
+             position_tag_id=text.toInt();
+         }
+         else if(ui->radioButton->isChecked())
+         {
+             QSqlQuery query;
+             order_id=text;
+             query.exec("select 标签编号 from storage_copy where 订单号 ='"+text+"'");
+             if(query.next())
+             {
+                  QSqlRecord record=query.record();
+                  position_tag_id=query.value(record.indexOf("标签编号")).toInt();
+             }
+         }
+
+         int rad=r1*2;
          if(tag->postion_tag)
          {
              //re-size the elipse... with a new rad value...
@@ -1057,7 +1078,16 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
 
           if(find_tag_flag&&tagId==position_tag_id&&text!="")
           {
-              QPen pen = QPen(Qt::red);
+              QPen pen;
+              QString str_color=ui->comboBox_3->currentText().trimmed();
+              if(str_color=="red")
+                pen = QPen(Qt::red);
+              else if(str_color=="yellow")
+                   pen = QPen(Qt::yellow);
+              else if(str_color=="blue")
+                   pen = QPen(Qt::blue);
+              else if(str_color=="green")
+                   pen = QPen(Qt::green);
               pen.setStyle(Qt::DashDotDotLine);
               pen.setWidthF(PEN_WIDTH);
               tag->postion_tag->setOpacity(0.5);
@@ -1102,6 +1132,7 @@ void GraphicsWidget::tagPos(quint64 tagId, double x, double y, double z)
         //qDebug() << "Tag: 0x" + QString::number(tagId, 16) << " " << x << " " << y << " " << z;
 	}
 }
+
 
 
 void GraphicsWidget::tagStats(quint64 tagId, double x, double y, double z, double r95)
@@ -1155,20 +1186,6 @@ void GraphicsWidget::tagStats(quint64 tagId, double x, double y, double z, doubl
 
                 tag->r95p->setPen(Qt::NoPen);
                 tag->r95p->setBrush(Qt::NoBrush);
-
-                /*--------------------------------------------------------*/
-//                if(find_tag_flag&&tagId==position_tag_id&&text!="")
-//                {
-//                    QPen pen = QPen(Qt::red);
-//                    pen.setStyle(Qt::DashDotDotLine);
-//                    pen.setWidthF(PEN_WIDTH);
-
-//                    tag->r95p->setOpacity(0.5);
-//                    tag->r95p->setPen(pen);
-//                    tag->r95p->setBrush(QBrush(Qt::green, Qt::Dense7Pattern));
-//                    tag->r95p->setBrush(Qt::NoBrush);
-//                }
-                /*--------------------------------------------------------*/
 
                 if( tag->r95Show && (rad <= 1))
                 {
@@ -3916,6 +3933,8 @@ void GraphicsWidget::on_pushButton_77_clicked()
     emit send_click0(click_num);
     ui->groupBox_12->hide();
     ui->groupBox_13->show();
+
+    ui->pushButton_92->click();
 }
 
 void GraphicsWidget::on_pushButton_82_clicked()
@@ -3927,7 +3946,7 @@ void GraphicsWidget::on_pushButton_82_clicked()
     QString tag_oid,tag_type,tag_state,tag_fac,tag_date,tag_other;
 
     ui->groupBox_14->setTitle("定位标签(标签号："+tag_id+")详情");
-    query.exec("select 标签标识,标签类型,标签状态,生产厂商,生产日期,备注 from biaoshi where 标签编号 ='"+tag_id+"'");
+    query.exec("select * from biaoshi where 标签编号 ='"+tag_id+"'");
     if(query.next())
     {
         QSqlRecord record=query.record();
@@ -3948,10 +3967,6 @@ void GraphicsWidget::on_pushButton_82_clicked()
     ui->label_59->setText("");
 }
 
-void GraphicsWidget::on_pushButton_82_released()
-{
-
-}
 
 void GraphicsWidget::on_pushButton_86_clicked()
 {
@@ -4095,4 +4110,94 @@ void GraphicsWidget::on_pushButton_103_clicked()
         ui->groupBox_18->hide();
         flag=false;
     }
+}
+
+
+void GraphicsWidget::on_pushButton_91_clicked()
+{
+   QString text1=ui->spinBox->text();
+   emit show_history(text1);
+
+   //////////////////////////////////////
+   QString text;
+   text=ui->lineEdit_23->text().trimmed();
+   QString tag_id;
+   QString order_id;
+   QSqlQuery query;
+   QString product_name;
+   QString product_id;
+   QString product_num;
+   QString house_num;
+   QString people;
+   QString input_time;
+
+ //  QDateTime current_data=QDateTime::currentDateTime();
+ //  QString current_time=current_data.toString("yyyy-MM-dd hh:mm:ss");
+
+   if(ui->radioButton_3->isChecked())
+   {
+       tag_id=text;
+       query.exec("select 订单号 from storage_copy where 标签编号 ='"+text+"'");
+       if(query.next())
+       {
+           QSqlRecord record=query.record();
+           order_id=query.value(record.indexOf("订单号")).toString();
+       }
+
+   }
+   else if(ui->radioButton_4->isChecked())
+   {
+       order_id=text;
+       query.exec("select 标签编号 from storage_copy where 订单号 ='"+text+"'");
+       if(query.next())
+       {
+           QSqlRecord record=query.record();
+           tag_id=query.value(record.indexOf("标签编号")).toString();
+       }
+   }
+   if(tag_id!="")
+       query.exec("select 产品名称,产品编号,数量,仓库,管理员,入库时间 from storage_copy where 标签编号 ='"+tag_id+"'");
+   if(query.next())
+   {
+       QSqlRecord record=query.record();
+       product_name=query.value(record.indexOf("产品名称")).toString();
+       product_id=query.value(record.indexOf("产品编号")).toString();
+       product_num=query.value(record.indexOf("数量")).toString();
+       house_num=query.value(record.indexOf("仓库")).toString();
+       people=query.value(record.indexOf("管理员")).toString();
+       input_time=query.value(record.indexOf("入库时间")).toString();
+
+   }
+
+
+   if(!ui->lineEdit_23->text().isEmpty())
+   {
+
+       ui->pushButton_93->setText(order_id);
+       ui->pushButton_100->setText(tag_id);
+       ui->pushButton_98->setText(product_name);
+       ui->pushButton_97->setText(product_id);
+       ui->pushButton_99->setText(product_num);
+       ui->pushButton_95->setText(house_num);
+       ui->pushButton_94->setText(people);
+       ui->pushButton_96->setText(input_time);
+   }
+
+}
+
+
+void GraphicsWidget::on_pushButton_92_clicked()
+{
+    emit unshow_history();
+    ui->lineEdit_23->clear();
+
+    ui->pushButton_93->setText("");
+    ui->pushButton_100->setText("");
+    ui->pushButton_98->setText("");
+    ui->pushButton_97->setText("");
+    ui->pushButton_99->setText("");
+    ui->pushButton_95->setText("");
+    ui->pushButton_94->setText("");
+    ui->pushButton_96->setText("");
+
 }

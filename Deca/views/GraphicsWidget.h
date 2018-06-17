@@ -420,6 +420,10 @@ private slots:
 
      void on_pushButton_103_clicked();
 
+     void on_pushButton_91_clicked();
+
+     void on_pushButton_92_clicked();
+
 signals:
     void sendOrderID(QString,QString); //标识管理中 新增标签 给 tag_add 发送编号、和标识
     //toolbox发送index给tabwidget
@@ -435,6 +439,10 @@ signals:
     void send_click9(int);
     void send_click_10(int);
     void send_num(QString);
+
+    void show_history(QString);//显示历史轨迹
+    void unshow_history();//取消显示历史轨迹
+
 private:
     Ui::GraphicsWidget *ui;
     QGraphicsScene *_scene;
@@ -515,6 +523,10 @@ private:
 
 };
 #endif // GRAPHICSWIDGET_H
+
+
+
+
 
 
 

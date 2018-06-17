@@ -65,7 +65,10 @@ protected slots:
     void setTagHistory(int h);
     void loggingClicked(void);
 private slots:
-    void on_floorplanOpen_pb_clicked();
+   // void on_floorplanOpen_pb_clicked();
+
+    void show_history(QString); //show历史轨迹
+    void unshow_history();
 
 private:
     Ui::ViewSettingsWidget *ui;

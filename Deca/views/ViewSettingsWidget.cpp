@@ -69,6 +69,11 @@ ViewSettingsWidget::ViewSettingsWidget(QWidget *parent) :
 
     QObject::connect(ui->logging_pb, SIGNAL(clicked()), this, SLOT(loggingClicked()));
 
+
+
+
+
+
     _logging = false ;
 
     ui->label_logfile->setText("");
@@ -84,6 +89,8 @@ ViewSettingsWidget::ViewSettingsWidget(QWidget *parent) :
     }
 
     RTLSDisplayApplication::connectReady(this, "onReady()");
+
+
 }
 
 void ViewSettingsWidget::onReady()
@@ -390,3 +397,17 @@ void ViewSettingsWidget::scaleClicked()
 }
 
 
+void ViewSettingsWidget::show_history(QString str)
+{
+    if(!ui->showTagHistory->isChecked())
+        ui->showTagHistory->click();
+    QString text=str;
+
+    ui->tagHistoryN->setValue(text.toInt());
+}
+void ViewSettingsWidget::unshow_history()
+{
+    if(ui->showTagHistory->isChecked())
+        ui->showTagHistory->click();
+
+}
