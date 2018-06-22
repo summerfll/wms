@@ -42,7 +42,7 @@ void modify_password::on_pushButton_clicked()
     {
         QSqlQuery query;
         query.exec("update staff_management set 密码='"+set_password+"',确认密码='"+set_password+"'"
-                                                                       "where 员工名='"+staff_name+"'");
+                                                                       "where 用户名='"+staff_name+"'");
         if (query.isActive())
         {
             QMessageBox::information(this, tr("信息"), tr("密码修改成功！"));

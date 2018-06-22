@@ -38,6 +38,7 @@ bool ConnectDatabase::openDatabase()
     return true;
 }
 
+
 // Close Database
 void ConnectDatabase::closeDatabase()
 {

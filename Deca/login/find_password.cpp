@@ -27,7 +27,7 @@ void find_password::on_pushButton_clicked()
     QString staff_name = ui->lineEdit->text();
     QString true_name = ui->lineEdit_2->text();
     QSqlQuery query;
-    query.exec("select *from staff_management where 员工名 = '"+staff_name+"'");
+    query.exec("select *from staff_management where 用户名 = '"+staff_name+"'");
     if(!query.next())
     {
         QMessageBox::warning(this,tr("错误"),tr("请输入正确的登陆名"));
@@ -36,7 +36,7 @@ void find_password::on_pushButton_clicked()
     }
     else
     {
-        if(query.record().value("真实名字").toString()!=true_name)
+        if(query.record().value("姓名").toString()!=true_name)
             {
             QMessageBox::warning(this,tr("错误"),tr("输入的真实姓名与登陆名不匹配"));
             ui->lineEdit->setText(NULL);

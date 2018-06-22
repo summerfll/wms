@@ -18,6 +18,7 @@ loginDialog::loginDialog(QWidget *parent) :
     this->setWindowTitle("用户登陆");
     ui->lineEdit_2->setPlaceholderText("Username");//设置当鼠标点击文本时设置内容消失
     ui->lineEdit->setPlaceholderText("Password");
+    ui->lineEdit->setEchoMode(QLineEdit::Password);
 }
 
 loginDialog::~loginDialog()
@@ -43,7 +44,7 @@ void loginDialog::on_pushButton_clicked()
     }
     else
     {
-            query.exec("select *from staff_management where 员工名='"+user_account+"'");
+            query.exec("select *from staff_management where 用户名='"+user_account+"'");
             if(!query.next())
             {
                 QMessageBox::warning(this, tr("错误"), tr("请输入正确的登陆名!"));

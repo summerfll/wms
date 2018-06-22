@@ -122,7 +122,7 @@ color:rgb(0, 0, 0)</string>
       <string notr="true">background-color:rgb(190, 154, 124, 255);</string>
      </property>
      <property name="text">
-      <string>真实名字：</string>
+      <string>姓     名：</string>
      </property>
     </widget>
    </item>
@@ -202,7 +202,7 @@ color:rgb(0, 0, 0)</string>
       <string notr="true">background-color:rgb(190, 154, 124, 255);</string>
      </property>
      <property name="text">
-      <string>员 工 名：</string>
+      <string>登陆用户名：</string>
      </property>
     </widget>
    </item>

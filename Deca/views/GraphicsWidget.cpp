@@ -69,6 +69,9 @@
 #include <QDebug>
 #include "GraphicsWidget.h"
 
+#include "login/find_password.h"
+
+
 
 #define PEN_WIDTH (0.04)
 #define ANC_SIZE (0.15)
@@ -2874,6 +2877,10 @@ void GraphicsWidget::on_pushButton_26_clicked()
     int click_num = 3;
     connect(this,SIGNAL(send_click3(int)),this,SLOT(stocking_1(int)));
     emit send_click3(click_num);
+
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_6);
+    model->setQuery("select * from storage_copy");
+    ui->tableView_6->setModel(model);
 }
 void GraphicsWidget::stocking_1(int num)
 {
@@ -2888,6 +2895,9 @@ void GraphicsWidget::on_pushButton_29_clicked()
     int click_num = 3;
     connect(this,SIGNAL(send_click3(int)),this,SLOT(stocking_2(int)));
     emit send_click3(click_num);
+    QSqlQueryModel *model = new QSqlQueryModel(ui->tableView_4);
+    model->setQuery("select * from outstorage");
+    ui->tableView_4->setModel(model);
 }
 void GraphicsWidget::stocking_2(int num)
 {
@@ -3191,7 +3201,7 @@ void GraphicsWidget::on_pushButton_50_clicked()
     int num = (read_num-1)*STAFF_LINE;
     QString limit_num = QString::number(num);
     QString staff_line = QString::number(STAFF_LINE);
-    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
+    model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
     ui->tableView_8->setModel(model_staffquery);
     model_staffquery0->setQuery("select *from "+MODEL_STAFF+"");
     staff_totalline=model_staffquery0->rowCount();//staff表的总行数
@@ -3373,7 +3383,7 @@ void GraphicsWidget::on_pushButton_53_clicked()
         int num = (read_num-1)*STAFF_LINE;
         QString limit_num = QString::number(num);
         QString staff_line = QString::number(STAFF_LINE);
-        model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
+        model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
         QString staff_id = model_staffquery->record(curRow).value("员工编号").toString();
         connect(this,SIGNAL(sendStaffID(QString)),staff_mdf,SLOT(disPlayImformation(QString)));
         emit sendStaffID(staff_id);
@@ -3440,8 +3450,8 @@ void GraphicsWidget::on_pushButton_55_clicked()
 {
     QString inquery_id = ui->lineEdit_2->text().trimmed();
     QString inquery_name = ui->lineEdit_13->text().trimmed();
-    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" "
-                                       "where 员工编号='"+inquery_id+"' or 员工名='"+inquery_name+"'");
+    model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" "
+                                       "where 员工编号='"+inquery_id+"' or 用户名='"+inquery_name+"'");
     ui->lineEdit_2->setText(NULL);
     ui->lineEdit_13->setText(NULL);
 }
@@ -3471,7 +3481,7 @@ void GraphicsWidget::on_pushButton_65_clicked()
 void GraphicsWidget::on_toolButton_clicked()
 {
     QString staff_line = QString::number(STAFF_LINE);
-    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+staff_line+"");
+    model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+staff_line+"");
     ui->tableView_8->setModel(model_staffquery);
     ui->label_22->setText(QString::number(staff_totalpage));
     ui->lineEdit_18->setText("1");
@@ -3484,7 +3494,7 @@ void GraphicsWidget::on_toolButton_2_clicked()
     QString staff_line = QString::number(STAFF_LINE);
     int num = STAFF_LINE*(staff_totalpage-1);
     QString limit_num = QString::number(num);
-    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
+    model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
     ui->tableView_8->setModel(model_staffquery);
     ui->label_23->setText(QString::number(staff_totalpage));
     ui->lineEdit_18->setText(QString::number(staff_totalpage));
@@ -3505,7 +3515,7 @@ void GraphicsWidget::on_toolButton_3_clicked()
         int num = (read_num-1)*STAFF_LINE;
         QString limit_num = QString::number(num);
         QString staff_line = QString::number(STAFF_LINE);
-        model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
+        model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+limit_num+","+staff_line+"");
         ui->tableView_8->setModel(model_staffquery);
         ui->label_23->setText(QString::number(read_num));
     }
@@ -3682,14 +3692,14 @@ void GraphicsWidget::on_pushButton_75_clicked()
     int click_num = 4;
     connect(this,SIGNAL(send_click4(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click4(click_num);
+
+    QSqlQueryModel *model2 = new QSqlQueryModel(ui->tableView_7);
+    model2->setQuery("select *from biaoshi");
+    ui->tableView_7->setModel(model2);
+
 }
 
-//void GraphicsWidget::on_pushButton_62_clicked()
-//{
-//    int click_num = 5;
- //   connect(this,SIGNAL(send_click5(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
-//    emit send_click5(click_num);
-//}//
+
 
 void GraphicsWidget::on_pushButton_67_clicked()
 {
@@ -3697,7 +3707,7 @@ void GraphicsWidget::on_pushButton_67_clicked()
     connect(this,SIGNAL(send_click6(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click6(click_num);
     QString staff_line = QString::number(STAFF_LINE);
-    model_staffquery->setQuery("select 员工编号,员工名,真实名字,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+staff_line+"");
+    model_staffquery->setQuery("select 员工编号,用户名,姓名,角色,邮箱,电话,备注 from "+MODEL_STAFF+" limit "+staff_line+"");
     ui->tableView_8->setModel(model_staffquery);
     ui->label_22->setText(QString::number(staff_totalpage));
     ui->lineEdit_18->setText("1");
@@ -4005,6 +4015,14 @@ void GraphicsWidget::on_pushButton_32_clicked()
     int click_num = 9;
     connect(this,SIGNAL(send_click_10(int)),ui->tabWidget,SLOT(setCurrentIndex(int)));
     emit send_click_10(click_num);
+
+    model_storagequery->setQuery("select *from "+MODEL_STORAGE+"");
+    ui->tableView_11->setModel(model_storagequery);
+
+    model_storequery->setQuery("select *from "+MODEL_STORE+"");
+    ui->tableView_12->setModel(model_storequery);
+
+
 }
 
 void GraphicsWidget::display(QString store_name)
@@ -4262,3 +4280,15 @@ void GraphicsWidget::on_pushButton_95_clicked()
     ui->label_68->setText("管理员: "+admin+"");
     ui->label_66->setText("备注: "+other+"");
 }
+
+
+void GraphicsWidget::on_pushButton_39_clicked()
+{
+    find_password *findpassword = new find_password();
+    findpassword->setAttribute(Qt::WA_QuitOnClose,false);//主窗口关闭时同时关闭该窗口
+    findpassword->move((QApplication::desktop()->width() - findpassword->width()) / 2,
+                      (QApplication::desktop()->height() - findpassword->height()) / 2);//桌面正中
+    findpassword->setWindowModality(Qt::ApplicationModal);//设置模态，禁止使用其他对话框
+    findpassword->show();
+}
+
