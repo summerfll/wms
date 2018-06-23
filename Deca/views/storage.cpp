@@ -27,7 +27,7 @@ storage::storage(QWidget *parent) :
 
     QSqlQuery query1;
     QSqlQueryModel *model = new QSqlQueryModel();
-    query1.exec("select 员工名 from staff_management");
+    query1.exec("select 姓名 from staff_management");
 
     while(query1.next())
     {

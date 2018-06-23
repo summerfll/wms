@@ -59,7 +59,7 @@ void add_staff::on_pushButton_2_clicked()
         else
         {
             QSqlQuery query;
-            query.prepare("insert into staff_management(真实名字,密码,确认密码,员工名,邮箱,电话,角色,备注)"
+            query.prepare("insert into staff_management(姓名,密码,确认密码,用户名,邮箱,电话,角色,备注)"
                        " values(:two,:three,:four,:five,:six,:seven,:eight,:nine)");
             query.bindValue(":two",str2);
             query.bindValue(":three",str3);

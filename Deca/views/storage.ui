@@ -52,142 +52,10 @@ color:rgb(0, 0, 0)
    <set>Qt::ImhNone</set>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="6" column="4">
-    <widget class="QLineEdit" name="lineEdit_7">
+   <item row="6" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineEdit_6">
      <property name="styleSheet">
       <string notr="true"/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="label_3">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>产品名称</string>
-     </property>
-    </widget>
-   </item>
-   <item row="12" column="4">
-    <widget class="QLineEdit" name="lineEdit_8">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::NoEcho</enum>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-     <property name="placeholderText">
-      <string>NOW DATE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="3">
-    <widget class="QLabel" name="label_13">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>生成厂商</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <spacer name="verticalSpacer_6">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="0">
-    <spacer name="verticalSpacer_7">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="4">
-    <widget class="QLineEdit" name="lineEdit_4">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="3">
-    <widget class="QLabel" name="label_5">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>标签编号</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="3">
-    <widget class="QLabel" name="label_7">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>仓库编号</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="3">
-    <widget class="QLabel" name="label_11">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>单   位</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="4">
-    <widget class="QComboBox" name="comboBox">
-     <property name="minimumSize">
-      <size>
-       <width>140</width>
-       <height>0</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="12" column="3">
-    <widget class="QLabel" name="label_9">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>入库时间</string>
      </property>
     </widget>
    </item>
@@ -204,8 +72,88 @@ color:rgb(0, 0, 0)
      </property>
     </spacer>
    </item>
+   <item row="3" column="0">
+    <spacer name="verticalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="3">
+    <widget class="QLabel" name="label_11">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>单   位</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>订 单 号</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_12">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>生产日期    </string>
+     </property>
+    </widget>
+   </item>
    <item row="9" column="0">
     <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>产品数量</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineEdit_5">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <widget class="QLineEdit" name="lineEdit_10">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -230,22 +178,18 @@ color:rgb(0, 0, 0)
      </property>
     </spacer>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="styleSheet">
-      <string notr="true"/>
+   <item row="1" column="0">
+    <spacer name="verticalSpacer_7">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="text">
-      <string>订 单 号</string>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
      </property>
-    </widget>
-   </item>
-   <item row="8" column="1" colspan="2">
-    <widget class="QLineEdit" name="lineEdit_9">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-    </widget>
+    </spacer>
    </item>
    <item row="4" column="0">
     <widget class="QLabel" name="label_4">
@@ -257,20 +201,54 @@ color:rgb(0, 0, 0)
      </property>
     </widget>
    </item>
-   <item row="10" column="1" colspan="2">
-    <widget class="QLineEdit" name="lineEdit_5">
+   <item row="8" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineEdit_9">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
-    <widget class="QLabel" name="label_6">
+   <item row="6" column="4">
+    <widget class="QLineEdit" name="lineEdit_7">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="3">
+    <widget class="QLabel" name="label_13">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>产品数量</string>
+      <string>生成厂商</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="3">
+    <widget class="QLabel" name="label_7">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>仓库编号</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="4">
+    <widget class="QComboBox" name="comboBox">
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>0</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
     </widget>
    </item>
@@ -299,20 +277,17 @@ color:rgb(0, 0, 0)
      </property>
     </widget>
    </item>
-   <item row="6" column="1" colspan="2">
-    <widget class="QLineEdit" name="lineEdit_6">
+   <item row="4" column="4">
+    <widget class="QLineEdit" name="lineEdit_4">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
-    <widget class="QLabel" name="label_10">
+   <item row="2" column="4">
+    <widget class="QLineEdit" name="lineEdit_2">
      <property name="styleSheet">
       <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>管 理 员</string>
      </property>
     </widget>
    </item>
@@ -326,30 +301,55 @@ color:rgb(0, 0, 0)
      </property>
     </widget>
    </item>
-   <item row="12" column="1" colspan="2">
-    <widget class="QComboBox" name="comboBox_2">
-     <property name="minimumSize">
-      <size>
-       <width>145</width>
-       <height>0</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1" colspan="2">
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
-    <widget class="QLabel" name="label_12">
+   <item row="2" column="3">
+    <widget class="QLabel" name="label_3">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>生成日期</string>
+      <string>产品名称</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QLabel" name="label_5">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>标签编号</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>管 理 员</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="4">
+    <widget class="QLineEdit" name="lineEdit_8">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::NoEcho</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string>NOW DATE</string>
      </property>
     </widget>
    </item>
@@ -468,36 +468,13 @@ background-color:rgb(0, 0, 0);
      </item>
     </layout>
    </item>
-   <item row="13" column="0">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
+   <item row="12" column="1" colspan="2">
+    <widget class="QComboBox" name="comboBox_2">
+     <property name="minimumSize">
       <size>
-       <width>20</width>
-       <height>40</height>
+       <width>145</width>
+       <height>0</height>
       </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="11" column="0">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="8" column="4">
-    <widget class="QLineEdit" name="lineEdit_10">
-     <property name="styleSheet">
-      <string notr="true"/>
      </property>
     </widget>
    </item>
@@ -513,6 +490,29 @@ background-color:rgb(0, 0, 0);
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="13" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="12" column="3">
+    <widget class="QLabel" name="label_9">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>入库时间</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

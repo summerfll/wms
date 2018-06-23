@@ -14,7 +14,7 @@ add_store::add_store(QWidget *parent) :
     this->setWindowTitle("新增仓库");
     QSqlQueryModel *model = new QSqlQueryModel();
 
-    model->setQuery("select 员工名 from staff_management");
+    model->setQuery("select 用户名 from staff_management");
     int rowNum = model->rowCount();
     for(int i = 0;i<rowNum;i++)
     {
@@ -28,7 +28,7 @@ add_store::add_store(QWidget *parent) :
 void add_store::displayphone_num(QString staff_name)
 {
     QSqlQuery query;
-    query.exec("select 电话 from staff_management where 员工名='"+staff_name+"'");
+    query.exec("select 电话 from staff_management where 用户名='"+staff_name+"'");
     while(query.next())
     {
         ui->lineEdit_6->setText(query.value(0).toString());

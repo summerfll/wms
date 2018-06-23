@@ -14,7 +14,7 @@ store_modify2::store_modify2(QWidget *parent) :
     this->setWindowTitle("仓库信息编辑");
 
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select 员工名 from staff_management");
+    model->setQuery("select 用户名 from staff_management");
     int rowNum = model->rowCount();
     for(int i = 0;i<rowNum;i++)
     {
@@ -29,7 +29,7 @@ store_modify2::store_modify2(QWidget *parent) :
 void store_modify2::displayphone_num(QString staff_name)
 {
     QSqlQuery query;
-    query.exec("select 电话 from staff_management where 员工名='"+staff_name+"'");
+    query.exec("select 电话 from staff_management where 用户名='"+staff_name+"'");
     while(query.next())
     {
         ui->lineEdit_7->setText(query.value(0).toString());
