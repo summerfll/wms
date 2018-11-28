@@ -21,6 +21,7 @@
 */
 int main(int argc, char *argv[])
 {
+    QApplication::addLibraryPath("./plugins");
     RTLSDisplayApplication app(argc, argv);
     loginDialog lgn;
     if(lgn.exec()==QDialog::Accepted)

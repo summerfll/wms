@@ -117,38 +117,38 @@ void MainWindow::onReady()
 #ifdef QT_DEBUG
     ui->mainToolBar->show();
 #else
-    while(_notConnected)
-    {
-        if(_notConnected)
-        {
-            //QMessageBox::critical(NULL, tr("COM Error"), QString("Cannot open/connect to COM port.\nPlease make sure TREK device is connected to PC."));
+//    while(_notConnected)
+//    {
+//        if(_notConnected)
+//        {
+//            //QMessageBox::critical(NULL, tr("COM Error"), QString("Cannot open/connect to COM port.\nPlease make sure TREK device is connected to PC."));
 
-            QMessageBox::StandardButton reply;
+//            QMessageBox::StandardButton reply;
 
-            //RTLSDisplayApplication::beep();
+//            //RTLSDisplayApplication::beep();
 
-            reply = QMessageBox::warning(this, tr("COM Error"), "Cannot open/connect to COM port.\n"
-                                          "Please make sure TREK device is connected to PC.\n\n "
-                                          "Press Close to exit or Retry to retry.",
-                                          QMessageBox::Close|QMessageBox::Retry);
+//            reply = QMessageBox::warning(this, tr("COM Error"), "Cannot open/connect to COM port.\n"
+//                                          "Please make sure TREK device is connected to PC.\n\n "
+//                                          "Press Close to exit or Retry to retry.",
+//                                          QMessageBox::Close|QMessageBox::Retry);
 
-            if(reply == QMessageBox::Close)
-            {
-                //exit application
-                RTLSDisplayApplication::closeAllWindows();
-                exit(-1);
-            }
+//            if(reply == QMessageBox::Close)
+//            {
+//                //exit application
+//                RTLSDisplayApplication::closeAllWindows();
+//                exit(-1);
+//            }
 
-            //else it will re-try...
+//            //else it will re-try...
 
-        }
+//        }
 
-        if(_cWidget->updateDeviceList() > 0)
-        {
-            _notConnected = false;
-            break;
-        }
-    }
+//        if(_cWidget->updateDeviceList() > 0)
+//        {
+//            _notConnected = false;
+//            break;
+//        }
+//    }
 #endif
 }
 

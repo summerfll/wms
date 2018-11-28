@@ -8,6 +8,8 @@ cache()
 QT       += core gui network xml serialport
 QT += core gui widgets
 
+RC_ICONS=CQUPT.ico
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = DecaRangeRTLS
