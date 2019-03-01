@@ -19,39 +19,39 @@
 
 主界面：
 
-![1](https://github.com/summerfll/wms/pic/主界面.png)
+![1](https://github.com/summerfll/wms/blob/master/pic/主界面.png)
 
 登陆界面：
 
-![2](https://github.com/summerfll/wms/pic/登陆界面.png)
+![2](https://github.com/summerfll/wms/blob/master/pic/登陆界面.png)
 
 轨迹跟踪：
 
-![3](https://github.com/summerfll/wms/pic/轨迹跟踪.png)
+![3](https://github.com/summerfll/wms/blob/master/pic/轨迹跟踪.png)
 
 位置查找：
 
-![4](https://github.com/summerfll/wms/pic/位置查找.png)
+![4](https://github.com/summerfll/wms/blob/master/pic/位置查找.png)
 
 标签管理：
 
-![5](https://github.com/summerfll/wms/pic/标签管理.png)
+![5](https://github.com/summerfll/wms/blob/master/pic/标签管理.png)
 
 入库管理：
 
-![6](https://github.com/summerfll/wms/pic/入库管理.png)
+![6](https://github.com/summerfll/wms/blob/master/pic/入库管理.png)
 
 出库管理：
 
-![7](https://github.com/summerfll/wms/pic/出库管理.png)
+![7](https://github.com/summerfll/wms/blob/master/pic/出库管理.png)
 
 员工管理：
 
-![8](https://github.com/summerfll/wms/pic/员工管理.png)
+![8](https://github.com/summerfll/wms/blob/master/pic/员工管理.png)
 
 移库管理：
 
-![9](https://github.com/summerfll/wms/pic/移库管理.png)
+![9](https://github.com/summerfll/wms/blob/master/pic/移库管理.png)
 
 ## 演示系统发布：
 
