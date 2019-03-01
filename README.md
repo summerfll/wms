@@ -19,7 +19,7 @@
 
 主界面：
 
-![1](https://github.com/summerfll/wms/blob/master/pic/主界面.png)
+![1](https://github.com/summerfll/wms/blob/master/pic/1.png)
 
 登陆界面：
 
